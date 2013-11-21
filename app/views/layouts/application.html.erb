@@ -8,8 +8,10 @@
 </head>
 <body>
 
-  <%# flash_messages! %>
-  <%= yield %>
+  <div class='container'>
+    <%= flash_messages! %>
+    <%= yield %>
+  </div> <!-- .container -->
 
 </body>
 </html>
