@@ -1,0 +1,12 @@
+<!-- [:error, :alert, :warning, :notice, :message].each do |key| -->
+<!-- content_tag :div, flash[key], :id=> key if flash[key] -->
+<!-- end -->
+
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div class="fade in alert alert-<%= name == :notice ? "success" : "danger" %>">
+      <a class="close" data-dismiss="alert">&#215;</a>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    </div>
+  <% end %>
+<% end %>
