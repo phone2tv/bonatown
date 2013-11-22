@@ -53,6 +53,7 @@ gem 'devise', '~> 3.2.0'
 gem 'devise-i18n'
 
 # Use rolify for user authorization
-gem 'rolify'
+#gem 'rolify'
+gem "rolify",        :git => "git://github.com/EppO/rolify.git"
 
 gem 'bootstrap-sass', '~> 3.0.0'
