@@ -3,6 +3,7 @@ en:
     models:
       user: "User"
       profile: "Profile"
+      role: "Role"
     attributes:
       user:
         email: "Email"
@@ -20,6 +21,8 @@ en:
         location: "Location"
         birthday: "Birthday"
         aboutme: "About Me"
+      role:
+        name: "Role Name"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
@@ -53,3 +56,9 @@ en:
     help_block:
       password: "leave blank if you don't want to change it"
       current_password: "we need your current password to confirm your changes"
+  role:
+    name:
+      admin: "Administrator"
+      moderator: "Moderator"
+      broker: "Broker"
+      customer: "Customer"

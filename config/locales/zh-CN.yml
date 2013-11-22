@@ -3,6 +3,7 @@ zh-CN:
     models:
       user: "用户纪录"
       profile: "用户信息"
+      role: "用户角色"
     attributes:
       user:
         email: "电子邮件"
@@ -20,6 +21,8 @@ zh-CN:
         location: "所在城市"
         birthday: "用户生日"
         aboutme: "个人简介"
+      role:
+        name: "角色名称"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
@@ -53,3 +56,9 @@ zh-CN:
     help_block:
       password: "留空，如果你不想去改变它"
       current_password: "我们需要您的当前密码以确认您的更改"
+  role:
+    name:
+      admin: "系统管理员"
+      moderator: "业务管理员"
+      broker: "经纪人"
+      customer: "企业客户"
