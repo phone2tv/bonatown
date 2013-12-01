@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  # validation macros
+  validates :terms_of_service, :acceptance => true
+
   # macros from gems
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
