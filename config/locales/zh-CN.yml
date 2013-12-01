@@ -49,6 +49,7 @@ zh-CN:
     login: "登录"
     logout: "退出"
     logoff: "注销"
+    cancel: "注销我的账户"
     remember_me: "保持登录状态"
     forgot_password: "忘记密码？"
     reset_password_instructions: "发送重置密码请求"

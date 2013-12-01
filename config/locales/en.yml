@@ -49,6 +49,7 @@ en:
     login: "Login"
     logout: "Logout"
     logoff: "Cancel my account"
+    cancel: "Cancel my account"
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
     reset_password_instructions: "Send me reset password instructions"

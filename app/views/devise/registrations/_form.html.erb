@@ -2,17 +2,17 @@
   <%= devise_error_messages! %>
 
   <div class='form-group'>
-    <%= f.label :email %>
+    <%# f.label :email %>
     <%= f.email_field :email, class: 'required form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
   </div>
 
   <div class='form-group'>
-    <%= f.label :password %>
+    <%# f.label :password %>
     <%= f.password_field :password, class: 'required form-control', minlength: 6, placeholder: t('activerecord.attributes.user.password') %>
   </div>
 
   <div class='form-group'>
-    <%= f.label :password_confirmation %>
+    <%# f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, class: 'required form-control', minlength: 6, placeholder: t('activerecord.attributes.user.password_confirmation') %>
   </div>
 
@@ -25,6 +25,6 @@
   </div>
 
   <div class='form-group'>
-    <%= f.submit t('devise.signup'), class: 'btn btn-primary btn-lg btn-block' %>
+    <%= f.submit t('devise.signup'), class: 'btn btn-success btn-lg btn-block' %>
   </div>
 <% end %>
