@@ -53,6 +53,9 @@ en:
     forgot_password: "Forgot your password?"
     reset_password_instructions: "Send me reset password instructions"
     reset_password: "Change my password"
+    or:
+      signup: "OR"
+      signin: "OR"
     help_block:
       password: "leave blank if you don't want to change it"
       current_password: "we need your current password to confirm your changes"
