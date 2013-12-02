@@ -52,6 +52,7 @@ zh-CN:
     cancel: "注销我的账户"
     remember_me: "保持登录状态"
     forgot_password: "忘记密码？"
+    change_password: "设置新密码？"
     reset_password_instructions: "发送重置密码请求"
     reset_password: "重置密码"
     or:

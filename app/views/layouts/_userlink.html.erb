@@ -9,7 +9,8 @@
       <li class="dropdown-header">Nav header</li>
       <li><%= link_to t('devise.logout'), destroy_user_session_path, method: :delete %></li>
       <li><%= link_to t('devise.logoff'), registration_path(current_user), :method => :delete, data: { confirm: 'Are you sure?' } %></li>
-      <li><a href="#"><i class="glyphicon glyphicon-off"></i> Logout</a></li>
+      <li><a href="#"><i class="glyphicon glyphicon-off"></i> <%= t('devise.logout') %></a></li>
+    </ul>
     </li>
   <% else %>
     <% if controller_name == 'sessions' %>

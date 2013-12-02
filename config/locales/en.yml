@@ -52,6 +52,7 @@ en:
     cancel: "Cancel my account"
     remember_me: "Remember me"
     forgot_password: "Forgot your password?"
+    change_password: "Change your password?"
     reset_password_instructions: "Send me reset password instructions"
     reset_password: "Change my password"
     or:
