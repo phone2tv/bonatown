@@ -2,13 +2,13 @@
   <%= devise_error_messages! %>
 
   <div class='form-group'>
-    <%# f.label :email %>
-    <%= f.email_field :email, class: 'required form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
+    <%# f.label :username, class: 'control-label' %>
+    <%= f.text_field :username, class: 'form-control', placeholder: t('activerecord.attributes.user.username') %>
   </div>
 
   <div class='form-group'>
-    <%# f.label :username, class: 'control-label' %>
-    <%= f.text_field :username, class: 'form-control', placeholder: t('activerecord.attributes.user.username') %>
+    <%# f.label :email %>
+    <%= f.email_field :email, class: 'required form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
   </div>
 
   <div class='form-group'>
