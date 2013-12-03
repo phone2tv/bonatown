@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   # attributes related macros
   attr_accessor :login
 
+  # association macros
+  belongs_to :profile, polymorphic: true
+
   # validation macros
   validates :terms_of_service, :presence => true, :acceptance => true, on: :create
 
