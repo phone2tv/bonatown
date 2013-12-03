@@ -10,7 +10,10 @@
 
   <!-- content and footer can NOT in same div -->
   <div class='sticky-wrapper'>
-    <%= render 'layouts/navbar_static' %>
+    <%= render 'layouts/header_menubar' %>
+    <%= render 'layouts/header_search' %>
+    <%= render 'layouts/header_navbar' %>
+    <%# render 'layouts/navbar_static' %>
     <div class='container'>
       <%# render 'layouts/navbar' %>
       <%= flash_messages! %>

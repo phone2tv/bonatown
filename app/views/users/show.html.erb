@@ -1,7 +1,2 @@
-<form class="form-wrapper cf">
-  <input type="text" placeholder="Search here..." required>
-  <button type="submit">Search</button>
-</form>
-
 <%= render 'show_admin' if @user.has_role? :admin %>
 <%= render 'show_moderator' if @user.has_role? :moderator %>

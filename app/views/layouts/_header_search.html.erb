@@ -1,0 +1,18 @@
+<div id='header-search'>
+  <div class='container'>
+    <div class='row'>
+      <div class='col-md-6 col-md-offset-6'>
+
+<%= form_tag users_path, class: '', method: :get do %>
+  <div class="input-group">
+    <%= search_field_tag :query, params[:query], class: 'form-control', placeholder: 'Search' %>
+    <div class="input-group-btn">
+      <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span></button>
+    </div>
+  </div>
+<% end %>
+
+      </div>
+    </div> <!-- .row -->
+  </div> <!-- .container -->
+</div> <!-- header-search -->
