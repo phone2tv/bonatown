@@ -19,13 +19,13 @@ def create_users
   print_title('setting up users')
 
   # create admin
-  admin = User.create!(email: 'admin@example.com', password: 'password')
+  admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password')
   admin.add_role :admin
 # profile = create_profile(admin, 'Admin')
   print_content "user: #{admin.email}"
 
   # create moderator
-  moderator = User.create!(email: 'moderator@example.com', password: 'password')
+  moderator = User.create!(username: 'moderator', email: 'moderator@example.com', password: 'password')
   moderator.add_role :moderator
 # profile = create_profile(moderator, 'Moderator')
   print_content "user: #{moderator.email}"

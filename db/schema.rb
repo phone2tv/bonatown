@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122141547) do
+ActiveRecord::Schema.define(version: 20131203051637) do
 
   create_table "roles", force: true do |t|
     t.string   "name"
@@ -37,10 +37,15 @@ ActiveRecord::Schema.define(version: 20131122141547) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "username",               default: "", null: false
+    t.integer  "profile_id"
+    t.string   "profile_type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["profile_id", "profile_type"], name: "index_users_on_profile_id_and_profile_type"
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["username"], name: "index_users_on_username", unique: true
 
   create_table "users_roles", id: false, force: true do |t|
     t.integer "user_id"
