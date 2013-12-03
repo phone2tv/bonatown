@@ -33,7 +33,7 @@ en:
       this_year: ! "%b %d at %H:%M"
       one_year_ago: ! "%b %d '%y at %H:%M"
   layouts:
-    brand: "Insurance"
+    brand: "INSURANCE"
     back: "Back"
     show: "Show"
     edit: "Edit"

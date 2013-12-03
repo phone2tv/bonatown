@@ -33,7 +33,7 @@ zh-CN:
       this_year: ! "%m月%d日 %H:%M"
       one_year_ago: ! '%Y-%m-%d %H:%M'
   layouts:
-    brand: "Insurance"
+    brand: "保险经纪"
     back: "返回"
     show: "显示"
     edit: "编辑"
