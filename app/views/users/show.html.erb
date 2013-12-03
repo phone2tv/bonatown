@@ -4,3 +4,4 @@
 </form>
 
 <%= render 'show_admin' if @user.has_role? :admin %>
+<%= render 'show_moderator' if @user.has_role? :moderator %>

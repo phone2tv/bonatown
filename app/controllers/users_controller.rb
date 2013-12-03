@@ -56,10 +56,15 @@ class UsersController < ApplicationController
 
     def update_profile
       return @user.profile.update(admin_profile_params) if @user.has_role? :admin
+      return @user.profile.update(moderator_profile_params) if @user.has_role? :moderator
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_profile_params
       params.require(:admin_profile).permit(:nickname, :realname, :aboutme)
+    end
+
+    def moderator_profile_params
+      params.require(:admin_profile).permit(:realname)
     end
 end
