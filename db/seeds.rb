@@ -19,16 +19,18 @@ def create_users
   print_title('setting up users')
 
   # create admin
+# admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password', terms_of_service: true)
   admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password')
   admin.add_role :admin
-# profile = create_profile(admin, 'Admin')
+  admin.profile = AdminProfile.create!(nickname: 'Nickname', realname: 'Realname', aboutme: 'Aboutme')
+  admin.save!
   print_content "user: #{admin.email}"
 
   # create moderator
-  moderator = User.create!(username: 'moderator', email: 'moderator@example.com', password: 'password')
-  moderator.add_role :moderator
+# moderator = User.create!(username: 'moderator', email: 'moderator@example.com', password: 'password')
+# moderator.add_role :moderator
 # profile = create_profile(moderator, 'Moderator')
-  print_content "user: #{moderator.email}"
+# print_content "user: #{moderator.email}"
 end
 
 def destroy_tables

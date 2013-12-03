@@ -3,6 +3,7 @@ en:
     models:
       user: "User"
       profile: "Profile"
+      admin_profile: "Admin Profile"
       role: "Role"
     attributes:
       user:
@@ -21,6 +22,10 @@ en:
         website: "Website"
         location: "Location"
         birthday: "Birthday"
+        aboutme: "About Me"
+      admin_profile:
+        nickname: "Display Name"
+        realname: "Real Name"
         aboutme: "About Me"
       role:
         name: "Role Name"

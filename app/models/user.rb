@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   belongs_to :profile, polymorphic: true
 
   # validation macros
-  validates :terms_of_service, :presence => true, :acceptance => true, on: :create
+# validates :terms_of_service, :presence => true, :acceptance => true, on: :create
 
   # validation
   validates :username, :presence => true, uniqueness: true, length: { in: 4..20 }
