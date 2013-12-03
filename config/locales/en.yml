@@ -2,9 +2,10 @@ en:
   activerecord:
     models:
       user: "User"
+      role: "Role"
       profile: "Profile"
       admin_profile: "Admin Profile"
-      role: "Role"
+      moderator_profile: "Moderator Profile"
     attributes:
       user:
         email: "Email"
@@ -15,6 +16,8 @@ en:
         remember_me: "Remember me"
         terms_of_service: "I agree to the Insurance Term of Service and Privacy Policy"
         username: "Username"
+      role:
+        name: "Role Name"
       profile:
         name: "Display Name"
         gravatar: "Gravatar"
@@ -27,8 +30,8 @@ en:
         nickname: "Display Name"
         realname: "Real Name"
         aboutme: "About Me"
-      role:
-        name: "Role Name"
+      moderator_profile:
+        realname: "Real Name"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
