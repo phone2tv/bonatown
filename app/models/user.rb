@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   # validation macros
-  validates :terms_of_service, :acceptance => true
+  validates :terms_of_service, :presence => true, :acceptance => true
+
+  # validation
+  validates :username, :presence => true, uniqueness: true, :length => { :minimum => 4 }
 
   # macros from gems
   # Include default devise modules. Others available are:

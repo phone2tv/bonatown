@@ -8,21 +8,22 @@ class ApplicationController < ActionController::Base
 
   before_filter :set_locale
 
-# before_filter :configure_permitted_parameters, if: :devise_controller?
+  before_filter :configure_permitted_parameters, if: :devise_controller?
 
   protected
 
   def configure_permitted_parameters
+    devise_parameter_sanitizer.for(:sign_up) << [:username, :terms_of_service]
+    devise_parameter_sanitizer.for(:account_update) << :username
+
   # devise_parameter_sanitizer.for(:sign_up) do |u|
   #   u.permit(:email, :password, :password_confirmation, :profile_attributes => [:name])
   #   u.permit!
   # end
 
-    devise_parameter_sanitizer.for(:sign_up) << { :profile_attributes => [:name] }
-
-    devise_parameter_sanitizer.for(:account_update) do |u|
-      u.permit(:email, :password, :password_confirmation, :current_password, :profile_attributes => [:name, :realname, :gravatar, :website, :location, :birthday, :aboutme, :id])
-    end
+  # devise_parameter_sanitizer.for(:account_update) do |u|
+  #   u.permit(:email, :password, :password_confirmation, :current_password, :profile_attributes => [:name, :realname, :gravatar, :website, :location, :birthday, :aboutme, :id])
+  # end
   end
 
   def set_locale

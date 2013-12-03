@@ -7,6 +7,11 @@
   </div>
 
   <div class='form-group'>
+    <%# f.label :username, class: 'control-label' %>
+    <%= f.text_field :username, class: 'form-control', placeholder: t('activerecord.attributes.user.username') %>
+  </div>
+
+  <div class='form-group'>
     <%# f.label :password %>
     <%= f.password_field :password, class: 'required form-control', minlength: 6, placeholder: t('activerecord.attributes.user.password') %>
   </div>

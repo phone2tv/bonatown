@@ -13,6 +13,7 @@ zh-CN:
         current_password: "当前密码"
         remember_me: "保持登录状态"
         terms_of_service: "我同意接受 Insurance 服务条款和隐私权条款"
+        username: "用户名"
       profile:
         name: "显示名称"
         gravatar: "头像"

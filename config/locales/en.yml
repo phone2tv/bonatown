@@ -13,6 +13,7 @@ en:
         current_password: "Current Password"
         remember_me: "Remember me"
         terms_of_service: "I agree to the Insurance Term of Service and Privacy Policy"
+        username: "Username"
       profile:
         name: "Display Name"
         gravatar: "Gravatar"
