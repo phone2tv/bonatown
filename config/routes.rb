@@ -3,7 +3,11 @@ Insurance::Application.routes.draw do
 
   devise_for :users
 
-  resources :users
+  resources :users, except: [:create] do
+    collection do
+      post 'create_moderator'
+    end
+  end
   # resources :users, only: [:index, :show, :edit, :update]
 
   # The priority is based upon order of creation: first created -> highest priority.

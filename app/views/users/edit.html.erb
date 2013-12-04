@@ -10,12 +10,12 @@
 
 <div class='row'>
   <div class='col-md-2'>
-    <%= render 'nav_admin' if @user.has_role? :admin %>
-    <%= render 'nav_moderator' if @user.has_role? :moderator %>
+    <%= render(partial: 'nav_admin', locals: { user: current_user }) if current_user.has_role? :admin %>
+    <%= render(partial: 'nav_moderator', locals: { user: current_user }) if current_user.has_role? :moderator %>
   </div> <!-- col-md-2 -->
   <div class='col-md-6'>
-    <%= render 'form_admin_profile' if @user.has_role? :admin %>
-    <%= render 'form_moderator_profile' if @user.has_role? :moderator %>
+    <%= render(partial: 'form_admin_profile', locals: { user: @user } ) if @user.has_role? :admin %>
+    <%= render(partial: 'form_moderator_profile', locals: { user: @user } ) if @user.has_role? :moderator %>
     <%= debug @profile %>
   </div>
 </div> <!-- .row -->

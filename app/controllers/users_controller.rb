@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:home, :index, :show]
 
 # before_action :set_user, only: [:show, :edit, :update, :destroy, :upload_gravatar, :edit_gravatar, :update_gravatar, :edit_bio, :edit_aboutme, :edit_tags, :edit_password, :update_password]
-  before_action :set_user, except: [:home, :index, :new, :create]
+  before_action :set_user, except: [:home, :index, :new, :create_moderator]
 
 # before_action :authorize_user!
 
@@ -30,11 +30,14 @@ class UsersController < ApplicationController
 
   # POST /users
   # POST /users.json
-  def create
-    @user = User.new(users_params)
+  def create_moderator
+    @user = User.new(user_params)
+    @user.add_role :moderator
+    @user.profile = ModeratorProfile.new(realname: 'Realname')
+  # profile = ModeratorProfile.new(realname: 'Realname', user: @user)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new' }
@@ -89,6 +92,6 @@ class UsersController < ApplicationController
     end
 
     def moderator_profile_params
-      params.require(:admin_profile).permit(:realname)
+      params.require(:moderator_profile).permit(:realname)
     end
 end
