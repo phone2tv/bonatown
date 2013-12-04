@@ -14,6 +14,37 @@ body
 //  padding-top: 40px;
 }
 
+.user .breadcrumb {
+  margin-top: 10px;
+  background-color: transparent;
+  font-size: 95%;
+  a {
+    color: #70ae4b;
+  }
+}
+
+.user {
+  .panel {
+    .panel-heading {
+      font-size: 95%;
+      color: #666666;
+    }
+
+    ul {
+      padding-left: 10px;
+      color: #666666;
+
+      a {
+        text-decoration: none;
+        font-size: 85%;
+        color: #666666;
+        &:hover {
+          color: #e54410;
+        }
+      }
+    }
+  }
+}
 
 .panel-body .btn:not(.btn-block) { width:120px;margin-bottom:10px; }
 

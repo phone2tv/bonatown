@@ -1,33 +1,67 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <div class="user">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">投保管理</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="#" class="">订单管理</a></li>
+            <li><a href="#" class="">保单管理</a></li>
+            <li><a href="#" class="">保险卡管理</a></li>
+            <li><a href="#" class="">评价管理</a></li>
+          </ul>
+        </div>
+      </div> <!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">交易管理</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="#" class="">收支明细</a></li>
+            <li><a href="#" class="">充提记录</a></li>
+            <li><a href="#" class="">消费记录</a></li>
+          </ul>
+        </div>
+      </div> <!-- panel -->
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">账户管理</h3>
+        </div>
+        <div class="panel-body">
+          <ul>
+            <li><a href="#" class="">会员资料</a></li>
+            <li><a href="#" class="">寄送地址</a></li>
+            <li><a href="#" class="">账户安全</a></li>
+            <li><a href="#" class="">常用联系人</a></li>
+            <li><a href="#" class="">我的收藏夹</a></li>
+            <li><a href="#" class="">订阅管理</a></li>
+          </ul>
+        </div>
+      </div> <!-- panel -->
+    </div> <!-- user -->
+  </div> <!-- col-md-2 -->
+
+  <div class='col-md-8'>
+    <%= render 'shortcut_buttons' %>
+  </div>
+  <div class='col-md-2'>
     <p> email: <%= @user.email %> </p>
     <p> role: <%= t(@user.role_name) %> </p>
     <p> realname: <%= @user.profile.realname %> </p>
-  </div>
-  <!-- Stylish CSS3 Search Box -->
-  <div class="col-md-8">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-        <h3 class="panel-title">
-          <span class="glyphicon glyphicon-bookmark"></span> Quick Shortcuts</h3>
-      </div>
-      <div class="panel-body">
-        <div class="row">
-          <div class="col-xs-6 col-md-6">
-            <a href="#" class="btn btn-danger btn-lg" role="button"><span class="glyphicon glyphicon-list-alt"></span> <br/>Apps</a>
-            <a href="#" class="btn btn-warning btn-lg" role="button"><span class="glyphicon glyphicon-bookmark"></span> <br/>Bookmarks</a>
-            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-signal"></span> <br/>Reports</a>
-            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-comment"></span> <br/>Comments</a>
-          </div>
-          <div class="col-xs-6 col-md-6">
-            <a href="#" class="btn btn-success btn-lg" role="button"><span class="glyphicon glyphicon-user"></span> <br/>Users</a>
-            <a href="#" class="btn btn-info btn-lg" role="button"><span class="glyphicon glyphicon-file"></span> <br/>Notes</a>
-            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-picture"></span> <br/>Photos</a>
-            <a href="#" class="btn btn-primary btn-lg" role="button"><span class="glyphicon glyphicon-tag"></span> <br/>Tags</a>
-          </div>
-        </div>
-        <a href="http://www.jquery2dotnet.com/" class="btn btn-success btn-lg btn-block" role="button"><span class="glyphicon glyphicon-globe"></span> Website</a>
-      </div>
-    </div>
   </div>
 </div>
