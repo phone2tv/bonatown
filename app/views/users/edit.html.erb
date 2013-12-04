@@ -10,8 +10,7 @@
 
 <div class='row'>
   <div class='col-md-2'>
-    <%= render(partial: 'nav_admin', locals: { user: current_user }) if current_user.has_role? :admin %>
-    <%= render(partial: 'nav_moderator', locals: { user: current_user }) if current_user.has_role? :moderator %>
+    <%= render partial: 'nav_panels', locals: { user: current_user } %>
   </div> <!-- col-md-2 -->
   <div class='col-md-6'>
     <%= render(partial: 'form_admin_profile', locals: { user: @user } ) if @user.has_role? :admin %>

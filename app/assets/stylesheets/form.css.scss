@@ -1,3 +1,20 @@
+form.form-border {
+  input[type=email], input[type=password], input[type=text], textarea {
+    border: 1px solid #cccccc;
+    &:focus {
+      border-color: #66afe9;
+    }
+  }
+  .form-group div.field_with_errors {
+    input[type=email], input[type=password], input[type=text], textarea, ul {
+      border: 1px solid #b94a48;
+      &:focus {
+        border-color: #ff0000;
+      }
+    }
+  }
+}
+
 // Stylish CSS3 Search Box
 
 .cf:before, .cf:after{
