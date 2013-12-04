@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:index, :show]
+  skip_before_filter :authenticate_user!, :only => [:home, :index, :show]
 
 # before_action :set_user, only: [:show, :edit, :update, :destroy, :upload_gravatar, :edit_gravatar, :update_gravatar, :edit_bio, :edit_aboutme, :edit_tags, :edit_password, :update_password]
-  before_action :set_user, except: [:index]
+  before_action :set_user, except: [:home, :index, :new, :create]
 
 # before_action :authorize_user!
 
@@ -18,9 +18,29 @@ class UsersController < ApplicationController
   def show
   end
 
+  # GET /users/new
+  def new
+    @user = User.new
+  end
+
   # GET /users/1
   # GET /users/1.json
   def edit
+  end
+
+  # POST /users
+  # POST /users.json
+  def create
+    @user = User.new(users_params)
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /profiles/1
@@ -60,6 +80,10 @@ class UsersController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
+    def user_params
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
+    end
+
     def admin_profile_params
       params.require(:admin_profile).permit(:nickname, :realname, :aboutme)
     end

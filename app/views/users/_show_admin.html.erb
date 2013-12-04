@@ -1,16 +1,44 @@
 <div class="row">
   <div class='col-md-2'>
-    <%= render 'nav_admin' %>
+    <%= render 'nav_admin', user: user %>
   </div> <!-- col-md-2 -->
 
-  <div class='col-md-8'>
-    <%= render 'shortcut_buttons' %>
-  </div>
-  <div class='col-md-2'>
-    <p> email: <%= @user.email %> </p>
-    <p> role: <%= t(@user.role_name) %> </p>
-    <p> nickname: <%= @user.profile.nickname %> </p>
-    <p> realname: <%= @user.profile.realname %> </p>
-    <p> aboutme: <%= @user.profile.aboutme %> </p>
-  </div>
+  <div class='col-md-10'>
+    <%# render 'shortcut_buttons' %>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">用户信息</h3>
+      </div>
+      <div class="panel-body">
+        <p> 电子邮件: <%= @user.email %> </p>
+        <p> 用户角色: <%= t(@user.role_name) %> </p>
+        <p> 真实姓名: <%= @user.profile.realname %> </p>
+        <p> 安全等级: 高</p>
+      </div>
+    </div> <!-- panel -->
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">支付提醒</h3>
+      </div>
+      <div class="panel-body">
+        <p> 订单 1: 意外险 </p>
+        <p> 订单 2: 财产险 </p>
+        <p> 订单 3: 车险 </p>
+      </div>
+    </div> <!-- panel -->
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">最近订单</h3>
+      </div>
+      <div class="panel-body">
+        <p> 订单 1: 意外险 </p>
+        <p> 订单 2: 财产险 </p>
+        <p> 订单 3: 车险 </p>
+      </div>
+    </div> <!-- panel -->
+
+  </div> <!-- col-md-10 -->
 </div>

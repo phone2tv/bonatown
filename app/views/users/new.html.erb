@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class='row'>
+  <div class='col-md-2'>
+    <%= render(partial: 'nav_admin', locals: { user: current_user }) if current_user.has_role? :admin %>
+    <%= render(partial: 'nav_moderator', locals: { user: current_user }) if current_user.has_role? :moderator %>
+  </div> <!-- col-md-2 -->
+  <div class='col-md-6'>
+    <%= render(partial: 'form') if current_user.has_role? :admin %>
+    <%= debug @profile %>
+  </div>
+</div> <!-- .row -->

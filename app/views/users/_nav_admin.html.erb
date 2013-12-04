@@ -6,10 +6,11 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><a href="#" class="">添加用户</a></li>
-        <li><a href="#" class="">添加业务管理员</a></li>
+        <li><%= link_to '显示所有用户', users_path %></li>
+        <li><%= link_to '添加业务管理员', new_user_path %></li>
         <li><a href="#" class="">添加保险业务员</a></li>
         <li><a href="#" class="">添加园区管理员</a></li>
+        <li><a href="#" class="">添加企业用户</a></li>
       </ul>
     </div>
   </div> <!-- panel -->
@@ -20,7 +21,7 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><%= link_to '会员资料', edit_user_path(@user) %></li>
+        <li><%= link_to '会员资料', edit_user_path(user) %></li>
         <li><a href="#" class="">会员资料</a></li>
         <li><a href="#" class="">寄送地址</a></li>
         <li><a href="#" class="">账户安全</a></li>

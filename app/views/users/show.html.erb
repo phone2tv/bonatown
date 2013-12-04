@@ -8,5 +8,7 @@
   </div>
 </div>
 
-<%= render 'show_admin' if @user.has_role? :admin %>
-<%= render 'show_moderator' if @user.has_role? :moderator %>
+<%# render 'show_admin' if @user.has_role? :admin %>
+<%# render 'show_moderator' if @user.has_role? :moderator %>
+<%= render(partial: 'show_admin', locals: { user: current_user }) if current_user.has_role? :admin %>
+<%= render(partial: 'show_moderator', locals: { user: current_user }) if current_user.has_role? :moderator %>

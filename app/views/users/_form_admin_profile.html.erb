@@ -1,4 +1,4 @@
-<%= form_for(@user.profile, :url => { action: "update" }, :html => { :method => :patch, class: '' }) do |f| %>
+<%= form_for(user.profile, :url => { action: "update" }, :html => { :method => :patch, class: '' }) do |f| %>
   <div class='form-group'>
     <%= f.label :nickname, class: 'control-label' %>
     <%= f.text_field :nickname, class: 'form-control', :autofocus => true %>
