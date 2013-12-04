@@ -1,13 +1,16 @@
 <div class="row">
-  <div class="col-md-4">
+  <div class='col-md-2'>
+    <%= render 'nav_admin' %>
+  </div> <!-- col-md-2 -->
+
+  <div class='col-md-8'>
+    <%= render 'shortcut_buttons' %>
+  </div>
+  <div class='col-md-2'>
     <p> email: <%= @user.email %> </p>
     <p> role: <%= t(@user.role_name) %> </p>
     <p> nickname: <%= @user.profile.nickname %> </p>
     <p> realname: <%= @user.profile.realname %> </p>
     <p> aboutme: <%= @user.profile.aboutme %> </p>
-  </div>
-  <!-- Stylish CSS3 Search Box -->
-  <div class="col-md-8">
-    <%= render 'shortcut_buttons' %>
   </div>
 </div>

@@ -1,2 +1,12 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
 <%= render 'show_admin' if @user.has_role? :admin %>
 <%= render 'show_moderator' if @user.has_role? :moderator %>
