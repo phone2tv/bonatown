@@ -13,7 +13,7 @@
     <%= render partial: 'nav_panels', locals: { user: current_user } %>
   </div>
   <div class='col-md-6'>
-    <%= render(partial: 'form') if current_user.has_role? :admin %>
+    <%= render(partial: 'form_new_user') if current_user.has_role? :admin %>
     <%= debug @profile %>
   </div>
 </div> <!-- .row -->

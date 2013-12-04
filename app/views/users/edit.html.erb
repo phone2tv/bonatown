@@ -13,8 +13,8 @@
     <%= render partial: 'nav_panels', locals: { user: current_user } %>
   </div> <!-- col-md-2 -->
   <div class='col-md-6'>
-    <%= render(partial: 'form_admin_profile', locals: { user: @user } ) if @user.has_role? :admin %>
-    <%= render(partial: 'form_moderator_profile', locals: { user: @user } ) if @user.has_role? :moderator %>
+    <%= render(partial: 'form_edit_admin_profile', locals: { user: @user } ) if @user.has_role? :admin %>
+    <%= render(partial: 'form_edit_moderator_profile', locals: { user: @user } ) if @user.has_role? :moderator %>
     <%= debug @profile %>
   </div>
 </div> <!-- .row -->
