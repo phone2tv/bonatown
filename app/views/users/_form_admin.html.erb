@@ -1,0 +1,43 @@
+<%= form_for(@user, :url => { controller: 'users', action: "create_admin" }, :html => { class: 'form-border' }) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class='form-group'>
+    <%= f.label :username, class: 'control-label' %>
+    <%= f.text_field :username, class: 'form-control', placeholder: t('activerecord.attributes.user.username'), :autofocus => true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :email, class: 'control-label' %>
+    <%= f.email_field :email, class: 'form-control', placeholder: t('activerecord.attributes.user.email') %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :password, class: 'control-label' %>
+    <%= f.password_field :password, class: 'form-control', placeholder: t('activerecord.attributes.user.password'), :autocomplete => "off" %>
+    <span class='help-block'><%# t('devise.help_block.password') %></span>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :password_confirmation, class: 'control-label' %>
+    <%= f.password_field :password_confirmation, class: 'form-control', placeholder: t('activerecord.attributes.user.password_confirmation') %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'admin_profile_nickname', t('activerecord.attributes.admin_profile.nickname'), class: 'control-label' %>
+    <%= text_field_tag 'admin_profile_nickname', nil, name: 'admin_profile[nickname]', class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'admin_profile_realname', t('activerecord.attributes.admin_profile.realname'), class: 'control-label' %>
+    <%= text_field_tag 'admin_profile_realname', nil, name: 'admin_profile[realname]', class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= label_tag 'admin_profile_aboutme', t('activerecord.attributes.admin_profile.aboutme'), class: 'control-label' %>
+    <%= text_area_tag 'admin_profile_aboutme', nil, name: 'admin_profile[aboutme]', class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

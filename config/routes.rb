@@ -5,6 +5,8 @@ Insurance::Application.routes.draw do
 
   resources :users, except: [:create] do
     collection do
+      get 'new_admin'
+      post 'create_admin'
       post 'create_moderator'
     end
   end
