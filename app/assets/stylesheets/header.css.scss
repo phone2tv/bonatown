@@ -46,12 +46,26 @@
   .col-md-3 {
     height: 40px;
     padding-left: 0;
+  }
+  .col-md-3.light {
     background-color: #f75730;
   }
 
-  .col-md-7 {
+  .col-md-6 {
     height: 40px;
     padding-left: 0;
+  }
+
+  .col-md-3 {
+    height: 40px;
+    span {
+      line-height: 20px;
+      padding-left: 0;
+      float: right;
+      font-size: 90%;
+      padding: 11px 10px;
+      color: #fbbdb0;
+    }
   }
 
   a.navtab {
