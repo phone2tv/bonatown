@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:home, :index, :show]
 
 # before_action :set_user, only: [:show, :edit, :update, :destroy, :upload_gravatar, :edit_gravatar, :update_gravatar, :edit_bio, :edit_aboutme, :edit_tags, :edit_password, :update_password]
-  before_action :set_user, except: [:home, :index, :new, :create_moderator, :new_admin, :create_admin, :new_manager, :create_manager]
+  before_action :set_user, except: [:home, :index, :new, :create_user, :create_moderator, :new_admin, :create_admin, :new_manager, :create_manager, :new_quoter, :create_quoter]
 
 # before_action :authorize_user!
 
@@ -21,6 +21,8 @@ class UsersController < ApplicationController
   # GET /users/new
   def new
     @user = User.new
+    @role_type = params[:role]
+    redirect_to root_path, notice: 'User ROLE is not specifyied.' if @role_type.nil?
   end
 
   # GET /users/new_admin
@@ -36,6 +38,25 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def edit
+  end
+
+  # POST /users
+  # POST /users.json
+  def create_user
+    @user = User.new(user_params)
+    @role_type = params[:role]
+    role_profile = (@role_type.capitalize + 'Profile').constantize
+    @user.add_role @role_type.to_sym
+    @user.profile = role_profile.new(name: 'FullName')
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @user }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # POST /users
@@ -128,6 +149,7 @@ class UsersController < ApplicationController
       return @user.profile.update(admin_profile_params) if @user.has_role? :admin
       return @user.profile.update(moderator_profile_params) if @user.has_role? :moderator
       return @user.profile.update(manager_profile_params) if @user.has_role? :manager
+      return @user.profile.update(quoter_profile_params) if @user.has_role? :quoter
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -150,5 +172,9 @@ class UsersController < ApplicationController
 
     def manager_profile_params
       params.require(:manager_profile).permit(:name)
+    end
+
+    def quoter_profile_params
+      params.require(:quoter_profile).permit(:name)
     end
 end

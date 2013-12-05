@@ -5,7 +5,7 @@ zh-CN:
       role: "用户角色"
       profile: "用户信息"
       admin_profile: "系统管理员信息"
-      moderator_profile: "业务管理员信息"
+      moderator_profile: "高层管理员信息"
       manager_profile: "业务管理员信息"
       quoter_profile: "保险业务员信息"
       park_profile: "园区管理员信息"

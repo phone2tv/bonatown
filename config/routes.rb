@@ -17,6 +17,7 @@ Insurance::Application.routes.draw do
       post 'create_quoter'
       post 'create_park'
       post 'create_customer'
+      post 'create_user'
     end
   end
   # resources :users, only: [:index, :show, :edit, :update]

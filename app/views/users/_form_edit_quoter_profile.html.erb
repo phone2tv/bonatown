@@ -1,0 +1,10 @@
+<%= form_for(user.profile, :url => { action: "update" }, :html => { :method => :patch, class: '' }) do |f| %>
+  <div class='form-group'>
+    <%= f.label :name, class: 'control-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
