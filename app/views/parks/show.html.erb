@@ -1,24 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @park.name %>
-</p>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <p>
+    <strong>Name:</strong>
+    <%= @park.name %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @park.website %>
-</p>
+    <p>
+    <strong>Website:</strong>
+    <%= @park.website %>
+    </p>
 
-<p>
-  <strong>Aboutme:</strong>
-  <%= @park.aboutme %>
-</p>
+    <p>
+    <strong>Aboutme:</strong>
+    <%= @park.aboutme %>
+    </p>
 
-<p>
-  <strong>User:</strong>
-  <%= @park.user %>
-</p>
+    <p>
+    <strong>User:</strong>
+    <%= @park.user.profile.name if @park.user.present? %>
+    </p>
 
-<%= link_to 'Edit', edit_park_path(@park) %> |
-<%= link_to 'Back', parks_path %>
+    <%= link_to 'Edit', edit_park_path(@park) %> |
+    <%= link_to 'Back', parks_path %>
+  </div>
+</div> <!-- row -->
+

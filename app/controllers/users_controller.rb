@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   skip_before_filter :authenticate_user!, :only => [:home, :index, :show]
 
-# before_action :set_user, only: [:show, :edit, :update, :destroy, :upload_gravatar, :edit_gravatar, :update_gravatar, :edit_bio, :edit_aboutme, :edit_tags, :edit_password, :update_password]
-  before_action :set_user, except: [:home, :index, :new, :create_user, :create_moderator, :new_admin, :create_admin, :new_manager, :create_manager, :new_quoter, :create_quoter]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
+# before_action :set_user, except: [:home, :index, :new, :create_user, :create_moderator, :new_admin, :create_admin, :new_manager, :create_manager, :new_quoter, :create_quoter]
 
 # before_action :authorize_user!
 
@@ -115,8 +115,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # PATCH/PUT /profiles/1
-  # PATCH/PUT /profiles/1.json
+  # PATCH/PUT /users/1
+  # PATCH/PUT /users/1.json
   def update
     respond_to do |format|
       if update_profile
@@ -126,6 +126,16 @@ class UsersController < ApplicationController
         format.html { render action: 'edit' }
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  # DELETE /users/1
+  # DELETE /users/1.json
+  def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to users_url }
+      format.json { head :no_content }
     end
   end
 

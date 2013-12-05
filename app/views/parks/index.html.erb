@@ -18,58 +18,20 @@
         <tr>
           <th><%= t('activerecord.attributes.park.name') %></th>
           <th><%= t('activerecord.attributes.park.website') %></th>
-          <th><%= t('activerecord.attributes.park.aboutme') %></th>
-          <th><%= t('activerecord.attributes.park.user') %></th>
-          <th></th>
-          <th></th>
+          <th><%= t('activerecord.attributes.park.user_id') %></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         <% @parks.each do |park| %>
           <tr>
-            <td><%= park.name %></td>
+            <td><%= link_to park.name, park %></td>
             <td><%= park.website %></td>
-            <td><%= park.aboutme %></td>
             <td><%= park.user.profile.name if park.user.present? %></td>
-            <td><%= link_to 'Show', park %></td>
-            <td><%= link_to 'Edit', edit_park_path(park) %></td>
-            <td><%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Edit', edit_park_path(park) %> / <%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div> <!-- col-md-10 -->
 </div> <!-- row -->
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Website</th>
-      <th>Aboutme</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @parks.each do |park| %>
-      <tr>
-        <td><%= park.name %></td>
-        <td><%= park.website %></td>
-        <td><%= park.aboutme %></td>
-        <td><%= park.user %></td>
-        <td><%= link_to 'Show', park %></td>
-        <td><%= link_to 'Edit', edit_park_path(park) %></td>
-        <td><%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Park', new_park_path %>
