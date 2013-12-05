@@ -1,6 +1,21 @@
-<h1>Editing accident_insurance</h1>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<%= render 'form' %>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <%= render 'form' %>
 
-<%= link_to 'Show', @accident_insurance %> |
-<%= link_to 'Back', accident_insurances_path %>
+    <%= link_to 'Show', @accident_insurance %> |
+    <%= link_to 'Back', accident_insurances_path %>
+  </div>
+</div> <!-- row -->

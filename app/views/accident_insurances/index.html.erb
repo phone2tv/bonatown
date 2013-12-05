@@ -1,4 +1,43 @@
-<h1>Listing accident_insurances</h1>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.accident_insurance.title') %></th>
+          <th><%= t('activerecord.attributes.accident_insurance.synopsis') %></th>
+          <th><%= t('activerecord.attributes.accident_insurance.price') %></th>
+          <th><%= t('activerecord.attributes.accident_insurance.company_id') %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @accident_insurances.each do |ain| %>
+          <tr>
+            <td><%= link_to ain.title, ain %></td>
+            <td><%= ain.synopsis %></td>
+            <td><%= ain.price %></td>
+            <td><%= ain.company.name if ain.company.present? %></td>
+            <td><%= link_to 'Edit', edit_accident_insurance_path(ain) %> / <%= link_to 'Destroy', ain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->
+
 
 <table>
   <thead>
