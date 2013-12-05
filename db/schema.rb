@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203142326) do
+ActiveRecord::Schema.define(version: 20131205134304) do
 
   create_table "admin_profiles", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -20,7 +20,31 @@ ActiveRecord::Schema.define(version: 20131203142326) do
     t.datetime "updated_at"
   end
 
+  create_table "customer_profiles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manager_profiles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "moderator_profiles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "park_profiles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "quoter_profiles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"

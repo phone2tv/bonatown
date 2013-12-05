@@ -15,5 +15,6 @@
   <div class='col-md-10'>
     <%= render(partial: 'show_admin', locals: { user: @user }) if @user.has_role? :admin %>
     <%= render(partial: 'show_moderator', locals: { user: @user }) if @user.has_role? :moderator %>
+    <%= render(partial: 'show_manager', locals: { user: @user }) if @user.has_role? :manager %>
   </div>
 </div>

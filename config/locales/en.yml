@@ -6,6 +6,10 @@ en:
       profile: "Profile"
       admin_profile: "Admin Profile"
       moderator_profile: "Moderator Profile"
+      manager_profile: "Manager Profile"
+      quoter_profile: "Quoter Profile"
+      park_profile: "Park Profile"
+      customer_profile: "Customer Profile"
     attributes:
       user:
         email: "Email"
@@ -26,11 +30,18 @@ en:
         birthday: "Birthday"
         aboutme: "About Me"
       admin_profile:
-        nickname: "Display Name"
         name: "Real Name"
         aboutme: "About Me"
       moderator_profile:
         name: "Real Name"
+      manager_profile:
+        name: "真实姓名"
+      quoter_profile:
+        name: "真实姓名"
+      park_profile:
+        name: "真实姓名"
+      customer_profile:
+        name: "真实姓名"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
@@ -73,5 +84,8 @@ en:
     name:
       admin: "Administrator"
       moderator: "Moderator"
-      broker: "Broker"
+      manager: "Manager"
+      quoter: "Quoter"
+      park: "Park"
       customer: "Customer"
+      broker: "Broker"

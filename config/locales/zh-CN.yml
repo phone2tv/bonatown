@@ -6,6 +6,10 @@ zh-CN:
       profile: "用户信息"
       admin_profile: "系统管理员信息"
       moderator_profile: "业务管理员信息"
+      manager_profile: "业务管理员信息"
+      quoter_profile: "保险业务员信息"
+      park_profile: "园区管理员信息"
+      customer_profile: "企业客户信息"
     attributes:
       user:
         email: "电子邮件"
@@ -26,10 +30,17 @@ zh-CN:
         birthday: "用户生日"
         aboutme: "个人简介"
       admin_profile:
-        nickname: "显示名称"
         name: "真实姓名"
         aboutme: "个人简介"
       moderator_profile:
+        name: "真实姓名"
+      manager_profile:
+        name: "真实姓名"
+      quoter_profile:
+        name: "真实姓名"
+      park_profile:
+        name: "真实姓名"
+      customer_profile:
         name: "真实姓名"
   datetime:
     formats:
@@ -72,6 +83,9 @@ zh-CN:
   role:
     name:
       admin: "系统管理员"
-      moderator: "业务管理员"
-      broker: "经纪人"
+      moderator: "高层管理员"
+      manager: "业务管理员"
+      quoter: "保险业务员"
+      park: "园区管理员"
       customer: "企业客户"
+      broker: "经纪人"

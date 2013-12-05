@@ -6,8 +6,17 @@ Insurance::Application.routes.draw do
   resources :users, except: [:create] do
     collection do
       get 'new_admin'
+      get 'new_moderator'
+      get 'new_manager'
+      get 'new_quoter'
+      get 'new_park'
+      get 'new_customer'
       post 'create_admin'
       post 'create_moderator'
+      post 'create_manager'
+      post 'create_quoter'
+      post 'create_park'
+      post 'create_customer'
     end
   end
   # resources :users, only: [:index, :show, :edit, :update]

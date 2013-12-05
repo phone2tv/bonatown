@@ -24,6 +24,9 @@ class User < ActiveRecord::Base
   def role_name
     return "role.name.broker" if self.has_role? :broker
     return "role.name.customer" if self.has_role? :customer
+    return "role.name.park" if self.has_role? :park
+    return "role.name.quoter" if self.has_role? :quoter
+    return "role.name.manager" if self.has_role? :manager
     return "role.name.moderator" if self.has_role? :moderator
     return "role.name.admin" if self.has_role? :admin
   end
