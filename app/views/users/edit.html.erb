@@ -15,6 +15,10 @@
   <div class='col-md-6'>
     <%= render(partial: 'form_edit_admin_profile', locals: { user: @user } ) if @user.has_role? :admin %>
     <%= render(partial: 'form_edit_moderator_profile', locals: { user: @user } ) if @user.has_role? :moderator %>
+    <%= render(partial: 'form_edit_manager_profile', locals: { user: @user } ) if @user.has_role? :manager %>
+    <%= render(partial: 'form_edit_quoter_profile', locals: { user: @user } ) if @user.has_role? :quoter %>
+    <%= render(partial: 'form_edit_park_profile', locals: { user: @user } ) if @user.has_role? :park %>
+    <%= render(partial: 'form_edit_customer_profile', locals: { user: @user } ) if @user.has_role? :customer %>
     <%= debug @profile %>
   </div>
 </div> <!-- .row -->
