@@ -150,6 +150,8 @@ class UsersController < ApplicationController
       return @user.profile.update(moderator_profile_params) if @user.has_role? :moderator
       return @user.profile.update(manager_profile_params) if @user.has_role? :manager
       return @user.profile.update(quoter_profile_params) if @user.has_role? :quoter
+      return @user.profile.update(park_profile_params) if @user.has_role? :park
+      return @user.profile.update(customer_profile_params) if @user.has_role? :customer
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
@@ -176,5 +178,13 @@ class UsersController < ApplicationController
 
     def quoter_profile_params
       params.require(:quoter_profile).permit(:name)
+    end
+
+    def park_profile_params
+      params.require(:park_profile).permit(:name)
+    end
+
+    def customer_profile_params
+      params.require(:customer_profile).permit(:name)
     end
 end

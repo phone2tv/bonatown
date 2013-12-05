@@ -11,8 +11,8 @@
         <li><%= link_to '添加高层管理员', new_user_path(role: 'moderator') %></li>
         <li><%= link_to '添加业务管理员', new_manager_users_path %></li>
         <li><%= link_to '添加保险业务员', new_user_path(role: 'quoter') %></li>
-        <li><%= link_to '添加园区管理员', '#' %></li>
-        <li><%= link_to '添加企业客户', '#' %></li>
+        <li><%= link_to '添加园区管理员', new_user_path(role: 'park') %></li>
+        <li><%= link_to '添加企业客户', new_user_path(role: 'customer') %></li>
       </ul>
     </div>
   </div> <!-- panel -->
