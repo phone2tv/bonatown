@@ -11,6 +11,7 @@ en:
       park_profile: "Park Profile"
       customer_profile: "Customer Profile"
       park: "Park"
+      company: "Company"
     attributes:
       user:
         email: "Email"
@@ -48,6 +49,10 @@ en:
         website: "Website"
         aboutme: "Introduction"
         user_id: "Park Admin"
+      company:
+        name: "Name"
+        website: "Website"
+        aboutme: "Introduction"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

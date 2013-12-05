@@ -23,6 +23,8 @@ Insurance::Application.routes.draw do
 
   resources :parks
 
+  resources :companies
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

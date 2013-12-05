@@ -11,6 +11,7 @@ zh-CN:
       park_profile: "园区管理员信息"
       customer_profile: "企业客户信息"
       park: "园区"
+      company: "保险公司"
     attributes:
       user:
         email: "电子邮件"
@@ -48,6 +49,10 @@ zh-CN:
         website: "园区主页"
         aboutme: "园区介绍"
         user_id: "园区管理员"
+      company:
+        name: "园区名称"
+        website: "园区主页"
+        aboutme: "园区介绍"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

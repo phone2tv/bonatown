@@ -11,11 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205161651) do
+ActiveRecord::Schema.define(version: 20131205171435) do
 
   create_table "admin_profiles", force: true do |t|
     t.string   "name",       default: "", null: false
     t.text     "aboutme",    default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "companies", force: true do |t|
+    t.string   "name"
+    t.string   "website"
+    t.text     "aboutme"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
