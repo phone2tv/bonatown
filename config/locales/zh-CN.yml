@@ -50,9 +50,9 @@ zh-CN:
         aboutme: "园区介绍"
         user_id: "园区管理员"
       company:
-        name: "园区名称"
-        website: "园区主页"
-        aboutme: "园区介绍"
+        name: "名称"
+        website: "主页"
+        aboutme: "介绍"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

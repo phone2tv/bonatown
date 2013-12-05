@@ -1,19 +1,35 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @company.name %>
-</p>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <p>
+    <strong>Name:</strong>
+    <%= @company.name %>
+    </p>
 
-<p>
-  <strong>Website:</strong>
-  <%= @company.website %>
-</p>
+    <p>
+    <strong>Website:</strong>
+    <%= @company.website %>
+    </p>
 
-<p>
-  <strong>Aboutme:</strong>
-  <%= @company.aboutme %>
-</p>
+    <p>
+    <strong>Aboutme:</strong>
+    <%= @company.aboutme %>
+    </p>
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+    <%= link_to 'Edit', edit_company_path(@company) %> |
+    <%= link_to 'Back', companies_path %>
+  </div>
+</div> <!-- row -->
+
