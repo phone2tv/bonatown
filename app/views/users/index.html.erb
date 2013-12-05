@@ -16,7 +16,7 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th><%= t('activerecord.attributes.admin_profile.realname') %></th>
+          <th><%= t('activerecord.attributes.admin_profile.name') %></th>
           <th><%= t('activerecord.attributes.user.username') %></th>
           <th><%= t('activerecord.attributes.role.name') %></th>
           <th><%= t('activerecord.attributes.user.email') %></th>
@@ -25,7 +25,7 @@
       <tbody>
         <% @users.each do |user| %>
           <tr>
-            <td><%= link_to user.profile.realname, user %> </td>
+            <td><%= link_to user.profile.name, user %> </td>
             <td><%= link_to user.username, edit_user_path(user) %> </td>
             <td><%= t(user.role_name) %> </td>
             <td><%= user.email %> </td>

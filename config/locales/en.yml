@@ -21,17 +21,16 @@ en:
       profile:
         name: "Display Name"
         gravatar: "Gravatar"
-        realname: "Real Name"
         website: "Website"
         location: "Location"
         birthday: "Birthday"
         aboutme: "About Me"
       admin_profile:
         nickname: "Display Name"
-        realname: "Real Name"
+        name: "Real Name"
         aboutme: "About Me"
       moderator_profile:
-        realname: "Real Name"
+        name: "Real Name"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

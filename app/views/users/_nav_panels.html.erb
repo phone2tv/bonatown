@@ -16,22 +16,23 @@
     </div>
   </div> <!-- panel -->
 
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h3 class="panel-title">账户管理</h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        <li><%= link_to '会员资料', edit_user_path(user) %></li>
-        <li><a href="#" class="">会员资料</a></li>
-        <li><a href="#" class="">寄送地址</a></li>
-        <li><a href="#" class="">账户安全</a></li>
-        <li><a href="#" class="">常用联系人</a></li>
-        <li><a href="#" class="">我的收藏夹</a></li>
-        <li><a href="#" class="">订阅管理</a></li>
-      </ul>
-    </div>
-  </div> <!-- panel -->
+  <% if user_signed_in? %>
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">账户管理</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li><%= link_to '会员资料', edit_user_path(user) %></li>
+          <li><a href="#" class="">寄送地址</a></li>
+          <li><a href="#" class="">账户安全</a></li>
+          <li><a href="#" class="">常用联系人</a></li>
+          <li><a href="#" class="">我的收藏夹</a></li>
+          <li><a href="#" class="">订阅管理</a></li>
+        </ul>
+      </div>
+    </div> <!-- panel -->
+  <% end %>
 
   <div class="panel panel-default">
     <div class="panel-heading">

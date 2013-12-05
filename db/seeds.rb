@@ -22,14 +22,14 @@ def create_users
 # admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password', terms_of_service: true)
   admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password')
   admin.add_role :admin
-  admin.profile = AdminProfile.create!(nickname: 'Nickname', realname: 'Realname', aboutme: 'Aboutme')
+  admin.profile = AdminProfile.create!(name: 'Adminstrator', aboutme: 'Aboutme')
   admin.save!
   print_content "user: #{admin.email}"
 
   # create moderator
   moderator = User.create!(username: 'moderator', email: 'moderator@example.com', password: 'password')
   moderator.add_role :moderator
-  moderator.profile = ModeratorProfile.create!(realname: 'Realname')
+  moderator.profile = ModeratorProfile.create!(name: 'Moderator')
   moderator.save!
   print_content "user: #{moderator.email}"
 end

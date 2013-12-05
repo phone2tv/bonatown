@@ -42,7 +42,8 @@ class UsersController < ApplicationController
   # @profile = AdminProfile.new(admin_profile_params)
   # @profile = AdminProfile.new(admin_params)
     respond_to do |format|
-      if @user.save
+    # if @user.save
+      if @user.valid? and @user.profile.valid? and @user.save
         format.html { redirect_to @user, notice: 'Admin was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
@@ -57,8 +58,8 @@ class UsersController < ApplicationController
   def create_moderator
     @user = User.new(user_params)
     @user.add_role :moderator
-    @user.profile = ModeratorProfile.new(realname: 'Realname')
-  # profile = ModeratorProfile.new(realname: 'Realname', user: @user)
+    @user.profile = ModeratorProfile.new(name: 'Realname')
+  # profile = ModeratorProfile.new(name: 'Realname', user: @user)
     respond_to do |format|
       if @user.save
         format.html { redirect_to edit_user_path(@user), notice: 'User was successfully created.' }
@@ -112,15 +113,15 @@ class UsersController < ApplicationController
     end
 
     def admin_params
-      params.require(:profile).permit(:nickname, :realname, :aboutme)
-    # params.require(:user).permit(:username, :email, :password, :password_confirmation, :nickname, :realname, :aboutme)
+      params.require(:profile).permit(:name, :aboutme)
+    # params.require(:user).permit(:username, :email, :password, :password_confirmation, :nickname, :name, :aboutme)
     end
 
     def admin_profile_params
-      params.require(:admin_profile).permit(:nickname, :realname, :aboutme)
+      params.require(:admin_profile).permit(:name, :aboutme)
     end
 
     def moderator_profile_params
-      params.require(:moderator_profile).permit(:realname)
+      params.require(:moderator_profile).permit(:name)
     end
 end

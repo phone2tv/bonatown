@@ -3,5 +3,5 @@ class AdminProfile < ActiveRecord::Base
   has_one :user, as: :profile, dependent: :destroy
 
   # validation
-  validates :nickname, :presence => true, :length => { :maximum => 20 }
+# validates :nickname, :presence => true, :length => { :maximum => 20 }
 end
