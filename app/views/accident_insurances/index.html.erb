@@ -1,0 +1,33 @@
+<h1>Listing accident_insurances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Synopsis</th>
+      <th>Price</th>
+      <th>Company</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accident_insurances.each do |accident_insurance| %>
+      <tr>
+        <td><%= accident_insurance.title %></td>
+        <td><%= accident_insurance.synopsis %></td>
+        <td><%= accident_insurance.price %></td>
+        <td><%= accident_insurance.company %></td>
+        <td><%= link_to 'Show', accident_insurance %></td>
+        <td><%= link_to 'Edit', edit_accident_insurance_path(accident_insurance) %></td>
+        <td><%= link_to 'Destroy', accident_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accident insurance', new_accident_insurance_path %>

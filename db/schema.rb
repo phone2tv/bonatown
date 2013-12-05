@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205171435) do
+ActiveRecord::Schema.define(version: 20131205191152) do
+
+  create_table "accident_insurances", force: true do |t|
+    t.string   "title"
+    t.text     "synopsis"
+    t.decimal  "price"
+    t.integer  "company_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accident_insurances", ["company_id"], name: "index_accident_insurances_on_company_id"
 
   create_table "admin_profiles", force: true do |t|
     t.string   "name",       default: "", null: false

@@ -12,6 +12,7 @@ en:
       customer_profile: "Customer Profile"
       park: "Park"
       company: "Company"
+      accident_insurance: "Accident Insurance"
     attributes:
       user:
         email: "Email"
@@ -53,6 +54,11 @@ en:
         name: "Name"
         website: "Website"
         aboutme: "Introduction"
+      accident_insurance:
+        title: "Title"
+        synopsis: "Synopsis"
+        price: "Price"
+        company_id: "Company"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

@@ -1,0 +1,2 @@
+module AccidentInsurancesHelper
+end

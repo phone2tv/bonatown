@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @accident_insurance.title %>
+</p>
+
+<p>
+  <strong>Synopsis:</strong>
+  <%= @accident_insurance.synopsis %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @accident_insurance.price %>
+</p>
+
+<p>
+  <strong>Company:</strong>
+  <%= @accident_insurance.company %>
+</p>
+
+<%= link_to 'Edit', edit_accident_insurance_path(@accident_insurance) %> |
+<%= link_to 'Back', accident_insurances_path %>
