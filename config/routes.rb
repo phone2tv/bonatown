@@ -20,7 +20,8 @@ Insurance::Application.routes.draw do
       post 'create_user'
     end
   end
-  # resources :users, only: [:index, :show, :edit, :update]
+
+  resources :parks
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -10,6 +10,7 @@ zh-CN:
       quoter_profile: "报价业务员信息"
       park_profile: "园区管理员信息"
       customer_profile: "企业客户信息"
+      park: "园区"
     attributes:
       user:
         email: "电子邮件"
@@ -42,6 +43,11 @@ zh-CN:
         name: "真实姓名"
       customer_profile:
         name: "真实姓名"
+      park:
+        name: "园区名称"
+        website: "园区主页"
+        aboutme: "园区介绍"
+        user_id: "园区管理员"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

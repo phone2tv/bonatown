@@ -17,6 +17,18 @@
     </div>
   </div> <!-- panel -->
 
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">园区管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><%= link_to '显示所有园区', parks_path %></li>
+        <li><%= link_to '添加'+t('activerecord.models.park'), new_park_path %></li>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+
   <% if user_signed_in? %>
     <div class="panel panel-danger">
       <div class="panel-heading">

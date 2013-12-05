@@ -10,6 +10,7 @@ en:
       quoter_profile: "Quoter Profile"
       park_profile: "Park Profile"
       customer_profile: "Customer Profile"
+      park: "Park"
     attributes:
       user:
         email: "Email"
@@ -30,18 +31,23 @@ en:
         birthday: "Birthday"
         aboutme: "About Me"
       admin_profile:
-        name: "Real Name"
+        name: "Full Name"
         aboutme: "About Me"
       moderator_profile:
-        name: "Real Name"
+        name: "Full Name"
       manager_profile:
-        name: "真实姓名"
+        name: "Full Name"
       quoter_profile:
-        name: "真实姓名"
+        name: "Full Name"
       park_profile:
-        name: "真实姓名"
+        name: "Full Name"
       customer_profile:
-        name: "真实姓名"
+        name: "Full Name"
+      park:
+        name: "Name"
+        website: "Website"
+        aboutme: "Introduction"
+        user_id: "Park Admin"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
