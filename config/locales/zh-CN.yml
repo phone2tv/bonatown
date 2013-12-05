@@ -7,7 +7,7 @@ zh-CN:
       admin_profile: "系统管理员信息"
       moderator_profile: "高层管理员信息"
       manager_profile: "业务管理员信息"
-      quoter_profile: "保险业务员信息"
+      quoter_profile: "报价业务员信息"
       park_profile: "园区管理员信息"
       customer_profile: "企业客户信息"
     attributes:
@@ -52,7 +52,7 @@ zh-CN:
       this_year: ! "%m月%d日 %H:%M"
       one_year_ago: ! '%Y-%m-%d %H:%M'
   layouts:
-    brand: "保险经纪"
+    brand: "保险超市"
     back: "返回"
     show: "显示"
     edit: "编辑"
@@ -85,7 +85,7 @@ zh-CN:
       admin: "系统管理员"
       moderator: "高层管理员"
       manager: "业务管理员"
-      quoter: "保险业务员"
+      quoter: "报价业务员"
       park: "园区管理员"
       customer: "企业客户"
       broker: "经纪人"
