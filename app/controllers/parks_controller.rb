@@ -4,7 +4,7 @@ class ParksController < ApplicationController
   # GET /parks
   # GET /parks.json
   def index
-    @parks = Park.all
+    @park_profiles = ParkProfile.all
   end
 
   # GET /parks/1

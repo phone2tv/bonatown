@@ -16,19 +16,19 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th><%= t('activerecord.attributes.park.name') %></th>
-          <th><%= t('activerecord.attributes.park.website') %></th>
-          <th><%= t('activerecord.attributes.park.user_id') %></th>
+          <th><%= t('activerecord.attributes.park_profile.name') %></th>
+          <th><%= t('activerecord.attributes.park_profile.park_name') %></th>
+          <th><%= t('activerecord.attributes.park_profile.location') %></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @parks.each do |park| %>
+        <% @park_profiles.each do |park_profile| %>
           <tr>
-            <td><%= link_to park.name, park %></td>
-            <td><%= park.website %></td>
-            <td><%= park.user.profile.name if park.user.present? %></td>
-            <td><%= link_to 'Edit', edit_park_path(park) %> / <%= link_to 'Destroy', park, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to park_profile.name, park_profile.user %></td>
+            <td><%= park_profile.park_name %></td>
+            <td><%= park_profile.location %></td>
+            <td><%= link_to 'Edit', edit_user_path(park_profile.user) %> / <%= link_to 'Destroy', park_profile.user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>

@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 20131205191152) do
 
   create_table "customer_profiles", force: true do |t|
     t.string   "name"
+    t.string   "enterprise_name"
+    t.string   "location"
     t.integer  "park_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -62,20 +64,11 @@ ActiveRecord::Schema.define(version: 20131205191152) do
 
   create_table "park_profiles", force: true do |t|
     t.string   "name"
+    t.string   "park_name"
+    t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "parks", force: true do |t|
-    t.string   "name"
-    t.string   "website"
-    t.text     "aboutme"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "parks", ["user_id"], name: "index_parks_on_user_id"
 
   create_table "quoter_profiles", force: true do |t|
     t.string   "name"

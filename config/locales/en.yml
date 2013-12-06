@@ -43,8 +43,12 @@ en:
         name: "Full Name"
       park_profile:
         name: "Full Name"
+        park_name: "Park Name"
+        location: "Park Location"
       customer_profile:
         name: "Full Name"
+        enterprise_name: "Enterprise Name"
+        location: "Enterprise Location"
         park_profile_id: "Park Name"
       park:
         name: "Name"
