@@ -16,57 +16,28 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th><%= t('activerecord.attributes.accident_insurance.title') %></th>
-          <th><%= t('activerecord.attributes.accident_insurance.synopsis') %></th>
-          <th><%= t('activerecord.attributes.accident_insurance.price') %></th>
-          <th><%= t('activerecord.attributes.accident_insurance.company_id') %></th>
+          <th><%= t('activerecord.attributes.insurance.title') %></th>
+          <th><%= t('activerecord.attributes.insurance.synopsis') %></th>
+          <th><%= t('activerecord.attributes.insurance.price') %></th>
+          <th><%= t('activerecord.attributes.insurance.workflow_state') %></th>
+          <th><%= t('activerecord.attributes.insurance.company_id') %></th>
+          <th><%= t('activerecord.attributes.accident_insurance.body') %></th>
           <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @accident_insurances.each do |ain| %>
+        <% @accident_insurances.each do |accident_insurance| %>
           <tr>
-            <td><%= link_to ain.title, ain %></td>
-            <td><%= ain.synopsis %></td>
-            <td><%= ain.price %></td>
-            <td><%= ain.company.name if ain.company.present? %></td>
-            <td><%= link_to 'Edit', edit_accident_insurance_path(ain) %> / <%= link_to 'Destroy', ain, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to accident_insurance.insurance.title, accident_insurance %></td>
+            <td><%= accident_insurance.insurance.synopsis %></td>
+            <td><%= accident_insurance.insurance.price %></td>
+            <td><%= accident_insurance.insurance.workflow_state %></td>
+            <td><%= accident_insurance.insurance.company.name if accident_insurance.insurance.company.present? %></td>
+            <td><%= accident_insurance.body %></td>
+            <td><%= link_to 'Edit', edit_accident_insurance_path(accident_insurance) %> / <%= link_to 'Destroy', accident_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div> <!-- col-md-10 -->
 </div> <!-- row -->
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Synopsis</th>
-      <th>Price</th>
-      <th>Company</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @accident_insurances.each do |accident_insurance| %>
-      <tr>
-        <td><%= accident_insurance.title %></td>
-        <td><%= accident_insurance.synopsis %></td>
-        <td><%= accident_insurance.price %></td>
-        <td><%= accident_insurance.company %></td>
-        <td><%= link_to 'Show', accident_insurance %></td>
-        <td><%= link_to 'Edit', edit_accident_insurance_path(accident_insurance) %></td>
-        <td><%= link_to 'Destroy', accident_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Accident insurance', new_accident_insurance_path %>

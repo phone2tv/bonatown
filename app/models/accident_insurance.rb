@@ -1,3 +1,5 @@
 class AccidentInsurance < ActiveRecord::Base
-  belongs_to :company
+  # association macros
+  has_one :insurance, as: :profile, dependent: :destroy
+  accepts_nested_attributes_for :insurance
 end

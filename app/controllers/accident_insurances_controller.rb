@@ -15,6 +15,7 @@ class AccidentInsurancesController < ApplicationController
   # GET /accident_insurances/new
   def new
     @accident_insurance = AccidentInsurance.new
+    @accident_insurance.build_insurance
   end
 
   # GET /accident_insurances/1/edit
@@ -69,6 +70,6 @@ class AccidentInsurancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_insurance_params
-      params.require(:accident_insurance).permit(:title, :synopsis, :price, :company_id)
+      params.require(:accident_insurance).permit(:body, :insurance_attributes => [:title, :synopsis, :price, :workflow_state, :company_id, :profile_id, :profile_type])
     end
 end

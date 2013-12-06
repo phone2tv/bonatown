@@ -15,22 +15,32 @@
   <div class='col-md-6'>
     <p>
     <strong>Title:</strong>
-    <%= @accident_insurance.title %>
+    <%= @accident_insurance.insurance.title %>
     </p>
 
     <p>
     <strong>Synopsis:</strong>
-    <%= @accident_insurance.synopsis %>
+    <%= @accident_insurance.insurance.synopsis %>
     </p>
 
     <p>
     <strong>Price:</strong>
-    <%= @accident_insurance.price %>
+    <%= @accident_insurance.insurance.price %>
+    </p>
+
+    <p>
+    <strong>State:</strong>
+    <%= @accident_insurance.insurance.workflow_state %>
     </p>
 
     <p>
     <strong>Company:</strong>
-    <%= @accident_insurance.company.name if @accident_insurance.company.present? %>
+    <%= @accident_insurance.insurance.company.name if @accident_insurance.insurance.company.present? %>
+    </p>
+
+    <p>
+    <strong>Body:</strong>
+    <%= @accident_insurance.body %>
     </p>
 
     <%= link_to 'Edit', edit_accident_insurance_path(@accident_insurance) %> |

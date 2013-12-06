@@ -1,9 +1,49 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<p>
-  <strong>Body:</strong>
-  <%= @health_insurance.body %>
-</p>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <p>
+    <strong>Title:</strong>
+    <%= @health_insurance.insurance.title %>
+    </p>
 
-<%= link_to 'Edit', edit_health_insurance_path(@health_insurance) %> |
-<%= link_to 'Back', health_insurances_path %>
+    <p>
+    <strong>Synopsis:</strong>
+    <%= @health_insurance.insurance.synopsis %>
+    </p>
+
+    <p>
+    <strong>Price:</strong>
+    <%= @health_insurance.insurance.price %>
+    </p>
+
+    <p>
+    <strong>State:</strong>
+    <%= @health_insurance.insurance.workflow_state %>
+    </p>
+
+    <p>
+    <strong>Company:</strong>
+    <%= @health_insurance.insurance.company.name if @health_insurance.insurance.company.present? %>
+    </p>
+
+    <p>
+    <strong>Body:</strong>
+    <%= @health_insurance.body %>
+    </p>
+
+    <%= link_to 'Edit', edit_health_insurance_path(@health_insurance) %> |
+    <%= link_to 'Back', health_insurances_path %>
+  </div>
+</div> <!-- row -->

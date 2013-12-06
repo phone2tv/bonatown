@@ -1,31 +1,11 @@
 <%= form_for(@accident_insurance) do |f| %>
-  <% if @accident_insurance.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@accident_insurance.errors.count, "error") %> prohibited this accident_insurance from being saved:</h2>
+  <%= form_error_messages!(f.object) %>
 
-      <ul>
-      <% @accident_insurance.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render partial: 'insurances/form', locals: { insurance_form: f } %>
 
   <div class="form-group">
-    <%= f.label :title, class: 'control-label' %>
-    <%= f.text_field :title, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :synopsis, class: 'control-label' %>
-    <%= f.text_area :synopsis, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :price, class: 'control-label' %>
-    <%= f.text_field :price, class: 'form-control' %>
-  </div>
-  <div class="form-group">
-    <%= f.label :company_id, class: 'control-label' %>
-    <%= f.collection_select :company_id, Company.all, :id, :name, { include_blank: false }, class: 'form-control' %>
+    <%= f.label :body, class: 'control-label' %>
+    <%= f.text_area :body, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>
