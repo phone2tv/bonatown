@@ -12,7 +12,9 @@ zh-CN:
       customer_profile: "企业客户信息"
       park: "园区"
       company: "保险公司"
+      insurance: "保险"
       accident_insurance: "意外险"
+      health_insurance: "健康险"
     attributes:
       user:
         email: "电子邮件"
@@ -59,11 +61,19 @@ zh-CN:
         name: "名称"
         website: "主页"
         aboutme: "介绍"
+      insurance:
+        title: "标题"
+        synopsis: "产品特色"
+        price: "保费"
+        workflow_state: "状态"
+        company_id: "保险公司"
       accident_insurance:
         title: "标题"
         synopsis: "产品特色"
         price: "保费"
         company_id: "保险公司"
+      health_insurance:
+        body: "补充说明"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
