@@ -48,3 +48,90 @@
   <div class='col-md-2'>
   </div>
 </div>
+
+<div class="insurance-home">
+<div class="page-header">
+  <h4><strong>未成年人保险</strong> <small>0岁-17岁成长期，周全呵护。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_child.gif") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="insurance-home">
+<div class="page-header">
+  <h4><strong>中青年保险</strong> <small>70后，80后，社会中坚，家庭顶梁必备保障。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_middle_age.gif") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="insurance-home">
+<div class="page-header">
+  <h4><strong>老年保险</strong> <small>保至80高龄，小到磕碰，大到住院全保障。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_old_age.jpg") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.first } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'users/insurance_show', locals: { insur: AccidentInsurance.last } %>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

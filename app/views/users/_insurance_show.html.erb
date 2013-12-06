@@ -1,0 +1,18 @@
+<div class='insurance-show'>
+  <div class='insurance-title'>
+    [<%= link_to '意外险', accident_insurances_path %>] <%= link_to insur.title, insur %>
+  </div>
+  <div class="row">
+    <div class='col-md-3'>
+      <%= image_tag("insurance_child_small.jpg", class: "img-rounded") %>
+    </div>
+    <div class='col-md-9'>
+      <div class='insurance-synopsis'>
+        <%= insur.synopsis %>
+      </div>
+      <div class='insurance-price'>
+        ¥ <span class='price-num'><%= insur.price %></span> <small>起</small>
+      </div>
+    </div>
+  </div>
+</div>
