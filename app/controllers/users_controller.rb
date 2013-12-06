@@ -195,6 +195,6 @@ class UsersController < ApplicationController
     end
 
     def customer_profile_params
-      params.require(:customer_profile).permit(:name)
+      params.require(:customer_profile).permit(:name, :park_profile_id)
     end
 end

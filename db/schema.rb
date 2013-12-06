@@ -41,9 +41,12 @@ ActiveRecord::Schema.define(version: 20131205191152) do
 
   create_table "customer_profiles", force: true do |t|
     t.string   "name"
+    t.integer  "park_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "customer_profiles", ["park_profile_id"], name: "index_customer_profiles_on_park_profile_id"
 
   create_table "manager_profiles", force: true do |t|
     t.string   "name"

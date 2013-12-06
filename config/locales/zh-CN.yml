@@ -45,6 +45,7 @@ zh-CN:
         name: "真实姓名"
       customer_profile:
         name: "真实姓名"
+        park_profile_id: "所属园区"
       park:
         name: "园区名称"
         website: "园区主页"
@@ -106,3 +107,5 @@ zh-CN:
       park: "园区管理员"
       customer: "企业客户"
       broker: "经纪人"
+  customer_profile:
+    include_blank: "不属于任何园区"

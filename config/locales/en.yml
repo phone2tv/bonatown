@@ -45,6 +45,7 @@ en:
         name: "Full Name"
       customer_profile:
         name: "Full Name"
+        park_profile_id: "Park Name"
       park:
         name: "Name"
         website: "Website"
@@ -106,3 +107,5 @@ en:
       park: "Park"
       customer: "Customer"
       broker: "Broker"
+  customer_profile:
+    include_blank: "Not in a Park"
