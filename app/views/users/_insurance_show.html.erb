@@ -1,3 +1,4 @@
+<% if insur.present? %>
 <div class='insurance-show'>
   <div class='insurance-title'>
     [<%= link_to '意外险', accident_insurances_path %>] <%= link_to insur.title, insur %>
@@ -16,3 +17,4 @@
     </div>
   </div>
 </div>
+<% end %>
