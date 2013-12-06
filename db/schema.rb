@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131205191152) do
+ActiveRecord::Schema.define(version: 20131206144226) do
 
   create_table "accident_insurances", force: true do |t|
     t.string   "title"
@@ -49,6 +49,21 @@ ActiveRecord::Schema.define(version: 20131205191152) do
   end
 
   add_index "customer_profiles", ["park_profile_id"], name: "index_customer_profiles_on_park_profile_id"
+
+  create_table "insurances", force: true do |t|
+    t.string   "title"
+    t.text     "synopsis"
+    t.decimal  "price"
+    t.string   "workflow_state"
+    t.integer  "company_id"
+    t.integer  "profile_id"
+    t.string   "profile_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "insurances", ["company_id"], name: "index_insurances_on_company_id"
+  add_index "insurances", ["profile_id", "profile_type"], name: "index_insurances_on_profile_id_and_profile_type"
 
   create_table "manager_profiles", force: true do |t|
     t.string   "name"

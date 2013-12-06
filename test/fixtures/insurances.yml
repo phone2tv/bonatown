@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  synopsis: MyText
+  price: 9.99
+  workflow_state: MyString
+  company_id: 
+  profile_id: 
+  profile_type: Profile
+
+two:
+  title: MyString
+  synopsis: MyText
+  price: 9.99
+  workflow_state: MyString
+  company_id: 
+  profile_id: 
+  profile_type: Profile
