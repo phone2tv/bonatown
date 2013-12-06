@@ -1,7 +1,11 @@
 Insurance::Application.routes.draw do
   root 'store#index'
 
-  get "store/index"
+  resources :store, only: :index do
+    collection do
+      get 'index'
+    end
+  end
 
   devise_for :users
 
