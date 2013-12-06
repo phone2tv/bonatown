@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Insurance::Application.load_tasks
+Insurer::Application.load_tasks

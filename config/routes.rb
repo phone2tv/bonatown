@@ -1,4 +1,4 @@
-Insurance::Application.routes.draw do
+Insurer::Application.routes.draw do
   root 'store#index'
 
   resources :store, only: :index do
