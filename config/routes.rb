@@ -1,4 +1,6 @@
 Insurer::Application.routes.draw do
+  resources :health_insurances
+
   root 'store#index'
 
   resources :store, only: :index do

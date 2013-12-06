@@ -1,0 +1,22 @@
+<%= insurance_form.fields_for :insurance do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: 'control-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :synopsis, class: 'control-label' %>
+    <%= f.text_area :synopsis, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, class: 'control-label' %>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :workflow_state, class: 'control-label' %>
+    <%= f.text_field :workflow_state, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_id, class: 'control-label' %>
+    <%= f.collection_select :company_id, Company.all, :id, :name, { include_blank: false }, class: 'form-control' %>
+  </div>
+<% end %>

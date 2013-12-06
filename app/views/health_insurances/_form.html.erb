@@ -1,0 +1,23 @@
+<%= form_for(@health_insurance) do |f| %>
+  <% if @health_insurance.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@health_insurance.errors.count, "error") %> prohibited this health_insurance from being saved:</h2>
+
+      <ul>
+      <% @health_insurance.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render partial: 'insurances/form', locals: { insurance_form: f } %>
+
+  <div class="form-group">
+    <%= f.label :body, class: 'control-label' %>
+    <%= f.text_area :body, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

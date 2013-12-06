@@ -1,0 +1,27 @@
+<h1>Listing health_insurances</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @health_insurances.each do |health_insurance| %>
+      <tr>
+        <td><%= health_insurance.body %></td>
+        <td><%= link_to 'Show', health_insurance %></td>
+        <td><%= link_to 'Edit', edit_health_insurance_path(health_insurance) %></td>
+        <td><%= link_to 'Destroy', health_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Health insurance', new_health_insurance_path %>
