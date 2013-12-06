@@ -1,5 +1,7 @@
 Insurance::Application.routes.draw do
-  root 'users#home'
+  root 'store#index'
+
+  get "store/index"
 
   devise_for :users
 
