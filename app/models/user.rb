@@ -1,4 +1,12 @@
 class User < ActiveRecord::Base
+  # the default scope first (if any)
+  scope :admins, lambda { where(profile_type: 'AdminProfile') }
+  scope :moderators, lambda { where(profile_type: 'ModeratorProfile') }
+  scope :managers, lambda { where(profile_type: 'ManagerProfile') }
+  scope :quoters, lambda { where(profile_type: 'QuoterProfile') }
+  scope :parks, lambda { where(profile_type: 'ParkProfile') }
+  scope :customers, lambda { where(profile_type: 'CustomerProfile') }
+
   # attributes related macros
   attr_accessor :login
 # attr_accessor :terms_of_service
