@@ -95,7 +95,8 @@
 
 #header-xiaomi {
   .topbar-xiaomi {
-    height: 110px;
+//  height: 110px;
+    min-height: 110px;
     line-height: 110px;
 //  padding-top: 33px;
   }
@@ -108,11 +109,14 @@
 //  border-top-left-radius: 4px;
 //  border-top-right-radius: 4px;
     background: #ff6f3d;
+
     a {
       display: block;
       line-height: 45px;
       height: 45px;
+      padding: 0px 12px;
       text-decoration: none;
+//    text-align: center;
       font-size: 16px;
       color: white;
       &:hover {
@@ -121,25 +125,21 @@
     }
     a.left {
       border-radius: 4px 0 0 4px;
-      padding: 0 12px;
+      padding: 0 18px;
     }
+
     ul {
       line-height: 45px;
-//    list-style-image: none;
-//    list-style-position: outside;
-      list-style-type: none;
+      height: 45px;
       margin: 0;
       padding: 0;
+      list-style: none;
+//    overflow: hidden;
+//    zoom: 1;
+
       li {
         float: left;
-        display: inline-block;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        a {
-          padding: 0 12px;
-        }
       }
-    }
-  }
-}
+    } // ul
+  } // .navbar-xiaomi
+} // #header-xiaomi
