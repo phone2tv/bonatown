@@ -15,7 +15,7 @@
         <%= insur.insurance.company.name %>
       </div>
       <div class='insurance-price'>
-        ¥ <span class='price-num'><%= insur.insurance.price %></span> <small>起</small>
+        <span class='price-num'><%= number_to_currency(insur.insurance.price) %></span> <small>起</small>
       </div>
     </div>
   </div>
