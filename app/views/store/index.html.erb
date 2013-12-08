@@ -3,11 +3,8 @@
     <%# render 'shared/panel_xiaomi' %>
     <%= render 'shared/panel_xyz' %>
   </div>
-  <div class='col-md-5'>
-    <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
-  </div>
-  <div class='col-md-4'>
-    <%= link_to image_tag('insurance_middle_age.gif'), root_path, class: 'image-hover' %>
+  <div class='col-md-9'>
+    <%= render 'carousel' %>
   </div>
 </div>
 
