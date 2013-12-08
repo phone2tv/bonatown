@@ -1,3 +1,23 @@
 // Place all the styles related to the Store controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+a.image-hover {
+  display: block;
+  position: relative;
+  left: -5;
+//top: 6;
+  width: 240px;
+  height: 275px;
+  border-radius: 5px;
+  border: 5px solid white;
+  &:hover {
+    position: absolute;
+    left: 1;
+    top: 1;
+    width: 240px;
+    height: 275px;
+    z-index: 1;
+    border: 5px solid rgba(0,0,255,0.15);
+  }
+}
