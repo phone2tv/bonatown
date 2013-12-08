@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  deal_time: 2013-12-09 01:53:01
+  address: MyString
+  number: MyString
+
+two:
+  deal_time: 2013-12-09 01:53:01
+  address: MyString
+  number: MyString

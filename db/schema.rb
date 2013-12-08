@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208172343) do
+ActiveRecord::Schema.define(version: 20131208175717) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -71,6 +71,21 @@ ActiveRecord::Schema.define(version: 20131208172343) do
   add_index "insurances", ["company_id"], name: "index_insurances_on_company_id"
   add_index "insurances", ["profile_id", "profile_type"], name: "index_insurances_on_profile_id_and_profile_type"
 
+  create_table "line_items", force: true do |t|
+    t.integer  "insurance_id"
+    t.integer  "cart_id"
+    t.integer  "order_id"
+    t.string   "workflow_state"
+    t.decimal  "price"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["insurance_id"], name: "index_line_items_on_insurance_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+
   create_table "manager_profiles", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -79,6 +94,14 @@ ActiveRecord::Schema.define(version: 20131208172343) do
 
   create_table "moderator_profiles", force: true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.datetime "deal_time"
+    t.string   "address"
+    t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

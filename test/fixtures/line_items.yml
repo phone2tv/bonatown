@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  insurance_id: 
+  cart_id: 
+  order_id: 
+  workflow_state: MyString
+  price: 9.99
+  quantity: 1
+
+two:
+  insurance_id: 
+  cart_id: 
+  order_id: 
+  workflow_state: MyString
+  price: 9.99
+  quantity: 1
