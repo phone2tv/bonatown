@@ -45,5 +45,8 @@
 
     <%= link_to 'Edit', edit_accident_insurance_path(@accident_insurance) %> |
     <%= link_to 'Back', accident_insurances_path %>
+    <p>
+    <%= button_to 'Add to Cart', line_items_path(insurance_id: @accident_insurance.insurance) %>
+    </p>
   </div>
 </div> <!-- row -->
