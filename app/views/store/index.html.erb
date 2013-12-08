@@ -4,19 +4,13 @@
     <%= render 'shared/panel_xyz' %>
   </div>
   <div class='col-md-5'>
-    <div class="insurance-home">
-      <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
-      <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
-      <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
-      <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
-    </div>
+    <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
   </div>
   <div class='col-md-4'>
     <%= link_to image_tag('insurance_middle_age.gif'), root_path, class: 'image-hover' %>
   </div>
 </div>
 
-<div class="insurance-home">
 <div class="page-header">
   <h4><strong>未成年人保险</strong> <small>0岁-17岁成长期，周全呵护。</small></h4>
 </div>
@@ -43,9 +37,7 @@
     </div>
   </div>
 </div>
-</div>
 
-<div class="insurance-home">
 <div class="page-header">
   <h4><strong>中青年保险</strong> <small>70后，80后，社会中坚，家庭顶梁必备保障。</small></h4>
 </div>
@@ -72,9 +64,7 @@
     </div>
   </div>
 </div>
-</div>
 
-<div class="insurance-home">
 <div class="page-header">
   <h4><strong>老年保险</strong> <small>保至80高龄，小到磕碰，大到住院全保障。</small></h4>
 </div>
@@ -100,5 +90,4 @@
       </div>
     </div>
   </div>
-</div>
 </div>
