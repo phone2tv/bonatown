@@ -32,18 +32,18 @@
   <div class='col-md-9'>
     <div class="row">
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first, img_name: "child_1.jpg" } %>
       </div>
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first, img_name: "child_2.jpg" } %>
       </div>
     </div>
     <div class="row">
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last, img_name: "child_3.jpg" } %>
       </div>
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last, img_name: "child_4.jpg" } %>
       </div>
     </div>
   </div>
@@ -59,22 +59,38 @@
   <div class='col-md-9'>
     <div class="row">
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+        <div class="row">
+          <div class='col-md-6'>
+            <%= image_tag("youth_travel.jpg") %>
+          </div>
+          <div class='col-md-6'>
+            <%= image_tag("youth_lvyou.jpg") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_fortune.jpg") %>
+          </div>
+        </div>
       </div>
-      <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+      <div class='col-md-3'>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_outdoor.jpg") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_drive.jpg") %>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
+      <div class='col-md-3'>
+        <%= image_tag("youth_lady.jpg") %>
       </div>
-      <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
-      </div>
-    </div>
-  </div>
-</div>
+    </div> <!-- row -->
+  </div> <!-- col-md-9 -->
+</div> <!-- row -->
 
 <div class="page-header">
   <h4><strong>老年保险</strong> <small>保至80高龄，小到磕碰，大到住院全保障。</small></h4>
@@ -86,18 +102,18 @@
   <div class='col-md-9'>
     <div class="row">
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first, img_name: "old_1.jpg" } %>
       </div>
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.first, img_name: "old_2.jpg" } %>
       </div>
     </div>
     <div class="row">
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last, img_name: "old_3.jpg" } %>
       </div>
       <div class='col-md-6'>
-        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last } %>
+        <%= render partial: 'store/store_insurance', locals: { insur: AccidentInsurance.last, img_name: "old_4.jpg" } %>
       </div>
     </div>
   </div>
