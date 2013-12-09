@@ -32,7 +32,7 @@ Insurer::Application.routes.draw do
   resources :accident_insurances
   resources :health_insurances
 
-  resources :cart, only: :index do
+  resources :cart, only: [:index, :destroy] do
   end
 
   resources :line_items, only: [:show, :edit, :create, :destroy] do
