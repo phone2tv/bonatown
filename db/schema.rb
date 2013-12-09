@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20131208175717) do
     t.integer  "order_id"
     t.string   "workflow_state"
     t.decimal  "price"
-    t.integer  "quantity"
+    t.integer  "quantity",       default: 1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end

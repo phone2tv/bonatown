@@ -28,7 +28,8 @@ class LineItemsController < ApplicationController
     @cart = current_cart
   # @insurance = Insurance.find(params[:insurance_id])
   # @line_item = LineItem.new(line_item_params)
-    @line_item = @cart.line_items.build(line_item_params)
+  # @line_item = @cart.line_items.build(line_item_params)
+    @line_item = @cart.add_insurance(line_item_params)
 
     respond_to do |format|
       if @line_item.save

@@ -6,7 +6,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.references :order, index: true
       t.string :workflow_state
       t.decimal :price
-      t.integer :quantity
+      t.integer :quantity, default: 1, null: false
 
       t.timestamps
     end

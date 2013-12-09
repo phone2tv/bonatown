@@ -61,13 +61,34 @@ def create_users
   print_content "user: #{customer.email}"
 end
 
+def create_insurances
+  print_title('setting up insurances')
+
+  company = Company.create!(name: 'Pacific', website: 'www.pacific.com', aboutme: 'about pacific')
+
+  insur = Insurance.create!(title: 'Accident insurance title 1', synopsis: 'Accident insurance synopsis 1', price: '1.00', company: company)
+  insur.profile = AccidentInsurance.create!(body: 'Accident insurance body');
+  insur.save!
+  print_content "insurance: #{insur.title}"
+
+  insur = Insurance.create!(title: 'Health insurance title 1', synopsis: 'Health insurance synopsis 1', price: '1.00', company: company)
+  insur.profile = HealthInsurance.create!(body: 'Health insurance body');
+  insur.save!
+  print_content "insurance: #{insur.title}"
+end
+
 def destroy_tables
   print_title('destroy tables')
   User.destroy_all
   print_content "destroy all users"
   Role.destroy_all
   print_content "destroy all roles"
+  AccidentInsurance.destroy_all
+  print_content "destroy all accident insurances"
+  HealthInsurance.destroy_all
+  print_content "destroy all health insurances"
 end
 
 destroy_tables
 create_users
+create_insurances
