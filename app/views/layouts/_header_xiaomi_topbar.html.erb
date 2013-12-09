@@ -30,7 +30,7 @@
           </div>
           <div class='col-md-4'>
             <% if (user_signed_in? and current_user.has_role?(:customer)) %>
-              <%= link_to cart_index_path do %>
+              <%= link_to cart_path do %>
                 <span class="glyphicon glyphicon-shopping-cart"></span> <span>购物车</span>
               <% end %>
             <% else %>

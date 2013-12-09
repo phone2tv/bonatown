@@ -7,6 +7,10 @@ Insurer::Application.routes.draw do
     end
   end
 
+# resources :cart, only: [:index, :destroy] do
+# end
+  resource :cart, only: [:show, :destroy]
+
   devise_for :users
 
   resources :users, except: [:create] do
@@ -31,9 +35,6 @@ Insurer::Application.routes.draw do
   resources :companies
   resources :accident_insurances
   resources :health_insurances
-
-  resources :cart, only: [:index, :destroy] do
-  end
 
   resources :line_items, only: [:show, :edit, :create, :destroy] do
     member do
