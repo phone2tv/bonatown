@@ -7,9 +7,6 @@ Insurer::Application.routes.draw do
     end
   end
 
-  resources :cart, only: :index do
-  end
-
   devise_for :users
 
   resources :users, except: [:create] do
@@ -34,7 +31,21 @@ Insurer::Application.routes.draw do
   resources :companies
   resources :accident_insurances
   resources :health_insurances
-  resources :line_items, only: [:show, :edit, :create, :destroy]
+
+  resources :cart, only: :index do
+  end
+
+  resources :line_items, only: [:show, :edit, :create, :destroy] do
+    member do
+      put 'commit'
+      put 'cancel'
+      put 'verify'
+      put 'quote'
+      put 'reject'
+      put 'pay'
+      put 'ship'
+    end
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

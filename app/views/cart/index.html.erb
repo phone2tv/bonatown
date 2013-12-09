@@ -34,9 +34,13 @@
             <td><%= line_item.price %></td>
             <td><%= line_item.quantity %></td>
             <td>
-              <%= link_to '提交', '#' %>
-              <%= link_to '核准', '#' %>
-              <%= link_to '报价', '#' %>
+              <div><%= link_to_if line_item.can_commit?, '提交', commit_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_cancel?, '取消', cancel_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_verify?, '核实', verify_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_quote?,  '报价', quote_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_reject?, '拒绝', reject_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_pay?,    '付款', pay_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_ship?,   '发货', ship_line_item_path(line_item), method: :put %></div>
             </td>
             <td><%= link_to 'Show', line_item %>
               / <%= link_to 'Edit', edit_line_item_path(line_item) %>

@@ -1,5 +1,5 @@
 class LineItemsController < ApplicationController
-  before_action :set_line_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_line_item, except: [:index, :new, :create]
 
   # GET /line_items
   # GET /line_items.json
@@ -61,6 +61,62 @@ class LineItemsController < ApplicationController
     @line_item.destroy
     respond_to do |format|
       format.html { redirect_to line_items_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def commit
+    @line_item.commit!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def cancel
+    @line_item.cancel!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def verify
+    @line_item.verify!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def quote
+    @line_item.quote!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def reject
+    @line_item.reject!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def pay
+    @line_item.pay!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def ship
+    @line_item.ship!
+    respond_to do |format|
+      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end

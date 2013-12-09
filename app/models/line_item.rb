@@ -64,6 +64,10 @@ class LineItem < ActiveRecord::Base
     state :unshipped do
       event :ship, :transitions_to => :shipped
     end
+    state :canceled do
+    end
+    state :shipped do
+    end
   end
 
   def quote
