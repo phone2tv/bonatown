@@ -33,7 +33,7 @@ Insurer::Application.routes.draw do
   resources :companies
   resources :accident_insurances
   resources :health_insurances
-  resources :line_items, only: [:create, :destroy]
+  resources :line_items, only: [:show, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

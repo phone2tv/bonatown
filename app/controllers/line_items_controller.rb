@@ -10,6 +10,7 @@ class LineItemsController < ApplicationController
   # GET /line_items/1
   # GET /line_items/1.json
   def show
+    @cart = current_cart
   end
 
   # GET /line_items/new
@@ -24,7 +25,10 @@ class LineItemsController < ApplicationController
   # POST /line_items
   # POST /line_items.json
   def create
-    @line_item = LineItem.new(line_item_params)
+    @cart = current_cart
+  # @insurance = Insurance.find(params[:insurance_id])
+  # @line_item = LineItem.new(line_item_params)
+    @line_item = @cart.line_items.build(line_item_params)
 
     respond_to do |format|
       if @line_item.save
@@ -69,6 +73,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:name, :website, :aboutme, :user_id)
+      params.require(:line_item).permit(:insurance_id)
     end
 end
