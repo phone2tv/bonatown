@@ -15,6 +15,7 @@ en:
       insurance: "Insurance"
       accident_insurance: "Accident Insurance"
       health_insurance: "Health Insurance"
+      line_item: "LineItem"
     attributes:
       user:
         email: "Email"
@@ -74,6 +75,13 @@ en:
         company_id: "Company"
       health_insurance:
         body: "Note"
+      line_item:
+        insurance_id: "Trade Insurance"
+        cart_id: "Cart"
+        order_id: "Order"
+        workflow_state: "State"
+        price: "Deal Price"
+        quantity: "Quantity"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

@@ -8,43 +8,61 @@ class LineItem < ActiveRecord::Base
   #   uncommited(init), unverified, unquoted, unpaid, unshipped, shipped, rejected
   #
   # ACTION:
-  #   commit,    uncommited -> unverified
+  #   customer, commit,    uncommited -> unverified
+  #   customer, cancel,    uncommited -> canceled
+  #   customer, commit,    rejected   -> unverified
+  #   customer, cancel,    rejected   -> canceled
   #
-  #   verify,    unverified -> unquoted
-  #   reject,    unverified -> rejected
+  #   manager,  verify,    unverified -> unquoted
+  #   manager,  reject,    unverified -> rejected
   #
-  #   quote,     unquoted   -> unpaid
-  #   reject,    unquoted   -> rejected
+  #   quoter,   quote,     unquoted   -> unpaid
+  #   quoter,   reject,    unquoted   -> rejected
   #
-  #   pay,       unpaid     -> unshipped
-  #   cancel,    unpaid     -> canceled
+  #   customer, pay,       unpaid     -> unshipped
+  #   customer, cancel,    unpaid     -> canceled
   #
-  #   ship,      unshipped  -> shipped
+  #   quoter,   ship,      unshipped  -> shipped
   #
+  #
+  # TODO:
+  #
+  # STATE:
+  #   surrendered
+  #
+  # ACTION:
   #   surrender, shipped    -> surrendered
   #
   include Workflow
   workflow do
+    # customer
     state :uncommited do
       event :commit, :transitions_to => :unverified
+      event :cancel, :transitions_to => :canceled
     end
+    # customer
+    state :rejected do
+      event :commit, :transitions_to => :unverified
+      event :cancel, :transitions_to => :canceled
+    end
+    # manager
     state :unverified do
       event :verify, :transitions_to => :unquoted
       event :reject, :transitions_to => :rejected
     end
+    # quoter
     state :unquoted do
       event :quote, :transitions_to => :unpaid
       event :reject, :transitions_to => :rejected
     end
+    # customer
     state :unpaid do
       event :pay, :transitions_to => :unshipped
       event :cancel, :transitions_to => :canceled
     end
+    # quoter
     state :unshipped do
       event :ship, :transitions_to => :shipped
-    end
-    state :shipped do
-      event :surrender, :transitions_to => :surrendered
     end
   end
 

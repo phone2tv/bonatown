@@ -1,12 +1,13 @@
 Insurer::Application.routes.draw do
-  get "line_items/create"
-  get "line_items/destroy"
   root 'store#index'
 
   resources :store, only: :index do
     collection do
       get 'index'
     end
+  end
+
+  resources :cart, only: :index do
   end
 
   devise_for :users
@@ -33,7 +34,7 @@ Insurer::Application.routes.draw do
   resources :companies
   resources :accident_insurances
   resources :health_insurances
-  resources :line_items, only: [:show, :create, :destroy]
+  resources :line_items, only: [:show, :edit, :create, :destroy]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -15,6 +15,7 @@ zh-CN:
       insurance: "保险"
       accident_insurance: "意外险"
       health_insurance: "健康险"
+      line_item: "订单项"
     attributes:
       user:
         email: "电子邮件"
@@ -74,6 +75,13 @@ zh-CN:
         company_id: "保险公司"
       health_insurance:
         body: "补充说明"
+      line_item:
+        insurance_id: "所购保险"
+        cart_id: "购物车"
+        order_id: "订单"
+        workflow_state: "状态"
+        price: "购买时价格"
+        quantity: "数量"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
