@@ -19,7 +19,6 @@ def create_users
   print_title('setting up users')
 
   # create admin
-# admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password', terms_of_service: true)
   admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password')
   admin.add_role :admin
   admin.profile = AdminProfile.create!(name: 'Adminstrator', aboutme: 'Aboutme')
@@ -32,6 +31,34 @@ def create_users
   moderator.profile = ModeratorProfile.create!(name: 'Moderator')
   moderator.save!
   print_content "user: #{moderator.email}"
+
+  # create manager
+  manager = User.create!(username: 'manager', email: 'manager@example.com', password: 'password')
+  manager.add_role :manager
+  manager.profile = ManagerProfile.create!(name: 'Manager')
+  manager.save!
+  print_content "user: #{manager.email}"
+
+  # create quoter
+  quoter = User.create!(username: 'quoter', email: 'quoter@example.com', password: 'password')
+  quoter.add_role :quoter
+  quoter.profile = QuoterProfile.create!(name: 'Quoter')
+  quoter.save!
+  print_content "user: #{quoter.email}"
+
+  # create park
+  park = User.create!(username: 'park', email: 'park@example.com', password: 'password')
+  park.add_role :park
+  park.profile = ParkProfile.create!(name: 'ParkUser')
+  park.save!
+  print_content "user: #{park.email}"
+
+  # create customer
+  customer = User.create!(username: 'customer', email: 'customer@example.com', password: 'password')
+  customer.add_role :customer
+  customer.profile = CustomerProfile.create!(name: 'Customer')
+  customer.save!
+  print_content "user: #{customer.email}"
 end
 
 def destroy_tables
