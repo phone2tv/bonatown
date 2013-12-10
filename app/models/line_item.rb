@@ -5,13 +5,13 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
 
   # STATE:
-  #   uncommited(init), unverified, unquoted, unpaid, unshipped, shipped, rejected
+  #   uncommited(init), cancelled, unverified, unquoted, unpaid, unshipped, shipped, rejected
   #
   # ACTION:
   #   customer, commit,    uncommited -> unverified
-  #   customer, cancel,    uncommited -> canceled
+  #   customer, cancel,    uncommited -> cancelled
   #   customer, commit,    rejected   -> unverified
-  #   customer, cancel,    rejected   -> canceled
+  #   customer, cancel,    rejected   -> cancelled
   #
   #   manager,  verify,    unverified -> unquoted
   #   manager,  reject,    unverified -> rejected
@@ -20,7 +20,7 @@ class LineItem < ActiveRecord::Base
   #   quoter,   reject,    unquoted   -> rejected
   #
   #   customer, pay,       unpaid     -> unshipped
-  #   customer, cancel,    unpaid     -> canceled
+  #   customer, cancel,    unpaid     -> cancelled
   #
   #   quoter,   ship,      unshipped  -> shipped
   #
@@ -38,12 +38,12 @@ class LineItem < ActiveRecord::Base
     # customer
     state :uncommited do
       event :commit, :transitions_to => :unverified
-      event :cancel, :transitions_to => :canceled
+      event :cancel, :transitions_to => :cancelled
     end
     # customer
     state :rejected do
       event :commit, :transitions_to => :unverified
-      event :cancel, :transitions_to => :canceled
+      event :cancel, :transitions_to => :cancelled
     end
     # manager
     state :unverified do
@@ -58,19 +58,19 @@ class LineItem < ActiveRecord::Base
     # customer
     state :unpaid do
       event :pay, :transitions_to => :unshipped
-      event :cancel, :transitions_to => :canceled
+      event :cancel, :transitions_to => :cancelled
     end
     # quoter
     state :unshipped do
       event :ship, :transitions_to => :shipped
     end
-    state :canceled do
+    state :cancelled do
     end
     state :shipped do
     end
   end
 
-  def quote
-    puts 'quote() : current state is: ' + self.workflow_state
-  end
+# def quote
+#   puts 'quote() : current state is: ' + self.workflow_state
+# end
 end

@@ -131,3 +131,21 @@ en:
       broker: "Broker"
   customer_profile:
     include_blank: "Not in a Park"
+  line_item:
+    state:
+      uncommited: "uncommited"
+      cancelled: "cancelled"
+      unverified: "unverified"
+      unquoted: "unquoted"
+      unpaid: "unpaid"
+      unshipped: "unshipped"
+      shipped: "shipped"
+      rejected: "rejected"
+    action:
+      commit: "commit"
+      cancel: "cancel"
+      verify: "verify"
+      quote: "quote"
+      reject: "reject"
+      pay: "pay"
+      ship: "ship"

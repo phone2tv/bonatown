@@ -131,3 +131,21 @@ zh-CN:
       broker: "经纪人"
   customer_profile:
     include_blank: "不属于任何园区"
+  line_item:
+    state:
+      uncommited: "未提交"
+      cancelled: "已取消"
+      unverified: "未审核"
+      unquoted: "未报价"
+      unpaid: "未付款"
+      unshipped: "未出单"
+      shipped: "已出单"
+      rejected: "拒绝"
+    action:
+      commit: "提交"
+      cancel: "取消"
+      verify: "审核"
+      quote: "报价"
+      reject: "拒绝"
+      pay: "付款"
+      ship: "发货"

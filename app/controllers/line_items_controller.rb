@@ -27,13 +27,11 @@ class LineItemsController < ApplicationController
   def create
     @cart = current_cart
   # @insurance = Insurance.find(params[:insurance_id])
-  # @line_item = LineItem.new(line_item_params)
-  # @line_item = @cart.line_items.build(line_item_params)
     @line_item = @cart.add_insurance(line_item_params)
 
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item, notice: 'LineItem was successfully created.' }
+        format.html { redirect_to :back, notice: 'Insurance was successfully added to cart.' }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { render action: 'new' }
@@ -61,7 +59,7 @@ class LineItemsController < ApplicationController
   def destroy
     @line_item.destroy
     respond_to do |format|
-      format.html { redirect_to line_items_url }
+      format.html { redirect_to cart_url }
       format.json { head :no_content }
     end
   end
@@ -69,7 +67,7 @@ class LineItemsController < ApplicationController
   def commit
     @line_item.commit!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -77,7 +75,7 @@ class LineItemsController < ApplicationController
   def cancel
     @line_item.cancel!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -85,7 +83,7 @@ class LineItemsController < ApplicationController
   def verify
     @line_item.verify!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -93,7 +91,7 @@ class LineItemsController < ApplicationController
   def quote
     @line_item.quote!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -101,7 +99,7 @@ class LineItemsController < ApplicationController
   def reject
     @line_item.reject!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -109,7 +107,7 @@ class LineItemsController < ApplicationController
   def pay
     @line_item.pay!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
@@ -117,7 +115,7 @@ class LineItemsController < ApplicationController
   def ship
     @line_item.ship!
     respond_to do |format|
-      format.html { redirect_to cart_index_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
