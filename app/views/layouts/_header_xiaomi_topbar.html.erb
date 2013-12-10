@@ -4,7 +4,7 @@
       <%= link_to image_tag('brand_xiaomi.png'), root_path %>
     </div>
     <div class='col-md-4'>
-      <%= form_tag store_index_path, class: 'form-search', method: :get do %>
+      <%= form_tag store_path, class: 'form-search', method: :get do %>
         <div class="input-group">
           <%= search_field_tag :query, params[:query], class: 'form-control', placeholder: "保险信息" %>
           <div class="input-group-btn">

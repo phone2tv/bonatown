@@ -1,14 +1,20 @@
 Insurer::Application.routes.draw do
-  root 'store#index'
+  root 'stores#show'
 
-  resources :store, only: :index do
+# resources :store, only: :index do
+#   collection do
+#     get 'index'
+#   end
+# end
+
+  resource :store, only: :show do
     collection do
-      get 'index'
+      get 'tagged'
     end
   end
+  get 'store/tagged(/*tags)' => 'stores#tagged', format: false
+# get 'store/tagged(/*tags)' => 'store#tagged', as: :store_tagged, format: false
 
-# resources :cart, only: [:index, :destroy] do
-# end
   resource :cart, only: [:show, :destroy]
 
   devise_for :users
