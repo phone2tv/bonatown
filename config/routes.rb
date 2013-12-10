@@ -9,11 +9,9 @@ Insurer::Application.routes.draw do
 
   resource :store, only: :show do
     collection do
-      get 'tagged'
+      get 'tagged(/*tags)' => 'stores#tagged', as: :tagged
     end
   end
-  get 'store/tagged(/*tags)' => 'stores#tagged', format: false
-# get 'store/tagged(/*tags)' => 'store#tagged', as: :store_tagged, format: false
 
   resource :cart, only: [:show, :destroy]
 
