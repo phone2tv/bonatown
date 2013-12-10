@@ -4,25 +4,21 @@
     <%# render 'shared/panel_xyz' %>
   </div>
   <div class='col-md-9'>
-    <div class="row">
-      <div class='col-md-12'>
-        <br />
-        <p> 产品目录： 交通意外保险 综合意外保险 </p>
-        <p> 承保年龄： 0-3周岁 4-17周岁 18-65周岁 65周岁以上 </p>
-        <p> 特色保障： 医疗补偿 家人保障 自驾出行 交通加倍赔付 紧急救援 财产损失 航班延误 重大疾病 </p>
-        <p> 保障期限： 7天以内 1个月以内 1-3个月 3个月-1年 </p>
-        <p> 品牌商家： 中国平安 美亚财产保险 阳光财险 华泰财产保险 泰康人寿 昆仑健康 太平养老保险 都邦保险 大地财产保险 合众人寿保险 太平洋财产保险 大众保险 </p>
-      </div>
+    <div>
+      <br />
+      <p> 产品目录： 交通意外保险 综合意外保险 </p>
+      <p> 承保年龄： 0-3周岁 4-17周岁 18-65周岁 65周岁以上 </p>
+      <p> 特色保障： 医疗补偿 家人保障 自驾出行 交通加倍赔付 紧急救援 财产损失 航班延误 重大疾病 </p>
+      <p> 保障期限： 7天以内 1个月以内 1-3个月 3个月-1年 </p>
+      <p> 品牌商家： 中国平安 美亚财产保险 阳光财险 华泰财产保险 泰康人寿 昆仑健康 太平养老保险 都邦保险 大地财产保险 合众人寿保险 太平洋财产保险 大众保险 </p>
     </div>
-    <div class="row">
-      <% 1.upto 50 do %>
-      <div class='col-md-6'>
+    <% 1.upto 50 do %>
+      <div class=''>
         <%= render partial: 'store_insurance', locals: { insur: AccidentInsurance.first, img_name: "child_1.jpg" } %>
       </div>
-      <div class='col-md-6'>
+      <div class=''>
         <%= render partial: 'store_insurance', locals: { insur: AccidentInsurance.last, img_name: "child_3.jpg" } %>
       </div>
-      <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
