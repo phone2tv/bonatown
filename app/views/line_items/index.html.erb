@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.line_item.insurance_id') %></th>
+          <th><%= t('activerecord.attributes.line_item.order_id') %></th>
+          <th><%= t('activerecord.attributes.line_item.workflow_state') %></th>
+          <th><%= t('activerecord.attributes.line_item.price') %></th>
+          <th><%= t('activerecord.attributes.line_item.quantity') %></th>
+          <th>Actions</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @line_items.each do |line_item| %>
+          <tr>
+            <td><%= link_to line_item.insurance.title, '#' %></td>
+            <td><%= link_to_if line_item.order.present?, line_item.id, line_item.order  %></td>
+            <td><%= t('line_item.state.' + line_item.workflow_state) %></td>
+            <td><%= line_item.price %></td>
+            <td><%= line_item.quantity %></td>
+            <td>
+              <div><%= link_to_if line_item.can_commit?, t('line_item.action.commit'), commit_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_cancel?, t('line_item.action.cancel'), cancel_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_verify?, t('line_item.action.verify'), verify_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_quote?,  t('line_item.action.quote'), quote_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_reject?, t('line_item.action.reject'), reject_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_pay?,    t('line_item.action.pay'), pay_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_ship?,   t('line_item.action.ship'), ship_line_item_path(line_item), method: :put %></div>
+            </td>
+            <td><%= link_to 'Show', line_item %>
+              / <%= link_to 'Edit', edit_line_item_path(line_item) %>
+              / <%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->

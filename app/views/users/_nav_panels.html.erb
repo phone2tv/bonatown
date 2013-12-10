@@ -17,6 +17,25 @@
     </div>
   </div> <!-- panel -->
 
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">订单管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><%= link_to '我的订单', line_items_path %></a></li>
+        <li><%= link_to '未提交订单', line_items_path(state: 'uncommited') %></a></li>
+        <li><%= link_to '被拒绝订单', line_items_path(state: 'rejected') %></a></li>
+        <li><%= link_to '已取消订单', line_items_path(state: 'cancelled') %></a></li>
+        <li><%= link_to '未审核订单', line_items_path(state: 'unverified') %></a></li>
+        <li><%= link_to '未报价订单', line_items_path(state: 'unquoted') %></a></li>
+        <li><%= link_to '未付款订单', line_items_path(state: 'unpaid') %></a></li>
+        <li><%= link_to '未出单订单', line_items_path(state: 'unshipped') %></a></li>
+        <li><%= link_to '已出单订单', line_items_path(state: 'shipped') %></a></li>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+
   <div class="panel panel-danger">
     <div class="panel-heading">
       <h3 class="panel-title">园区管理</h3>

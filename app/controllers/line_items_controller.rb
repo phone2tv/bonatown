@@ -4,7 +4,9 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
+    state = params[:state]
     @line_items = LineItem.all
+    @line_items = @line_items.where(workflow_state: state) if state.present?
   end
 
   # GET /line_items/1

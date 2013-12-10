@@ -1,12 +1,6 @@
 Insurer::Application.routes.draw do
   root 'stores#show'
 
-# resources :store, only: :index do
-#   collection do
-#     get 'index'
-#   end
-# end
-
   resource :store, only: :show do
     collection do
       get 'tagged(/*tags)' => 'stores#tagged', as: :tagged
@@ -40,7 +34,7 @@ Insurer::Application.routes.draw do
   resources :accident_insurances
   resources :health_insurances
 
-  resources :line_items, only: [:show, :edit, :create, :destroy] do
+  resources :line_items, only: [:index, :show, :edit, :create, :destroy] do
     member do
       put 'commit'
       put 'cancel'

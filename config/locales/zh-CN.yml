@@ -140,7 +140,7 @@ zh-CN:
       unpaid: "未付款"
       unshipped: "未出单"
       shipped: "已出单"
-      rejected: "拒绝"
+      rejected: "被拒绝"
     action:
       commit: "提交"
       cancel: "取消"
