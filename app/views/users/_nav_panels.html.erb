@@ -23,15 +23,16 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><%= link_to '我的订单', line_items_path %></a></li>
-        <li><%= link_to '未提交订单', line_items_path(state: 'uncommited') %></a></li>
-        <li><%= link_to '被拒绝订单', line_items_path(state: 'rejected') %></a></li>
-        <li><%= link_to '已取消订单', line_items_path(state: 'cancelled') %></a></li>
-        <li><%= link_to '未审核订单', line_items_path(state: 'unverified') %></a></li>
-        <li><%= link_to '未报价订单', line_items_path(state: 'unquoted') %></a></li>
-        <li><%= link_to '未付款订单', line_items_path(state: 'unpaid') %></a></li>
-        <li><%= link_to '未出单订单', line_items_path(state: 'unshipped') %></a></li>
-        <li><%= link_to '已出单订单', line_items_path(state: 'shipped') %></a></li>
+        <li><%= link_to "我的购物车", cart_path %></li>
+        <li><%= link_to "我的订单", line_items_path %></li>
+        <li><%= link_to "未提交订单 (#{LineItem.uncommited_count})", line_items_path(state: 'uncommited') %></li>
+        <li><%= link_to "被拒绝订单 (#{LineItem.rejected_count})", line_items_path(state: 'rejected') %></li>
+        <li><%= link_to "已取消订单 (#{LineItem.cancelled_count})", line_items_path(state: 'cancelled') %></li>
+        <li><%= link_to "未审核订单 (#{LineItem.unverified_count})", line_items_path(state: 'unverified') %></li>
+        <li><%= link_to "未报价订单 (#{LineItem.unquoted_count})", line_items_path(state: 'unquoted') %></li>
+        <li><%= link_to "未付款订单 (#{LineItem.unpaid_count})", line_items_path(state: 'unpaid') %></li>
+        <li><%= link_to "未出单订单 (#{LineItem.unshipped_count})", line_items_path(state: 'unshipped') %></li>
+        <li><%= link_to "已出单订单 (#{LineItem.shipped_count})", line_items_path(state: 'shipped') %></li>
       </ul>
     </div>
   </div> <!-- panel -->
