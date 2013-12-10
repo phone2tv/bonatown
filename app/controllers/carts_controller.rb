@@ -10,7 +10,8 @@ class CartsController < ApplicationController
 
   def destroy
     @cart = current_cart
-    @cart.destroy
+    @cart.line_items.destroy_all
+  # @cart.destroy
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to cart_url, notice: 'Your cart is currently empty' }
