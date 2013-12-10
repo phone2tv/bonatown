@@ -1,4 +1,5 @@
 class LineItem < ActiveRecord::Base
+  # the default scope first (if any)
   scope :uncommited_count, lambda { where(workflow_state: 'uncommited').count }
   scope :cancelled_count, lambda { where(workflow_state: 'cancelled').count }
   scope :rejected_count, lambda { where(workflow_state: 'rejected').count }
@@ -7,6 +8,18 @@ class LineItem < ActiveRecord::Base
   scope :unpaid_count, lambda { where(workflow_state: 'unpaid').count }
   scope :unshipped_count, lambda { where(workflow_state: 'unshipped').count }
   scope :shipped_count, lambda { where(workflow_state: 'shipped').count }
+
+# scope :items_in_cart, lambda { where("workflow_state = 'uncommited' OR workflow_state = 'rejected' OR workflow_state = 'unverified' OR workflow_state = 'unquoted' OR workflow_state = 'unpaid'") }
+# scope :items_in_cart, lambda { |states|
+  scope :items_in_cart, lambda {
+    states = ['uncommited', 'rejected', 'unverified', 'unquoted', 'unpaid']
+    conditions = []
+    states.each do |state|
+      conditions << "workflow_state = '#{state}'"
+    end
+    where(conditions.join(" or "))
+  }
+
 
   # association macros
   belongs_to :insurance
