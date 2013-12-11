@@ -10,7 +10,7 @@ class Insurance < ActiveRecord::Base
   # validation macros
   validates :title, :presence => true, length: { in: 4..50 }
   validates :price, numericality: true
-  validates :workflow_state, :presence => true
+  validates :aasm_state, :presence => true
   validates :company_id, :presence => true
 
   before_destroy :ensure_not_referenced_by_any_line_item
@@ -27,13 +27,18 @@ class Insurance < ActiveRecord::Base
     end
   end
 
-# include Workflow
-# workflow do
-#   state :online do
-#     event :offshelf, :transitions_to => :offline
-#   end
-#   state :offline do
-#     event :onshelf, :transitions_to => :online
-#   end
-# end
+  include AASM
+
+  aasm do
+    state :online, :initial => true
+    state :offline
+
+    event :put_down do
+      transitions :from => :online, :to => :offline
+    end
+
+    event :put_up do
+      transitions :from => :offline, :to => :online
+    end
+  end
 end

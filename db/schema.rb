@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20131208175717) do
     t.string   "title"
     t.text     "synopsis"
     t.decimal  "price"
-    t.string   "workflow_state"
+    t.string   "aasm_state"
     t.integer  "company_id"
     t.integer  "profile_id"
     t.string   "profile_type"
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20131208175717) do
     t.integer  "insurance_id"
     t.integer  "cart_id"
     t.integer  "order_id"
-    t.string   "workflow_state"
+    t.string   "aasm_state"
     t.decimal  "price"
-    t.integer  "quantity",       default: 1, null: false
+    t.integer  "quantity",     default: 1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -102,12 +102,14 @@ ActiveRecord::Schema.define(version: 20131208175717) do
   end
 
   create_table "orders", force: true do |t|
+    t.integer  "user_id"
     t.datetime "deal_time"
     t.string   "address"
-    t.string   "number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "park_profiles", force: true do |t|
     t.string   "name"

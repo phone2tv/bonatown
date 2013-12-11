@@ -6,7 +6,7 @@ class LineItemsController < ApplicationController
   def index
     state = params[:state]
     @line_items = LineItem.all
-    @line_items = @line_items.where(workflow_state: state) if state.present?
+    @line_items = @line_items.where(aasm_state: state) if state.present?
   end
 
   # GET /line_items/1
@@ -75,7 +75,7 @@ class LineItemsController < ApplicationController
   end
 
   def cancel
-    if @line_item.uncommited?
+    if @line_item.uncommitted?
       @line_item.destroy
     else
       @line_item.cancel!

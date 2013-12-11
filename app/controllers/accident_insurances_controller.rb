@@ -70,6 +70,6 @@ class AccidentInsurancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_insurance_params
-      params.require(:accident_insurance).permit(:body, :insurance_attributes => [:title, :synopsis, :price, :workflow_state, :company_id, :profile_id, :profile_type])
+      params.require(:accident_insurance).permit(:body, :insurance_attributes => [:title, :synopsis, :price, :aasm_state, :company_id, :profile_id, :profile_type])
     end
 end

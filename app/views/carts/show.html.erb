@@ -23,7 +23,7 @@
         <tr>
           <th><%= t('activerecord.attributes.line_item.insurance_id') %></th>
           <th><%= t('activerecord.attributes.line_item.order_id') %></th>
-          <th><%= t('activerecord.attributes.line_item.workflow_state') %></th>
+          <th><%= t('activerecord.attributes.line_item.aasm_state') %></th>
           <th><%= t('activerecord.attributes.line_item.price') %></th>
           <th><%= t('activerecord.attributes.line_item.quantity') %></th>
           <th>Actions</th>
@@ -35,7 +35,7 @@
           <tr>
             <td><%= link_to line_item.insurance.title, line_item.insurance.profile %></td>
             <td><%= link_to_if line_item.order.present?, line_item.id, line_item.order  %></td>
-            <td><%= t('line_item.state.' + line_item.workflow_state) %></td>
+            <td><%= t('line_item.state.' + line_item.aasm_state) %></td>
             <td><%= line_item.price %></td>
             <td><%= line_item.quantity %></td>
             <td>

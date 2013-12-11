@@ -19,7 +19,7 @@
           <th><%= t('activerecord.attributes.insurance.title') %></th>
           <th><%= t('activerecord.attributes.insurance.synopsis') %></th>
           <th><%= t('activerecord.attributes.insurance.price') %></th>
-          <th><%= t('activerecord.attributes.insurance.workflow_state') %></th>
+          <th><%= t('activerecord.attributes.insurance.aasm_state') %></th>
           <th><%= t('activerecord.attributes.insurance.company_id') %></th>
           <th><%= t('activerecord.attributes.accident_insurance.body') %></th>
           <th></th>
@@ -31,7 +31,7 @@
             <td><%= link_to accident_insurance.insurance.title, accident_insurance %></td>
             <td><%= accident_insurance.insurance.synopsis %></td>
             <td><%= accident_insurance.insurance.price %></td>
-            <td><%= accident_insurance.insurance.workflow_state %></td>
+            <td><%= accident_insurance.insurance.aasm_state %></td>
             <td><%= accident_insurance.insurance.company.name if accident_insurance.insurance.company.present? %></td>
             <td><%= accident_insurance.body %></td>
             <td><%= link_to 'Edit', edit_accident_insurance_path(accident_insurance) %> / <%= link_to 'Destroy', accident_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>

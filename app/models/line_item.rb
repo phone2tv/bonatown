@@ -1,21 +1,21 @@
 class LineItem < ActiveRecord::Base
   # the default scope first (if any)
-  scope :cancelled_count, lambda { where(workflow_state: 'cancelled').count }
-  scope :uncommited_count, lambda { where(workflow_state: 'uncommitted').count }
-  scope :committed_count, lambda { where(workflow_state: 'committed').count }
-  scope :rejected_count, lambda { where(workflow_state: 'rejected').count }
-  scope :verified_count, lambda { where(workflow_state: 'verified').count }
-  scope :quoted_count, lambda { where(workflow_state: 'quoted').count }
-  scope :paid_count, lambda { where(workflow_state: 'paid').count }
-  scope :shipped_count, lambda { where(workflow_state: 'shipped').count }
+  scope :cancelled_count, lambda { where(aasm_state: 'cancelled').count }
+  scope :uncommitted_count, lambda { where(aasm_state: 'uncommitted').count }
+  scope :committed_count, lambda { where(aasm_state: 'committed').count }
+  scope :rejected_count, lambda { where(aasm_state: 'rejected').count }
+  scope :verified_count, lambda { where(aasm_state: 'verified').count }
+  scope :quoted_count, lambda { where(aasm_state: 'quoted').count }
+  scope :paid_count, lambda { where(aasm_state: 'paid').count }
+  scope :shipped_count, lambda { where(aasm_state: 'shipped').count }
 
-# scope :items_in_cart, lambda { where("workflow_state = 'uncommitted' OR workflow_state = 'rejected' OR workflow_state = 'committed' OR workflow_state = 'verified' OR workflow_state = 'quoted'") }
+# scope :items_in_cart, lambda { where("aasm_state = 'uncommitted' OR aasm_state = 'rejected' OR aasm_state = 'committed' OR aasm_state = 'verified' OR aasm_state = 'quoted'") }
 # scope :items_in_cart, lambda { |states|
   scope :items_in_cart, lambda {
     states = ['uncommitted', 'committed', 'rejected', 'verified', 'quoted']
     conditions = []
     states.each do |state|
-      conditions << "workflow_state = '#{state}'"
+      conditions << "aasm_state = '#{state}'"
     end
     where(conditions.join(" or "))
   }
@@ -24,7 +24,7 @@ class LineItem < ActiveRecord::Base
     states = ['cancelled', 'paid', 'shipped']
     conditions = []
     states.each do |state|
-      conditions << "workflow_state = '#{state}'"
+      conditions << "aasm_state = '#{state}'"
     end
     where(conditions.join(" or "))
   }
@@ -96,7 +96,7 @@ class LineItem < ActiveRecord::Base
 
   include AASM
 
-  aasm :column => 'workflow_state' do
+  aasm :column => 'aasm_state' do
     state :uncommitted, :initial => true
     state :committed
     state :cancelled

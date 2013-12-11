@@ -26,7 +26,7 @@
         <ul>
           <li><%= link_to "我的购物车 (#{current_user.profile.cart.line_items.items_in_cart.size})", cart_path %>
           <ul>
-            <li><%= link_to "未提交订单 (#{LineItem.uncommited_count})", line_items_path(state: 'uncommitted') %></li>
+            <li><%= link_to "未提交订单 (#{LineItem.uncommitted_count})", line_items_path(state: 'uncommitted') %></li>
             <li><%= link_to "已提交订单 (#{LineItem.committed_count})", line_items_path(state: 'committed') %></li>
             <li><%= link_to "被拒绝订单 (#{LineItem.rejected_count})", line_items_path(state: 'rejected') %></li>
             <li><%= link_to "已审核订单 (#{LineItem.verified_count})", line_items_path(state: 'verified') %></li>
@@ -51,7 +51,7 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><%= link_to "未提交订单 (#{LineItem.uncommited_count})", line_items_path(state: 'uncommitted') %></li>
+        <li><%= link_to "未提交订单 (#{LineItem.uncommitted_count})", line_items_path(state: 'uncommitted') %></li>
         <li><%= link_to "已提交订单 (#{LineItem.committed_count})", line_items_path(state: 'committed') %></li>
         <li><%= link_to "被拒绝订单 (#{LineItem.rejected_count})", line_items_path(state: 'rejected') %></li>
         <li><%= link_to "已审核订单 (#{LineItem.verified_count})", line_items_path(state: 'verified') %></li>

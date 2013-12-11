@@ -4,7 +4,7 @@ class CreateInsurances < ActiveRecord::Migration
       t.string :title
       t.text :synopsis
       t.decimal :price
-      t.string :workflow_state
+      t.string :aasm_state
       t.references :company, index: true
       t.references :profile, polymorphic: true, index: true
 

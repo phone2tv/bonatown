@@ -119,4 +119,5 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :can?
+  helper_method :current_cart
 end

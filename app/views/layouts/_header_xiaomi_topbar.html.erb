@@ -31,7 +31,7 @@
           <div class='col-md-4'>
             <% if (user_signed_in? and current_user.has_role?(:customer)) %>
               <%= link_to cart_path do %>
-                <span class="glyphicon glyphicon-shopping-cart"></span> <span>购物车</span> <span><strong><%= current_user.profile.cart.line_items.items_in_cart.size %></strong></span>
+                <span class="glyphicon glyphicon-shopping-cart"></span> <span>购物车</span> <span><strong><%= current_cart.line_items.items_in_cart.size %></strong></span>
               <% end %>
             <% else %>
               <span class="glyphicon glyphicon-shopping-cart"></span> <span>购物车</span>
