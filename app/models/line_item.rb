@@ -20,6 +20,15 @@ class LineItem < ActiveRecord::Base
     where(conditions.join(" or "))
   }
 
+  scope :items_out_cart, lambda {
+    states = ['cancelled', 'paid', 'shipped']
+    conditions = []
+    states.each do |state|
+      conditions << "workflow_state = '#{state}'"
+    end
+    where(conditions.join(" or "))
+  }
+
 
   # association macros
   belongs_to :insurance
