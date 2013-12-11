@@ -133,14 +133,14 @@ zh-CN:
     include_blank: "不属于任何园区"
   line_item:
     state:
-      uncommited: "未提交"
       cancelled: "已取消"
-      unverified: "未审核"
-      unquoted: "未报价"
-      unpaid: "未付款"
-      unshipped: "未出单"
-      shipped: "已出单"
+      uncommitted: "未提交"
+      committed: "已提交"
       rejected: "被拒绝"
+      verified: "已审核"
+      quoted: "已报价"
+      paid: "已付款"
+      shipped: "已出单"
     action:
       commit: "提交"
       cancel: "取消"

@@ -133,14 +133,14 @@ en:
     include_blank: "Not in a Park"
   line_item:
     state:
-      uncommited: "uncommited"
       cancelled: "cancelled"
-      unverified: "unverified"
-      unquoted: "unquoted"
-      unpaid: "unpaid"
-      unshipped: "unshipped"
-      shipped: "shipped"
+      uncommitted: "uncommitted"
+      committed: "committed"
       rejected: "rejected"
+      verified: "verified"
+      quoted: "quoted"
+      paid: "paid"
+      shipped: "shipped"
     action:
       commit: "commit"
       cancel: "cancel"

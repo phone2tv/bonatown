@@ -13,16 +13,6 @@ class Insurance < ActiveRecord::Base
   validates :workflow_state, :presence => true
   validates :company_id, :presence => true
 
-  include Workflow
-  workflow do
-    state :online do
-      event :offshelf, :transitions_to => :offline
-    end
-    state :offline do
-      event :onshelf, :transitions_to => :online
-    end
-  end
-
   before_destroy :ensure_not_referenced_by_any_line_item
 
   private
@@ -36,4 +26,14 @@ class Insurance < ActiveRecord::Base
       return false
     end
   end
+
+# include Workflow
+# workflow do
+#   state :online do
+#     event :offshelf, :transitions_to => :offline
+#   end
+#   state :offline do
+#     event :onshelf, :transitions_to => :online
+#   end
+# end
 end

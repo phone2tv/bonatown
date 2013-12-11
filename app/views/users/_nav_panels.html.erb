@@ -23,16 +23,27 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><%= link_to "我的购物车", cart_path %></li>
-        <li><%= link_to "我的订单", line_items_path %></li>
-        <li><%= link_to "未提交订单 (#{LineItem.uncommited_count})", line_items_path(state: 'uncommited') %></li>
-        <li><%= link_to "被拒绝订单 (#{LineItem.rejected_count})", line_items_path(state: 'rejected') %></li>
-        <li><%= link_to "已取消订单 (#{LineItem.cancelled_count})", line_items_path(state: 'cancelled') %></li>
-        <li><%= link_to "未审核订单 (#{LineItem.unverified_count})", line_items_path(state: 'unverified') %></li>
-        <li><%= link_to "未报价订单 (#{LineItem.unquoted_count})", line_items_path(state: 'unquoted') %></li>
-        <li><%= link_to "未付款订单 (#{LineItem.unpaid_count})", line_items_path(state: 'unpaid') %></li>
-        <li><%= link_to "未出单订单 (#{LineItem.unshipped_count})", line_items_path(state: 'unshipped') %></li>
-        <li><%= link_to "已出单订单 (#{LineItem.shipped_count})", line_items_path(state: 'shipped') %></li>
+        <% if current_user.has_role? :customer %>
+          <li><%= link_to "我的购物车 (#{current_user.profile.cart.line_items.items_in_cart.size})", cart_path %></li>
+          <li><%= link_to "我的订单 (#{current_user.profile.cart.line_items.count})", line_items_path %>
+          <ul>
+            <li><%= link_to "已付款订单 (#{LineItem.paid_count})", line_items_path(state: 'paid') %></li>
+            <li><%= link_to "已出单订单 (#{LineItem.shipped_count})", line_items_path(state: 'shipped') %></li>
+            <li><%= link_to "已取消订单 (#{LineItem.cancelled_count})", line_items_path(state: 'cancelled') %></li>
+          </ul>
+          </li>
+        <% end %>
+        <li> <%= link_to '待处理订单项目', '#' %>
+        <ul>
+          <li><%= link_to "未提交订单 (#{LineItem.uncommited_count})", line_items_path(state: 'uncommitted') %></li>
+          <li><%= link_to "已提交订单 (#{LineItem.committed_count})", line_items_path(state: 'committed') %></li>
+          <li><%= link_to "被拒绝订单 (#{LineItem.rejected_count})", line_items_path(state: 'rejected') %></li>
+          <li><%= link_to "已审核订单 (#{LineItem.verified_count})", line_items_path(state: 'verified') %></li>
+          <li><%= link_to "已报价订单 (#{LineItem.quoted_count})", line_items_path(state: 'quoted') %></li>
+          <li><%= link_to "已付款订单 (#{LineItem.paid_count})", line_items_path(state: 'paid') %></li>
+          <li><%= link_to "已出单订单 (#{LineItem.shipped_count})", line_items_path(state: 'shipped') %></li>
+        </ul>
+        </li>
       </ul>
     </div>
   </div> <!-- panel -->
