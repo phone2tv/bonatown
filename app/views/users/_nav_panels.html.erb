@@ -24,7 +24,7 @@
       </div>
       <div class="panel-body">
         <ul>
-          <li><%= link_to "我的购物车 (#{current_user.profile.cart.line_items.items_in_cart.size})", cart_path %>
+          <li><%= link_to "我的购物车 (#{current_user.cart.line_items.items_in_cart.size})", cart_path %>
           <ul>
             <li><%= link_to "未提交订单 (#{LineItem.uncommitted_count})", line_items_path(state: 'uncommitted') %></li>
             <li><%= link_to "已提交订单 (#{LineItem.committed_count})", line_items_path(state: 'committed') %></li>
@@ -33,7 +33,7 @@
             <li><%= link_to "已报价订单 (#{LineItem.quoted_count})", line_items_path(state: 'quoted') %></li>
           </ul>
           </li>
-          <li><%= link_to "我的订单 (#{current_user.profile.cart.line_items.items_out_cart.count})", line_items_path %>
+          <li><%= link_to "我的订单 (#{current_user.cart.line_items.items_out_cart.count})", line_items_path %>
           <ul>
             <li><%= link_to "已付款订单 (#{LineItem.paid_count})", line_items_path(state: 'paid') %></li>
             <li><%= link_to "已出单订单 (#{LineItem.shipped_count})", line_items_path(state: 'shipped') %></li>

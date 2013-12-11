@@ -27,12 +27,12 @@ ActiveRecord::Schema.define(version: 20131208175717) do
   end
 
   create_table "carts", force: true do |t|
-    t.integer  "customer_profile_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "carts", ["customer_profile_id"], name: "index_carts_on_customer_profile_id"
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id"
 
   create_table "companies", force: true do |t|
     t.string   "name"

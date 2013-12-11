@@ -13,6 +13,8 @@ class User < ActiveRecord::Base
 
   # association macros
   belongs_to :profile, polymorphic: true
+  has_one :cart
+  has_many :orders
 
   # validation macros
 # validates :terms_of_service, :presence => true, :acceptance => true, on: :create

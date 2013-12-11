@@ -1,7 +1,7 @@
 class Cart < ActiveRecord::Base
   # association macros
   has_many :line_items, dependent: :destroy
-  belongs_to :customer_profile
+  belongs_to :user
 
   def add_insurance(line_item_params)
     line_items.build(line_item_params)
