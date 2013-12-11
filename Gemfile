@@ -58,4 +58,4 @@ gem "rolify",        :git => "git://github.com/EppO/rolify.git"
 
 gem 'bootstrap-sass', '~> 3.0.0'
 
-gem 'workflow'
+gem 'aasm'
