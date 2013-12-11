@@ -40,10 +40,10 @@
             <td><%= line_item.quantity %></td>
             <td>
               <div><%= link_to_if line_item.can_commit?, t('line_item.action.commit'), commit_line_item_path(line_item), method: :put %></div>
-              <div><%= link_to_if line_item.can_cancel?, t('line_item.action.cancel'), cancel_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_cancel?, t('line_item.action.cancel'), cancel_line_item_path(line_item), method: :put, data: { confirm: 'Are you sure?' } %></div>
               <div><%= link_to_if line_item.can_verify?, t('line_item.action.verify'), verify_line_item_path(line_item), method: :put %></div>
               <div><%= link_to_if line_item.can_quote?,  t('line_item.action.quote'), quote_line_item_path(line_item), method: :put %></div>
-              <div><%= link_to_if line_item.can_reject?, t('line_item.action.reject'), reject_line_item_path(line_item), method: :put %></div>
+              <div><%= link_to_if line_item.can_reject?, t('line_item.action.reject'), reject_line_item_path(line_item), method: :put, data: { confirm: 'Are you sure?' } %></div>
               <div><%= link_to_if line_item.can_pay?,    t('line_item.action.pay'), pay_line_item_path(line_item), method: :put %></div>
               <div><%= link_to_if line_item.can_ship?,   t('line_item.action.ship'), ship_line_item_path(line_item), method: :put %></div>
             </td>

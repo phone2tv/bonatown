@@ -75,7 +75,11 @@ class LineItemsController < ApplicationController
   end
 
   def cancel
-    @line_item.cancel!
+    if @line_item.uncommited?
+      @line_item.destroy
+    else
+      @line_item.cancel!
+    end
     respond_to do |format|
       format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
