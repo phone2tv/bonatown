@@ -4,7 +4,8 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+  # @orders = Order.all
+    @orders = current_user.orders
   end
 
   # GET /orders/1
@@ -24,7 +25,9 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = Order.new(order_params)
+  # @order = Order.new(order_params)
+    @order = current_user.orders.build(order_params)
+    @order.line_items << current_cart.line_items.where(aasm_state: 'quoted')
 
     respond_to do |format|
       if @order.save
@@ -69,6 +72,7 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:deal_time, :address)
+      params.require(:order).permit(:address)
+    # params.require(:order).permit(:deal_time, :address)
     end
 end

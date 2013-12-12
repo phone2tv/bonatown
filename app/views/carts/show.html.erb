@@ -15,7 +15,7 @@
   <div class='col-md-10'>
     <p>
     <%= link_to '清空购物车', cart_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to '结算', cart_path, class: 'btn btn-success' %>
+    <%= link_to '结算', new_order_path, class: 'btn btn-success' %>
     <%# button_to 'Empty cart', cart_path, class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' %>
     </p>
     <table class="table table-bordered table-hover">

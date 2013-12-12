@@ -17,7 +17,7 @@ class LineItem < ActiveRecord::Base
     states.each do |state|
       conditions << "aasm_state = '#{state}'"
     end
-    where(conditions.join(" or "))
+    where(conditions.join(" or ")).where(order_id: nil)
   }
 
   scope :items_out_cart, lambda {
@@ -34,6 +34,9 @@ class LineItem < ActiveRecord::Base
   belongs_to :insurance
   belongs_to :cart
   belongs_to :order
+
+  # validation macros
+  validates :aasm_state, :presence => true
 
   # STATE:
   #   uncommitted(init), cancelled, rejected, committed, verified, quoted, paid, shipped

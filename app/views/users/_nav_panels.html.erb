@@ -40,6 +40,7 @@
             <li><%= link_to "已取消订单 (#{LineItem.cancelled_count})", line_items_path(state: 'cancelled') %></li>
           </ul>
           </li>
+          <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path %>
         </ul>
       </div>
     </div> <!-- panel -->

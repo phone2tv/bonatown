@@ -1,29 +1,19 @@
-<h1>Listing orders</h1>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Deal time</th>
-      <th>Address</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
-      <tr>
-        <td><%= order.deal_time %></td>
-        <td><%= order.address %></td>
-        <td><%= link_to 'Show', order %></td>
-        <td><%= link_to 'Edit', edit_order_path(order) %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Order', new_order_path %>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+    <%= render partial: 'orders/order', collection: @orders, as: :order %>
+    <%# render collection: @orders, as: :order %>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->

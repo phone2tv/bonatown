@@ -1,14 +1,18 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
 
-<p>
-  <strong>Deal time:</strong>
-  <%= @order.deal_time %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+    <%= render 'order', order: @order %>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->
