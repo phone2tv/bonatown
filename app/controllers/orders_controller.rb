@@ -5,12 +5,13 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.all
+  # @orders = Order.all
+    @orders = current_user.orders
 
     state = params[:state]
-    @line_items = @line_items.where(aasm_state: state) if state.present?
+    @orders = @orders.where(aasm_state: state) if state.present?
 
-    @orders = current_user.orders.order(created_at: :desc)
+    @orders = @orders.order(created_at: :desc)
   end
 
   # GET /orders/1
