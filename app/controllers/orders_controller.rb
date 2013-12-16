@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
   # @orders = Order.all
-    @orders = current_user.orders
+    @orders = current_user.orders.order(created_at: :desc)
   end
 
   # GET /orders/1
