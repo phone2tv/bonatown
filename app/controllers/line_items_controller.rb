@@ -11,7 +11,7 @@ class LineItemsController < ApplicationController
     @line_items = @line_items.where(user_id: user_id) if user_id.present?
     order_id = params[:order_id]
     if (order_id.present?)
-      if (order_id == true)
+      if (order_id == 'true')
         @line_items = @line_items.where.not(order_id: nil)
       else
         @line_items = @line_items.where(order_id: nil)
