@@ -11,6 +11,8 @@ Insurer::Application.routes.draw do
   resources :orders do
     member do
       put 'pay'
+      put 'ship'
+      put 'cancel'
     end
   end
 

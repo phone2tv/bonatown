@@ -18,15 +18,15 @@
           </li>
           <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path %>
           <ul>
-            <li><%= link_to "未付款订单项 (#{current_user.ordered_line_items.quoted.count})", line_items_path(state: 'quoted', user_id: current_user.id, order_id: true) %></li>
-            <li><%= link_to "已付款订单项 (#{current_user.ordered_line_items.paid.count})", line_items_path(state: 'paid', user_id: current_user.id, order_id: true) %></li>
-            <li><%= link_to "已出单订单项 (#{current_user.ordered_line_items.shipped.count})", line_items_path(state: 'shipped', user_id: current_user.id, order_id: true) %></li>
-            <li><%= link_to "已取消订单项 (#{current_user.ordered_line_items.cancelled.count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: true) %></li>
+            <li><%= link_to "未付款订单 (#{current_user.orders.unpaid.count})", line_items_path(state: 'unpaid') %></li>
+            <li><%= link_to "已付款订单 (#{current_user.orders.paid.count})", line_items_path(state: 'paid') %></li>
+            <li><%= link_to "已出单订单 (#{current_user.orders.shipped.count})", line_items_path(state: 'shipped') %></li>
+            <li><%= link_to "已取消订单 (#{current_user.orders.cancelled.count})", line_items_path(state: 'cancelled') %></li>
           </ul>
           </li>
           <li><%= link_to "已取消订单", '#' %>
           <ul>
-            <li><%= link_to "已取消订单项 (#{current_user.line_items.cancelled.where(order_id: nil).count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: false) %></li>
+            <li><%= link_to "已取消订单项 (#{current_user.line_items.cancelled.where(order_id: nil).count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: true) %></li>
           </ul>
         </ul>
       </div>

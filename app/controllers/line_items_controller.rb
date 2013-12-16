@@ -4,19 +4,16 @@ class LineItemsController < ApplicationController
   # GET /line_items
   # GET /line_items.json
   def index
-    state = params[:state]
     @line_items = LineItem.all
+
+    state = params[:state]
     @line_items = @line_items.where(aasm_state: state) if state.present?
+
     user_id = params[:user_id]
     @line_items = @line_items.where(user_id: user_id) if user_id.present?
+
     order_id = params[:order_id]
-    if (order_id.present?)
-      if (order_id == 'true')
-        @line_items = @line_items.where.not(order_id: nil)
-      else
-        @line_items = @line_items.where(order_id: nil)
-      end
-    end
+    @line_items = @line_items.where(order_id: nil) if order_id.present?
   end
 
   # GET /line_items/1

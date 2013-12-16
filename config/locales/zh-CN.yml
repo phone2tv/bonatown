@@ -82,6 +82,9 @@ zh-CN:
         aasm_state: "状态"
         price: "购买时价格"
         quantity: "数量"
+      order:
+        aasm_state: "状态"
+        address: "邮寄地址"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
@@ -149,3 +152,13 @@ zh-CN:
       reject: "拒绝"
       pay: "付款"
       ship: "发货"
+  order:
+    state:
+      unpaid: "未付款"
+      paid: "已付款"
+      shipped: "已出单"
+      cancelled: "已取消"
+    action:
+      pay: "付款"
+      ship: "发货"
+      cancel: "取消"

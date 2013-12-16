@@ -105,7 +105,7 @@ ActiveRecord::Schema.define(version: 20131208175717) do
 
   create_table "orders", force: true do |t|
     t.integer  "user_id"
-    t.datetime "deal_time"
+    t.string   "aasm_state"
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"

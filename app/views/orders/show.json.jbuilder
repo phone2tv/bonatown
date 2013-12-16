@@ -1,1 +1,1 @@
-json.extract! @order, :deal_time, :address, :created_at, :updated_at
+json.extract! @order, :aasm_state, :address, :created_at, :updated_at

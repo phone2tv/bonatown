@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-  # @orders = Order.all
+    @orders = Order.all
+
+    state = params[:state]
+    @line_items = @line_items.where(aasm_state: state) if state.present?
+
     @orders = current_user.orders.order(created_at: :desc)
   end
 
@@ -70,9 +74,28 @@ class OrdersController < ApplicationController
   end
 
   def pay
+    @order.pay!
     @order.line_items.each { |line_item| line_item.pay! }
     respond_to do |format|
-      format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+      format.html { redirect_to :back, notice: 'Order was successfully paid.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def ship
+    @order.ship!
+    @order.line_items.each { |line_item| line_item.ship! }
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'Order was successfully shipped.' }
+      format.json { head :no_content }
+    end
+  end
+
+  def cancel
+    @order.cancel!
+    @order.line_items.each { |line_item| line_item.cancel! }
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
       format.json { head :no_content }
     end
   end
@@ -86,6 +109,5 @@ class OrdersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
       params.require(:order).permit(:address)
-    # params.require(:order).permit(:deal_time, :address)
     end
 end

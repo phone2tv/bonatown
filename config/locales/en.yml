@@ -82,6 +82,9 @@ en:
         aasm_state: "State"
         price: "Deal Price"
         quantity: "Quantity"
+      order:
+        aasm_state: "State"
+        address: "Address"
   datetime:
     formats:
       default: ! '%Y-%m-%d'
@@ -149,3 +152,13 @@ en:
       reject: "reject"
       pay: "pay"
       ship: "ship"
+  order:
+    state:
+      unpaid: "unpaid"
+      paid: "paid"
+      shipped: "shipped"
+      cancelled: "cancelled"
+    action:
+      pay: "pay"
+      ship: "ship"
+      cancel: "cancel"
