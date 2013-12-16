@@ -2,7 +2,9 @@ class CartsController < ApplicationController
   def show
     if current_user.has_role? :customer
       @cart = current_cart
-      @line_items = @cart.line_items.items_in_cart
+      @line_items = @cart.line_items
+      state = params[:state]
+      @line_items = @line_items.where(aasm_state: state) if state.present?
     else
       redirect_to root_path, alert: "only customer can use shopping cart."
     end

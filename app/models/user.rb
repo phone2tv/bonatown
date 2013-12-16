@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   belongs_to :profile, polymorphic: true
   has_one :cart
   has_many :orders
+  has_many :line_items
+  has_many :ordered_line_items, through: :orders, source: :line_items
 
   # validation macros
 # validates :terms_of_service, :presence => true, :acceptance => true, on: :create

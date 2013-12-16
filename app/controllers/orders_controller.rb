@@ -27,7 +27,11 @@ class OrdersController < ApplicationController
   def create
   # @order = Order.new(order_params)
     @order = current_user.orders.build(order_params)
-    @order.line_items << current_cart.line_items.where(aasm_state: 'quoted')
+  # @order.line_items << current_cart.line_items.where(aasm_state: 'quoted')
+    current_cart.line_items.where(aasm_state: 'quoted').each do |line_item|
+      line_item.cart = nil
+      @order.line_items << line_item
+    end
 
     respond_to do |format|
       if @order.save

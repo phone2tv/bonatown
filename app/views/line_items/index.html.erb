@@ -16,6 +16,7 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
+          <th><%= t('activerecord.attributes.line_item.id') %></th>
           <th><%= t('activerecord.attributes.line_item.insurance_id') %></th>
           <th><%= t('activerecord.attributes.line_item.order_id') %></th>
           <th><%= t('activerecord.attributes.line_item.aasm_state') %></th>
@@ -28,8 +29,9 @@
       <tbody>
         <% @line_items.each do |line_item| %>
           <tr>
+            <td><%= link_to line_item.id, line_item %></td>
             <td><%= link_to line_item.insurance.title, line_item.insurance.profile %></td>
-            <td><%= link_to_if line_item.order.present?, line_item.id, line_item.order  %></td>
+            <td><%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.id), line_item.order  %></td>
             <td><%= t('line_item.state.' + line_item.aasm_state) %></td>
             <td><%= line_item.price %></td>
             <td><%= line_item.quantity %></td>
@@ -49,5 +51,7 @@
         <% end %>
       </tbody>
     </table>
+
+    <%= debug params %>
   </div> <!-- col-md-10 -->
 </div> <!-- row -->

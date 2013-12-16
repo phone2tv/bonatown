@@ -9,8 +9,6 @@ class LineItem < ActiveRecord::Base
   scope :paid_count, lambda { where(aasm_state: 'paid').count }
   scope :shipped_count, lambda { where(aasm_state: 'shipped').count }
 
-# scope :items_in_cart, lambda { where("aasm_state = 'uncommitted' OR aasm_state = 'rejected' OR aasm_state = 'committed' OR aasm_state = 'verified' OR aasm_state = 'quoted'") }
-# scope :items_in_cart, lambda { |states|
   scope :items_in_cart, lambda {
     states = ['uncommitted', 'committed', 'rejected', 'verified', 'quoted']
     conditions = []
@@ -32,6 +30,7 @@ class LineItem < ActiveRecord::Base
 
   # association macros
   belongs_to :insurance
+  belongs_to :user
   belongs_to :cart
   belongs_to :order
 

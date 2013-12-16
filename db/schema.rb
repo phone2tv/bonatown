@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(version: 20131208175717) do
 
   create_table "line_items", force: true do |t|
     t.integer  "insurance_id"
+    t.integer  "user_id"
     t.integer  "cart_id"
     t.integer  "order_id"
     t.string   "aasm_state"
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20131208175717) do
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
   add_index "line_items", ["insurance_id"], name: "index_line_items_on_insurance_id"
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["user_id"], name: "index_line_items_on_user_id"
 
   create_table "manager_profiles", force: true do |t|
     t.string   "name"

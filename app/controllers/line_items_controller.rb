@@ -7,6 +7,16 @@ class LineItemsController < ApplicationController
     state = params[:state]
     @line_items = LineItem.all
     @line_items = @line_items.where(aasm_state: state) if state.present?
+    user_id = params[:user_id]
+    @line_items = @line_items.where(user_id: user_id) if user_id.present?
+    order_id = params[:order_id]
+    if (order_id.present?)
+      if (order_id == true)
+        @line_items = @line_items.where.not(order_id: nil)
+      else
+        @line_items = @line_items.where(order_id: nil)
+      end
+    end
   end
 
   # GET /line_items/1
@@ -30,6 +40,7 @@ class LineItemsController < ApplicationController
     @cart = current_cart
   # @insurance = Insurance.find(params[:insurance_id])
     @line_item = @cart.add_insurance(line_item_params)
+    @line_item.user = current_user
 
     respond_to do |format|
       if @line_item.save
@@ -78,6 +89,7 @@ class LineItemsController < ApplicationController
     if @line_item.uncommitted?
       @line_item.destroy
     else
+      @line_item.cart = nil
       @line_item.cancel!
     end
     respond_to do |format|
