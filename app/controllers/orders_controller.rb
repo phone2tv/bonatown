@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+# before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, except: [:index, :new, :create]
 
   # GET /orders
   # GET /orders.json
@@ -64,6 +65,14 @@ class OrdersController < ApplicationController
     @order.destroy
     respond_to do |format|
       format.html { redirect_to orders_url }
+      format.json { head :no_content }
+    end
+  end
+
+  def pay
+    @order.line_items.each { |line_item| line_item.pay! }
+    respond_to do |format|
+      format.html { redirect_to @order, notice: 'Order was successfully updated.' }
       format.json { head :no_content }
     end
   end

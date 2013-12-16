@@ -8,7 +8,11 @@ Insurer::Application.routes.draw do
   end
 
   resource :cart, only: [:show, :destroy]
-  resources :orders
+  resources :orders do
+    member do
+      put 'pay'
+    end
+  end
 
   devise_for :users
 

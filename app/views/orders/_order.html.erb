@@ -1,5 +1,6 @@
 <p>
 <strong>ORDER ID:</strong> <%= order.id %>, 
+<%= link_to_if order.line_items.first.may_pay?,    t('line_item.action.pay'), pay_order_path(order), method: :put %> |
 <%= link_to 'Show', order %> |
 <%= link_to 'Edit', edit_order_path(order) %> |
 <%= link_to 'Back', orders_path %>
