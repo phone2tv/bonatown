@@ -1,47 +1,11 @@
 <div class="user">
 
   <%= render 'shared/mgr_panel_myorder.html.erb' %>
-
   <%= render 'shared/mgr_panel_orders.html.erb' %>
-
   <%= render 'shared/mgr_panel_users.html.erb' %>
-
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h3 class="panel-title">园区管理</h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        <li><%= link_to '园区列表', parks_path %></li>
-      </ul>
-    </div>
-  </div> <!-- panel -->
-
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h3 class="panel-title">保险公司管理</h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        <li><%= link_to '保险公司列表', companies_path %></li>
-        <li><%= link_to '添加'+t('activerecord.models.company'), new_company_path %></li>
-      </ul>
-    </div>
-  </div> <!-- panel -->
-
-  <div class="panel panel-danger">
-    <div class="panel-heading">
-      <h3 class="panel-title">保险管理</h3>
-    </div>
-    <div class="panel-body">
-      <ul>
-        <li><%= link_to '意外险列表', accident_insurances_path %></li>
-        <li><%= link_to '健康险列表', health_insurances_path %></li>
-        <li><%= link_to '添加'+t('activerecord.models.accident_insurance'), new_accident_insurance_path %></li>
-        <li><%= link_to '添加'+t('activerecord.models.health_insurance'), new_health_insurance_path %></li>
-      </ul>
-    </div>
-  </div> <!-- panel -->
+  <%= render 'shared/mgr_panel_parks.html.erb' %>
+  <%= render 'shared/mgr_panel_companies.html.erb' %>
+  <%= render 'shared/mgr_panel_insurances.html.erb' %>
 
   <% if user_signed_in? %>
     <div class="panel panel-danger">
