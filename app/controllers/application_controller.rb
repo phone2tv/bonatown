@@ -62,6 +62,10 @@ class ApplicationController < ActionController::Base
   def can?(action, object, parent=nil)
     user = current_user
 
+    if (user.has_role? :admin)
+      return true
+    end
+
     if (object.is_a? User)
       if (action == :index or action == :show)
         return true

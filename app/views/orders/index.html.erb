@@ -10,7 +10,7 @@
 
 <div class="row">
   <div class='col-md-2'>
-    <%= render partial: 'users/nav_panels', locals: { user: current_user } %>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
   </div>
   <div class='col-md-10'>
     <%= render partial: 'orders/order', collection: @orders, as: :order %>

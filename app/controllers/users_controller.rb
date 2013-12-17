@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
-  skip_before_filter :authenticate_user!, :only => [:home, :index, :show]
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-# before_action :set_user, except: [:home, :index, :new, :create_user, :create_moderator, :new_admin, :create_admin, :new_manager, :create_manager, :new_quoter, :create_quoter]
 
 # before_action :authorize_user!
 

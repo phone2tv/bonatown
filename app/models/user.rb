@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  include Roler
+
   # the default scope first (if any)
   scope :admins, lambda { where(profile_type: 'AdminProfile') }
   scope :moderators, lambda { where(profile_type: 'ModeratorProfile') }

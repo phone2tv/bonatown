@@ -1,0 +1,32 @@
+<% if current_user.has_role? :customer %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">订单管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><%= link_to "我的购物车 (#{current_user.cart.line_items.size})", cart_path %>
+        <ul>
+          <li><%= link_to "未提交订单 (#{current_cart.line_items.uncommitted.count})", cart_path(state: 'uncommitted') %></li>
+          <li><%= link_to "已提交订单 (#{current_cart.line_items.committed.count})", cart_path(state: 'committed') %></li>
+          <li><%= link_to "被拒绝订单 (#{current_cart.line_items.rejected.count})", cart_path(state: 'rejected') %></li>
+          <li><%= link_to "已审核订单 (#{current_cart.line_items.verified.count})", cart_path(state: 'verified') %></li>
+          <li><%= link_to "已报价订单 (#{current_cart.line_items.quoted.count})", cart_path(state: 'quoted') %></li>
+        </ul>
+        </li>
+        <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path %>
+        <ul>
+          <li><%= link_to "未付款订单 (#{current_user.orders.unpaid.count})", orders_path(state: 'unpaid') %></li>
+          <li><%= link_to "已付款订单 (#{current_user.orders.paid.count})", orders_path(state: 'paid') %></li>
+          <li><%= link_to "已出单订单 (#{current_user.orders.shipped.count})", orders_path(state: 'shipped') %></li>
+          <li><%= link_to "已取消订单 (#{current_user.orders.cancelled.count})", orders_path(state: 'cancelled') %></li>
+        </ul>
+        </li>
+        <li><%= link_to "已取消订单", '#' %>
+        <ul>
+          <li><%= link_to "已取消订单项 (#{current_user.line_items.cancelled.where(order_id: nil).count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: true) %></li>
+        </ul>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+<% end %>

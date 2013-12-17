@@ -1,0 +1,19 @@
+<% if current_user.has_role? :manager %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">订单管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><%= link_to "未提交订单 (#{LineItem.uncommitted.count})", line_items_path(state: 'uncommitted') %></li>
+        <li><%= link_to "已提交订单 (#{LineItem.committed.count})", line_items_path(state: 'committed') %></li>
+        <li><%= link_to "被拒绝订单 (#{LineItem.rejected.count})", line_items_path(state: 'rejected') %></li>
+        <li><%= link_to "已审核订单 (#{LineItem.verified.count})", line_items_path(state: 'verified') %></li>
+        <li><%= link_to "已报价订单 (#{LineItem.quoted.count})", line_items_path(state: 'quoted') %></li>
+        <li><%= link_to "已付款订单 (#{LineItem.paid.count})", line_items_path(state: 'paid') %></li>
+        <li><%= link_to "已出单订单 (#{LineItem.shipped.count})", line_items_path(state: 'shipped') %></li>
+        <li><%= link_to "已取消订单 (#{LineItem.cancelled.count})", line_items_path(state: 'cancelled') %></li>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+<% end %>
