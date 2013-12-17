@@ -1,4 +1,4 @@
-<% if current_user.has_role? :manager %>
+<% if current_user.is_manager? %>
   <div class="panel panel-default">
     <div class="panel-heading">
       <h3 class="panel-title">订单管理</h3>
