@@ -31,10 +31,14 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-  # @order = Order.new(order_params)
+    line_items = current_cart.line_items.where(aasm_state: 'quoted')
+    if line_items.empty?
+      redirect_to cart_url, alert: "Order can't be empty."
+      return
+    end
+
     @order = current_user.orders.build(order_params)
-  # @order.line_items << current_cart.line_items.where(aasm_state: 'quoted')
-    current_cart.line_items.where(aasm_state: 'quoted').each do |line_item|
+    line_items.each do |line_item|
       line_item.cart = nil
       @order.line_items << line_item
     end
