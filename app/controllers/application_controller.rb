@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   # set up user authentiation with devise
   before_filter :authenticate_user!
 
+  before_action :authorize_user!
+
   before_filter :set_locale
 
   private
@@ -41,6 +43,37 @@ class ApplicationController < ActionController::Base
   # end
   end
 
+  def current_permission
+    @current_permission ||= Permission.new(current_user)
+  end
+
+  def current_resource
+    # method 1: set instance directly
+    if params[:id].present?
+      instance_name = "@#{controller_name.singularize}"
+      instance_value = controller_name.classify.constantize.find_by(id: params[:id])
+      instance_variable_set(instance_name, instance_value)
+    end
+  end
+
+  def authorize_user!
+    if !current_permission.allow?(controller_name, params[:action], current_resource)
+      @msg = 'You are not authorized to access this page.'
+      respond_to do |format|
+        format.html { redirect_to :back, alert: @msg }
+        format.js { render 'questions/vote_failed.js.erb' }
+      end
+    end
+  end
+
+  def can?(action, object, parent = nil)
+    if parent.nil?
+      current_permission.allow? object.class.to_s.tableize, action, object
+    else
+      current_permission.allow? object.class.to_s.tableize, action, [object, parent]
+    end
+  end
+
   def set_locale
     if params[:locale] and I18n.available_locales.include? params[:locale].to_sym
       I18n.locale = params[:locale]
@@ -59,71 +92,8 @@ class ApplicationController < ActionController::Base
     { :locale => I18n.locale }
   end
 
-  def can?(action, object, parent=nil)
-    user = current_user
-
-    if (user.has_role? :admin)
-      return true
-    end
-
-    if (object.is_a? User)
-      if (action == :index or action == :show)
-        return true
-      elsif (user == object)
-        return true
-      else
-        return false
-      end
-    end
-
-    if (object.is_a? ActsAsTaggableOn::Tag)
-      if (action == :index)
-        return true
-      else
-        return false
-      end
-    end
-
-    if (action == :top)
-      return [Question, Answer, Comment].include?(object.class)
-    elsif (action == :index)
-      return [Question, Answer, Comment].include?(object.class)
-    elsif (action == :show)
-      return [Question, Answer, Comment].include?(object.class)
-    elsif !user_signed_in?
-      return false
-    elsif (action == :new)
-      if [Question, Answer].include?(object.class)
-        return true
-      elsif [Comment].include?(object.class)
-        return parent.owned_by?(user) || user.can_addcomment?
-      end
-    elsif (action == :create)
-      if [Question, Answer].include?(object.class)
-        return true
-      elsif [Comment].include?(object.class)
-        return parent.owned_by?(user) || user.can_addcomment?
-      end
-    elsif (action == :destroy)
-      return [Question, Answer, Comment].include?(object.class) && object.owned_by?(user)
-    elsif (action == :edit)
-      return [Question, Answer].include?(object.class) && object.owned_by?(user)
-    elsif (action == :update)
-      return [Question, Answer].include?(object.class) && object.owned_by?(user)
-    elsif (action == :upvote)
-      return [Question, Answer].include?(object.class) && !object.owned_by?(user) && user.can_upvote?
-    elsif (action == :downvote)
-      return [Question, Answer].include?(object.class) && !object.owned_by?(user) && user.can_downvote?
-    elsif (action == :favorite)
-      return [Question].include?(object.class)
-    elsif (action == :read)
-      return [Question].include?(object.class)
-    elsif (action == :accept)
-      return [Answer].include?(object.class)
-    else
-      return false
-    end
-  end
+# delegate :allow?, to: :current_permission
+# helper_method :allow?
 
   helper_method :can?
   helper_method :current_cart

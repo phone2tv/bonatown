@@ -37,6 +37,12 @@ class LineItem < ActiveRecord::Base
   # validation macros
   validates :aasm_state, :presence => true
 
+  # instance methods
+  def owned_by? owner
+    return false unless owner.is_a? User
+    user == owner
+  end
+
   # STATE:
   #   uncommitted(init), cancelled, rejected, committed, verified, quoted, paid, shipped
   #

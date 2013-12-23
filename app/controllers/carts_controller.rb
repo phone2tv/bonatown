@@ -19,4 +19,10 @@ class CartsController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  private
+
+    def current_resource
+      current_cart
+    end
 end

@@ -41,7 +41,7 @@ Insurer::Application.routes.draw do
   resources :accident_insurances
   resources :health_insurances
 
-  resources :line_items, only: [:index, :show, :edit, :create, :destroy] do
+  resources :line_items, only: [:index, :show, :create, :destroy] do
     member do
       put 'commit'
       put 'cancel'
