@@ -5,8 +5,10 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-  # @orders = Order.all
-    @orders = current_user.orders
+    @orders = Order.all
+
+    user_id = params[:user_id]
+    @orders = @orders.where(user_id: user_id) if user_id.present?
 
     state = params[:state]
     @orders = @orders.where(aasm_state: state) if state.present?
@@ -31,7 +33,6 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-  # line_items = current_cart.line_items.where(aasm_state: 'quoted')
     line_items = current_cart.line_items.quoted
     if line_items.empty?
       redirect_to cart_url, alert: "Order can't be empty."

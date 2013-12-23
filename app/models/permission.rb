@@ -27,9 +27,11 @@ class Permission
         user.is_moderator? && (is_manager? || u.is_quoter? || u.is_park? || u.is_customer?) or
         user.is_manager? && (u.is_quoter? || u.is_park? || u.is_customer?)
       end
+      # carts
       allow :carts, [:show, :destroy] do |cart|
         user.is_customer? and cart.owned_by?(user)
       end
+      # companies
       allow [:companies, :accident_insurances, :health_insurances], [:new, :edit, :create, :update, :destroy] do |company|
         user.is_manager?
       end
@@ -47,13 +49,13 @@ class Permission
         user.is_admin?
       end
       allow :orders, [:pay] do |order|
-        order.owned_by?(user) and order.may_pay?
+        order.may_pay? and order.owned_by?(user)
       end
       allow :orders, [:cancel] do |order|
-        order.owned_by?(user) and order.may_cancel?
+        order.may_cancel? and order.owned_by?(user)
       end
       allow :orders, [:ship] do |order|
-        user.is_quoter? and order.may_ship?
+        order.may_ship? and user.is_quoter?
       end
       # line items
       allow :line_items, [:create] do
@@ -63,27 +65,26 @@ class Permission
         user.is_admin?
       end
       allow :line_items, [:commit] do |line_item|
-        line_item.owned_by?(user) and line_item.may_commit?
+        line_item.may_commit? and line_item.owned_by?(user)
       end
       allow :line_items, [:cancel] do |line_item|
-        line_item.owned_by?(user) and line_item.may_cancel?
+        line_item.may_cancel? and line_item.owned_by?(user)
       end
       allow :line_items, [:verify] do |line_item|
-        user.is_manager? and line_item.may_verify?
+        line_item.may_verify? and user.is_manager?
       end
       allow :line_items, [:quote] do |line_item|
-        user.is_quoter? and line_item.may_quote?
+        line_item.may_quote? and user.is_quoter?
       end
       allow :line_items, [:reject] do |line_item|
-      # (user.is_manager? || user.is_quoter?) && line_item.may_reject?
-        user.is_manager? && (line_item.aasm.current_state == :committed) or
-        user.is_quoter? && (line_item.aasm.current_state == :verified)
+        (line_item.aasm.current_state == :committed) && user.is_manager? or
+        (line_item.aasm.current_state == :verified) && user.is_quoter?
       end
       allow :line_items, [:pay] do |line_item|
-        line_item.owned_by?(user) and line_item.may_pay?
+        line_item.may_pay? and line_item.owned_by?(user)
       end
       allow :line_items, [:ship] do |line_item|
-        user.is_quoter? and line_item.may_ship?
+        line_item.may_ship? and user.is_quoter?
       end
       # as admin
       allow_all if user.is_admin?

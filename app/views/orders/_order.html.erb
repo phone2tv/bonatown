@@ -1,9 +1,9 @@
 <p>
 <strong>ORDER ID:</strong> <%= order.id %>, 
 <strong><%= t('activerecord.attributes.order.aasm_state') %>:</strong> <%= t('line_item.state.' + order.aasm_state) %>, < 
-<%= link_to_if order.may_pay?, t('order.action.pay'), pay_order_path(order), method: :put %> |
-<%= link_to_if order.may_ship?, t('order.action.ship'), ship_order_path(order), method: :put %> |
-<%= link_to_if order.may_cancel?, t('order.action.cancel'), cancel_order_path(order), method: :put %> |
+<%= link_to_if can?(:pay, order), t('order.action.pay'), pay_order_path(order), method: :put %> |
+<%= link_to_if can?(:ship, order), t('order.action.ship'), ship_order_path(order), method: :put %> |
+<%= link_to_if can?(:cancel, order), t('order.action.cancel'), cancel_order_path(order), method: :put %> |
 <%= link_to 'Show', order %> |
 <%= link_to 'Edit', edit_order_path(order) %> |
 <%= link_to 'Back', orders_path %> >

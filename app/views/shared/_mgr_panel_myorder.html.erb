@@ -14,12 +14,12 @@
           <li><%= link_to "已报价订单 (#{current_cart.line_items.quoted.count})", cart_path(state: 'quoted') %></li>
         </ul>
         </li>
-        <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path %>
+        <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path(user_id: current_user) %>
         <ul>
-          <li><%= link_to "未付款订单 (#{current_user.orders.unpaid.count})", orders_path(state: 'unpaid') %></li>
-          <li><%= link_to "已付款订单 (#{current_user.orders.paid.count})", orders_path(state: 'paid') %></li>
-          <li><%= link_to "已出单订单 (#{current_user.orders.shipped.count})", orders_path(state: 'shipped') %></li>
-          <li><%= link_to "已取消订单 (#{current_user.orders.cancelled.count})", orders_path(state: 'cancelled') %></li>
+          <li><%= link_to "未付款订单 (#{current_user.orders.unpaid.count})", orders_path(state: 'unpaid', user_id: current_user) %></li>
+          <li><%= link_to "已付款订单 (#{current_user.orders.paid.count})", orders_path(state: 'paid', user_id: current_user) %></li>
+          <li><%= link_to "已出单订单 (#{current_user.orders.shipped.count})", orders_path(state: 'shipped', user_id: current_user) %></li>
+          <li><%= link_to "已取消订单 (#{current_user.orders.cancelled.count})", orders_path(state: 'cancelled', user_id: current_user) %></li>
         </ul>
         </li>
         <li><%= link_to "已取消订单", '#' %>
