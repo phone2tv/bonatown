@@ -6,13 +6,14 @@
   <td><%= line_item.price %></td>
   <td><%= line_item.quantity %></td>
   <td>
-    <div><%= link_to_if line_item.may_commit?, t('line_item.action.commit'), commit_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_cancel?, t('line_item.action.cancel'), cancel_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_verify?, t('line_item.action.verify'), verify_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_quote?,  t('line_item.action.quote'), quote_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_reject?, t('line_item.action.reject'), reject_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_pay?,    t('line_item.action.pay'), pay_line_item_path(line_item), method: :put %></div>
-    <div><%= link_to_if line_item.may_ship?,   t('line_item.action.ship'), ship_line_item_path(line_item), method: :put %></div>
+    <% blank = true %>
+    <% line_item.aasm.events.each do |event| %>
+      <% if can? event, line_item %>
+        <div><%= link_to t('line_item.action.'+event.to_s), { controller: 'line_items', action: event, id: line_item }, { method: :put } %></div>
+        <% blank = false %>
+      <% end %>
+    <% end %>
+    <%= "-" if blank %>
   </td>
   <td><%= link_to 'Show', line_item %>
     / <%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

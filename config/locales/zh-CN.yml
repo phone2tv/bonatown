@@ -151,7 +151,7 @@ zh-CN:
       quote: "报价"
       reject: "拒绝"
       pay: "付款"
-      ship: "发货"
+      ship: "出单"
   order:
     state:
       unpaid: "未付款"
@@ -160,5 +160,5 @@ zh-CN:
       cancelled: "已取消"
     action:
       pay: "付款"
-      ship: "发货"
+      ship: "出单"
       cancel: "取消"

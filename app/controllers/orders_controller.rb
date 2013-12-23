@@ -31,7 +31,8 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    line_items = current_cart.line_items.where(aasm_state: 'quoted')
+  # line_items = current_cart.line_items.where(aasm_state: 'quoted')
+    line_items = current_cart.line_items.quoted
     if line_items.empty?
       redirect_to cart_url, alert: "Order can't be empty."
       return

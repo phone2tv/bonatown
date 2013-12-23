@@ -12,13 +12,13 @@ class Permission
       # as stacker
       allow :sessions, [:destroy]
       allow :registrations, [:edit, :update, :destroy, :edit_password, :update_password]
-      allow :users, [:new_admin, :create_admin, :new_moderator, :create_moderator] do
+      allow :users, [:new_admin, :create_admin, :new_moderator, :create_moderator] do |u|
         user.is_admin?
       end
-      allow :users, [:new_manager, :create_manager] do
+      allow :users, [:new_manager, :create_manager] do |u|
         user.is_admin? or user.is_moderator?
       end
-      allow :users, [:new_quoter, :create_quoter, :new_park, :create_park, :new_customer, :create_customer] do
+      allow :users, [:new_quoter, :create_quoter, :new_park, :create_park, :new_customer, :create_customer] do |u|
         user.is_manager?
       end
       allow :users, [:edit, :update] do |u|
@@ -34,8 +34,8 @@ class Permission
         user.is_manager?
       end
       # orders
-      allow :orders, [:new, :create] do
-        user.is_customer?
+      allow :orders, [:new, :create] do |order|
+        user.is_customer? && !user.cart.line_items.quoted.empty?
       end
       allow :orders, [:edit, :update] do |order|
         order.owned_by? user
@@ -62,18 +62,28 @@ class Permission
       allow :line_items, [:destroy] do |line_item|
         user.is_admin?
       end
-      allow :line_items, [:commit, :cancel, :pay] do
-        user.is_customer?
+      allow :line_items, [:commit] do |line_item|
+        line_item.owned_by?(user) and line_item.may_commit?
+      end
+      allow :line_items, [:cancel] do |line_item|
+        line_item.owned_by?(user) and line_item.may_cancel?
       end
       allow :line_items, [:verify] do |line_item|
         user.is_manager? and line_item.may_verify?
       end
-      allow :line_items, [:quote, :ship] do |line_item|
-        user.is_quoter?
+      allow :line_items, [:quote] do |line_item|
+        user.is_quoter? and line_item.may_quote?
       end
       allow :line_items, [:reject] do |line_item|
-        user.is_manager? and (line_item.current_state == 'committed') or
-        user.is_quoter? and (line_item.current_state == 'verified')
+      # (user.is_manager? || user.is_quoter?) && line_item.may_reject?
+        user.is_manager? && (line_item.aasm.current_state == :committed) or
+        user.is_quoter? && (line_item.aasm.current_state == :verified)
+      end
+      allow :line_items, [:pay] do |line_item|
+        line_item.owned_by?(user) and line_item.may_pay?
+      end
+      allow :line_items, [:ship] do |line_item|
+        user.is_quoter? and line_item.may_ship?
       end
       # as admin
       allow_all if user.is_admin?
@@ -82,8 +92,8 @@ class Permission
 
   def allow?(controller, action, resource = nil)
     allowed = @allow_all || @allowed_actions[[controller.to_s, action.to_s]]
-    allowed && (allowed == true || resource && allowed.call(resource))
-#   false
+    allowed && (allowed == true || allowed.call(resource))
+  # allowed && (allowed == true || resource && allowed.call(resource))
   end
 
   private

@@ -106,7 +106,7 @@ class LineItemsController < ApplicationController
   def quote
     @line_item.quote!
     respond_to do |format|
-      format.html { redirect_to cart_url, notice: 'LineItem was successfully updated.' }
+      format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
     end
   end
