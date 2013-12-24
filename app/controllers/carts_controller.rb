@@ -5,6 +5,7 @@ class CartsController < ApplicationController
       @line_items = @cart.line_items
       state = params[:state]
       @line_items = @line_items.where(aasm_state: state) if state.present?
+      @line_items = @line_items.order(updated_at: :desc)
     else
       redirect_to root_path, alert: "only customer can use shopping cart."
     end

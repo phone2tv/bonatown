@@ -4,6 +4,13 @@ GIT
   specs:
     rolify (3.3.0.rc5)
 
+GIT
+  remote: https://github.com/cloudbsd/acts_as_traceable.git
+  revision: 8a9a3eea1af495a67b01d697d2bde72e5e3375bc
+  specs:
+    acts_as_traceable (0.0.2)
+      rails (~> 4.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -134,6 +141,7 @@ PLATFORMS
 
 DEPENDENCIES
   aasm
+  acts_as_traceable!
   bootstrap-sass (~> 3.0.0)
   coffee-rails (~> 4.0.0)
   devise (~> 3.2.0)

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208175717) do
+ActiveRecord::Schema.define(version: 20131224085229) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -137,6 +137,19 @@ ActiveRecord::Schema.define(version: 20131208175717) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
+
+  create_table "traces", force: true do |t|
+    t.integer  "tracer_id",      null: false
+    t.string   "tracer_type",    null: false
+    t.integer  "traceable_id",   null: false
+    t.string   "traceable_type", null: false
+    t.string   "action",         null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "traces", ["traceable_id", "traceable_type"], name: "index_traces_on_traceable_id_and_traceable_type"
+  add_index "traces", ["tracer_id", "tracer_type"], name: "index_traces_on_tracer_id_and_tracer_type"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

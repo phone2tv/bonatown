@@ -1,2 +1,27 @@
 <%= debug @line_item %>
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Actions</th>
+      <th>Time</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @line_item.traces.each do |trace| %>
+
+      <tr>
+        <td><%= trace.tracer.username %></td>
+        <td><%= t('line_item.action.'+trace.action) %></td>
+        <td><%= trace.created_at %></td>
+        <td><%# link_to 'Show', line_item %>
+          / <%# link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
 <%= debug params %>

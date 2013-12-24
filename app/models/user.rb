@@ -25,6 +25,15 @@ class User < ActiveRecord::Base
   validates :username, :presence => true, uniqueness: true, length: { in: 4..20 }
 
   # macros from gems
+  acts_as_tracer
+# acts_as_tracer_on :commit_line_items
+# acts_as_tracer_on :cancel_line_items
+# acts_as_tracer_on :verify_line_items
+# acts_as_tracer_on :quote_line_items
+# acts_as_tracer_on :reject_line_items
+# acts_as_tracer_on :pay_line_items
+# acts_as_tracer_on :ship_line_items
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

@@ -37,6 +37,9 @@ class LineItem < ActiveRecord::Base
   # validation macros
   validates :aasm_state, :presence => true
 
+  # macros from gems
+  acts_as_traceable
+
   # instance methods
   def owned_by? owner
     return false unless owner.is_a? User

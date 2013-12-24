@@ -77,8 +77,8 @@ class Permission
         line_item.may_quote? and user.is_quoter?
       end
       allow :line_items, [:reject] do |line_item|
-        (line_item.aasm.current_state == :committed) && user.is_manager? or
-        (line_item.aasm.current_state == :verified) && user.is_quoter?
+        line_item.committed? && user.is_manager? or
+        line_item.verified? && user.is_quoter?
       end
       allow :line_items, [:pay] do |line_item|
         line_item.may_pay? and line_item.owned_by?(user)

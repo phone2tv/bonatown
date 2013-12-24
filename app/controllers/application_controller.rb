@@ -57,7 +57,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authorize_user!
-    if !current_permission.allow?(controller_name, params[:action], current_resource)
+    unless current_permission.allow?(controller_name, params[:action], current_resource)
       @msg = 'You are not authorized to access this page.'
       respond_to do |format|
         format.html { redirect_to :back, alert: @msg }
