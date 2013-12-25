@@ -6,9 +6,9 @@ GIT
 
 GIT
   remote: https://github.com/cloudbsd/acts_as_traceable.git
-  revision: 8a9a3eea1af495a67b01d697d2bde72e5e3375bc
+  revision: f57e5649e1e6ae11059b32c692885c8e2f6c4ce3
   specs:
-    acts_as_traceable (0.0.2)
+    acts_as_traceable (0.0.4)
       rails (~> 4.0.0)
 
 GEM

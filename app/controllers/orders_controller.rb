@@ -82,7 +82,10 @@ class OrdersController < ApplicationController
 
   def pay
     @order.pay!
-    @order.line_items.each { |line_item| line_item.pay! }
+    @order.line_items.each do |line_item|
+      line_item.pay!
+      current_user.trace(line_item, 'pay')
+    end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully paid.' }
       format.json { head :no_content }
@@ -91,7 +94,10 @@ class OrdersController < ApplicationController
 
   def ship
     @order.ship!
-    @order.line_items.each { |line_item| line_item.ship! }
+    @order.line_items.each do |line_item|
+      line_item.ship!
+      current_user.trace(line_item, 'ship')
+    end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully shipped.' }
       format.json { head :no_content }
@@ -100,7 +106,10 @@ class OrdersController < ApplicationController
 
   def cancel
     @order.cancel!
-    @order.line_items.each { |line_item| line_item.cancel! }
+    @order.line_items.each do |line_item|
+      line_item.cancel!
+      current_user.trace(line_item, 'cancel')
+    end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
       format.json { head :no_content }
