@@ -126,8 +126,14 @@ class OrdersController < ApplicationController
   def cancel
     @order.cancel!
     @order.line_items.each do |line_item|
-      line_item.cancel!
-      current_user.trace(line_item, 'cancel')
+      # NOT cancel line_items (put them back into cart)
+      line_item.order = nil
+      line_item.cart = current_cart
+      line_item.save
+
+      # cancel line_items too
+    # line_item.cancel!
+    # current_user.trace(line_item, 'cancel')
     end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
