@@ -13,6 +13,33 @@
     <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
   </div>
   <div class='col-md-10'>
+
+    <div class="row">
+      <div class='col-md-4'>
+
+    <%= form_for(Order.new) do |f| %>
+      <table class='table'>
+        <% current_cart.line_items.quoted.each do |line_item| %>
+          <tr>
+            <td>
+              <%= check_box_tag('order[line_items][]', line_item.id) %>
+              <%# label_tag('order[line_items][]', "check out this line_item") %>
+            </td>
+            <td><%= link_to line_item.id, line_item %></td>
+            <td><%= link_to line_item.insurance.title, line_item.insurance.profile %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> <%= f.submit %> </td>
+        </tr>
+      </table>
+    <% end %>
+
+      </div>
+    </div>
+
     <p>
     <%= link_to '清空购物车', cart_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
     <%= link_to '结算', new_order_path, class: 'btn btn-success' %>

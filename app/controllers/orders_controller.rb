@@ -33,21 +33,46 @@ class OrdersController < ApplicationController
   # POST /orders
   # POST /orders.json
   def create
-    @order = current_user.orders.build(order_params)
-    current_cart.line_items.quoted.each do |line_item|
-      line_item.cart = nil
-      @order.line_items << line_item
-    end
+    if params[:order] && params[:order][:line_items]
+      @order = current_user.orders.build(order_params)
+      # current_cart.line_items.quoted.each do |line_item|
+      line_items = LineItem.where(id: params[:order][:line_items])
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @order }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
+      line_items.quoted.each do |line_item|
+        line_item.cart = nil
+        @order.line_items << line_item
+      end
+
+      respond_to do |format|
+        if @order.save
+          format.html { redirect_to @order, notice: 'Order was successfully created.' }
+          format.json { render action: 'show', status: :created, location: @order }
+        else
+          format.html { render action: 'new' }
+          format.json { render json: @order.errors, status: :unprocessable_entity }
+        end
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to :back, alert: 'At least select one item.' }
       end
     end
+
+  # @order = current_user.orders.build(order_params)
+  # current_cart.line_items.quoted.each do |line_item|
+  #   line_item.cart = nil
+  #   @order.line_items << line_item
+  # end
+
+  # respond_to do |format|
+  #   if @order.save
+  #     format.html { redirect_to @order, notice: 'Order was successfully created.' }
+  #     format.json { render action: 'show', status: :created, location: @order }
+  #   else
+  #     format.html { render action: 'new' }
+  #     format.json { render json: @order.errors, status: :unprocessable_entity }
+  #   end
+  # end
   end
 
   # PATCH/PUT /orders/1
