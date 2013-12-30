@@ -123,23 +123,32 @@ class OrdersController < ApplicationController
     end
   end
 
+  # NOT cancel line_items (put them back into cart)
   def cancel
-    @order.cancel!
     @order.line_items.each do |line_item|
-      # NOT cancel line_items (put them back into cart)
       line_item.order = nil
       line_item.cart = current_cart
       line_item.save
-
-      # cancel line_items too
-    # line_item.cancel!
-    # current_user.trace(line_item, 'cancel')
     end
+    @order.destroy
     respond_to do |format|
-      format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
+      format.html { redirect_to cart_url, notice: 'Order was successfully cancelled.' }
       format.json { head :no_content }
     end
   end
+
+# # cancel line_items too
+# def cancel
+#   @order.cancel!
+#   @order.line_items.each do |line_item|
+#     line_item.cancel!
+#     current_user.trace(line_item, 'cancel')
+#   end
+#   respond_to do |format|
+#     format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
+#     format.json { head :no_content }
+#   end
+# end
 
   private
     # Use callbacks to share common setup or constraints between actions.
