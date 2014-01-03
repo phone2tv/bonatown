@@ -166,11 +166,11 @@ zh-CN:
       pay: "付款"
       ship: "出单"
       cancel: "取消"
-  accident_insurance:
+  accident_item:
     employee_number:
       less_than_50: "50人以下"
       between_50_and_200: "50-200人"
       more_than_200: "200人以上"
     quota:
       less_than_50k: "5万以下"
-      between_50k_and_300k: "5-30万"
+      between_50k_and_300k: "5 - 30万"

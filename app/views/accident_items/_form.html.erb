@@ -2,8 +2,9 @@
   <%= form_error_messages!(f.object) %>
 
   <div class="form-group">
-    <%= f.label :accident_insurance_id %><br>
-    <%= f.text_field :accident_insurance_id, :value => @accident_insurance.id %>
+    <%= f.label :accident_insurance_id, class: 'control-label' %>
+    <%= f.text_field :accident_insurance_id, readonly: true, class: 'form-control' %>
+    <%# f.text_field :accident_insurance_id, :value => @accident_insurance.id %>
   </div>
   <div class="form-group">
     <%= f.label :industry_id, class: 'control-label' %>
@@ -11,13 +12,13 @@
   </div>
   <div class="form-group">
     <%= f.label :employee_number, class: 'control-label' %>
-    <%= f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_insurance.employee_number.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
-    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_insurance.employee_number.#{item[0]}"), item[1]] }, { include_blank: false, prompt: 'Employee Number' }, { class: 'form-control' } %>
+    <%= f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_item.employee_number.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_item.employee_number.#{item[0]}"), item[1]] }, { include_blank: false, prompt: 'Employee Number' }, { class: 'form-control' } %>
     <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER, prompt: 'Employee Number' %>
   </div>
   <div class="form-group">
     <%= f.label :quota, class: 'control-label' %>
-    <%= f.select :quota, AccidentItem::QUOTA.map { |item| [t("accident_insurance.quota.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+    <%= f.select :quota, AccidentItem::QUOTA.map { |item| [t("accident_item.quota.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
   </div>
   <div class="form-group">
     <%= f.label :started_at, class: 'control-label' %> <br>
@@ -27,6 +28,9 @@
     <%= f.label :stopped_at, class: 'control-label' %> <br>
     <%= f.date_select :stopped_at, { class: 'form-control' } %>
   </div>
+
+  <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
+
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>
   </div>

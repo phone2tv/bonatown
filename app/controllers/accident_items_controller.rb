@@ -15,7 +15,8 @@ class AccidentItemsController < ApplicationController
   # GET /accident_items/new
   def new
     @accident_insurance = AccidentInsurance.find_by(id: params[:accident_insurance_id])
-    @accident_item = AccidentItem.new
+    @accident_item = AccidentItem.new(accident_insurance_id: @accident_insurance.id)
+    @accident_item.build_line_item(user_id: current_user.id, cart_id: current_cart.id)
   end
 
   # GET /accident_items/1/edit
@@ -25,24 +26,24 @@ class AccidentItemsController < ApplicationController
   # POST /accident_items
   # POST /accident_items.json
   def create
-    @accident_item = AccidentItem.new(accident_item_params)
-    if @accident_item.save
-      line_item = current_cart.line_items.build(insurance_item: @accident_item)
-      line_item.user = current_user
-      line_item.save
-      redirect_to @accident_item.specific_insurance, notice: 'Insurance was successfully added to cart.'
-    end
-
   # @accident_item = AccidentItem.new(accident_item_params)
-  # respond_to do |format|
-  #   if @accident_item.save
-  #     format.html { redirect_to @accident_item, notice: 'Accident item was successfully created.' }
-  #     format.json { render action: 'show', status: :created, location: @accident_item }
-  #   else
-  #     format.html { render action: 'new' }
-  #     format.json { render json: @accident_item.errors, status: :unprocessable_entity }
-  #   end
+  # if @accident_item.save
+  #   line_item = current_cart.line_items.build(insurance_item: @accident_item)
+  #   line_item.user = current_user
+  #   line_item.save
+  #   redirect_to @accident_item.specific_insurance, notice: 'Insurance was successfully added to cart.'
   # end
+
+    @accident_item = AccidentItem.new(accident_item_params)
+    respond_to do |format|
+      if @accident_item.save
+        format.html { redirect_to @accident_item, notice: 'Accident item was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @accident_item }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @accident_item.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /accident_items/1
@@ -77,6 +78,6 @@ class AccidentItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_item_params
-      params.require(:accident_item).permit(:accident_insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at)
+      params.require(:accident_item).permit(:accident_insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :cart_id])
     end
 end

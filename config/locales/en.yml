@@ -166,11 +166,11 @@ en:
       pay: "pay"
       ship: "ship"
       cancel: "cancel"
-  accident_insurance:
+  accident_item:
     employee_number:
       less_than_50: "Less Than 50"
       between_50_and_200: "Between 50 and 200"
       more_than_200: "More Than 200"
     quota:
-      less_than_50k: "5万以下"
-      between_50k_and_300k: "5-30万"
+      less_than_50k: "below 50k"
+      between_50k_and_300k: "50k - 300k"
