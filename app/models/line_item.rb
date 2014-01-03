@@ -29,7 +29,7 @@ class LineItem < ActiveRecord::Base
 
 
   # association macros
-  belongs_to :insurance
+  belongs_to :insurance_item, polymorphic: true
   belongs_to :user
   belongs_to :cart
   belongs_to :order

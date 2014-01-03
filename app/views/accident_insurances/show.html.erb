@@ -14,7 +14,8 @@
   </div>
   <div class='col-md-6'>
     <p>
-    <%= button_to '加入购物车', line_items_path(line_item: { insurance_id: @accident_insurance.insurance }), class: 'btn btn-success' %>
+    <%# button_to '加入购物车', line_items_path(line_item: { insurance_id: @accident_insurance.insurance }), class: 'btn btn-success' %>
+    <%= link_to '加入购物车', new_accident_item_path(accident_insurance_id: @accident_insurance), class: 'btn btn-success' %>
     </p>
     <p>
     <%# button_to 'Add to Cart', line_items_path(line_item: { insurance_id: @accident_insurance.insurance }), class: 'btn btn-success' %>

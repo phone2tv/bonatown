@@ -1,0 +1,23 @@
+<%= form_for(@accident_item) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="form-group">
+    <%= f.label :accident_insurance_id %><br>
+    <%= f.text_field :accident_insurance_id, :value => @accident_insurance.id %>
+  </div>
+  <div class="form-group">
+    <%= f.label :industry_id, class: 'control-label' %>
+    <%= f.select :industry_id, Industry.all.map { |industry| [industry.name, industry.id] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee_number, class: 'control-label' %>
+    <%= f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_insurance.employee_number.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_insurance.employee_number.#{item[0]}"), item[1]] }, { include_blank: false, prompt: 'Employee Number' }, { class: 'form-control' } %>
+    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER, prompt: 'Employee Number' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= debug params %>

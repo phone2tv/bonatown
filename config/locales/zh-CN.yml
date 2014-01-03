@@ -69,10 +69,9 @@ zh-CN:
         aasm_state: "状态"
         company_id: "保险公司"
       accident_insurance:
-        title: "标题"
-        synopsis: "产品特色"
-        price: "保费"
-        company_id: "保险公司"
+        body: "补充说明"
+        industry: "行业分类"
+        employee_number: "员工数量"
       health_insurance:
         body: "补充说明"
       line_item:
@@ -162,3 +161,8 @@ zh-CN:
       pay: "付款"
       ship: "出单"
       cancel: "取消"
+  accident_insurance:
+    employee_number:
+      less_than_50: "50人以下"
+      between_50_and_200: "50-200人"
+      more_than_200: "200人以上"

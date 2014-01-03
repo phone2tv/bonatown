@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  accident_insurance_id: 
+  industry_id: 
+  employee_number: MyString
+
+two:
+  accident_insurance_id: 
+  industry_id: 
+  employee_number: MyString

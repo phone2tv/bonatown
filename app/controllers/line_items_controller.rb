@@ -35,7 +35,7 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     @cart = current_cart
-  # @insurance = Insurance.find(params[:insurance_id])
+  # @insurance = Insurance.find(params[:insurance_item_id])
     @line_item = @cart.add_insurance(line_item_params)
     @line_item.user = current_user
 
@@ -150,6 +150,6 @@ class LineItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def line_item_params
-      params.require(:line_item).permit(:insurance_id)
+      params.require(:line_item).permit(:insurance_item_id, :insurance_item_type)
     end
 end

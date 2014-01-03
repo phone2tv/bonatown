@@ -33,11 +33,11 @@ class Insurance < ActiveRecord::Base
     state :online, :initial => true
     state :offline
 
-    event :put_down do
+    event :stop do
       transitions :from => :online, :to => :offline
     end
 
-    event :put_up do
+    event :sell do
       transitions :from => :offline, :to => :online
     end
   end

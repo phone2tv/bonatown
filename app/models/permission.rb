@@ -57,6 +57,10 @@ class Permission
       allow :orders, [:ship] do |order|
         order.may_ship? and user.is_quoter?
       end
+      # accident_items
+      allow [:accident_items], [:new, :edit, :create, :update, :destroy] do |item|
+        user.is_customer?
+      end
       # line items
       allow :line_items, [:create] do
         user.is_customer?

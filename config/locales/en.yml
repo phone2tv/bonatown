@@ -69,10 +69,9 @@ en:
         aasm_state: "State"
         company_id: "Company"
       accident_insurance:
-        title: "Title"
-        synopsis: "Synopsis"
-        price: "Price"
-        company_id: "Company"
+        body: "Note"
+        industry: "Industry"
+        employee_number: "Employee Number"
       health_insurance:
         body: "Note"
       line_item:
@@ -162,3 +161,8 @@ en:
       pay: "pay"
       ship: "ship"
       cancel: "cancel"
+  accident_insurance:
+    employee_number:
+      less_than_50: "Less Than 50"
+      between_50_and_200: "Between 50 and 200"
+      more_than_200: "More Than 200"

@@ -77,6 +77,16 @@ def create_insurances
   print_content "insurance: #{insur.title}"
 end
 
+def create_industries
+  print_title('setting up insurances')
+
+  industry = Industry.create(name: 'Computer')
+  print_content "industry: #{industry.name}"
+
+  industry = Industry.create(name: 'Band')
+  print_content "industry: #{industry.name}"
+end
+
 def destroy_tables
   print_title('destroy tables')
   User.destroy_all
@@ -92,3 +102,4 @@ end
 destroy_tables
 create_users
 create_insurances
+create_industries

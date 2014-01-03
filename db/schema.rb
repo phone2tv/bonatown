@@ -11,13 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224085229) do
+ActiveRecord::Schema.define(version: 20140102145715) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "accident_items", force: true do |t|
+    t.integer  "accident_insurance_id"
+    t.integer  "industry_id"
+    t.string   "employee_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accident_items", ["accident_insurance_id"], name: "index_accident_items_on_accident_insurance_id"
+  add_index "accident_items", ["industry_id"], name: "index_accident_items_on_industry_id"
 
   create_table "admin_profiles", force: true do |t|
     t.string   "name",       default: "", null: false
@@ -59,6 +70,12 @@ ActiveRecord::Schema.define(version: 20131224085229) do
     t.datetime "updated_at"
   end
 
+  create_table "industries", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "insurances", force: true do |t|
     t.string   "title"
     t.text     "synopsis"
@@ -75,19 +92,20 @@ ActiveRecord::Schema.define(version: 20131224085229) do
   add_index "insurances", ["profile_id", "profile_type"], name: "index_insurances_on_profile_id_and_profile_type"
 
   create_table "line_items", force: true do |t|
-    t.integer  "insurance_id"
+    t.integer  "insurance_item_id"
+    t.string   "insurance_item_type"
     t.integer  "user_id"
     t.integer  "cart_id"
     t.integer  "order_id"
     t.string   "aasm_state"
     t.decimal  "price"
-    t.integer  "quantity",     default: 1, null: false
+    t.integer  "quantity",            default: 1, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
-  add_index "line_items", ["insurance_id"], name: "index_line_items_on_insurance_id"
+  add_index "line_items", ["insurance_item_id", "insurance_item_type"], name: "index_line_items_on_insurance_item_id_and_insurance_item_type"
   add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
   add_index "line_items", ["user_id"], name: "index_line_items_on_user_id"
 
