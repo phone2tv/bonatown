@@ -27,14 +27,13 @@ class AccidentItemsController < ApplicationController
   def create
     @accident_item = AccidentItem.new(accident_item_params)
     if @accident_item.save
-    # line_item = current_cart.add_insurance(@accident_item)
       line_item = current_cart.line_items.build(insurance_item: @accident_item)
       line_item.user = current_user
       line_item.save
       redirect_to @accident_item.specific_insurance, notice: 'Insurance was successfully added to cart.'
     end
 
-    @accident_item = AccidentItem.new(accident_item_params)
+  # @accident_item = AccidentItem.new(accident_item_params)
   # respond_to do |format|
   #   if @accident_item.save
   #     format.html { redirect_to @accident_item, notice: 'Accident item was successfully created.' }
@@ -78,6 +77,6 @@ class AccidentItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_item_params
-      params.require(:accident_item).permit(:accident_insurance_id, :industry_id, :employee_number)
+      params.require(:accident_item).permit(:accident_insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at)
     end
 end

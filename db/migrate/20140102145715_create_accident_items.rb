@@ -4,6 +4,9 @@ class CreateAccidentItems < ActiveRecord::Migration
       t.references :accident_insurance, index: true
       t.references :industry, index: true
       t.string :employee_number
+      t.integer :quota
+      t.date :started_at
+      t.date :stopped_at
 
       t.timestamps
     end

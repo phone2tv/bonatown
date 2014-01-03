@@ -16,6 +16,18 @@
     <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER, prompt: 'Employee Number' %>
   </div>
   <div class="form-group">
+    <%= f.label :quota, class: 'control-label' %>
+    <%= f.select :quota, AccidentItem::QUOTA.map { |item| [t("accident_insurance.quota.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :started_at, class: 'control-label' %> <br>
+    <%= f.date_select :started_at, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stopped_at, class: 'control-label' %> <br>
+    <%= f.date_select :stopped_at, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

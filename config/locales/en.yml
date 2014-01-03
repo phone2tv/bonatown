@@ -15,6 +15,7 @@ en:
       insurance: "Insurance"
       accident_insurance: "Accident Insurance"
       health_insurance: "Health Insurance"
+      accident_item: "Accident Insurance"
       line_item: "LineItem"
     attributes:
       user:
@@ -70,10 +71,14 @@ en:
         company_id: "Company"
       accident_insurance:
         body: "Note"
-        industry: "Industry"
-        employee_number: "Employee Number"
       health_insurance:
         body: "Note"
+      accident_item:
+        industry_id: "Industry"
+        employee_number: "Employee Number"
+        quota: "Quota"
+        started_at: "Start Time"
+        stopped_at: "End Time"
       line_item:
         insurance_id: "Trade Insurance"
         cart_id: "Cart"
@@ -166,3 +171,6 @@ en:
       less_than_50: "Less Than 50"
       between_50_and_200: "Between 50 and 200"
       more_than_200: "More Than 200"
+    quota:
+      less_than_50k: "5万以下"
+      between_50k_and_300k: "5-30万"

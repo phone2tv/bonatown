@@ -23,6 +23,9 @@ ActiveRecord::Schema.define(version: 20140102145715) do
     t.integer  "accident_insurance_id"
     t.integer  "industry_id"
     t.string   "employee_number"
+    t.integer  "quota"
+    t.date     "started_at"
+    t.date     "stopped_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
