@@ -28,6 +28,14 @@
     <%= f.label :stopped_at, class: 'control-label' %> <br>
     <%= f.date_select :stopped_at, { class: 'form-control' } %>
   </div>
+  <div class="form-group">
+    <%= f.label :accident_medical, class: 'control-label' %>
+    <%= f.select :accident_medical, AccidentItem::ACCIDENT_MEDICAL.map { |item| [t("accident_item.accident_medical.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hospital_allowance, class: 'control-label' %>
+    <%= f.select :hospital_allowance, AccidentItem::HOSPITAL_ALLOWANCE.map { |item| [t("accident_item.hospital_allowance.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
 
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
 

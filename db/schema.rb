@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20140102145715) do
     t.integer  "quota"
     t.date     "started_at"
     t.date     "stopped_at"
+    t.integer  "accident_medical"
+    t.integer  "hospital_allowance"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

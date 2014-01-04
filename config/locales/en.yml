@@ -79,6 +79,8 @@ en:
         quota: "Quota"
         started_at: "Start Time"
         stopped_at: "End Time"
+        accident_medical: "Accident Medical Treatment"
+        hospital_allowance: "Hospital Allowance"
       line_item:
         insurance_id: "Trade Insurance"
         cart_id: "Cart"
@@ -174,3 +176,12 @@ en:
     quota:
       less_than_50k: "below 50k"
       between_50k_and_300k: "50k - 300k"
+    accident_medical:
+      equal_2k: "2000 CNY"
+      equal_5k: "5000 CNY"
+      equal_10k: "10000 CNY"
+      equal_20k: "20000 CNY"
+    hospital_allowance:
+      20_per_day: "20CNY/DAY"
+      50_per_day: "50CNY/DAY"
+      100_per_day: "100CNY/DAY"

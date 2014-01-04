@@ -2,6 +2,8 @@ class AccidentItem < ActiveRecord::Base
 # EMPLOYEE_NUMBER = [ "less_than_50", "between_50_and_200", "more_than_200" ]
   EMPLOYEE_NUMBER = [ ["less_than_50", 0], ["between_50_and_200", 1], ["more_than_200", 2] ]
   QUOTA = [ ["less_than_50k", 0], ["between_50k_and_300k", 1] ]
+  ACCIDENT_MEDICAL = [ ["equal_2k", 0], ["equal_5k", 1], ["equal_10k", 2], ["equal_20k", 3] ]
+  HOSPITAL_ALLOWANCE = [ ["20_per_day", 0], ["50_per_day", 1], ["100_per_day", 2] ]
 
   # association macros
   belongs_to :specific_insurance, class_name: 'AccidentInsurance', foreign_key: 'accident_insurance_id'

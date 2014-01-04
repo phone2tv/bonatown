@@ -79,6 +79,8 @@ zh-CN:
         quota: "每次意外伤害限额"
         started_at: "保单起保日期"
         stopped_at: "保单终止日期"
+        accident_medical: "意外医疗"
+        hospital_allowance: "住院津贴"
       line_item:
         insurance_id: "所购保险"
         cart_id: "购物车"
@@ -174,3 +176,12 @@ zh-CN:
     quota:
       less_than_50k: "5万以下"
       between_50k_and_300k: "5 - 30万"
+    accident_medical:
+      equal_2k: "2000元"
+      equal_5k: "5000元"
+      equal_10k: "10000元"
+      equal_20k: "20000元"
+    hospital_allowance:
+      20_per_day: "20元/天"
+      50_per_day: "50元/天"
+      100_per_day: "100元/天"

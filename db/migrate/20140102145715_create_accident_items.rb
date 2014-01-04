@@ -7,6 +7,8 @@ class CreateAccidentItems < ActiveRecord::Migration
       t.integer :quota
       t.date :started_at
       t.date :stopped_at
+      t.integer :accident_medical
+      t.integer :hospital_allowance
 
       t.timestamps
     end
