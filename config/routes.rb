@@ -38,6 +38,7 @@ Insurer::Application.routes.draw do
 
   resources :parks
   resources :companies
+  resources :insurances
   resources :accident_insurances
   resources :health_insurances
 

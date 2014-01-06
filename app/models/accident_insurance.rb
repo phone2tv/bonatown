@@ -1,3 +1,8 @@
+class AccidentInsurance < Insurance
+  has_many :specific_items, class_name: 'AccidentItem'
+# has_many :accident_items
+end
+=begin
 class AccidentInsurance < ActiveRecord::Base
   # association macros
   has_one :insurance, as: :profile, dependent: :destroy
@@ -5,3 +10,4 @@ class AccidentInsurance < ActiveRecord::Base
   has_many :specific_items, class_name: 'AccidentItem'
 # has_many :accident_items
 end
+=end

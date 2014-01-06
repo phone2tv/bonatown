@@ -86,15 +86,17 @@ ActiveRecord::Schema.define(version: 20140102145715) do
     t.text     "synopsis"
     t.decimal  "price"
     t.string   "aasm_state"
+    t.string   "type"
     t.integer  "company_id"
-    t.integer  "profile_id"
-    t.string   "profile_type"
+    t.string   "image"
+    t.string   "target"
+    t.text     "feature"
+    t.text     "benefit"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "insurances", ["company_id"], name: "index_insurances_on_company_id"
-  add_index "insurances", ["profile_id", "profile_type"], name: "index_insurances_on_profile_id_and_profile_type"
 
   create_table "line_items", force: true do |t|
     t.integer  "insurance_item_id"

@@ -14,10 +14,10 @@
     </div>
     <% 1.upto 50 do %>
       <div class=''>
-        <%= render partial: 'store_insurance', locals: { insur: AccidentInsurance.first, img_name: "child_1.jpg" } %>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.first, img_name: "child_1.jpg" } %>
       </div>
       <div class=''>
-        <%= render partial: 'store_insurance', locals: { insur: AccidentInsurance.last, img_name: "child_3.jpg" } %>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.last, img_name: "child_3.jpg" } %>
       </div>
     <% end %>
   </div>

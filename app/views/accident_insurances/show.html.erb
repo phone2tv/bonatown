@@ -14,41 +14,61 @@
   </div>
   <div class='col-md-6'>
     <p>
-    <%# button_to '加入购物车', line_items_path(line_item: { insurance_id: @accident_insurance.insurance }), class: 'btn btn-success' %>
+    <%# button_to '加入购物车', line_items_path(line_item: { insurance_id: @accident_insurance }), class: 'btn btn-success' %>
     <%= link_to '加入购物车', new_accident_item_path(accident_insurance_id: @accident_insurance), class: 'btn btn-success' %>
     </p>
     <p>
-    <%# button_to 'Add to Cart', line_items_path(line_item: { insurance_id: @accident_insurance.insurance }), class: 'btn btn-success' %>
+    <%# button_to 'Add to Cart', line_items_path(line_item: { insurance_id: @accident_insurance }), class: 'btn btn-success' %>
     </p>
 
     <p>
     <strong>Title:</strong>
-    <%= @accident_insurance.insurance.title %>
+    <%= @accident_insurance.title %>
     </p>
 
     <p>
     <strong>Synopsis:</strong>
-    <%= @accident_insurance.insurance.synopsis %>
+    <%= @accident_insurance.synopsis %>
     </p>
 
     <p>
     <strong>Price:</strong>
-    <%= @accident_insurance.insurance.price %>
+    <%= @accident_insurance.price %>
     </p>
 
     <p>
-    <strong>State:</strong>
-    <%= @accident_insurance.insurance.aasm_state %>
+    <strong>Aasm state:</strong>
+    <%= @accident_insurance.aasm_state %>
+    </p>
+
+    <p>
+    <strong>Type:</strong>
+    <%= @accident_insurance.type %>
     </p>
 
     <p>
     <strong>Company:</strong>
-    <%= @accident_insurance.insurance.company.name if @accident_insurance.insurance.company.present? %>
+    <%= @accident_insurance.company.name if @accident_insurance.company.present? %>
     </p>
 
     <p>
-    <strong>Body:</strong>
-    <%= @accident_insurance.body %>
+    <strong>Image:</strong>
+    <%= @accident_insurance.image %>
+    </p>
+
+    <p>
+    <strong>Target:</strong>
+    <%= @accident_insurance.target %>
+    </p>
+
+    <p>
+    <strong>Feature:</strong>
+    <%= @accident_insurance.feature %>
+    </p>
+
+    <p>
+    <strong>Benefit:</strong>
+    <%= @accident_insurance.benefit %>
     </p>
 
     <%= link_to 'Edit', edit_accident_insurance_path(@accident_insurance) %> |

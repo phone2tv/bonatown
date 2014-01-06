@@ -4,16 +4,22 @@ one:
   title: MyString
   synopsis: MyText
   price: 9.99
-  workflow_state: MyString
+  aasm_state: MyString
+  type: 
   company_id: 
-  profile_id: 
-  profile_type: Profile
+  image: MyString
+  target: MyString
+  feature: MyText
+  benefit: MyText
 
 two:
   title: MyString
   synopsis: MyText
   price: 9.99
-  workflow_state: MyString
+  aasm_state: MyString
+  type: 
   company_id: 
-  profile_id: 
-  profile_type: Profile
+  image: MyString
+  target: MyString
+  feature: MyText
+  benefit: MyText
