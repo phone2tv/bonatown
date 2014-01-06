@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Insurance:</strong>
+  <%= @public_liability_item.insurance %>
+</p>
+
+<p>
+  <strong>Business place:</strong>
+  <%= @public_liability_item.business_place %>
+</p>
+
+<p>
+  <strong>Business type:</strong>
+  <%= @public_liability_item.business_type %>
+</p>
+
+<p>
+  <strong>With fire control:</strong>
+  <%= @public_liability_item.with_fire_control %>
+</p>
+
+<p>
+  <strong>With security measure:</strong>
+  <%= @public_liability_item.with_security_measure %>
+</p>
+
+<%= link_to 'Edit', edit_public_liability_item_path(@public_liability_item) %> |
+<%= link_to 'Back', public_liability_items_path %>

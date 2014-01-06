@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140102145715) do
+ActiveRecord::Schema.define(version: 20140106085359) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -145,6 +145,18 @@ ActiveRecord::Schema.define(version: 20140102145715) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "public_liability_items", force: true do |t|
+    t.integer  "insurance_id"
+    t.string   "business_place"
+    t.integer  "business_type"
+    t.boolean  "with_fire_control"
+    t.boolean  "with_security_measure"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "public_liability_items", ["insurance_id"], name: "index_public_liability_items_on_insurance_id"
 
   create_table "quoter_profiles", force: true do |t|
     t.string   "name"

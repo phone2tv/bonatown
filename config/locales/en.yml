@@ -15,8 +15,9 @@ en:
       insurance: "Insurance"
       accident_insurance: "Accident Insurance"
       health_insurance: "Health Insurance"
-      accident_item: "Accident Insurance"
       line_item: "LineItem"
+      accident_item: "Accident Insurance"
+      public_liability_item: "Public Liability Insurance"
     attributes:
       user:
         email: "Email"
@@ -78,6 +79,13 @@ en:
         body: "Note"
       health_insurance:
         body: "Note"
+      line_item:
+        insurance_id: "Trade Insurance"
+        cart_id: "Cart"
+        order_id: "Order"
+        aasm_state: "State"
+        price: "Deal Price"
+        quantity: "Quantity"
       accident_item:
         industry_id: "Industry"
         employee_number: "Employee Number"
@@ -86,13 +94,11 @@ en:
         stopped_at: "End Time"
         accident_medical: "Accident Medical Treatment"
         hospital_allowance: "Hospital Allowance"
-      line_item:
-        insurance_id: "Trade Insurance"
-        cart_id: "Cart"
-        order_id: "Order"
-        aasm_state: "State"
-        price: "Deal Price"
-        quantity: "Quantity"
+      public_liability_item:
+        business_place: "Business Place"
+        business_type: "Business Type"
+        with_fire_control: "With Fire Control"
+        with_security_measure: "With Security Measure"
       order:
         aasm_state: "State"
         address: "Address"
@@ -190,3 +196,8 @@ en:
       20_per_day: "20CNY/DAY"
       50_per_day: "50CNY/DAY"
       100_per_day: "100CNY/DAY"
+  public_liability_item:
+    business_type:
+      production: "Production"
+      sale: "Sale"
+      storage: "Storage"

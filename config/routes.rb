@@ -1,4 +1,6 @@
 Insurer::Application.routes.draw do
+  resources :public_liability_items
+
   root 'stores#show'
 
   resource :store, only: :show do

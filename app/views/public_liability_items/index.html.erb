@@ -1,0 +1,35 @@
+<h1>Listing public_liability_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Insurance</th>
+      <th>Business place</th>
+      <th>Business type</th>
+      <th>With fire control</th>
+      <th>With security measure</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_liability_items.each do |public_liability_item| %>
+      <tr>
+        <td><%= public_liability_item.insurance %></td>
+        <td><%= public_liability_item.business_place %></td>
+        <td><%= public_liability_item.business_type %></td>
+        <td><%= public_liability_item.with_fire_control %></td>
+        <td><%= public_liability_item.with_security_measure %></td>
+        <td><%= link_to 'Show', public_liability_item %></td>
+        <td><%= link_to 'Edit', edit_public_liability_item_path(public_liability_item) %></td>
+        <td><%= link_to 'Destroy', public_liability_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public liability item', new_public_liability_item_path %>

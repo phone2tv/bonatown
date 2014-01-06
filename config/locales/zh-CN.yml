@@ -15,8 +15,9 @@ zh-CN:
       insurance: "保险"
       accident_insurance: "意外险"
       health_insurance: "健康险"
-      accident_item: "意外险"
       line_item: "订单项"
+      accident_item: "意外险"
+      public_liability_item: "公共责任险"
     attributes:
       user:
         email: "电子邮件"
@@ -78,6 +79,13 @@ zh-CN:
         body: "补充说明"
       health_insurance:
         body: "补充说明"
+      line_item:
+        insurance_id: "所购保险"
+        cart_id: "购物车"
+        order_id: "订单"
+        aasm_state: "状态"
+        price: "购买时价格"
+        quantity: "数量"
       accident_item:
         industry_id: "行业分类"
         employee_number: "员工数量"
@@ -86,13 +94,11 @@ zh-CN:
         stopped_at: "保单终止日期"
         accident_medical: "意外医疗"
         hospital_allowance: "住院津贴"
-      line_item:
-        insurance_id: "所购保险"
-        cart_id: "购物车"
-        order_id: "订单"
-        aasm_state: "状态"
-        price: "购买时价格"
-        quantity: "数量"
+      public_liability_item:
+        business_place: "被保险人营业场所"
+        business_type: "被保险人营业性质"
+        with_fire_control: "有无消防装置"
+        with_security_measure: "有无安保措施"
       order:
         aasm_state: "状态"
         address: "邮寄地址"
@@ -190,3 +196,8 @@ zh-CN:
       20_per_day: "20元/天"
       50_per_day: "50元/天"
       100_per_day: "100元/天"
+  public_liability_item:
+    business_type:
+      production: "生产"
+      sale: "销售"
+      storage: "仓储"

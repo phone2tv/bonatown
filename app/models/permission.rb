@@ -59,10 +59,10 @@ class Permission
         order.may_ship? and user.is_quoter?
       end
       # accident_items
-      allow [:accident_items], [:show] do |item|
+      allow [:accident_items, :public_liability_items], [:show] do |item|
         item.owned_by? user
       end
-      allow [:accident_items], [:new, :edit, :create, :update, :destroy] do |item|
+      allow [:accident_items, :public_liability_items], [:new, :edit, :create, :update, :destroy] do |item|
         user.is_customer?
       end
       # line items
