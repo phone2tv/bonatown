@@ -69,6 +69,11 @@ en:
         price: "Price"
         aasm_state: "State"
         company_id: "Company"
+        type: "Type"
+        image: "Image"
+        target: "Targets"
+        feature: "Features"
+        benefit: "Benefits"
       accident_insurance:
         body: "Note"
       health_insurance:

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <%= render 'form' %>
+
+    <%= link_to 'Show', @public_liability_insurance %> |
+    <%= link_to 'Back', public_liability_insurances_path %>
+  </div>
+</div> <!-- row -->

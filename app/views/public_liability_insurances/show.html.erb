@@ -1,0 +1,77 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-6'>
+    <p>
+    <%# button_to '加入购物车', line_items_path(line_item: { insurance_id: @public_liability_insurance }), class: 'btn btn-success' %>
+    <%= link_to '加入购物车', new_public_liability_item_path(public_liability_insurance_id: @public_liability_insurance), class: 'btn btn-success' %>
+    </p>
+    <p>
+    <%# button_to 'Add to Cart', line_items_path(line_item: { insurance_id: @public_liability_insurance }), class: 'btn btn-success' %>
+    </p>
+
+    <p>
+    <strong>Title:</strong>
+    <%= @public_liability_insurance.title %>
+    </p>
+
+    <p>
+    <strong>Synopsis:</strong>
+    <%= @public_liability_insurance.synopsis %>
+    </p>
+
+    <p>
+    <strong>Price:</strong>
+    <%= @public_liability_insurance.price %>
+    </p>
+
+    <p>
+    <strong>Aasm state:</strong>
+    <%= @public_liability_insurance.aasm_state %>
+    </p>
+
+    <p>
+    <strong>Type:</strong>
+    <%= @public_liability_insurance.type %>
+    </p>
+
+    <p>
+    <strong>Company:</strong>
+    <%= @public_liability_insurance.company.name if @public_liability_insurance.company.present? %>
+    </p>
+
+    <p>
+    <strong>Image:</strong>
+    <%= @public_liability_insurance.image %>
+    </p>
+
+    <p>
+    <strong>Target:</strong>
+    <%= @public_liability_insurance.target %>
+    </p>
+
+    <p>
+    <strong>Feature:</strong>
+    <%= @public_liability_insurance.feature %>
+    </p>
+
+    <p>
+    <strong>Benefit:</strong>
+    <%= @public_liability_insurance.benefit %>
+    </p>
+
+    <%= link_to 'Edit', edit_public_liability_insurance_path(@public_liability_insurance) %> |
+    <%= link_to 'Back', public_liability_insurances_path %>
+  </div>
+</div> <!-- row -->

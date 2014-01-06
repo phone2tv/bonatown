@@ -40,6 +40,7 @@ Insurer::Application.routes.draw do
   resources :companies
   resources :insurances
   resources :accident_insurances
+  resources :public_liability_insurances
   resources :health_insurances
 
   resources :line_items, only: [:index, :show, :create, :destroy] do

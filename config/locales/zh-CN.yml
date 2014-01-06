@@ -69,6 +69,11 @@ zh-CN:
         price: "保费"
         aasm_state: "状态"
         company_id: "保险公司"
+        type: "所属类型"
+        image: "相应图片"
+        target: "适用对象"
+        feature: "产品亮点"
+        benefit: "保障权益"
       accident_insurance:
         body: "补充说明"
       health_insurance:

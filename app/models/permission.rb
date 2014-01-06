@@ -7,7 +7,7 @@ class Permission
     allow :stores, [:show, :tagged]
     allow :orders, [:index]
     allow [:line_items], [:index, :show]
-    allow [:companies, :insurances, :accident_insurances, :health_insurances], [:index, :show]
+    allow [:companies, :insurances, :accident_insurances, :public_liability_insurances, :health_insurances], [:index, :show]
     if user
       # as user
       allow :sessions, [:destroy]
@@ -32,7 +32,7 @@ class Permission
         user.is_customer? and cart.owned_by?(user)
       end
       # companies
-      allow [:companies, :insurances, :accident_insurances, :health_insurances], [:new, :edit, :create, :update, :destroy] do |company|
+      allow [:companies, :insurances, :accident_insurances, :public_liability_insurances, :health_insurances], [:new, :edit, :create, :update, :destroy] do |company|
         true
       # user.is_manager?
       end
