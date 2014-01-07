@@ -24,16 +24,16 @@
   </div>
 
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
-  <%# render partial: 'elevators/form', locals: { elevator_form: f } %>
+  <%= render partial: 'elevators/form', locals: { elevator_form: f } %>
 
-  <%= f.fields_for :elevators do |elevator| %>
+  <%# f.fields_for :elevators do |elevator| %>
     <div class="form-group">
-      <%= elevator.label :kind, class: 'control-label' %>
-      <%= elevator.text_field :kind, class: 'form-control' %>
-      <%= elevator.check_box :_destroy %>
-      <%= elevator.label :_destroy, 'Remove Elevator' %>
+      <%# elevator.label :kind, class: 'control-label' %>
+      <%# elevator.text_field :kind, class: 'form-control' %>
+      <%# elevator.check_box :_destroy %>
+      <%# elevator.label :_destroy, 'Remove Elevator' %>
     </div>
-  <% end %>
+  <%# end %>
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>
