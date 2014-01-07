@@ -6,6 +6,8 @@ class PublicLiabilityItem < ActiveRecord::Base
 # belongs_to :insurance
   has_one :line_item, as: :insurance_item, dependent: :destroy
   accepts_nested_attributes_for :line_item
+  has_many :elevators, dependent: :destroy
+  accepts_nested_attributes_for :elevators, :reject_if => lambda { |a| a[:kind].blank? }
 
   # validation macros
   validates :insurance_id, presence: true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140106085359) do
+ActiveRecord::Schema.define(version: 20140106160625) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -68,6 +68,19 @@ ActiveRecord::Schema.define(version: 20140106085359) do
   end
 
   add_index "customer_profiles", ["park_profile_id"], name: "index_customer_profiles_on_park_profile_id"
+
+  create_table "elevators", force: true do |t|
+    t.integer  "public_liability_item_id"
+    t.string   "kind"
+    t.integer  "quantity"
+    t.date     "year_of_manufacture"
+    t.integer  "using_years"
+    t.integer  "overhaul_interval"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "elevators", ["public_liability_item_id"], name: "index_elevators_on_public_liability_item_id"
 
   create_table "health_insurances", force: true do |t|
     t.text     "body"

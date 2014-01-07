@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  kind: MyString
+  quantity: 1
+  year_of_manufacture: 2014-01-07
+  using_years: 1
+  overhaul_interval: 1
+
+two:
+  kind: MyString
+  quantity: 1
+  year_of_manufacture: 2014-01-07
+  using_years: 1
+  overhaul_interval: 1

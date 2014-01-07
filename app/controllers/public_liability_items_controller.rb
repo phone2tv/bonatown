@@ -17,6 +17,8 @@ class PublicLiabilityItemsController < ApplicationController
   # @public_liability_item = PublicLiabilityItem.new
     @public_liability_item = PublicLiabilityItem.new(insurance_id: params[:insurance_id])
     @public_liability_item.build_line_item(user_id: current_user.id, cart_id: current_cart.id)
+    @public_liability_item.elevators.build
+    @public_liability_item.elevators.build
   end
 
   # GET /public_liability_items/1/edit
@@ -71,6 +73,6 @@ class PublicLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def public_liability_item_params
-      params.require(:public_liability_item).permit(:insurance_id, :business_place, :business_type, :with_fire_control, :with_security_measure)
+      params.require(:public_liability_item).permit(:insurance_id, :business_place, :business_type, :with_fire_control, :with_security_measure, :line_item_attributes => [:user_id, :cart_id], :elevators_attributes => [:kind, :quantity, :year_of_manufacture, :using_years, :overhaul_interval])
     end
 end

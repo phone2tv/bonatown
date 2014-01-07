@@ -1,6 +1,4 @@
 Insurer::Application.routes.draw do
-  resources :public_liability_items
-
   root 'stores#show'
 
   resource :store, only: :show do
@@ -58,6 +56,10 @@ Insurer::Application.routes.draw do
   end
 
   resources :accident_items
+  resources :public_liability_items do
+    resources :elevator, only: [:new, :create, :destroy]
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
