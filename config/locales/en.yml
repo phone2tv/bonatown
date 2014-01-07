@@ -102,6 +102,12 @@ en:
       order:
         aasm_state: "State"
         address: "Address"
+      elevator:
+        kind: "Kind"
+        quantity: "Quantity"
+        year_of_manufacture: "Year of Manufacture"
+        using_years: "Using Years"
+        overhaul_interval: "Overhaul Interval"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

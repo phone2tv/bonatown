@@ -102,6 +102,12 @@ zh-CN:
       order:
         aasm_state: "状态"
         address: "邮寄地址"
+      elevator:
+        kind: "种类"
+        quantity: "数量"
+        year_of_manufacture: "生产年份"
+        using_years: "使用年数"
+        overhaul_interval: "检修时间间隔"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

@@ -30,6 +30,8 @@
     <div class="form-group">
       <%= elevator.label :kind, class: 'control-label' %>
       <%= elevator.text_field :kind, class: 'form-control' %>
+      <%= elevator.check_box :_destroy %>
+      <%= elevator.label :_destroy, 'Remove Elevator' %>
     </div>
   <% end %>
 
