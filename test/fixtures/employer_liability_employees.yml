@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  employer_liability_item_id: 
+  name: MyString
+  title: MyString
+  health: MyString
+
+two:
+  employer_liability_item_id: 
+  name: MyString
+  title: MyString
+  health: MyString

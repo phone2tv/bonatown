@@ -6,8 +6,8 @@ class EmployerLiabilityItem < ActiveRecord::Base
 # belongs_to :insurance
   has_one :line_item, as: :insurance_item, dependent: :destroy
   accepts_nested_attributes_for :line_item, update_only: true
-# has_many :insured_products, dependent: :destroy
-# accepts_nested_attributes_for :insured_products, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
+  has_many :employer_liability_employees, dependent: :destroy
+  accepts_nested_attributes_for :employer_liability_employees, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true
 
   # validation macros
   validates :insurance_id, presence: true

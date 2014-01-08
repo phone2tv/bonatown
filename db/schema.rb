@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108143023) do
+ActiveRecord::Schema.define(version: 20140108150820) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -81,6 +81,17 @@ ActiveRecord::Schema.define(version: 20140108143023) do
   end
 
   add_index "elevators", ["public_liability_item_id"], name: "index_elevators_on_public_liability_item_id"
+
+  create_table "employer_liability_employees", force: true do |t|
+    t.integer  "employer_liability_item_id"
+    t.string   "name"
+    t.string   "title"
+    t.string   "health"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employer_liability_employees", ["employer_liability_item_id"], name: "index_employees_on_employer_liability_item_id"
 
   create_table "employer_liability_items", force: true do |t|
     t.integer  "insurance_id"

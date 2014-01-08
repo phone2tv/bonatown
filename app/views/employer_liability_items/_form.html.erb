@@ -56,6 +56,14 @@
 
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
 
+  <%= f.fields_for :employer_liability_employees do |builder| %>
+    <%= render 'employer_liability_employee_fields', f: builder %>
+  <% end %>
+
+  <div class="form-group">
+    <%= link_to_add_fields "Add Employee", f, :employer_liability_employees %>
+  </div>
+
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>
   </div>
