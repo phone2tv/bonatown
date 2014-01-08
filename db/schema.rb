@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108114329) do
+ActiveRecord::Schema.define(version: 20140108130658) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -110,6 +110,20 @@ ActiveRecord::Schema.define(version: 20140108114329) do
   end
 
   add_index "insurances", ["company_id"], name: "index_insurances_on_company_id"
+
+  create_table "insured_products", force: true do |t|
+    t.integer  "product_liability_item_id"
+    t.string   "name"
+    t.string   "kind"
+    t.string   "nature"
+    t.string   "use"
+    t.string   "sales_area"
+    t.string   "sales_volumn"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "insured_products", ["product_liability_item_id"], name: "index_insured_products_on_product_liability_item_id"
 
   create_table "line_items", force: true do |t|
     t.integer  "insurance_item_id"

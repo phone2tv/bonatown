@@ -9,7 +9,7 @@ class AccidentItem < ActiveRecord::Base
   belongs_to :specific_insurance, class_name: 'AccidentInsurance', foreign_key: 'accident_insurance_id'
   belongs_to :industry
   has_one :line_item, as: :insurance_item, dependent: :destroy
-  accepts_nested_attributes_for :line_item
+  accepts_nested_attributes_for :line_item, update_only: true
 
   # validation macros
   validates :accident_insurance_id, presence: true

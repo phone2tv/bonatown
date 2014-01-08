@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  product_liability_item_id: 
+  name: MyString
+  kind: MyString
+  nature: MyString
+  use: MyString
+  sales_area: MyString
+  sales_volumn: MyString
+
+two:
+  product_liability_item_id: 
+  name: MyString
+  kind: MyString
+  nature: MyString
+  use: MyString
+  sales_area: MyString
+  sales_volumn: MyString

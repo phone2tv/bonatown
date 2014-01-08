@@ -35,7 +35,14 @@
   </div>
 
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
-  <%# render partial: 'elevators/form', locals: { elevator_form: f } %>
+
+  <%= f.fields_for :insured_products do |builder| %>
+    <%= render 'insured_product_fields', f: builder %>
+  <% end %>
+
+  <div class="form-group">
+    <%= link_to_add_fields "Add Insured Product", f, :insured_products %>
+  </div>
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>

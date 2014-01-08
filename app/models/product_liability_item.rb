@@ -5,7 +5,9 @@ class ProductLiabilityItem < ActiveRecord::Base
   belongs_to :specific_insurance, class_name: 'ProductLiabilityInsurance', foreign_key: 'insurance_id'
 # belongs_to :insurance
   has_one :line_item, as: :insurance_item, dependent: :destroy
-  accepts_nested_attributes_for :line_item
+  accepts_nested_attributes_for :line_item, update_only: true
+  has_many :insured_products, dependent: :destroy
+  accepts_nested_attributes_for :insured_products, :reject_if => lambda { |a| a[:name].blank? }, :allow_destroy => true, update_only: true
 
   # validation macros
   validates :insurance_id, presence: true
