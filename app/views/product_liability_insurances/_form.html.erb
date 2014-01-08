@@ -1,0 +1,47 @@
+<%= form_for(@product_liability_insurance) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="form-group">
+    <%= f.label :title, class: 'control-label' %>
+    <%= f.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :synopsis, class: 'control-label' %>
+    <%= f.text_area :synopsis, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price, class: 'control-label' %>
+    <%= f.text_field :price, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%# f.label :aasm_state, class: 'control-label' %>
+    <%# f.text_field :aasm_state, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :type, class: 'control-label' %>
+    <%= f.text_field :type, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :company_id, class: 'control-label' %>
+    <%= f.collection_select :company_id, Company.all, :id, :name, { include_blank: false }, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image, class: 'control-label' %>
+    <%= f.text_field :image, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :target, class: 'control-label' %>
+    <%= f.text_field :target, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :feature, class: 'control-label' %>
+    <%= f.text_area :feature, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :benefit, class: 'control-label' %>
+    <%= f.text_area :benefit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

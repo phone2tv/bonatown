@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th><%= t('activerecord.attributes.insurance.title') %></th>
+          <th><%= t('activerecord.attributes.insurance.synopsis') %></th>
+          <th><%= t('activerecord.attributes.insurance.price') %></th>
+          <th><%= t('activerecord.attributes.insurance.aasm_state') %></th>
+          <th><%= t('activerecord.attributes.insurance.company_id') %></th>
+          <th><%= t('activerecord.attributes.insurance.type') %></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @employer_liability_insurances.each do |employer_liability_insurance| %>
+          <tr>
+            <td><%= link_to employer_liability_insurance.title, employer_liability_insurance %></td>
+            <td><%= employer_liability_insurance.synopsis %></td>
+            <td><%= employer_liability_insurance.price %></td>
+            <td><%= employer_liability_insurance.aasm_state %></td>
+            <td><%= employer_liability_insurance.company.name if employer_liability_insurance.company.present? %></td>
+            <td><%= employer_liability_insurance.type %></td>
+            <td><%= link_to 'Edit', edit_employer_liability_insurance_path(employer_liability_insurance) %> / <%= link_to 'Destroy', employer_liability_insurance, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->

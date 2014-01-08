@@ -65,15 +65,21 @@ def create_insurances
   print_title('setting up insurances')
 
   company = Company.create!(name: 'Pacific', website: 'www.pacific.com', aboutme: 'about pacific')
+  company = Company.create!(name: 'Pingan', website: 'www.pingan.com', aboutme: 'about pingan')
 
   insur = AccidentInsurance.create!(title: 'Accident insurance title 1', synopsis: 'Accident insurance synopsis 1', price: '1.00', company: company)
-# insur.profile = AccidentInsurance.create!(body: 'Accident insurance body');
-# insur.save!
   print_content "insurance: #{insur.title}"
 
   insur = HealthInsurance.create!(title: 'Health insurance title 1', synopsis: 'Health insurance synopsis 1', price: '1.00', company: company)
-# insur.profile = HealthInsurance.create!(body: 'Health insurance body');
-# insur.save!
+  print_content "insurance: #{insur.title}"
+
+  insur = PublicLiabilityInsurance.create!(title: 'Public Liability insurance title 1', synopsis: 'Public Liability insurance synopsis 1', price: '1.00', company: company)
+  print_content "insurance: #{insur.title}"
+
+  insur = ProductLiabilityInsurance.create!(title: 'Product Liability insurance title 1', synopsis: 'Product Liability insurance synopsis 1', price: '1.00', company: company)
+  print_content "insurance: #{insur.title}"
+
+  insur = EmployerLiabilityInsurance.create!(title: 'Employer Liability insurance title 1', synopsis: 'Employer Liability insurance synopsis 1', price: '1.00', company: company)
   print_content "insurance: #{insur.title}"
 end
 
