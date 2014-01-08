@@ -160,6 +160,7 @@ ActiveRecord::Schema.define(version: 20140108114329) do
   end
 
   create_table "product_liability_items", force: true do |t|
+    t.integer  "insurance_id"
     t.integer  "business_nature"
     t.integer  "each_accident_limit"
     t.integer  "bodily_injury_limit"
@@ -170,6 +171,8 @@ ActiveRecord::Schema.define(version: 20140108114329) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "product_liability_items", ["insurance_id"], name: "index_product_liability_items_on_insurance_id"
 
   create_table "public_liability_items", force: true do |t|
     t.integer  "insurance_id"

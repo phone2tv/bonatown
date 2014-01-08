@@ -1,6 +1,7 @@
 class CreateProductLiabilityItems < ActiveRecord::Migration
   def change
     create_table :product_liability_items do |t|
+      t.references :insurance, index: true
       t.integer :business_nature
       t.integer :each_accident_limit
       t.integer :bodily_injury_limit

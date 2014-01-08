@@ -6,4 +6,14 @@ class ProductLiabilityItem < ActiveRecord::Base
 # belongs_to :insurance
   has_one :line_item, as: :insurance_item, dependent: :destroy
   accepts_nested_attributes_for :line_item
+
+  # validation macros
+  validates :insurance_id, presence: true
+  validates :business_nature, presence: true
+
+  # instance methods
+  def owned_by? owner
+    return false unless owner.is_a? User
+    line_item.user == owner
+  end
 end

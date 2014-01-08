@@ -14,7 +14,9 @@ class ProductLiabilityItemsController < ApplicationController
 
   # GET /product_liability_items/new
   def new
-    @product_liability_item = ProductLiabilityItem.new
+  # @product_liability_item = ProductLiabilityItem.new
+    @product_liability_item = ProductLiabilityItem.new(insurance_id: params[:insurance_id])
+    @product_liability_item.build_line_item(user_id: current_user.id, cart_id: current_cart.id)
   end
 
   # GET /product_liability_items/1/edit
@@ -69,6 +71,6 @@ class ProductLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_liability_item_params
-      params.require(:product_liability_item).permit(:business_nature, :each_accident_limit, :bodily_injury_limit, :property_damage_limit, :aggregate_limit, :started_at, :stopped_at)
+      params.require(:product_liability_item).permit(:insurance_id, :business_nature, :each_accident_limit, :bodily_injury_limit, :property_damage_limit, :aggregate_limit, :started_at, :stopped_at, :line_item_attributes => [:user_id, :cart_id, :price])
     end
 end

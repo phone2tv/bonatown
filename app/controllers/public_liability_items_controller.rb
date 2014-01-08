@@ -73,6 +73,6 @@ class PublicLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def public_liability_item_params
-      params.require(:public_liability_item).permit(:insurance_id, :business_place, :business_type, :with_fire_control, :with_security_measure, :line_item_attributes => [:user_id, :cart_id], :elevators_attributes => [:id, :kind, :quantity, :year_of_manufacture, :using_years, :overhaul_interval, :_destroy])
+      params.require(:public_liability_item).permit(:insurance_id, :business_place, :business_type, :with_fire_control, :with_security_measure, :line_item_attributes => [:user_id, :cart_id, :price], :elevators_attributes => [:id, :kind, :quantity, :year_of_manufacture, :using_years, :overhaul_interval, :_destroy])
     end
 end
