@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108130658) do
+ActiveRecord::Schema.define(version: 20140108143023) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -81,6 +81,26 @@ ActiveRecord::Schema.define(version: 20140108130658) do
   end
 
   add_index "elevators", ["public_liability_item_id"], name: "index_elevators_on_public_liability_item_id"
+
+  create_table "employer_liability_items", force: true do |t|
+    t.integer  "insurance_id"
+    t.integer  "business_nature"
+    t.integer  "bodily_injury_limit"
+    t.integer  "medical_expenses_limit"
+    t.integer  "litigation_costs_limit"
+    t.integer  "aggregate_limit"
+    t.integer  "deductibles"
+    t.integer  "each_accident_limit"
+    t.integer  "bodily_injury_aggregate_limit"
+    t.integer  "property_deductibles"
+    t.integer  "employee_number"
+    t.date     "effective_date"
+    t.date     "termination_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "employer_liability_items", ["insurance_id"], name: "index_employer_liability_items_on_insurance_id"
 
   create_table "health_insurances", force: true do |t|
     t.text     "body"

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_nature: 1
+  bodily_injury_limit: 1
+  medical_expenses_limit: 1
+  litigation_costs_limit: 1
+  aggregate_limit: 1
+  deductibles: 1
+  each_accident_limit: 1
+  bodily_injury_aggregate_limit: 1
+  property_deductibles: 1
+  employee_number: 1
+  effective_date: 2014-01-08
+  termination_date: 2014-01-08
+
+two:
+  business_nature: 1
+  bodily_injury_limit: 1
+  medical_expenses_limit: 1
+  litigation_costs_limit: 1
+  aggregate_limit: 1
+  deductibles: 1
+  each_accident_limit: 1
+  bodily_injury_aggregate_limit: 1
+  property_deductibles: 1
+  employee_number: 1
+  effective_date: 2014-01-08
+  termination_date: 2014-01-08

@@ -1,0 +1,49 @@
+<h1>Listing employer_liability_items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Business nature</th>
+      <th>Bodily injury limit</th>
+      <th>Medical expenses limit</th>
+      <th>Litigation costs limit</th>
+      <th>Aggregate limit</th>
+      <th>Deductibles</th>
+      <th>Each accident limit</th>
+      <th>Bodily injury aggregate limit</th>
+      <th>Property deductibles</th>
+      <th>Employee number</th>
+      <th>Effective date</th>
+      <th>Termination date</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employer_liability_items.each do |employer_liability_item| %>
+      <tr>
+        <td><%= employer_liability_item.business_nature %></td>
+        <td><%= employer_liability_item.bodily_injury_limit %></td>
+        <td><%= employer_liability_item.medical_expenses_limit %></td>
+        <td><%= employer_liability_item.litigation_costs_limit %></td>
+        <td><%= employer_liability_item.aggregate_limit %></td>
+        <td><%= employer_liability_item.deductibles %></td>
+        <td><%= employer_liability_item.each_accident_limit %></td>
+        <td><%= employer_liability_item.bodily_injury_aggregate_limit %></td>
+        <td><%= employer_liability_item.property_deductibles %></td>
+        <td><%= employer_liability_item.employee_number %></td>
+        <td><%= employer_liability_item.effective_date %></td>
+        <td><%= employer_liability_item.termination_date %></td>
+        <td><%= link_to 'Show', employer_liability_item %></td>
+        <td><%= link_to 'Edit', edit_employer_liability_item_path(employer_liability_item) %></td>
+        <td><%= link_to 'Destroy', employer_liability_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employer liability item', new_employer_liability_item_path %>

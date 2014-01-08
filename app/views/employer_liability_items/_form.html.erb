@@ -1,0 +1,62 @@
+<%= form_for(@employer_liability_item) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="form-group">
+    <%= f.label :insurance_id, class: 'control-label' %>
+    <%= f.text_field :insurance_id, readonly: true, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :business_nature, class: 'control-label' %>
+    <%= f.select :business_nature, EmployerLiabilityItem::BUSINESS_NATURE.map { |item| [t("employer_liability_item.business_nature.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bodily_injury_limit, class: 'control-label' %>
+    <%= f.number_field :bodily_injury_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :medical_expenses_limit, class: 'control-label' %>
+    <%= f.number_field :medical_expenses_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :litigation_costs_limit, class: 'control-label' %>
+    <%= f.number_field :litigation_costs_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :aggregate_limit, class: 'control-label' %>
+    <%= f.number_field :aggregate_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deductibles, class: 'control-label' %>
+    <%= f.number_field :deductibles, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :each_accident_limit, class: 'control-label' %>
+    <%= f.number_field :each_accident_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bodily_injury_aggregate_limit, class: 'control-label' %>
+    <%= f.number_field :bodily_injury_aggregate_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_deductibles, class: 'control-label' %>
+    <%= f.number_field :property_deductibles, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee_number, class: 'control-label' %>
+    <%= f.number_field :employee_number, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :effective_date, class: 'control-label' %>
+    <%= f.date_select :effective_date, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :termination_date, class: 'control-label' %>
+    <%= f.date_select :termination_date, class: 'form-control' %>
+  </div>
+
+  <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

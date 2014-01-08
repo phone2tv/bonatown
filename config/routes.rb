@@ -62,6 +62,7 @@ Insurer::Application.routes.draw do
     resources :elevator, only: [:new, :create, :destroy]
   end
   resources :product_liability_items
+  resources :employer_liability_items
 
 
   # The priority is based upon order of creation: first created -> highest priority.

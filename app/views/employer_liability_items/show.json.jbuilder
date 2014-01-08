@@ -1,0 +1,1 @@
+json.extract! @employer_liability_item, :id, :business_nature, :bodily_injury_limit, :medical_expenses_limit, :litigation_costs_limit, :aggregate_limit, :deductibles, :each_accident_limit, :bodily_injury_aggregate_limit, :property_deductibles, :employee_number, :effective_date, :termination_date, :created_at, :updated_at
