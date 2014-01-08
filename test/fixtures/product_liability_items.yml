@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  business_nature: 1
+  each_accident_limit: 1
+  bodily_injury_limit: 1
+  property_damage_limit: 1
+  aggregate_limit: 1
+  started_at: 2014-01-08
+  stopped_at: 2014-01-08
+
+two:
+  business_nature: 1
+  each_accident_limit: 1
+  bodily_injury_limit: 1
+  property_damage_limit: 1
+  aggregate_limit: 1
+  started_at: 2014-01-08
+  stopped_at: 2014-01-08

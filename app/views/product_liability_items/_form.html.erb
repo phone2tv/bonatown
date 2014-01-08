@@ -1,0 +1,36 @@
+<%= form_for(@product_liability_item) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="form-group">
+    <%= f.label :business_nature, class: 'control-label' %>
+    <%= f.select :business_nature, ProductLiabilityItem::BUSINESS_NATURE.map { |item| [t("product_liability_item.business_nature.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :each_accident_limit, class: 'control-label' %>
+    <%= f.number_field :each_accident_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :bodily_injury_limit, class: 'control-label' %>
+    <%= f.number_field :bodily_injury_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :property_damage_limit, class: 'control-label' %>
+    <%= f.number_field :property_damage_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :aggregate_limit, class: 'control-label' %>
+    <%= f.number_field :aggregate_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :started_at, class: 'control-label' %>
+    <%= f.date_select :started_at, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stopped_at, class: 'control-label' %>
+    <%= f.date_select :stopped_at, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

@@ -15,9 +15,14 @@ en:
       insurance: "Insurance"
       accident_insurance: "Accident Insurance"
       health_insurance: "Health Insurance"
+      public_liability_insurance: "Public Liability Insurance"
+      product_liability_insurance: "Product Liability Insurance"
+      employer_liability_insurance: "Employer Liability Insurance"
       line_item: "LineItem"
       accident_item: "Accident Insurance"
       public_liability_item: "Public Liability Insurance"
+      product_liability_item: "Product Liability Insurance"
+      employer_liability_item: "Employer Liability Insurance"
     attributes:
       user:
         email: "Email"
@@ -99,6 +104,14 @@ en:
         business_type: "Business Type"
         with_fire_control: "With Fire Control"
         with_security_measure: "With Security Measure"
+      product_liability_item:
+        business_nature: "Business Nature"
+        each_accident_limit: "Each Accident Limit"
+        bodily_injury_limit: "Bodily Injury Limit"
+        property_damage_limit: "Property Damage Limit"
+        aggregate_limit: "Aggregate Limit"
+        started_at: "Started At"
+        stopped_at: "Stopped At"
       order:
         aasm_state: "State"
         address: "Address"
@@ -207,3 +220,10 @@ en:
       production: "Production"
       sale: "Sale"
       storage: "Warehouse Keeping"
+  product_liability_item:
+    business_nature:
+      manufacturer: "Manufacturer"
+      retailer: "Retailer"
+      wholesaler: "Wholesaler"
+      importer: "Importer"
+      exporter: "Exporter"
