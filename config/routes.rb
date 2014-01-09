@@ -1,4 +1,4 @@
-Insurer::Application.routes.draw do
+Insuretown::Application.routes.draw do
   root 'stores#show'
 
   resource :store, only: :show do
