@@ -192,6 +192,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.integer  "user_id"
     t.string   "aasm_state"
     t.string   "address"
+    t.string   "order_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

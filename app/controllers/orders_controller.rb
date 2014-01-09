@@ -43,6 +43,8 @@ class OrdersController < ApplicationController
         @order.line_items << line_item
       end
 
+      @order.order_number = @order.make_order_number(current_user.id, line_items.first.id)
+
       respond_to do |format|
         if @order.save
           format.html { redirect_to @order, notice: 'Order was successfully created.' }

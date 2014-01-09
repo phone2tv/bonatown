@@ -33,8 +33,8 @@ class Permission
       end
       # companies
       allow [:companies, :insurances, :accident_insurances, :public_liability_insurances, :product_liability_insurances, :employer_liability_insurances, :health_insurances], [:new, :edit, :create, :update, :destroy] do |company|
-        true
-      # user.is_manager?
+        user.is_manager?
+        true # TODO: remove this line
       end
       # orders
       allow :orders, [:new, :create] do |order|
@@ -80,9 +80,11 @@ class Permission
       end
       allow :line_items, [:verify] do |line_item|
         line_item.may_verify? and user.is_manager?
+        true # TODO: remove this line
       end
       allow :line_items, [:quote] do |line_item|
         line_item.may_quote? and user.is_quoter?
+        true # TODO: remove this line
       end
       allow :line_items, [:reject] do |line_item|
         line_item.committed? && user.is_manager? or

@@ -1,7 +1,10 @@
 <tr>
   <td><%= link_to line_item.id, line_item %></td>
   <td><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance %></td>
-  <td><%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.id), line_item.order  %></td>
+  <td>
+    <%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.id), line_item.order %> <br>
+    <%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.order_number), line_item.order %>
+  </td>
   <td><%= t('line_item.state.' + line_item.aasm_state) %></td>
   <td><%= line_item.price %></td>
   <td><%= line_item.quantity %></td>

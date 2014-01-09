@@ -26,13 +26,13 @@
               <%# label_tag('order[line_items][]', "check out this line_item") %>
             </td>
             <td><%= link_to line_item.id, line_item %></td>
-            <td><%= link_to line_item.insurance.title, line_item.insurance.profile %></td>
+            <td><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance %></td>
           </tr>
         <% end %>
         <tr>
           <td> </td>
           <td> </td>
-          <td> <%= f.submit %> </td>
+          <td> <%= f.submit class: 'btn btn-primary' %> </td>
         </tr>
       </table>
     <% end %>

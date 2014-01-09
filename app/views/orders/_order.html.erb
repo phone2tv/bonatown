@@ -1,5 +1,6 @@
 <p>
 <strong>ORDER ID:</strong> <%= order.id %>, 
+<strong>订单号:</strong> <%= order.order_number %>, 
 <strong><%= t('activerecord.attributes.order.aasm_state') %>:</strong> <%= t('line_item.state.' + order.aasm_state) %>, < 
 <%= link_to_if can?(:pay, order), t('order.action.pay'), pay_order_path(order), method: :put %> |
 <%= link_to_if can?(:ship, order), t('order.action.ship'), ship_order_path(order), method: :put %> |

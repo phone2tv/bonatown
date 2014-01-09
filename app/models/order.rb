@@ -5,11 +5,27 @@ class Order < ActiveRecord::Base
 
   # validation macros
   validates :aasm_state, :presence => true
+  validates :order_number, :presence => true, length: { is: 16 }
 
   # instance methods
   def owned_by? owner
     return false unless owner.is_a? User
     user == owner
+  end
+
+  # 16 bytes number
+  # date(8) + user_id(4) + number
+  def make_order_number(user_id, item_id)
+    # 8 bytes
+    date_part = Time.now.strftime("%Y%m%d")
+    # 4 bytes
+    user_part = sprintf "%04d", user_id
+    user_part = user_part[0, 4]
+    # 4 types
+    item_part = sprintf "%04d", item_id
+    item_part = item_part[0, 4]
+    # sn
+    order_number = date_part + user_part + item_part
   end
 
   def get_order_sn
