@@ -22,8 +22,8 @@
     <%= f.number_field :litigation_costs_limit, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :aggregate_limit, class: 'control-label' %>
-    <%= f.number_field :aggregate_limit, class: 'form-control' %>
+    <%= f.label :within_period_aggregate_limit, class: 'control-label' %>
+    <%= f.number_field :within_period_aggregate_limit, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :deductibles, class: 'control-label' %>
@@ -34,8 +34,12 @@
     <%= f.number_field :each_accident_limit, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :bodily_injury_aggregate_limit, class: 'control-label' %>
-    <%= f.number_field :bodily_injury_aggregate_limit, class: 'form-control' %>
+    <%= f.label :each_accident_bodily_injury_limit, class: 'control-label' %>
+    <%= f.number_field :each_accident_bodily_injury_limit, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :aggregate_limit, class: 'control-label' %>
+    <%= f.number_field :aggregate_limit, class: 'form-control' %>
   </div>
   <div class="form-group">
     <%= f.label :property_deductibles, class: 'control-label' %>

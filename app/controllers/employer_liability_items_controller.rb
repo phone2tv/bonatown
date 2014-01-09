@@ -70,6 +70,6 @@ class EmployerLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employer_liability_item_params
-      params.require(:employer_liability_item).permit(:insurance_id, :business_nature, :bodily_injury_limit, :medical_expenses_limit, :litigation_costs_limit, :aggregate_limit, :deductibles, :each_accident_limit, :bodily_injury_aggregate_limit, :property_deductibles, :employee_number, :effective_date, :termination_date, :line_item_attributes => [:user_id, :cart_id, :price, :quantity], :employer_liability_employees_attributes => [:id, :name, :title, :health, :_destroy])
+      params.require(:employer_liability_item).permit(:insurance_id, :business_nature, :bodily_injury_limit, :medical_expenses_limit, :litigation_costs_limit, :within_period_aggregate_limit, :deductibles, :each_accident_limit, :bodily_injury_aggregate_limit, :property_deductibles, :employee_number, :effective_date, :termination_date, :line_item_attributes => [:user_id, :cart_id, :price, :quantity], :employer_liability_employees_attributes => [:id, :name, :title, :health, :_destroy])
     end
 end
