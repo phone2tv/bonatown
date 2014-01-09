@@ -58,9 +58,7 @@ Insurer::Application.routes.draw do
   end
 
   resources :accident_items
-  resources :public_liability_items do
-    resources :elevator, only: [:new, :create, :destroy]
-  end
+  resources :public_liability_items
   resources :product_liability_items
   resources :employer_liability_items
 
