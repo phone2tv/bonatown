@@ -1,32 +1,5 @@
 class LineItem < ActiveRecord::Base
   # the default scope first (if any)
-# scope :cancelled_count, lambda { where(aasm_state: 'cancelled').count }
-# scope :uncommitted_count, lambda { where(aasm_state: 'uncommitted').count }
-# scope :committed_count, lambda { where(aasm_state: 'committed').count }
-# scope :rejected_count, lambda { where(aasm_state: 'rejected').count }
-# scope :verified_count, lambda { where(aasm_state: 'verified').count }
-# scope :quoted_count, lambda { where(aasm_state: 'quoted').count }
-# scope :paid_count, lambda { where(aasm_state: 'paid').count }
-# scope :shipped_count, lambda { where(aasm_state: 'shipped').count }
-
-# scope :items_in_cart, lambda {
-#   states = ['uncommitted', 'committed', 'rejected', 'verified', 'quoted']
-#   conditions = []
-#   states.each do |state|
-#     conditions << "aasm_state = '#{state}'"
-#   end
-#   where(conditions.join(" or ")).where(order_id: nil)
-# }
-
-# scope :items_out_cart, lambda {
-#   states = ['cancelled', 'paid', 'shipped']
-#   conditions = []
-#   states.each do |state|
-#     conditions << "aasm_state = '#{state}'"
-#   end
-#   where(conditions.join(" or "))
-# }
-
 
   # association macros
   belongs_to :insurance_item, polymorphic: true

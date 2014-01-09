@@ -18,6 +18,7 @@ en:
       public_liability_insurance: "Public Liability Insurance"
       product_liability_insurance: "Product Liability Insurance"
       employer_liability_insurance: "Employer Liability Insurance"
+      order: "Order"
       line_item: "LineItem"
       accident_item: "Accident Insurance"
       public_liability_item: "Public Liability Insurance"

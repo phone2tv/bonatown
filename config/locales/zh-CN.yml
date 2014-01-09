@@ -18,6 +18,7 @@ zh-CN:
       public_liability_insurance: "公共责任险"
       product_liability_insurance: "产品责任险"
       employer_liability_insurance: "雇主责任险"
+      order: "订单"
       line_item: "订单项"
       accident_item: "意外险"
       public_liability_item: "公共责任险"
