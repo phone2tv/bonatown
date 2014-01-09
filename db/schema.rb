@@ -167,6 +167,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.string   "aasm_state"
     t.decimal  "price"
     t.integer  "quantity",            default: 1, null: false
+    t.integer  "lock_version",        default: 0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -197,6 +198,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.datetime "updated_at"
   end
 
+  add_index "orders", ["order_number"], name: "index_orders_on_order_number", unique: true
   add_index "orders", ["user_id"], name: "index_orders_on_user_id"
 
   create_table "park_profiles", force: true do |t|

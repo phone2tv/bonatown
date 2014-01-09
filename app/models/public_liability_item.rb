@@ -18,4 +18,11 @@ class PublicLiabilityItem < ActiveRecord::Base
     return false unless owner.is_a? User
     line_item.user == owner
   end
+
+  def update_with_conflict_validation(*args)
+    update(*args)
+  rescue ActiveRecord::StaleObjectError
+    errors.add :base, "This record changed while you were editing it."
+    false
+  end
 end

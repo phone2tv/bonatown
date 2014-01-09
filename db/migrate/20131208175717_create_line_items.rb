@@ -8,6 +8,7 @@ class CreateLineItems < ActiveRecord::Migration
       t.string :aasm_state
       t.decimal :price
       t.integer :quantity, default: 1, null: false
+      t.integer :lock_version, default: 0, null: false
 
       t.timestamps
     end
