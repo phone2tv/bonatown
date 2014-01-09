@@ -96,6 +96,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
   create_table "employer_liability_items", force: true do |t|
     t.integer  "insurance_id"
     t.integer  "business_nature"
+    t.string   "manufacture_category"
     t.integer  "bodily_injury_limit"
     t.integer  "medical_expenses_limit"
     t.integer  "litigation_costs_limit"

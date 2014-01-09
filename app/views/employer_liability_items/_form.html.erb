@@ -10,6 +10,10 @@
     <%= f.select :business_nature, EmployerLiabilityItem::BUSINESS_NATURE.map { |item| [t("employer_liability_item.business_nature.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
   </div>
   <div class="form-group">
+    <%= f.label :manufacture_category, class: 'control-label' %>
+    <%= f.text_field :manufacture_category, class: 'form-control' %>
+  </div>
+  <div class="form-group">
     <%= f.label :bodily_injury_limit, class: 'control-label' %>
     <%= f.number_field :bodily_injury_limit, class: 'form-control' %>
   </div>

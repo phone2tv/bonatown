@@ -1,5 +1,5 @@
 class EmployerLiabilityItem < ActiveRecord::Base
-  BUSINESS_NATURE = [ ["manufacturer", 0], ["retailer", 1], ["wholesaler", 2], ["importer", 3], ["exporter", 4] ]
+  BUSINESS_NATURE = [ ["social_groups", 0], ["institutions", 1], ["government_agencies", 2], ["school", 3], ["business", 4], ["restaurant", 5], ["financial_enterprise", 6], ["entertainment", 7], ["manufacture", 8] ]
 
   # association macros
   belongs_to :specific_insurance, class_name: 'EmployerLiabilityInsurance', foreign_key: 'insurance_id'

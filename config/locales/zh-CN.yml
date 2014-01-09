@@ -114,6 +114,7 @@ zh-CN:
         stopped_at: "保单终止日期"
       employer_liability_item:
         business_nature: "被保险人性质"
+        manufacture_category: "从事何种生产"
         bodily_injury_limit: "每人伤残，死亡赔偿限额：元"
         medical_expenses_limit: "医疗费用赔偿限额/人：元"
         litigation_costs_limit: "保险期限内诉讼费用累积赔偿限额"
@@ -241,3 +242,14 @@ zh-CN:
       wholesaler: "批发商"
       importer: "进口商"
       exporter: "出口商"
+  employer_liability_item:
+    business_nature:
+      social_groups: "社会团体"
+      institutions: "事业单位"
+      government_agencies: "机关"
+      school: "学校"
+      business: "商业"
+      restaurant: "饭店"
+      financial_enterprise: "金融单位"
+      entertainment: "娱乐场所"
+      manufacture: "生产企业"

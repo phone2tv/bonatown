@@ -3,6 +3,7 @@ class CreateEmployerLiabilityItems < ActiveRecord::Migration
     create_table :employer_liability_items do |t|
       t.references :insurance, index: true
       t.integer :business_nature
+      t.string :manufacture_category
       t.integer :bodily_injury_limit
       t.integer :medical_expenses_limit
       t.integer :litigation_costs_limit

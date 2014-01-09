@@ -4,13 +4,15 @@
   <thead>
     <tr>
       <th>Business nature</th>
+      <th>Manufacture Category</th>
       <th>Bodily injury limit</th>
       <th>Medical expenses limit</th>
       <th>Litigation costs limit</th>
-      <th>Aggregate limit</th>
+      <th>Within Period Aggregate limit</th>
       <th>Deductibles</th>
       <th>Each accident limit</th>
-      <th>Bodily injury aggregate limit</th>
+      <th>Each accident Bodily injury limit</th>
+      <th>Aggregate limit</th>
       <th>Property deductibles</th>
       <th>Employee number</th>
       <th>Effective date</th>
@@ -25,6 +27,7 @@
     <% @employer_liability_items.each do |employer_liability_item| %>
       <tr>
         <td><%= employer_liability_item.business_nature %></td>
+        <td><%= employer_liability_item.manufacture_category %></td>
         <td><%= employer_liability_item.bodily_injury_limit %></td>
         <td><%= employer_liability_item.medical_expenses_limit %></td>
         <td><%= employer_liability_item.litigation_costs_limit %></td>

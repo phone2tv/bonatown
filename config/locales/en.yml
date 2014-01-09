@@ -114,6 +114,7 @@ en:
         stopped_at: "Stopped At"
       employer_liability_item:
         business_nature: "Business Nature"
+        manufacture_category: "Manufacture Category"
         bodily_injury_limit: "Bodily Injury Limit"
         medical_expenses_limit: "Medical Expenses Limit"
         litigation_costs_limit: "Litigation Costs Limit"
@@ -241,3 +242,14 @@ en:
       wholesaler: "Wholesaler"
       importer: "Importer"
       exporter: "Exporter"
+  employer_liability_item:
+    business_nature:
+      social_groups: "Social Groups"
+      institutions: "Instructions"
+      government_agencies: "Government Agencies"
+      school: "School"
+      business: "Business"
+      restaurant: "Restaurant"
+      financial_enterprise: "Financial Enterprise"
+      entertainment: "Entertainment"
+      manufacture: "Manufacture"
