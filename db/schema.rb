@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
   end
 
   create_table "accident_items", force: true do |t|
-    t.integer  "accident_insurance_id"
+    t.integer  "insurance_id"
     t.integer  "industry_id"
     t.string   "employee_number"
     t.integer  "quota"
@@ -32,8 +32,8 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.datetime "updated_at"
   end
 
-  add_index "accident_items", ["accident_insurance_id"], name: "index_accident_items_on_accident_insurance_id"
   add_index "accident_items", ["industry_id"], name: "index_accident_items_on_industry_id"
+  add_index "accident_items", ["insurance_id"], name: "index_accident_items_on_insurance_id"
 
   create_table "admin_profiles", force: true do |t|
     t.string   "name",       default: "", null: false

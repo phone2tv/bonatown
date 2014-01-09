@@ -6,13 +6,13 @@ class AccidentItem < ActiveRecord::Base
   HOSPITAL_ALLOWANCE = [ ["20_per_day", 0], ["50_per_day", 1], ["100_per_day", 2] ]
 
   # association macros
-  belongs_to :specific_insurance, class_name: 'AccidentInsurance', foreign_key: 'accident_insurance_id'
+  belongs_to :specific_insurance, class_name: 'AccidentInsurance', foreign_key: 'insurance_id'
   belongs_to :industry
   has_one :line_item, as: :insurance_item, dependent: :destroy
   accepts_nested_attributes_for :line_item, update_only: true
 
   # validation macros
-  validates :accident_insurance_id, presence: true
+  validates :insurance_id, presence: true
   validates :industry_id, presence: true
   validates :employee_number, presence: true
   validates :quota, presence: true

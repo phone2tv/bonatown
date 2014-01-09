@@ -14,8 +14,7 @@ class AccidentItemsController < ApplicationController
 
   # GET /accident_items/new
   def new
-    @accident_insurance = AccidentInsurance.find_by(id: params[:accident_insurance_id])
-    @accident_item = AccidentItem.new(accident_insurance_id: @accident_insurance.id)
+    @accident_item = AccidentItem.new(insurance_id: params[:insurance_id])
     @accident_item.build_line_item(user_id: current_user.id, cart_id: current_cart.id)
   end
 
@@ -78,6 +77,6 @@ class AccidentItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_item_params
-      params.require(:accident_item).permit(:accident_insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :cart_id, :price, :quantity])
+      params.require(:accident_item).permit(:insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :cart_id, :price, :quantity])
     end
 end
