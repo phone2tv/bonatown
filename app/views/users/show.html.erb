@@ -13,11 +13,6 @@
     <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
   </div>
   <div class='col-md-10'>
-    <%= render(partial: 'show_admin', locals: { user: @user }) if @user.has_role? :admin %>
-    <%= render(partial: 'show_moderator', locals: { user: @user }) if @user.has_role? :moderator %>
-    <%= render(partial: 'show_manager', locals: { user: @user }) if @user.has_role? :manager %>
-    <%= render(partial: 'show_quoter', locals: { user: @user }) if @user.has_role? :quoter %>
-    <%= render(partial: 'show_park', locals: { user: @user }) if @user.has_role? :park %>
-    <%= render(partial: 'show_customer', locals: { user: @user }) if @user.has_role? :customer %>
+    <%= render @user.profile %>
   </div>
 </div>
