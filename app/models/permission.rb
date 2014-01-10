@@ -30,6 +30,12 @@ class Permission
         user.is_moderator? && (is_manager? || u.is_quoter? || u.is_park? || u.is_customer?) or
         user.is_manager? && (u.is_quoter? || u.is_park? || u.is_customer?)
       end
+      allow [:admin_profiles, :moderator_profiles, :manager_profiles, :quoter_profiles], [:new, :edit, :create, :update, :destroy] do |profile|
+        user.id == profile.user.id or user.is_admin?
+      end
+      allow [:park_profiles, :customer_profiles], [:new, :edit, :create, :update, :destroy] do |profile|
+        user.id == profile.user.id or user.is_admin?
+      end
       # carts
       allow :carts, [:show, :destroy] do |cart|
         user.is_customer? and cart.owned_by?(user)

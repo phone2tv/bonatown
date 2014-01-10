@@ -7,22 +7,16 @@
       <ul>
         <li><%= link_to '用户列表', users_path %></li>
         <% if current_user.is_admin? %>
-          <li><%= link_to '> 添加'+t('role.name.admin'), new_admin_profile_path %></li>
-          <li><%= link_to '添加'+t('role.name.admin'), new_admin_users_path %></li>
+          <li><%= link_to '添加'+t('role.name.admin'), new_admin_profile_path %></li>
         <% end %>
         <% if current_user.is_admin? or current_user.is_moderator? %>
-          <li><%= link_to '> 添加'+t('role.name.moderator'), new_moderator_profile_path %></li>
-          <li><%= link_to '> 添加'+t('role.name.manager'), new_manager_profile_path %></li>
-          <li><%= link_to '添加'+t('role.name.moderator'), new_user_path(role: 'moderator') %></li>
-          <li><%= link_to '添加'+t('role.name.manager'), new_manager_users_path %></li>
+          <li><%= link_to '添加'+t('role.name.moderator'), new_moderator_profile_path %></li>
+          <li><%= link_to '添加'+t('role.name.manager'), new_manager_profile_path %></li>
         <% end %>
         <% if current_user.is_admin? or current_user.is_moderator? or current_user.is_manager? %>
-          <li><%= link_to '> 添加'+t('role.name.quoter'), new_quoter_profile_path %></li>
-          <li><%= link_to '> 添加'+t('role.name.park'), new_park_profile_path %></li>
-          <li><%= link_to '> 添加'+t('role.name.customer'), new_customer_profile_path %></li>
-          <li><%= link_to '添加'+t('role.name.quoter'), new_user_path(role: 'quoter') %></li>
-          <li><%= link_to '添加'+t('role.name.park'), new_user_path(role: 'park') %></li>
-          <li><%= link_to '添加'+t('role.name.customer'), new_user_path(role: 'customer') %></li>
+          <li><%= link_to '添加'+t('role.name.quoter'), new_quoter_profile_path %></li>
+          <li><%= link_to '添加'+t('role.name.park'), new_park_profile_path %></li>
+          <li><%= link_to '添加'+t('role.name.customer'), new_customer_profile_path %></li>
         <% end %>
       </ul>
     </div>

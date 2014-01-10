@@ -18,23 +18,7 @@ Insuretown::Application.routes.draw do
 
   devise_for :users
 
-  resources :users, except: [:create] do
-    collection do
-      get 'new_admin'
-      get 'new_moderator'
-      get 'new_manager'
-      get 'new_quoter'
-      get 'new_park'
-      get 'new_customer'
-      post 'create_admin'
-      post 'create_moderator'
-      post 'create_manager'
-      post 'create_quoter'
-      post 'create_park'
-      post 'create_customer'
-      post 'create_user'
-    end
-  end
+  resources :users, only: [:index, :show, :destroy]
 
   resources :admin_profiles, only: [:new, :edit, :create, :update, :destroy]
   resources :moderator_profiles, only: [:new, :edit, :create, :update, :destroy]
