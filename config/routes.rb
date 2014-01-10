@@ -36,6 +36,13 @@ Insuretown::Application.routes.draw do
     end
   end
 
+  resources :admin_profiles, only: [:new, :edit, :create, :update, :destroy]
+  resources :moderator_profiles, only: [:new, :edit, :create, :update, :destroy]
+  resources :manager_profiles, only: [:new, :edit, :create, :update, :destroy]
+  resources :quoter_profiles, only: [:new, :edit, :create, :update, :destroy]
+  resources :park_profiles, only: [:new, :edit, :create, :update, :destroy]
+  resources :customer_profiles, only: [:new, :edit, :create, :update, :destroy]
+
   resources :parks
   resources :companies
   resources :insurances
