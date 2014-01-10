@@ -3,8 +3,6 @@ class UsersController < ApplicationController
 
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
-  before_action :authorize_user!
-
   # GET /users
   # GET /users.json
   def index
@@ -142,13 +140,7 @@ class UsersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
-    end
-
-    def authorize_user!
-      user = @user.nil? ? User.new : @user
-      unless can? params[:action].to_sym, user
-        redirect_to root_path, alert: 'You have no permission to access this page.'
-      end
+      @profile = @user.profile
     end
 
     def update_profile
