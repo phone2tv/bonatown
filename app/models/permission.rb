@@ -3,7 +3,7 @@ class Permission
     # as guest
     allow :sessions, [:new, :create]
     allow :registrations, [:new, :create, :cancel]
-    allow :users, [:index, :show]
+    allow :users, [:index]
     allow :stores, [:show, :tagged]
     allow :orders, [:index]
     allow [:line_items], [:index, :show]
@@ -12,6 +12,9 @@ class Permission
       # as user
       allow :sessions, [:destroy]
       allow :registrations, [:edit, :update, :destroy, :edit_password, :update_password]
+      allow :users, [:show] do |u|
+        user.id == u.id
+      end
       allow :users, [:new_admin, :create_admin, :new_moderator, :create_moderator] do |u|
         user.is_admin?
       end

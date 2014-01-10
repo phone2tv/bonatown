@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
   has_many :ordered_line_items, through: :orders, source: :line_items
 
   # validation macros
-# validates :terms_of_service, :presence => true, :acceptance => true, on: :create
+  validates :terms_of_service, :acceptance => true, on: :create
   validates :username, :presence => true, uniqueness: true, length: { in: 4..20 }
 
   # macros from gems
