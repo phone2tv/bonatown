@@ -1,0 +1,19 @@
+<%= form_for(@profile, :url => { controller: 'users', action: "create_admin" }, :html => { class: 'form-border' }) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <%= render partial: 'users/form_user', locals: { user_form: f } %>
+
+  <div class='form-group'>
+    <%= f.label :name, class: 'control-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :aboutme, class: 'control-label' %>
+    <%= f.text_area :aboutme, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

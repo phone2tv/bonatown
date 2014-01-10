@@ -26,7 +26,8 @@ class UsersController < ApplicationController
 
   # GET /users/new_admin
   def new_admin
-    @user = User.new
+    @profile = AdminProfile.new
+    @profile.build_user
   end
 
   # GET /users/new_manager
@@ -61,19 +62,15 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create_admin
-    @user = User.new(user_params)
-    @user.add_role :admin
-    @user.profile = AdminProfile.new(admin_profile_params)
-  # @profile = AdminProfile.new(admin_profile_params)
-  # @profile = AdminProfile.new(admin_params)
+    @profile = AdminProfile.new(admin_params)
+    @profile.user.add_role :admin
     respond_to do |format|
-    # if @user.save
-      if @user.valid? and @user.profile.valid? and @user.save
-        format.html { redirect_to @user, notice: 'Admin was successfully created.' }
+      if @profile.save
+        format.html { redirect_to @profile.user, notice: 'Admin was successfully created.' }
         format.json { render action: 'show', status: :created, location: @user }
       else
         format.html { render action: 'new_admin' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
+        format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -169,8 +166,7 @@ class UsersController < ApplicationController
     end
 
     def admin_params
-      params.require(:profile).permit(:name, :aboutme)
-    # params.require(:user).permit(:username, :email, :password, :password_confirmation, :nickname, :name, :aboutme)
+      params.require(:admin_profile).permit(:name, :aboutme, :user_attributes => [:username, :email, :password, :password_confirmation])
     end
 
     def admin_profile_params
