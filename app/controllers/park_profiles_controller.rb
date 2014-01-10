@@ -68,9 +68,9 @@ class ParkProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def park_profile_params
       if params[:park_profile][:user_attributes][:password].blank? and params[:park_profile][:user_attributes][:password_confirmation].blank?
-        params.require(:park_profile).permit(:name, :user_attributes => [:username, :email])
+        params.require(:park_profile).permit(:name, :park_name, :location, :user_attributes => [:username, :email])
       else
-        params.require(:park_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation])
+        params.require(:park_profile).permit(:name, :park_name, :location, :user_attributes => [:username, :email, :password, :password_confirmation])
       end
     end
 end

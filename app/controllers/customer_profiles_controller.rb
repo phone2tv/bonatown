@@ -68,9 +68,9 @@ class CustomerProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_profile_params
       if params[:customer_profile][:user_attributes][:password].blank? and params[:customer_profile][:user_attributes][:password_confirmation].blank?
-        params.require(:customer_profile).permit(:name, :user_attributes => [:username, :email])
+        params.require(:customer_profile).permit(:name, :enterprise_name, :location, :park_profile_id, :user_attributes => [:username, :email])
       else
-        params.require(:customer_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation])
+        params.require(:customer_profile).permit(:name, :enterprise_name, :location, :park_profile_id, :user_attributes => [:username, :email, :password, :password_confirmation])
       end
     end
 end
