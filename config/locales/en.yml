@@ -186,6 +186,9 @@ en:
       broker: "Broker"
   customer_profile:
     include_blank: "Not in a Park"
+  cart:
+    add_to_cart: "Add to Cart"
+    buy_now: "Buy Now"
   line_item:
     state:
       cancelled: "cancelled"

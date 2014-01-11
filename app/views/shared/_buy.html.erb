@@ -1,0 +1,5 @@
+<p>
+<%# button_to '加入购物车', line_items_path(line_item: { insurance_id: @public_liability_insurance }), class: 'btn btn-success' %>
+<%= link_to t('cart.buy_now'), { controller: insurance.class.to_s.tableize.sub('insurances', 'items'), action: 'new', insurance_id: insurance }, { class: 'btn btn-danger' } %>
+<%= link_to t('cart.add_to_cart'), new_public_liability_item_path(insurance_id: @public_liability_insurance), class: 'btn btn-warning' %>
+</p>
