@@ -15,7 +15,7 @@ class EmployerLiabilityItemsController < ApplicationController
   # GET /employer_liability_items/new
   def new
     @employer_liability_item = EmployerLiabilityItem.new(insurance_id: params[:insurance_id])
-    @employer_liability_item.build_line_item(user_id: current_user.id, cart_id: current_cart.id)
+    @employer_liability_item.build_line_item(user_id: current_user.id)
   end
 
   # GET /employer_liability_items/1/edit
@@ -70,6 +70,6 @@ class EmployerLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def employer_liability_item_params
-      params.require(:employer_liability_item).permit(:insurance_id, :business_nature, :manufacture_category, :bodily_injury_limit, :medical_expenses_limit, :litigation_costs_limit, :within_period_aggregate_limit, :deductibles, :each_accident_limit, :each_accident_bodily_injury_limit, :aggregate_limit, :property_deductibles, :employee_number, :effective_date, :termination_date, :line_item_attributes => [:user_id, :cart_id, :price, :quantity], :employer_liability_employees_attributes => [:id, :name, :title, :health, :_destroy])
+      params.require(:employer_liability_item).permit(:insurance_id, :business_nature, :manufacture_category, :bodily_injury_limit, :medical_expenses_limit, :litigation_costs_limit, :within_period_aggregate_limit, :deductibles, :each_accident_limit, :each_accident_bodily_injury_limit, :aggregate_limit, :property_deductibles, :employee_number, :effective_date, :termination_date, :line_item_attributes => [:user_id, :price, :quantity, :lock_version], :employer_liability_employees_attributes => [:id, :name, :title, :health, :_destroy])
     end
 end

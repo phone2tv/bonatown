@@ -47,7 +47,7 @@ class Permission
       end
       # orders
       allow :orders, [:new, :create] do |order|
-        user.is_customer? && !user.cart.line_items.quoted.empty?
+        user.is_customer? && !user.line_items.where(order_id: nil).quoted.empty?
       end
       allow :orders, [:edit, :update] do |order|
         order.owned_by? user

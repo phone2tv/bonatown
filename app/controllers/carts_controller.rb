@@ -1,8 +1,7 @@
 class CartsController < ApplicationController
   def show
     if current_user.has_role? :customer
-      @cart = current_cart
-      @line_items = @cart.line_items
+      @line_items = current_user.line_items.where(order_id: nil)
       state = params[:state]
       @line_items = @line_items.where(aasm_state: state) if state.present?
       @line_items = @line_items.order(updated_at: :desc)
@@ -12,8 +11,7 @@ class CartsController < ApplicationController
   end
 
   def destroy
-    @cart = current_cart
-    @cart.line_items.destroy_all
+    current_user.line_items.where(order_id: nil).uncommitted.destroy_all
     session[:cart_id] = nil
     respond_to do |format|
       format.html { redirect_to cart_url, notice: 'Your cart is currently empty' }

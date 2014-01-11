@@ -19,7 +19,7 @@
 
     <%= form_for(Order.new) do |f| %>
       <table class='table'>
-        <% current_cart.line_items.quoted.each do |line_item| %>
+        <% current_user.line_items.where(order_id: nil).quoted.each do |line_item| %>
           <tr>
             <td>
               <%= check_box_tag('order[line_items][]', line_item.id) %>

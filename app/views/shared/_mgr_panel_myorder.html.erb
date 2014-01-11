@@ -5,13 +5,14 @@
     </div>
     <div class="panel-body">
       <ul>
-        <li><%= link_to "我的购物车 (#{current_user.cart.line_items.size})", cart_path %>
+        <li><%= link_to "我的购物车 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
         <ul>
-          <li><%= link_to "未提交订单 (#{current_cart.line_items.uncommitted.count})", cart_path(state: 'uncommitted') %></li>
-          <li><%= link_to "已提交订单 (#{current_cart.line_items.committed.count})", cart_path(state: 'committed') %></li>
-          <li><%= link_to "被拒绝订单 (#{current_cart.line_items.rejected.count})", cart_path(state: 'rejected') %></li>
-          <li><%= link_to "已审核订单 (#{current_cart.line_items.verified.count})", cart_path(state: 'verified') %></li>
-          <li><%= link_to "已报价订单 (#{current_cart.line_items.quoted.count})", cart_path(state: 'quoted') %></li>
+          <li><%= link_to "未提交订单项 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", cart_path(state: 'uncommitted') %></li>
+          <li><%= link_to "已提交订单项 (#{current_user.line_items.where(order_id: nil).committed.count})", cart_path(state: 'committed') %></li>
+          <li><%= link_to "被拒绝订单项 (#{current_user.line_items.where(order_id: nil).rejected.count})", cart_path(state: 'rejected') %></li>
+          <li><%= link_to "已审核订单项 (#{current_user.line_items.where(order_id: nil).verified.count})", cart_path(state: 'verified') %></li>
+          <li><%= link_to "已报价订单项 (#{current_user.line_items.where(order_id: nil).quoted.count})", cart_path(state: 'quoted') %></li>
+          <li><%= link_to "已取消订单项 (#{current_user.line_items.where(order_id: nil).cancelled.count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: true) %></li>
         </ul>
         </li>
         <li><%= link_to "我的订单 (#{current_user.orders.size})", orders_path(user_id: current_user) %>
@@ -22,10 +23,6 @@
           <li><%= link_to "已取消订单 (#{current_user.orders.cancelled.count})", orders_path(state: 'cancelled', user_id: current_user) %></li>
         </ul>
         </li>
-        <li><%= link_to "已取消订单", '#' %>
-        <ul>
-          <li><%= link_to "已取消订单项 (#{current_user.line_items.cancelled.where(order_id: nil).count})", line_items_path(state: 'cancelled', user_id: current_user.id, order_id: true) %></li>
-        </ul>
       </ul>
     </div>
   </div> <!-- panel -->
