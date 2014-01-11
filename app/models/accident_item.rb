@@ -14,10 +14,10 @@ class AccidentItem < ActiveRecord::Base
   # validation macros
   validates :insurance_id, presence: true
   validates :industry_id, presence: true
-  validates :employee_number, presence: true
-  validates :quota, presence: true
-  validates :started_at, presence: true
-  validates :stopped_at, presence: true
+# validates :employee_number, presence: true
+# validates :quota, presence: true
+# validates :started_at, presence: true
+# validates :stopped_at, presence: true
 
   # instance methods
   def owned_by? owner

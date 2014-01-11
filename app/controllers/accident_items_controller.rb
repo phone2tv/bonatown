@@ -61,6 +61,21 @@ class AccidentItemsController < ApplicationController
     end
   end
 
+  # POST /accident_items/add_to_cart
+  def add_to_cart
+    @accident_item = AccidentItem.new(insurance_id: params[:insurance_id], industry_id: 1)
+    @accident_item.build_line_item(user_id: current_user.id)
+    respond_to do |format|
+      if @accident_item.save
+        format.html { redirect_to :back, notice: 'Accident insurance was added to cart.' }
+        format.json { render action: 'show', status: :created, location: @accident_item }
+      else
+        format.html { redirect_to :back, alert: 'Accident insurance was failed to add to cart.' }
+        format.json { render json: @accident_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_accident_item

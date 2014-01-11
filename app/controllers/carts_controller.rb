@@ -4,7 +4,7 @@ class CartsController < ApplicationController
       @line_items = current_user.line_items.where(order_id: nil)
       state = params[:state]
       @line_items = @line_items.where(aasm_state: state) if state.present?
-      @line_items = @line_items.order(updated_at: :desc)
+      @line_items = @line_items.order(created_at: :desc)
     else
       redirect_to root_path, alert: "only customer can use shopping cart."
     end

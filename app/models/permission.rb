@@ -74,6 +74,9 @@ class Permission
       allow [:accident_items, :public_liability_items, :product_liability_items, :employer_liability_items], [:new, :edit, :create, :update, :destroy] do |item|
         user.is_customer?
       end
+      allow [:accident_items, :public_liability_items, :product_liability_items, :employer_liability_items], [:add_to_cart] do |item|
+        user.is_customer?
+      end
       # line items
       allow :line_items, [:create] do
         user.is_customer?

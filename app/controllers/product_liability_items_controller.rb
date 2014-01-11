@@ -62,6 +62,21 @@ class ProductLiabilityItemsController < ApplicationController
     end
   end
 
+  # POST /accident_items/add_to_cart
+  def add_to_cart
+    @product_liability_item = ProductLiabilityItem.new(insurance_id: params[:insurance_id], business_nature: 1)
+    @product_liability_item.build_line_item(user_id: current_user.id)
+    respond_to do |format|
+      if @product_liability_item.save
+        format.html { redirect_to :back, notice: 'ProductLiability insurance was added to cart.' }
+        format.json { render action: 'show', status: :created, location: @product_liability_item }
+      else
+        format.html { redirect_to :back, alert: 'ProductLiability insurance was failed to add to cart.' }
+        format.json { render json: @product_liability_item.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product_liability_item

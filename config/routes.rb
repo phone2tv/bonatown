@@ -48,10 +48,26 @@ Insuretown::Application.routes.draw do
     end
   end
 
-  resources :accident_items
-  resources :public_liability_items
-  resources :product_liability_items
-  resources :employer_liability_items
+  resources :accident_items do
+    collection do
+      post 'add_to_cart'
+    end
+  end
+  resources :public_liability_items do
+    collection do
+      post 'add_to_cart'
+    end
+  end
+  resources :product_liability_items do
+    collection do
+      post 'add_to_cart'
+    end
+  end
+  resources :employer_liability_items do
+    collection do
+      post 'add_to_cart'
+    end
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
