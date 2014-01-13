@@ -60,6 +60,7 @@ zh-CN:
         name: "联系人"
         enterprise_name: "企业名称"
         location: "企业地址"
+        business_license: "营业执照"
         park_profile_id: "所属园区"
       park:
         name: "园区名称"

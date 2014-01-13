@@ -56,6 +56,10 @@ gem 'devise-i18n'
 #gem 'rolify'
 gem "rolify",        :git => "git://github.com/EppO/rolify.git"
 
+# Use carrierwave and mini_magick for upload and crop user gravatar
+gem "mini_magick"
+gem "carrierwave"
+
 gem 'bootstrap-sass', '~> 3.0.0'
 
 gem 'aasm'

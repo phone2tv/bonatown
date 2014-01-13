@@ -60,6 +60,7 @@ en:
         name: "Full Name"
         enterprise_name: "Enterprise Name"
         location: "Enterprise Location"
+        business_license: "Business License"
         park_profile_id: "Park Name"
       park:
         name: "Name"

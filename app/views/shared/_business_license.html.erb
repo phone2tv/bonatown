@@ -1,0 +1,5 @@
+<% if user.profile.business_license.present? %>
+  <%= image_tag(user.profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
+<% else %>
+  <%= image_tag("rails.png", size: '128x128', class: 'img-polaroid' ) %>
+<% end %>

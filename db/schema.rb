@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.string   "name"
     t.string   "enterprise_name"
     t.string   "location"
+    t.string   "business_license"
     t.integer  "park_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"

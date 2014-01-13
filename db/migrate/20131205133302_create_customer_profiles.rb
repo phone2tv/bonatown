@@ -4,6 +4,7 @@ class CreateCustomerProfiles < ActiveRecord::Migration
       t.string :name
       t.string :enterprise_name
       t.string :location
+      t.string :business_license
       t.references :park_profile, index: true
 
       t.timestamps
