@@ -18,12 +18,6 @@
     <%= f.text_field :location, class: 'form-control' %>
   </div>
 
-  <div class='form-group'>
-    <% if @profile.business_license? %>
-      <%= image_tag(@profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
-    <% end %>
-  </div>
-
   <div class='form-group' style='display:none'>
     <%= f.label :business_license, class: 'control-label' %>
     <%= f.file_field :business_license %>
@@ -32,6 +26,11 @@
 
   <div class="form-group">
     <%= f.label :business_license, class: 'control-label' %>
+    <div class="form-group">
+    <% if @profile.business_license? %>
+      <%= image_tag(@profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
+    <% end %>
+    </div>
     <div class="input-group">
       <input id="business_license_input" class="form-control" type="text" placeholder="Upload business_license ..." disabled>
       <span class="input-group-btn">
