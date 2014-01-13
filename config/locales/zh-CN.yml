@@ -147,6 +147,13 @@ zh-CN:
       short_so: ! "%m月%d日 %H:%M"
       this_year: ! "%m月%d日 %H:%M"
       one_year_ago: ! '%Y-%m-%d %H:%M'
+  errors:
+    messages:
+      carrierwave_processing_error: "不能调整图片尺寸。"
+      carrierwave_integrity_error: "不是一个图片。"
+      carrierwave_download_error: "不能下载图片。"
+      extension_white_list_error: "不接受扩展名为 %{extension} 的文件，允许的文件类型为：%{allowed_types}"
+      extension_black_list_error: "不接受扩展名为 %{extension} 的文件，禁止的文件类型为：%{prohibited_types}"
   layouts:
     brand: "保险超市网"
     back: "返回"

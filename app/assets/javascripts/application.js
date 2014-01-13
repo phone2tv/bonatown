@@ -18,6 +18,12 @@
 //= require placeholder.min
 //= require_tree .
 
+window.setTimeout(function() {
+  $("div.alert").fadeTo(500, 0).slideUp(500, function() {
+    $(this).remove();
+  });
+}, 2000);
+
 /*
 function remove_fields(link) {
   $(link).prev("input[type=hidden]").val("1");
