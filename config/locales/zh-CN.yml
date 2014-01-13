@@ -187,6 +187,7 @@ zh-CN:
       broker: "经纪人"
   customer_profile:
     include_blank: "不属于任何园区"
+    select_business_license: "选择营业执照"
   cart:
     add_to_cart: "加入购物车"
     buy_now: "立刻购买"

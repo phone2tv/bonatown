@@ -23,10 +23,21 @@
       <%= image_tag(@profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
     <% end %>
   </div>
-  <div class='form-group'>
+
+  <div class='form-group' style='display:none'>
     <%= f.label :business_license, class: 'control-label' %>
     <%= f.file_field :business_license %>
     <%# f.file_field :business_license, class: 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :business_license, class: 'control-label' %>
+    <div class="input-group">
+      <input id="business_license_input" class="form-control" type="text" placeholder="Upload business_license ..." disabled>
+      <span class="input-group-btn">
+        <a class="btn btn-default" onclick="$('input[id=customer_profile_business_license]').click();"><span class="fa fa-upload"></span> <%= t('customer_profile.select_business_license') %></a>
+      </span>
+    </div>
   </div>
 
   <div class='form-group'>
@@ -39,3 +50,10 @@
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>
+
+
+<script>
+  $('input[id=customer_profile_business_license]').change(function() {
+    $('#business_license_input').val($(this).val());
+  });
+</script>

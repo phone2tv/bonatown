@@ -187,6 +187,7 @@ en:
       broker: "Broker"
   customer_profile:
     include_blank: "Not in a Park"
+    select_business_license: "Select Business License"
   cart:
     add_to_cart: "Add to Cart"
     buy_now: "Buy Now"
