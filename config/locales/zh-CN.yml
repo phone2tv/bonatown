@@ -67,7 +67,7 @@ zh-CN:
         name: "姓名"
         card_type: "证件类型"
         card_no: "证件号码"
-        birthday: "生日日期"
+        birthday: "出生日期"
         gender: "性别"
         english_name: "英文名/拼音"
         mobile: "移动电话"
@@ -279,3 +279,11 @@ zh-CN:
       financial_enterprise: "金融单位"
       entertainment: "娱乐场所"
       manufacture: "生产企业"
+  contact:
+    card_type:
+      idcard: "身份证"
+      armcard: "军官证"
+      passport: "护照"
+      driving_license: "驾驶证"
+      simplified_chinese: "港澳台身份证/回乡证"
+      other: "其他"

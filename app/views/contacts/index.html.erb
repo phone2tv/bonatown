@@ -1,4 +1,18 @@
-<h1>Listing contacts</h1>
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
 
 <table>
   <thead>
@@ -14,7 +28,6 @@
       <th>Province</th>
       <th>City</th>
       <th>District</th>
-      <th>Customer profile</th>
       <th></th>
       <th></th>
       <th></th>
@@ -32,10 +45,9 @@
         <td><%= contact.english_name %></td>
         <td><%= contact.mobile %></td>
         <td><%= contact.telephone %></td>
-        <td><%= contact.province %></td>
-        <td><%= contact.city %></td>
-        <td><%= contact.district %></td>
-        <td><%= contact.customer_profile %></td>
+        <td><%= ChinaCity.get(contact.province) %></td>
+        <td><%= ChinaCity.get(contact.city) %></td>
+        <td><%= ChinaCity.get(contact.district) %></td>
         <td><%= link_to 'Show', contact %></td>
         <td><%= link_to 'Edit', edit_contact_path(contact), 'data-no-turbolink' => true %></td>
         <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -44,6 +56,5 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Contact', new_contact_path, 'data-no-turbolink' => true %>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->

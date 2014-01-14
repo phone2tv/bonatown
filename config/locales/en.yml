@@ -279,3 +279,11 @@ en:
       financial_enterprise: "Financial Enterprise"
       entertainment: "Entertainment"
       manufacture: "Manufacture"
+  contact:
+    card_type:
+      idcard: "ID Card"
+      armcard: "Arm Card"
+      passport: "Passport"
+      driving_license: "Driving License"
+      simplified_chinese: "Simplified Chinese"
+      other: "Other"
