@@ -36,6 +36,12 @@ class Permission
       allow [:park_profiles, :customer_profiles], [:new, :edit, :create, :update, :destroy] do |profile|
         user.id == profile.user.id or user.is_admin?
       end
+      allow [:contacts], [:index, :new, :create] do |contact|
+        user.is_customer?
+      end
+      allow [:contacts], [:show, :edit, :update, :destroy] do |contact|
+        user.profile.id == contact.customer_profile.id or user.is_admin?
+      end
       # carts
       allow :carts, [:show, :destroy] do |cart|
         user.is_customer? and cart.owned_by?(user)

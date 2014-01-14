@@ -7,4 +7,5 @@ class CustomerProfile < ActiveRecord::Base
   has_one :user, as: :profile, dependent: :destroy
   accepts_nested_attributes_for :user, update_only: true
   belongs_to :park_profile
+  has_many :contacts, dependent: :destroy
 end

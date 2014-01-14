@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140108150820) do
+ActiveRecord::Schema.define(version: 20140114091810) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -57,6 +57,25 @@ ActiveRecord::Schema.define(version: 20140108150820) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "contacts", force: true do |t|
+    t.string   "name"
+    t.string   "card_type"
+    t.string   "card_no"
+    t.date     "birthday"
+    t.string   "gender"
+    t.string   "english_name"
+    t.string   "mobile"
+    t.string   "telephone"
+    t.string   "province"
+    t.string   "city"
+    t.string   "district"
+    t.integer  "customer_profile_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "contacts", ["customer_profile_id"], name: "index_contacts_on_customer_profile_id"
 
   create_table "customer_profiles", force: true do |t|
     t.string   "name"

@@ -1,0 +1,49 @@
+<h1>Listing contacts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Card type</th>
+      <th>Card no</th>
+      <th>Birthday</th>
+      <th>Gender</th>
+      <th>English name</th>
+      <th>Mobile</th>
+      <th>Telephone</th>
+      <th>Province</th>
+      <th>City</th>
+      <th>District</th>
+      <th>Customer profile</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @contacts.each do |contact| %>
+      <tr>
+        <td><%= contact.name %></td>
+        <td><%= contact.card_type %></td>
+        <td><%= contact.card_no %></td>
+        <td><%= contact.birthday %></td>
+        <td><%= contact.gender %></td>
+        <td><%= contact.english_name %></td>
+        <td><%= contact.mobile %></td>
+        <td><%= contact.telephone %></td>
+        <td><%= contact.province %></td>
+        <td><%= contact.city %></td>
+        <td><%= contact.district %></td>
+        <td><%= contact.customer_profile %></td>
+        <td><%= link_to 'Show', contact %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact), 'data-no-turbolink' => true %></td>
+        <td><%= link_to 'Destroy', contact, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Contact', new_contact_path, 'data-no-turbolink' => true %>

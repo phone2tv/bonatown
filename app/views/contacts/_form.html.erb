@@ -1,0 +1,83 @@
+<%= form_for(@contact) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :card_type %><br>
+    <%= f.text_field :card_type %>
+  </div>
+  <div class="field">
+    <%= f.label :card_no %><br>
+    <%= f.text_field :card_no %>
+  </div>
+  <div class="field">
+    <%= f.label :birthday %><br>
+    <%= f.date_select :birthday %>
+  </div>
+  <div class="field">
+    <%= f.label :gender %><br>
+    <%= f.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= f.label :english_name %><br>
+    <%= f.text_field :english_name %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :telephone %><br>
+    <%= f.text_field :telephone %>
+  </div>
+  <div class="field">
+    <%= f.label :province %><br>
+    <%# f.text_field :province %>
+  </div>
+  <div class="field">
+    <%= f.label :city %><br>
+    <%# f.text_field :city %>
+  </div>
+  <div class="field">
+    <%= f.label :district %><br>
+    <%# f.text_field :district %>
+  </div>
+
+  <%-
+    province = @contact.province
+    city = @contact.city
+    district = @contact.district
+    provinces  = ChinaCity.list
+    cities     = ChinaCity.list(province)
+    districtes = ChinaCity.list(city)
+  %>
+
+  <div class='rails-helper city-group'>
+    <%= select_tag :province, options_for_select(provinces, province) , prompt: '--省份--', id: 'contact_province', name: 'contact[province]', class: ['city-select', 'city-province'] %>
+    <%= select_tag :city    , options_for_select(cities, city)        , prompt: '--城市--', id: 'contact_city',     name: 'contact[city]', class: ['city-select', 'city-city'] %>
+    <%= select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: 'contact_district', name: 'contact[district]', class: ['city-select', 'city-district'] %>
+  </div>
+
+  <div class='rails-helper city-group'>
+    <%# select_tag :province, options_for_select(provinces, province) , prompt: '--省份--', id: 'contact_province', name: 'contact[province]', class: 'city-select city-province' %>
+    <%# select_tag :city,     options_for_select(cities, city)        , prompt: '--城市--', id: 'contact_city',     name: 'contact[city]', class: 'city-select city-city' %>
+    <%# select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: 'contact_district', name: 'contact[district]', class: 'city-select city-district' %>
+  </div>
+
+  <div class='rails-helper city-group'>
+    <%# f.select :province, options_for_select(provinces, province) , { include_blank: true, prompt: '--省份--' }, class: ['city-select', 'city-province'] %>
+    <%# f.select :city    , options_for_select(cities, city)        , { include_blank: true, prompt: '--城市--' }, class: ['city-select', 'city-city'] %>
+    <%# f.select :district, options_for_select(districtes, district), { include_blank: true, prompt: '--地区--' }, class: ['city-select', 'city-district'] %>
+  </div>
+
+  <div class="field">
+    <%= f.label :customer_profile_id %><br>
+    <%= f.text_field :customer_profile_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

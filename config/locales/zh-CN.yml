@@ -24,6 +24,7 @@ zh-CN:
       public_liability_item: "公共责任险"
       product_liability_item: "产品责任险"
       employer_liability_item: "雇主责任险"
+      contact: "联系人"
     attributes:
       user:
         email: "电子邮件"
@@ -62,6 +63,18 @@ zh-CN:
         location: "企业地址"
         business_license: "营业执照"
         park_profile_id: "所属园区"
+      contact:
+        name: "姓名"
+        card_type: "证件类型"
+        card_no: "证件号码"
+        birthday: "生日日期"
+        gender: "性别"
+        english_name: "英文名/拼音"
+        mobile: "移动电话"
+        telephone: "固定电话"
+        province: "所在省"
+        city: "所在市"
+        district: "所在区县"
       park:
         name: "园区名称"
         website: "园区主页"

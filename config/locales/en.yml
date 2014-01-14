@@ -24,6 +24,7 @@ en:
       public_liability_item: "Public Liability Insurance"
       product_liability_item: "Product Liability Insurance"
       employer_liability_item: "Employer Liability Insurance"
+      contact: "Contact"
     attributes:
       user:
         email: "Email"
@@ -62,6 +63,18 @@ en:
         location: "Enterprise Location"
         business_license: "Business License"
         park_profile_id: "Park Name"
+      contact:
+        name: "Name"
+        card_type: "Card Type"
+        card_no: "Card NO"
+        birthday: "Birthday"
+        gender: "Gender"
+        english_name: "English Name"
+        mobile: "Mobile"
+        telephone: "Telephone"
+        province: "province"
+        city: "City"
+        district: "District"
       park:
         name: "Name"
         website: "Website"

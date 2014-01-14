@@ -64,5 +64,6 @@ gem 'bootstrap-sass', '~> 3.0.0'
 gem "font-awesome-rails", '~> 4.0.0'
 
 gem 'aasm'
+gem 'china_city'
 
 gem 'acts_as_traceable', :git => "https://github.com/cloudbsd/acts_as_traceable.git"

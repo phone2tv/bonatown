@@ -1,6 +1,8 @@
 Insuretown::Application.routes.draw do
   root 'stores#show'
 
+  mount ChinaCity::Engine => '/china_city'
+
   resource :store, only: :show do
     collection do
       get 'tagged(/*tags)' => 'stores#tagged', as: :tagged
@@ -26,6 +28,8 @@ Insuretown::Application.routes.draw do
   resources :quoter_profiles, only: [:new, :edit, :create, :update, :destroy]
   resources :park_profiles, only: [:new, :edit, :create, :update, :destroy]
   resources :customer_profiles, only: [:new, :edit, :create, :update, :destroy]
+
+  resources :contacts
 
   resources :parks
   resources :companies

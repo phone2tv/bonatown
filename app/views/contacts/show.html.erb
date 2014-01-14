@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @contact.name %>
+</p>
+
+<p>
+  <strong>Card type:</strong>
+  <%= @contact.card_type %>
+</p>
+
+<p>
+  <strong>Card no:</strong>
+  <%= @contact.card_no %>
+</p>
+
+<p>
+  <strong>Birthday:</strong>
+  <%= @contact.birthday %>
+</p>
+
+<p>
+  <strong>Gender:</strong>
+  <%= @contact.gender %>
+</p>
+
+<p>
+  <strong>English name:</strong>
+  <%= @contact.english_name %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @contact.mobile %>
+</p>
+
+<p>
+  <strong>Telephone:</strong>
+  <%= @contact.telephone %>
+</p>
+
+<p>
+  <strong>Province:</strong>
+  <%= @contact.province %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @contact.city %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @contact.district %>
+</p>
+
+<p>
+  <strong>Customer profile:</strong>
+  <%= @contact.customer_profile %>
+</p>
+
+<%= link_to 'Edit', edit_contact_path(@contact), 'data-no-turbolink' => true %> |
+<%= link_to 'Back', contacts_path %>
