@@ -26,7 +26,7 @@
         <% @users.each do |user| %>
           <tr>
             <td><%= link_to user.profile.name, user %> </td>
-            <td><%= link_to user.username, edit_user_path(user) %> </td>
+            <td><%= link_to user.username, controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile %></td>
             <td><%= t(user.role_name) %> </td>
             <td><%= user.email %> </td>
           </tr>

@@ -4,7 +4,7 @@ class CustomerProfile < ActiveRecord::Base
   mount_uploader :business_license, BusinessLicenseUploader
 
   # association macros
-  has_one :user, as: :profile, dependent: :destroy
+  has_one :user, as: :profile
   accepts_nested_attributes_for :user, update_only: true
   belongs_to :park_profile
   has_many :contacts, dependent: :destroy

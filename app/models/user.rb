@@ -14,7 +14,7 @@ class User < ActiveRecord::Base
 # attr_accessor :terms_of_service
 
   # association macros
-  belongs_to :profile, polymorphic: true
+  belongs_to :profile, polymorphic: true, dependent: :destroy
   has_one :cart
   has_many :orders
   has_many :line_items
