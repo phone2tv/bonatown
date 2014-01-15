@@ -287,3 +287,7 @@ zh-CN:
       driving_license: "驾驶证"
       simplified_chinese: "港澳台身份证/回乡证"
       other: "其他"
+    gender:
+      secrecy: "保密"
+      man: "男"
+      woman: "女"
