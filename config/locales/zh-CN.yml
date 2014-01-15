@@ -10,6 +10,7 @@ zh-CN:
       quoter_profile: "报价业务员信息"
       park_profile: "园区管理员信息"
       customer_profile: "企业客户信息"
+      contact: "联系人"
       park: "园区"
       company: "保险公司"
       insurance: "保险"
@@ -24,7 +25,6 @@ zh-CN:
       public_liability_item: "公共责任险"
       product_liability_item: "产品责任险"
       employer_liability_item: "雇主责任险"
-      contact: "联系人"
     attributes:
       user:
         email: "电子邮件"
@@ -35,6 +35,18 @@ zh-CN:
         remember_me: "保持登录状态"
         terms_of_service: "我同意接受 Insurance 服务条款和隐私权条款"
         username: "用户名"
+        name: "姓名"
+        card_type: "证件类型"
+        card_no: "证件号码"
+        birthday: "出生日期"
+        gender: "性别"
+        english_name: "英文名/拼音"
+        mobile: "移动电话"
+        telephone: "固定电话"
+        province: "所在省"
+        city: "所在市"
+        district: "所在区县"
+        location: "企业地址"
       role:
         name: "角色名称"
       profile:

@@ -326,6 +326,18 @@ ActiveRecord::Schema.define(version: 20140114165125) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "username",               default: "", null: false
+    t.string   "name"
+    t.string   "card_type"
+    t.string   "card_no"
+    t.date     "birthday"
+    t.string   "gender"
+    t.string   "english_name"
+    t.string   "mobile"
+    t.string   "telephone"
+    t.string   "province"
+    t.string   "city"
+    t.string   "district"
+    t.string   "location"
     t.integer  "profile_id"
     t.string   "profile_type"
   end
