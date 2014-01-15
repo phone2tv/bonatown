@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140114091810) do
+ActiveRecord::Schema.define(version: 20140114165125) do
 
   create_table "accident_insurances", force: true do |t|
     t.text     "body"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20140114091810) do
 
   add_index "carts", ["user_id"], name: "index_carts_on_user_id"
 
+  create_table "cities", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "province_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "companies", force: true do |t|
     t.string   "name"
     t.string   "website"
@@ -82,12 +90,23 @@ ActiveRecord::Schema.define(version: 20140114091810) do
     t.string   "enterprise_name"
     t.string   "location"
     t.string   "business_license"
+    t.string   "province_code"
+    t.string   "city_code"
+    t.string   "district_code"
     t.integer  "park_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "customer_profiles", ["park_profile_id"], name: "index_customer_profiles_on_park_profile_id"
+
+  create_table "districts", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.string   "city_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "elevators", force: true do |t|
     t.integer  "public_liability_item_id"
@@ -243,6 +262,13 @@ ActiveRecord::Schema.define(version: 20140114091810) do
   end
 
   add_index "product_liability_items", ["insurance_id"], name: "index_product_liability_items_on_insurance_id"
+
+  create_table "provinces", force: true do |t|
+    t.string   "code"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "public_liability_items", force: true do |t|
     t.integer  "insurance_id"

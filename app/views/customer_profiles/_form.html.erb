@@ -14,6 +14,24 @@
   </div>
 
   <div class='form-group'>
+    <%= f.label :province_code, class: 'control-label' %> <br>
+    <%# f.text_field :province_code, class: 'form-control' %>
+    <%= f.collection_select :province_code, Province.all, :code, :name, include_blank: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :city_code, class: 'control-label' %> <br>
+    <%# f.text_field :city_code, class: 'form-control' %>
+    <%= f.collection_select :city_code, City.all, :code, :name, include_blank: true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :district_code, class: 'control-label' %> <br>
+    <%# f.text_field :district_code, class: 'form-control' %>
+    <%= f.collection_select :district_code, District.all, :code, :name, include_blank: true %>
+  </div>
+
+  <div class='form-group'>
     <%= f.label :location, class: 'control-label' %>
     <%= f.text_field :location, class: 'form-control' %>
   </div>

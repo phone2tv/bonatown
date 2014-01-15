@@ -10,6 +10,10 @@ def print_title(title)
   puts "\n== #{title}"
 end
 
+def print_summary(content)
+  puts "== #{content}"
+end
+
 def print_content(content, level = 1)
   indent = '   ' * level
   puts "#{indent}=> #{content}"
@@ -93,6 +97,66 @@ def create_industries
   print_content "industry: #{industry.name}"
 end
 
+
+# data line format:
+#   insert Data_Province values(199,'110000','Beijing')
+def import_provinces
+  Province.destroy_all
+  print_title('importing provinces')
+  File.open 'db/1_sql_insert_province.sql', 'r' do |file|
+    while row = file.gets
+      row.strip!
+      columns = /.+\(\d+,'(\d+)','(.+)'\)/.match(row)
+      code = columns[1]
+      name = columns[2]
+      province = Province.create(code: code, name: name)
+      print_content "imported province: #{province.id}, #{province.code}, #{province.name}"
+    end
+  end
+  print_summary "total imported provinces count: #{Province.count}"
+end
+
+# data line format:
+#   insert Data_City values(1,'110100','Beijing','110000')
+#   insert Data_City values(3,'120100','Tianjing','120000')
+def import_cities
+  City.destroy_all
+  print_title('importing cities')
+  File.open 'db/2_sql_insert_city.sql', 'r' do |file|
+    while row = file.gets
+      row.strip!
+      columns = /.+\(\d+,'(\d+)','(.+)','(\d+)'\)/.match(row)
+      code = columns[1]
+      name = columns[2]
+      province_code = columns[3]
+      city = City.create(code: code, name: name, province_code: province_code)
+      print_content "imported city: #{city.id}, #{city.code}, #{city.name}, #{city.province_code}"
+    end
+  end
+  print_summary "total imported cities count: #{City.count}"
+end
+
+# data line format:
+#   insert Data_Area values(1,'110101','东城区','110100')
+#   insert Data_Area values(2,'110102','西城区','110100')
+def import_districts
+  District.destroy_all
+  print_title('importing districts')
+  File.open 'db/3_sql_insert_area.sql', 'r' do |file|
+    while row = file.gets
+      row.strip!
+      columns = /.+\(\d+,'(\d+)','(.+)','(\d+)'\)/.match(row)
+      code = columns[1]
+      name = columns[2]
+      city_code = columns[3]
+      district = District.create(code: code, name: name, city_code: city_code)
+      print_content "imported district: #{district.id}, #{district.code}, #{district.name}, #{district.city_code}"
+    end
+  end
+  print_summary "total imported districts count: #{District.count}"
+end
+
+
 def destroy_tables
   print_title('destroy tables')
   User.destroy_all
@@ -109,3 +173,6 @@ destroy_tables
 create_users
 create_insurances
 create_industries
+import_provinces
+import_cities
+import_districts
