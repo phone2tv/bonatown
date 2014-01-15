@@ -35,6 +35,7 @@
     <%= f.text_field :telephone, class: 'form-control' %>
   </div>
   <div class="form-group">
+    <%= f.label :location, class: 'control-label' %>
     <%= f.label :province, class: 'control-label' %>
     <%= f.label :city, class: 'control-label' %>
     <%= f.label :district, class: 'control-label' %>
@@ -53,6 +54,7 @@
     <%= select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: 'contact_district', name: 'contact[district]', class: ['city-select', 'city-district'] %>
   </div>
 
+    <%= f.text_field :location, class: 'form-control' %>
   </div>
 
   <div class='rails-helper city-group'>

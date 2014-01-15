@@ -36,8 +36,7 @@ ActiveRecord::Schema.define(version: 20140114165125) do
   add_index "accident_items", ["insurance_id"], name: "index_accident_items_on_insurance_id"
 
   create_table "admin_profiles", force: true do |t|
-    t.string   "name",       default: "", null: false
-    t.text     "aboutme",    default: "", null: false
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -78,6 +77,7 @@ ActiveRecord::Schema.define(version: 20140114165125) do
     t.string   "province"
     t.string   "city"
     t.string   "district"
+    t.string   "location"
     t.integer  "customer_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"

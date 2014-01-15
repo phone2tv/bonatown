@@ -46,7 +46,6 @@ en:
         aboutme: "About Me"
       admin_profile:
         name: "Full Name"
-        aboutme: "About Me"
       moderator_profile:
         name: "Full Name"
       manager_profile:
@@ -75,6 +74,7 @@ en:
         province: "province"
         city: "City"
         district: "District"
+        location: "Location"
       park:
         name: "Name"
         website: "Website"

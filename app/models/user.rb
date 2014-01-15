@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
 
   # attributes related macros
   attr_accessor :login
-# attr_accessor :terms_of_service
 
   # association macros
   belongs_to :profile, polymorphic: true, dependent: :destroy

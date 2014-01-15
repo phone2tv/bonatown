@@ -45,8 +45,7 @@ zh-CN:
         birthday: "用户生日"
         aboutme: "个人简介"
       admin_profile:
-        name: "真实姓名"
-        aboutme: "个人简介"
+        name: "姓名"
       moderator_profile:
         name: "真实姓名"
       manager_profile:
@@ -75,6 +74,7 @@ zh-CN:
         province: "所在省"
         city: "所在市"
         district: "所在区县"
+        location: "企业地址"
       park:
         name: "园区名称"
         website: "园区主页"

@@ -12,6 +12,7 @@ class CreateContacts < ActiveRecord::Migration
       t.string :province
       t.string :city
       t.string :district
+      t.string :location
       t.references :customer_profile, index: true
 
       t.timestamps

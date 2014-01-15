@@ -25,7 +25,7 @@ def create_users
   # create admin
   admin = User.create!(username: 'admin', email: 'admin@example.com', password: 'password')
   admin.add_role :admin
-  admin.profile = AdminProfile.create!(name: 'Adminstrator', aboutme: 'Aboutme')
+  admin.profile = AdminProfile.create!(name: 'Adminstrator')
   admin.save!
   print_content "user: #{admin.email}"
 
