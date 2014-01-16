@@ -1,14 +1,11 @@
 provinceChange = (province_id, city_id) ->
   cities = $(city_id).html()
-  console.log(cities)
-  console.log(province_id + " : " + city_id)
-  console.log("after cities: ----------------------------")
+# console.log(cities)
   $(province_id).change ->
     province = $(province_id + ' :selected').text()
     escaped_province = province.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
     options = $(cities).filter("optgroup[label=#{escaped_province}]").html()
-    console.log(options)
-    console.log("province change: ----------------------------")
+#   console.log(options)
     if options
       $(city_id).html(options)
       $(city_id).change()
@@ -24,15 +21,12 @@ provinceChange = (province_id, city_id) ->
 
 cityChange = (city_id, district_id) ->
   districts = $(district_id).html()
-  console.log(districts)
-  console.log(city_id + " : " + district_id)
-  console.log("after districts: ----------------------------")
+# console.log(districts)
   $(city_id).change ->
     city = $(city_id + ' :selected').text()
     escaped_city = city.replace(/([ #;&,.+*~\':"!^$[\]()=>|\/@])/g, '\\$1')
     options = $(districts).filter("optgroup[label=#{escaped_city}]").html()
-    console.log(options)
-    console.log("city change: ----------------------------")
+#   console.log(options)
     if options
       $(district_id).html(options)
 #     $(district_id).show()
@@ -51,10 +45,10 @@ cityChange = (city_id, district_id) ->
 #  cityChange('#customer_profile_city_code', '#customer_profile_district_code')
 
 $(document).on "page:change", ->
-  provinceChange('#customer_profile_user_attributes_province', '#customer_profile_user_attributes_city')
-  cityChange('#customer_profile_user_attributes_city', '#customer_profile_user_attributes_district')
-  $('#customer_profile_user_attributes_province').change()
-
   provinceChange('#customer_profile_province_code', '#customer_profile_city_code')
   cityChange('#customer_profile_city_code', '#customer_profile_district_code')
   $('#customer_profile_province_code').change()
+
+  provinceChange('.select-province', '.select-city')
+  cityChange('.select-city', '.select-district')
+  $('.select-province').change()

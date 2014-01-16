@@ -21,7 +21,7 @@
       <%# f.collection_select :city_code, City.all, :code, :name, include_blank: true %>
       <%= f.grouped_collection_select :city_code, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' } %>
       <%# f.collection_select :district_code, District.all, :code, :name, include_blank: true %>
-      <%= f.grouped_collection_select :district_code, City.all, :districts, :name, :code, :name, include_blank: false, prompt: '--地区--' %>
+      <%= f.grouped_collection_select :district_code, City.all, :districts, :name, :code, :name, { include_blank: false, prompt: '--地区--' } %>
     </div>
     <%= f.text_field :location, class: 'form-control' %>
   </div>
