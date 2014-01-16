@@ -68,9 +68,9 @@ class AdminProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_profile_params
       if params[:admin_profile][:user_attributes][:password].blank? and params[:admin_profile][:user_attributes][:password_confirmation].blank?
-        params.require(:admin_profile).permit(:name, :user_attributes => [:username, :email])
-      else
-        params.require(:admin_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation])
+        params[:admin_profile][:user_attributes].delete :password
+        params[:admin_profile][:user_attributes].delete :password_confirmation
       end
+      params.require(:admin_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
     end
 end

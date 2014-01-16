@@ -68,9 +68,9 @@ class CustomerProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_profile_params
       if params[:customer_profile][:user_attributes][:password].blank? and params[:customer_profile][:user_attributes][:password_confirmation].blank?
-        params.require(:customer_profile).permit(:name, :enterprise_name, :province_code, :city_code, :district_code, :location, :business_license, :park_profile_id, :user_attributes => [:username, :email, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
-      else
-        params.require(:customer_profile).permit(:name, :enterprise_name, :province_code, :city_code, :district_code, :location, :business_license, :park_profile_id, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
+        params[:customer_profile][:user_attributes].delete :password
+        params[:customer_profile][:user_attributes].delete :password_confirmation
       end
+      params.require(:customer_profile).permit(:name, :enterprise_name, :province_code, :city_code, :district_code, :location, :business_license, :park_profile_id, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
     end
 end

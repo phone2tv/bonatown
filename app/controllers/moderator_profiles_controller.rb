@@ -68,9 +68,9 @@ class ModeratorProfilesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def moderator_profile_params
       if params[:moderator_profile][:user_attributes][:password].blank? and params[:moderator_profile][:user_attributes][:password_confirmation].blank?
-        params.require(:moderator_profile).permit(:name, :user_attributes => [:username, :email])
-      else
-        params.require(:moderator_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation])
+        params[:moderator_profile][:user_attributes].delete :password
+        params[:moderator_profile][:user_attributes].delete :password_confirmation
       end
+      params.require(:moderator_profile).permit(:name, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
     end
 end
