@@ -65,11 +65,11 @@
     <%= f.label :location, class: 'control-label' %> <br>
     <div class='form-group'>
       <%# f.collection_select :province, Province.all, :code, :name, prompt: true %>
-      <%= f.select :province, Province.all.map { |province| [province.name, province.code] }, { include_blank: false, prompt: '--省份--' } %>
+      <%= f.select :province, Province.all.map { |province| [province.name, province.code] }, { include_blank: false, prompt: '--省份--' }, { class: 'select-province' } %>
       <%# f.collection_select :city, City.all, :code, :name, include_blank: true %>
-      <%= f.grouped_collection_select :city, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' } %>
+      <%= f.grouped_collection_select :city, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' }, { class: 'select-city' } %>
       <%# f.collection_select :district, District.all, :code, :name, include_blank: true %>
-      <%= f.grouped_collection_select :district, City.all, :districts, :name, :code, :name, include_blank: false, prompt: '--地区--' %>
+      <%= f.grouped_collection_select :district, City.all, :districts, :name, :code, :name, { include_blank: false, prompt: '--地区--'}, { class: 'select-city' } %>
     </div>
     <%= f.text_field :location, class: 'form-control' %>
   </div>

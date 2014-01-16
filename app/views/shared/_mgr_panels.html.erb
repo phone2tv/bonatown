@@ -14,7 +14,8 @@
       </div>
       <div class="panel-body">
         <ul>
-          <li><%= link_to '会员资料', controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile %></li>
+          <li><%= link_to '会员资料', { controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile }, 'data-no-turbolink' => true %></li>
+          <li><%= link_to '会员资料', edit_customer_profile_path(user.profile), 'data-no-turbolink' => true %></li>
           <li><a href="#" class="">寄送地址</a></li>
           <li><a href="#" class="">账户安全</a></li>
           <li><%= link_to '常用联系人', contacts_path %></li>
