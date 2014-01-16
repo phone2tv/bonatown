@@ -71,6 +71,6 @@ class ParkProfilesController < ApplicationController
         params[:park_profile][:user_attributes].delete :password
         params[:park_profile][:user_attributes].delete :password_confirmation
       end
-      params.require(:park_profile).permit(:name, :park_name, :location, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
+      params.require(:park_profile).permit(:name, :park_name, :location, :company_id, :user_attributes => [:username, :email, :password, :password_confirmation, :name, :card_type, :card_no, :birthday, :gender, :english_name, :mobile, :telephone, :province, :city, :district, :location])
     end
 end

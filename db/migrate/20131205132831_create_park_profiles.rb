@@ -4,6 +4,7 @@ class CreateParkProfiles < ActiveRecord::Migration
       t.string :name
       t.string :park_name
       t.string :location
+      t.references :company, index: true
 
       t.timestamps
     end

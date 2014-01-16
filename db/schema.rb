@@ -244,9 +244,12 @@ ActiveRecord::Schema.define(version: 20140114165125) do
     t.string   "name"
     t.string   "park_name"
     t.string   "location"
+    t.integer  "company_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "park_profiles", ["company_id"], name: "index_park_profiles_on_company_id"
 
   create_table "product_liability_items", force: true do |t|
     t.integer  "insurance_id"
