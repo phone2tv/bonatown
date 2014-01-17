@@ -1,0 +1,120 @@
+<div class="row">
+  <div class='col-md-3'>
+    <%= render 'shared/panel_xiaomi' %>
+    <%# render 'shared/panel_xyz' %>
+  </div>
+  <div class='col-md-9'>
+    <%= render 'carousel' %>
+    <div class="row">
+      <div class='col-md-3'>
+        <%= image_tag("travel_1.jpg") %>
+      </div>
+      <div class='col-md-3'>
+        <%= image_tag("travel_2.jpg") %>
+      </div>
+      <div class='col-md-3'>
+        <%= image_tag("travel_3.jpg") %>
+      </div>
+      <div class='col-md-3'>
+        <%= image_tag("travel_4.jpg") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-header">
+  <h4><strong>未成年人保险</strong> <small>0岁-17岁成长期，周全呵护。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_child.gif") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.first, img_name: "child_1.jpg" } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.first, img_name: "child_2.jpg" } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.last, img_name: "child_3.jpg" } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.last, img_name: "child_4.jpg" } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-header">
+  <h4><strong>中青年保险</strong> <small>70后，80后，社会中坚，家庭顶梁必备保障。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_middle_age.gif") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <div class="row">
+          <div class='col-md-6'>
+            <%= image_tag("youth_travel.jpg") %>
+          </div>
+          <div class='col-md-6'>
+            <%= image_tag("youth_lvyou.jpg") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_fortune.jpg") %>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_outdoor.jpg") %>
+          </div>
+        </div>
+        <div class="row">
+          <div class='col-md-12'>
+            <%= image_tag("youth_drive.jpg") %>
+          </div>
+        </div>
+      </div>
+      <div class='col-md-3'>
+        <%= image_tag("youth_lady.jpg") %>
+      </div>
+    </div> <!-- row -->
+  </div> <!-- col-md-9 -->
+</div> <!-- row -->
+
+<div class="page-header">
+  <h4><strong>老年保险</strong> <small>保至80高龄，小到磕碰，大到住院全保障。</small></h4>
+</div>
+<div class="row">
+  <div class='col-md-3'>
+    <%= image_tag("insurance_old_age.jpg") %>
+  </div>
+  <div class='col-md-9'>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.first, img_name: "old_1.jpg" } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.first, img_name: "old_2.jpg" } %>
+      </div>
+    </div>
+    <div class="row">
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.last, img_name: "old_3.jpg" } %>
+      </div>
+      <div class='col-md-6'>
+        <%= render partial: 'store_insurance', locals: { insur: Insurance.last, img_name: "old_4.jpg" } %>
+      </div>
+    </div>
+  </div>
+</div>

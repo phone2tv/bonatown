@@ -1,0 +1,648 @@
+@charset "utf-8";
+/* CSS Document */
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body{ color:#819093; font-size:12px; font-family:"微软雅黑"; }	
+ul,li{	list-style:none;}
+a{   blr:expression(this.onFocus=this.blur());/*IE*/
+    outline:none;/*火狐*/
+	text-decoration:none; }
+img{ border:0px;}
+.clear{ clear:both}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+.clearfix {
+	clear:both;
+}
+.hidden{ display:none; }
+/*页头页尾**********************************/
+.indexTop{ width:1147px; height:138px; margin:0px auto;color:#8a8a8a; }
+.indexTopTel{ width:1147px; height:28px; line-height:28px; font-size:12px;}
+.indexTopTel a{ color:#ff5a00}
+.indexTopTelLet{ float:left}
+.indexTopTelRit{ float:right;line-height:28px;}
+.indexTopTelRit a{color:#8a8a8a; }
+.indexTopTelRit li{ float:left}
+.indexTopTelRit img{ width:17px; height:17px; margin:4px 10px 0px 0px; display:block; float:left}
+.indexTopTelRit1{ width:158px; height:28px; float:left}
+.indexTopTelRit1 span{color:#ff5a00}
+.indexTopTelRit2{ width:100px; height:28px; float:left}
+.indexTopTelRit3{ width:130px; height:28px; float:left; color:#ff5a00} 
+
+.indexTopBot{ width:1147px; height:110px;}
+.indexTopBotLogo{ width:181px; height:71px; padding:23px 0px 0px 10px; float:left}
+
+.indexTopBotMid{ width:390px; height:75px;  float:left; padding:33px 0px 0px 160px; }
+
+.indexTopBotMidBOX{ width:390PX; height:47px; position:relative}
+.indexTopBotMidinput1{ width:381px; height:41px; border:none; float:left; text-indent:5px; line-height:47px; border:#006ab5 2px solid;border-radius:8px; }
+.indexTopBotMidinput2{ width:31px; height:31px; position:absolute; top:7px; right:15px; cursor:pointer}
+
+
+.indexTopBotMid ul{ width:340px; height:28px; }
+.indexTopBotMid li{ width:60px;  height:28px; line-height:28px; margin-right:20px; float:left;color:#aeaeae; }
+.indexTopBotMid li a{ color:#aeaeae}
+
+.indexTopBotRit{ width:300px;height:71px; float:right; }
+.indexTopBotRit a{ color:#aeaeae}
+.indexTopBotRit li{ float:left;width:90px; height:71px;padding:32px 0px 0px 10px}
+.indexTopBotRit li img{  display:block; margin:0px auto}
+.indexTopBotRit span{ width:90px; height:25px; line-height:25px; text-align:center; display:block}
+
+
+.indexBottomBox{ width:100%; height:206px; border-top:#d9d9d9 1px solid ; margin-top:30px; }
+.indexBottom{ width:1147px; height:165px; border-bottom:1px #d4d4d4 dashed; margin:0px auto}
+.indexBottom ul{ float:left;}
+.indexBottom li{ width:95px; height:165px; float:left; padding-left:5px; line-height:28px; font-size:14px; color:#7f7f7f; padding-left:120px;}
+.indexBottom li a{ color:#7f7f7f; }
+
+.indexBottom li strong{ width:100%;height:58px; line-height:58px;  font-size:16px; display:block; border-bottom:1px dashed #aeaeae;margin-bottom:5px; color:#000}
+
+.indexBottom li strong a{ color:#000}
+
+.indexBottom1box{ width:217px; height:165px; float:left}
+.indexBottom1{width:217px;height:58px; line-height:58px;  font-size:16px; display:block;  color:#000; text-align:center; font-weight:bolder}
+.indexBottom1 a{ color:#000}
+
+.indexBottom2{ width:216px; height:165px; float:left;}
+.indexBottom2 img{ width:216px; height:56px; margin-top:53px; margin-left:20px;}
+
+.indexBottom3{ width:1147px; height:40px; line-height:40px; text-align:right; color:#c8c8c8; margin:0px auto}
+
+.fonta{ font-family:Arial;}
+
+
+
+
+
+
+/*首页**********************************/
+.indexnr{ width:1147px; height:auto; margin:0px auto}
+.nav{ background:#0064af; width:1133px; padding:0px 7px 0px 7px; height:47px; position:relative}
+.navLet{ width:7px; height:47px; background:url(index-nav1.jpg) no-repeat; position:absolute; top:0px ; left:0px;}
+.navRit{width:7px; height:47px; background:url(index-nav3.jpg) no-repeat; position:absolute; top:0px ; right:0px;}
+.nav1{ width:227px; height:47px; float:left; line-height:47px; color:#FFF; font-size:18px; background:url(index-nav2.jpg) no-repeat 190px 0px ; text-indent:14px;}
+.nav ul li{ width:137px; height:47px; float:left;  }
+.nav ul li a{ display:block;text-align:center;line-height:47px; color:#FFF;  font-size:18px; }
+.nav ul li a.hover{ background:url(index-nav4.jpg) no-repeat; color:#0064af}
+.nav ul li a:hover{ background:url(index-nav4.jpg) no-repeat; color:#0064af}
+.navlist{ width:230px; height:353px; float:left; margin-right:14px; background:#f0f6f9; border-left:2px solid #006ab5;border-right:2px solid #006ab5; position:relative}
+.navlist ul {border-bottom:1px solid #cee6f5;  }
+.navlist ul:hover{border-bottom:1px solid #cee6f5; background:#FFF  }
+.navlist li{ width:230px; height:auto; color:#656565}
+.navlist  ul li a{color:#656565}
+.navlist li a.hover{color:#ff5a00; text-decoration:underline}
+.navlist li a:hover{color:#ff5a00; text-decoration:underline}
+.navlistTil a{ width:230px;  height:40px;_height:41px; line-height:40px;color:#1c1c1c; font-size:14px; display:block; }
+.navlistTil img{ margin:11px 10px 0px 10px ; display:block; float:left}
+.navlistNr{ padding-left:37px; width:178px; color:#656565; line-height:22px; padding-bottom:5px;}
+.navlistNr span{ margin-right:20px; }
+.navlistBot{ width:234px; height:7px; background:url(index-index17.jpg) no-repeat; position:absolute; bottom:0px;_bottom:-14px ;left:-2px;}
+
+.indexbanner { width:897px; height:337px;  float:left; padding-top:15px;}
+.indexbanner img{ width:897px; height:337px; border:1px solid #e7e7e7; float:left; display:block}
+.indexDiscountbox{ width:1147px; height:278px; margin-top:15px; }
+.indexDiscountboxLet{ width:7px; height:286px;  background:url(index-index48.jpg); float:left}
+.indexDiscountboxMid{ width:1133px; height:284px;border-top:1px solid #f1f1f1;border-bottom:1px solid #f1f1f1; float:left}
+.indexDiscountboxRit{ width:7px; height:286px;  background:url(index-index47.jpg); float:left}
+.indexDiscountTitel{ width:1133px; height:44px;border-bottom:1px solid #f1f1f1; }
+.indexDiscountTitel li{width:120px; height:44px;line-height:44px; float:left;}
+.indexDiscountTitel li a{ display:block; text-align:center; font-size:16px; color:#000000;  font-weight:bold}
+.indexDiscountTitel  li a.hover{ background:url(index-index18.jpg) no-repeat  bottom}
+.indexDiscountLet{ width:518px; height:239px; float:left;border-right:1px dashed #f1f1f1; padding-left:47px; }
+.indexDiscountLetTitel{ width:518px; height:47px; line-height:47px; color:#595959; font-size:14px;}
+.indexDiscountLetTitel a{color:#595959;}
+.indexDiscountLetnr{ width:306px; height:184px; position:relative; padding:0px 0px 0px 212px;line-height:26px; }
+.indexDiscountLetnr span a{ color:#9f9f9f; }
+.indexDiscountLetimg1{border:1px solid  #eceaeb; position:absolute; top:0px; left:0px;}
+.indexDiscountLetnr h1{ width:306px; color:#717171; font-size:14px; display:block; height:26px; line-height:26px; }
+.indexDiscountLetnr h1 a{color:#717171;}
+.indexDiscountLetnr h2{ width:306px; color:#838383; font-size:14px; display:block; height:40px; font-weight:inherit; line-height:40px;}
+.indexDiscountLetnr h2 a{ color:#838383}
+.indexDiscountLetnr h2 strong{ color:#ff5400}
+.indexDiscountLetnrh3 { border:1px #ff5400 solid; background:#ff5400;border-radius:5px; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;  float:left; margin-right:80px;}
+.indexDiscountLetnrh3:hover{ background:#F00}
+
+.indexDiscountLetnrh4{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px; float:left}
+.indexDiscountLetnrh4:hover{ background:#F00}
+
+
+.indexInsure{width:273px; height:22px; text-align:right;font-size:12px; padding-top:5px;}
+.indexInsure span{color:#ff5400}
+.indexDiscountRit{ width:518px; height:239px; float:left; padding-left:47px; }
+.indexDiscountRitTitel{ width:518px; height:47px; line-height:47px; color:#595959; font-size:14px;}
+.indexDiscountRitTitel a{color:#595959;}
+.indexDiscountRitnr{ width:306px; height:184px; position:relative; padding:0px 0px 0px 212px;line-height:26px; }
+.indexDiscountRitnr span a{ color:#9f9f9f; }
+.indexDiscountRitimg1{border:1px solid  #eceaeb; position:absolute; top:0px; left:0px;}
+.indexDiscountRitnr h1{ width:306px; color:#717171; font-size:14px; display:block; height:26px; line-height:26px; }
+.indexDiscountRitnr h1 a{color:#717171;}
+.indexDiscountRitnr h2{ width:306px; color:#838383; font-size:14px; display:block; height:40px; font-weight:inherit; line-height:40px;}
+.indexDiscountRitnr h2 a{ color:#838383}
+.indexDiscountRitnr h2 strong{ color:#ff5400}
+.indexDiscountRitnrh3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;  float:left; margin-right:80px;}
+.indexDiscountRitnrh3:hover{ background:#F00}
+
+.indexDiscountRitnrh4{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px; float:left}
+.indexDiscountRitnrh4:hover{ background:#F00}
+
+.indexPropertybox{ width:1147px; height:270px;  margin-top:15px; }
+.indexPropertyTitelLet{ width:7px; height:52px; background:url(index-index50.jpg); float:left}
+.indexPropertyTitelRit{ width:7px; height:52px; background:url(index-index49.jpg); float:left}
+.indexPropertyTitel{ width:1133px; height:50px; font-size:18px; color:#000; line-height:50px;border-bottom:1px solid #f1f1f1;border-top:1px solid #f1f1f1; float:left}
+.indexPropertyTitel a{ color:#000}
+.indexPropertyTitel img{ margin:11px 10px 0px 10px; display:block; float:left}
+.indexPropertyBoxLet{ width:7px; height:228px;  float:left; background:url(index-index51.jpg)  no-repeat}
+.indexPropertyBoxRit{ width:7px; height:228px;  float:left; background:url(index-index52.jpg)  no-repeat}
+.indexProperty{ width:1133px; height:227px;float:left;border-bottom:1px solid #f1f1f1; }
+.indexProperty1{ width:147px; height:227px; border-right:1px solid #f1f1f1; float:left; position:relative; padding-left:266px; }
+.indexProperty1 span a{ color:#767676; }
+.indexProperty1img1{border:1px solid  #eceaeb; position:absolute; top:12px; left:7px; width:200px; height:200px;}
+.indexProperty1 h1{ width:147px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
+.indexProperty1 h1 a{color:#000000;}
+.indexProperty1 h2{ width:147px; color:#838383; font-size:14px; display:block; height:49px; font-weight:inherit; line-height:49px; }
+.indexProperty1 h2 a{ color:#767676}
+.indexProperty1 h2 strong{ color:#ff5400}
+.indexProperty1h3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
+.indexProperty1h3:hover{ background:#F00 }
+
+
+.indexProperty2{ width:185px; height:227px; border-right:1px solid #f1f1f1; float:left;  position:relative; padding-left:300px;}
+.indexProperty2 span a{ color:#767676; }
+.indexProperty2img1{border:1px solid  #eceaeb; position:absolute; top:12px; left:55px; width:200px; height:200px;}
+.indexProperty2 h1{ width:185px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
+.indexProperty2 h1 a{color:#000000;}
+.indexProperty2 h2{ width:185px; color:#838383; font-size:14px; display:block; height:49px; font-weight:inherit; line-height:49px; }
+.indexProperty2 h2 a{ color:#767676}
+.indexProperty2 h2 strong{ color:#ff5400}
+.indexProperty2h3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
+.indexProperty2h3:hover{ background:#F00}
+
+.indexProperty3{ width:233px; height:227px; float:left; }
+.indexPropertyBoxRitTil{ width:233px; height:44px; border-bottom:1px #0064af solid; line-height:44px; font-size:14px; color:#000}
+.indexPropertyBoxRitTil a{ color:#000}
+.indexPropertyBoxRitTil img{ width:4px; height:13px; display:block; margin:16px 10px 0px 19px;_margin:16px 10px 0px 10px; float:left}
+.indexProperty3 li{ width:233px; height:35px ; line-height:35px;border-bottom:1px #f1f1f1 dashed; text-indent:35px; }
+.indexProperty3 li a{ color:#646464}
+
+
+.indexCartybox{ width:1147px; height:470px;  margin-top:15px; }
+.indexCartyTitelLet{ width:7px; height:52px; background:url(index-index50.jpg); float:left}
+.indexCartyTitelRit{ width:7px; height:52px; background:url(index-index49.jpg); float:left}
+.indexCartyTitel{ width:1133px; height:50px; font-size:18px; color:#000; line-height:50px;border-bottom:1px solid #f1f1f1;border-top:1px solid #f1f1f1; float:left}
+.indexCartyTitel a{ color:#000000 }
+.indexCartyTitel img{ margin:11px 10px 0px 10px; display:block; float:left}
+.indexCartyBoxLet{ width:7px; height:418px;  float:left; background:url(index-index53.jpg)  no-repeat}
+.indexCartyBoxRit{ width:7px; height:418px;  float:left; background:url(index-index56.jpg)  no-repeat}
+.indexCarty{ width:1133px; height:417px;float:left; border-bottom:1px solid #f1f1f1; }
+.indexCarty1{ width:350px; height:387px; padding:30px 0px 0px 100px; border-right:1px solid #f1f1f1; float:left; background:url(index-index27.jpg) no-repeat  18px 200px;color:#585858; font-size:14px; }
+.indexCarty1 a{ color:#585858}
+.indexCarty1 span{ font-size:18px; color:#101010;}
+.indexCarty1 span a{ color:#000}
+.indexCarty2{ width:350px; height:387px; padding:30px 0px 0px 100px; border-right:1px solid #f1f1f1; float:left; background:url(index-index20.jpg) no-repeat  18px 200px;color:#585858; font-size:14px;}
+.indexCarty2 a{ color:#585858}
+.indexCarty2 span{ font-size:18px; color:#101010;}
+.indexCarty2 span a{ color:#000}
+.indexCarty3{ width:231px; height:417px; float:left   }
+.indexCarty3Til{ width:231px; height:49px; line-height:49px; font-size:14px; color:#000; text-indent:10px; background:url(index-index25.jpg) no-repeat 10px bottom;}
+.indexCarty3img2{ margin-top:-5px; width:7px; height:6px; float:left; display:block;}
+.indexCarty3txt{ width:110px; height:23px; line-height:23px; border:1px solid #e4e4e4}
+.indexCarty3txt2{ width:87px; height:25px; line-height:23px; border:none; float:left; background:url(index-index41.jpg) no-repeat}
+.indexCarty3txt3{ width:26px; height:25px; background:url(index-index26.jpg) no-repeat; float:left; border:none; cursor:pointer}
+.indexCarty3button{ padding-left:60px; cursor:pointer}
+.indexMedicinetybox{ width:1147px; height:470px;  margin-top:15px; }
+.indexMedicinetyTitelLet{ width:7px; height:52px; background:url(index-index50.jpg); float:left}
+.indexMedicinetyTitelRit{ width:7px; height:52px; background:url(index-index49.jpg); float:left}
+.indexMedicinetyTitel{ width:1133px; height:50px; font-size:18px; color:#000; line-height:50px;border-bottom:1px solid #f1f1f1;border-top:1px solid #f1f1f1; float:left}
+.indexMedicinetyTitel a{ color:#000}
+.indexMedicinetyTitel img{ margin:11px 10px 0px 10px; display:block; float:left}
+.indexMedicinetyBoxLet{ width:7px; height:418px;  float:left; background:url(index-index53.jpg)  no-repeat}
+.indexMedicinetyBoxRit{ width:7px; height:418px;  float:left; background:url(index-index54.jpg)  no-repeat}
+.indexMedicinety{ width:1133px; height:417px;float:left; border-bottom:1px solid #f1f1f1; }
+.indexMedicinety1{ width:350px; height:387px; padding:30px 0px 0px 100px; border-right:1px solid #f1f1f1; float:left; background:url(index-index38.jpg) no-repeat  6px 200px;color:#585858; font-size:14px; }
+.indexMedicinety1 a{ color:#585858}
+.indexMedicinety1 span{ font-size:18px; color:#101010;}
+.indexMedicinety1 span a{ color:#000}
+.indexMedicinety2{ width:350px; height:387px; padding:30px 0px 0px 100px; border-right:1px solid #f1f1f1; float:left; background:url(index-index32.jpg) no-repeat  6px 200px;color:#585858; font-size:14px;}
+.indexMedicinety2 a{ color:#585858}
+.indexMedicinety2 span{ font-size:18px; color:#101010;}
+.indexMedicinety2 span a{ color:#000}
+.indexMedicinety3{ width:231px; height:417px; float:left   }
+.indexMedicinety3Til{ width:231px; height:48px; line-height:48px; font-size:14px; color:#000; color:#000;border-bottom:1px #0064af solid; }
+.indexMedicinety3Til a{ color:#000}
+.indexMedicinety3Til img{ width:4px; height:13px; display:block; margin:18px 10px 0px 19px;_margin:16px 10px 0px 10px; float:left}
+.indexMedicinety3 li{ background:url(index-index55.jpg) no-repeat 16px  16px ; }
+.indexMedicinety3 li a{ color:#646464}
+.indexMedicinety3 li{ width:200px; height:50px; border-bottom:1px #f1f1f1 dashed; padding-left:31px; padding-top:8px; line-height:20px; color:#646464}
+.indexMedicinety3 li span{ color:#ff5400}
+.indexdutybox{ width:1147px; height:470px;  margin-top:25px;}
+.indexdutyTitelLet{ width:7px; height:52px; background:url(index-index50.jpg); float:left}
+.indexdutyTitelRit{ width:7px; height:52px; background:url(index-index49.jpg); float:left}
+.indexdutyTitel{ width:1133px; height:50px; font-size:18px; color:#000; line-height:50px;border-bottom:1px solid #f1f1f1;border-top:1px solid #f1f1f1; float:left}
+.indexdutyTitel a{ color:#000}
+.indexdutyTitel img{ margin:11px 10px 0px 10px; display:block; float:left}
+.indexdutyBoxLet{ width:7px; height:418px;  float:left; background:url(index-index53.jpg)  no-repeat}
+.indexdutyBoxRit{ width:7px; height:418px;  float:left; background:url(index-index54.jpg)  no-repeat}
+.indexduty{ width:1133px; height:417px;float:left; border-bottom:1px solid #f1f1f1; }
+.indexduty1{ width:470px; height:417px; border-right:1px solid #f1f1f1; float:left;color:#585858; font-size:14px; }
+.indexduty1 span a{color:#585858;}
+.indexduty1 img{ width:448px; height:233px; margin:15px  0px  0px 7px ;border-right:1px solid #f1f1f;}
+.indexduty1 h1{ width:147px;color:#717171; font-size:14px; display:block; height:50px; line-height:50px; color:#000000; padding-left:90px;}
+.indexduty1 h1 a{ color:#000}
+.indexduty1 span{padding-left:90px;}
+.indexduty1 h2{ width:147px; color:#838383; font-size:14px; display:block; height:49px; font-weight:inherit; line-height:49px;padding-left:90px;}
+.indexduty1 h2 a{color:#585858;}
+.indexduty1 h2 strong{ color:#ff5400}
+.indexduty1h3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
+.indexduty1h3:hover{ background:#F00}
+
+.indexduty2{ width:430px; height:417px;  border-right:1px solid #f1f1f1; float:left; color:#585858; font-size:14px;}
+.indexduty2 span a{color:#585858;}
+.indexduty2Top{width:180px; height:208px;border-bottom:1px solid #f1f1f1; position:relative; padding-left:250px; }
+.indexduty2Topimg{ width:180px; height:180px;  position:absolute; top:12px; left:12px; border:1px #e7e7e7 solid}
+.indexduty2Top h1{ width:160px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
+.indexduty2Top h1 a{ color:#000}
+.indexduty2Top span{ width:160px; display:block;}
+.indexduty2Top h2{ width:160px; color:#838383; font-size:14px; display:block; height:40px; font-weight:inherit; line-height:40px; }
+.indexduty2Top h2 a{color:#585858;}
+.indexduty2Top h2 strong{ color:#ff5400}
+.indexduty2Toph3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
+.indexduty2Toph3:hover{ background:#F00}
+
+.indexduty2Bot{width:180px; height:208px;border-bottom:1px solid #f1f1f1; position:relative; padding-left:250px; }
+.indexduty2Botimg{ width:180px; height:180px;  position:absolute; top:12px; left:12px; border:1px #e7e7e7 solid}
+.indexduty2Bot h1{ width:160px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
+.indexduty2Bot h1 a{ color:#000}
+.indexduty2Bot span{ width:160px; display:block;}
+.indexduty2Bot h2{ width:160px; color:#838383; font-size:14px; display:block; height:40px; font-weight:inherit; line-height:40px; }
+.indexduty2Bot h2 a{color:#585858;}
+.indexduty2Bot h2 strong{ color:#ff5400}
+.indexduty2Both3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
+.indexduty2Both3:hover{ background:#F00}
+.indexduty3{ width:231px; height:417px; float:left   }
+.indexduty3Top{width:231px; height:208px;border-bottom:1px solid #f1f1f1;}
+.indexduty3Bot{width:231px; height:208px; }
+.indexduty3Botnr{ width:194px; height:160px; padding-left:37px;  line-height:22px;}
+.indexduty3Botnr a{ color:#959595}
+.indexduty3Botnr strong{ width:194px; display:block; height:40px; line-height:40px;}
+.indexduty3Botnr strong a{ color:#646464}
+.indexduty3Bot span a{ color:#044474}
+.indexduty3Til{ width:231px; height:48px; line-height:48px; font-size:14px; color:#000; color:#000;border-bottom:1px #0064af solid; }
+.indexduty3Til a{ color:#000}
+.indexduty3Til img{ width:4px; height:13px; display:block; margin:18px 10px 0px 19px;_margin:16px 10px 0px 10px; float:left}
+.indexduty3 li{ background:url(index-index55.jpg) no-repeat 16px  16px ; }
+.indexduty3 li a{ color:#646464}
+.indexduty3 li{ width:200px; height:50px; border-bottom:1px #f1f1f1 dashed; padding-left:31px; padding-top:8px; line-height:20px; color:#646464}
+.indexduty3 li span{ color:#ff5400}
+
+
+/*********************订单管理*********************************/
+.order_main{ width:1148px; margin:0 auto; height:auto!important;}
+.order_site{ width:1148px; height:40px; line-height:40px; margin:0 auto;}
+.order_site a{ color:#0064af;}
+
+.mainleft{width:235px; padding-right:2px; float:left; background:#fcfbfb; border:1px solid #f1f1f1; border-radius:4px; _display:inline; overflow:hidden; } 
+.left_top h2{ height:31px; line-height:31px; color:#6b6b6b; text-indent:11px; font-weight:normal; font-size:12px; font-family:"微软雅黑"; }
+.left_top .user{ padding:13px 5px 0 26px; color:#262626; overflow:hidden;}
+.left_top .user img{ margin:0 15px 0 12px; vertical-align:bottom; }
+.left_top .user_tip{ padding:13px 5px 0 26px; line-height:20px; color:#262626; height:34px; overflow:hidden; }
+.left_tit{ height:58px; line-height:58px; border-top:1px dotted #eaeaea; text-indent:35px; font-family:"微软雅黑"; font-size:16px; color:#2c2c2d;}
+.leftNavs li{height:46px; line-height:46px; width:234px;border-top:1px solid #dfdfdf; position:relative; z-index:1; text-indent:36px;  }
+.leftNavs li a{display:block; height:46px; font-family:"微软雅黑"; font-size:14px; color:#666;}
+.leftNavs li a:hover{ color:#146fb3; text-decoration:none;}
+.leftNavs li.current{ width:231px; border:1px solid #4c92c7; background:#fff; border-right:none; border-left:4px solid #05528b; margin-bottom:-1px; z-index:2; text-indent:32px;}
+.leftNavs li.current a{ color:#146fb3; font-weight:bold; }
+
+.leftNavs .gyzgsel a{ border:none; color:#e60000;}
+.leftNavs .gyzgsel a:hover{text-decoration:none;}
+.shzrsel{width:200px; height:63px; font-family:"微软雅黑"; font-size:18px; color:#666; border:1px solid #dfdfdf; background:#fff; border-right:none }
+.leftNavs .shzrsel a{ border:none; color:#e60000;}
+.leftNavs .shzrsel a:hover{text-decoration:none;}
+.xwzxsel{width:200px; height:63px; font-family:"微软雅黑"; font-size:18px; color:#666; border:1px solid #dfdfdf; background:#fff; border-right:none }
+.leftNavs .xwzxsel a{ border:none; color:#e60000;}
+.leftNavs .xwzxsel a:hover{text-decoration:none;}
+
+
+.mainright{width:911px; border:1px solid #488ec3; background:url(zcjy_zc.jpg) no-repeat right bottom #fff; height:auto; overflow:hidden; float:left; margin-left:-4px; _display:inline; }
+.topNewsBox{ margin:19px 17px; border:1px solid #f5f5f5; padding:20px 20px 27px 25px; overflow:hidden; }
+.topNewsBox img{ border:1px solid #f1f1f1; float:left; }
+.tnbRight{ float:left; padding-left:43px;}
+.tnbRight dl{ height:160px; }
+.tnbRight dt{ height:48px; line-height:48px; font-size:18px; color:#363636; }
+.tnbRight dd{ height:25px; line-height:25px; }
+.tnbRight dd a{ color:#808080; }
+.tnbRight dd a:hover{ color:#146fb3; }
+.tnbRight p a{ display:block; padding:0 18px; height:29px; line-height:29px; overflow:hidden; color:#FFF; background:#ff5400; border-radius:5px; float:left;  }
+.tnbRight p a:hover{ background:#F00}
+.ml_90{ margin-left:90px; _display:inline }
+.bdTabBox{ width:873px; margin:0px auto; margin-bottom:20px; }
+..bdTabBox_Tit{ height:37px;}
+.bdTabBox_Tit li{ float:left; width:116px; height:37px; line-height:37px; text-align:center;  margin-right:2px; background:#f0f0f0; }
+.bdTabBox_Tit li a{ color:#84a5be }
+.bdTabBox_Tit li.hover{ background:#2c8cd5}
+.bdTabBox_Tit li.hover a{ color:#fff} 
+.bdTabBox_Con{ border:1px solid #e7edf2; }
+
+.tableBd{ }
+.tableBd th{ height:41px; background:#faf9f9; color:#333; font-weight:normal; }
+.tableBd th a{ width:7px; height:11px; padding-left:5px;}
+.tableBd_List{ border-bottom:1px dotted #dedede; overflow:hidden; }
+.tableBd_List td{ text-align:center; opacity:#6a6e71 }
+.tableBd_List .dd_num{ padding:6px 11px; background:#fcfcfc; color:#104fd1; float:left; margin-left:30px; _display:inline}
+.tableBd_List .btn{ width:85px; background:#f7a922; color:#FFF; overflow:hidden; height:33px; line-height:33px; display:block; margin-left:30px; }
+.tableBd_List .name{ font-weight:bold; text-decoration:underline; color:#104fd1;}
+.tableBd_List span{ color:#ff5400}
+.tableBd_List strong{ color:#6a6e71 }
+.tableBd_List b{ color:#474645; font-weight:normal;}
+.tableBd_List td a{ color:#0064af}
+/* pages */
+.pagesWrap{ padding:50px 0; text-align:center; }
+.pagesWrap a{ border:1px solid #fff; padding:2px 7px;}
+.pagesWrap a.current{ background:#78b5e5; color:#fff; }
+.pagesWrap a:hover{ border:1px solid #a9d0ef}
+.pagesWrap .next,.pagesWrap .prev{ color:#454545; }
+
+/**保险详情**/
+.insurancePositionbox{ width:1147px; height:50px; line-height:50px; color:#353535;}
+.insurancePositionbox span{ color:#0064af;}
+.insuranceDetailsnr{ width:880px; height:auto; margin-right:15px; float:left;}
+.insuranceDetailsbox{ width:870px; height:392px; border:1px solid #f1f1f1; background:#ffffff; padding-top:14px; padding-left:8px;}
+.insuranceDetails1{ width:352px; height:392px; margin-right:54px; float:left;}
+.insuranceDetails1img{ width:344px; height:290px; border:1px solid #ebeaea; padding:4px;}
+.insuranceDetails1 p{ width:352px; height:68px; line-height:68px; color:#161616;}
+.insuranceDetails1 p a{ color:#161616; padding:0 3px;}
+.insuranceDetails1 p a:hover{ color:#0064af;}
+.insuranceDetails1 p img{ vertical-align:-3px;}
+.insuranceDetails2{ width:464px; height:392px; float:left;}
+.insuranceDetails2 h1{ width:464px; height:47px; line-height:47px; color:#202020; font-size:18px; font-weight:normal; float:left;}
+.insuranceDetails2 span{ width:75px; height:36px; color:#6c6c6c; text-align:right; line-height:36px; font-size:14px; float:left;}
+.insuranceDetails2 h2{ width:389px; height:36px; color:#323232; line-height:36px; font-size:14px; font-weight:normal; float:left;}
+.insuranceDetails2 .insuranceDetails2Vouchers a{ color:#ff3000;}
+.insuranceDetails2Vouchers a:hover{ color:#f00;}
+.insuranceDetails2 .insuranceDetails2Price{ color:#ff5400; font-style:normal;}
+.insuranceDetailsh3 { border:1px #ff5400 solid; background:#ff5400; border-radius:5px; width:100px; height:35px; line-height:35px; text-align:center; display:block; cursor:pointer; color:#FFF; font-size:16px;  float:left; margin-right:56px; margin-top:35px; font-family:"微软雅黑";}
+.insuranceDetailsh3:hover{ background:#F00}
+.insuranceDetailsh4 { border:1px #80d019 solid; background:#80d019; border-radius:5px; width:100px; height:35px; line-height:35px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:16px;  float:left; margin-right:80px;  margin-top:35px;  font-family:"微软雅黑";}
+.insuranceDetailsh4:hover{ background:#8ee91a}
+.insuranceStepbox{ width:878px; height:97px; padding:56px 0 34px 0px; border:1px solid #f1f1f1; background:#f8fafb; margin-top:15px;}
+.insuranceStepbox td{text-align:center; font-size:14px; color:#555555;}
+.insuranceCobrandingbox{ width:878px; border:1px solid #f1f1f1; width:880px; height:auto; background:#ffffff; margin-top:15px; float:left;}
+.insuranceCobranding{ position:relative;}
+.insuranceCobranding h1{ width:878px; height:47px; line-height:47px; font-size:16px; font-weight:normal; color:#2d2d2d; text-indent:30px; border-bottom:1px solid #f1f1f1;}
+.insuranceCobranding ul{ width:878px; padding-top:12px; padding-bottom:8px;}
+.insuranceCobranding ul li{ width:168px; height:166px; border-right:1px solid #f1f1f1; padding-left:50px; padding-top:7px; float:left;}
+.insuranceCobranding ul li p{ line-height:21px; color:#717171; margin-bottom:20px; padding-top:10px;}
+.insuranceCobranding .rb{ border-right:none;}
+.insuranceCobrandingTl{ position:absolute; top:124px; left:0; width:26px; height:46px;}
+.insuranceCobrandingTl a{ display:block; width:26px; height:46px; background:url(insurance-10.png) no-repeat;}
+.insuranceCobrandingTl a:hover{ background:url(insurance-11.png) no-repeat;}
+.insuranceCobrandingTr{ position:absolute; top:124px; right:0; width:26px; height:46px;}
+.insuranceCobrandingTr a{ display:block; width:26px; height:46px; background:url(insurance-12.png) no-repeat;}
+.insuranceCobrandingTr a:hover{ background:url(insurance-13.png) no-repeat;}
+.insuranceCobrandingTr a.hover{ background:url(insurance-13.png) no-repeat;}
+.insuranceTabbox{ width:878px; height:auto; background:#ffffff; border:1px solid #f1f1f1; margin-top:15px; }
+.insuranceTab{ width:878px; height:42px; }
+.insuranceTab a{ float:left; display:block; width:135px; height:42px; margin-right:2px; line-height:42px; background:#eaebeb; color:#313131; font-size:16px; text-align:center;}
+.insuranceTab a:hover{ background:#2c8cd5; color:#ffffff;}
+.insuranceTab a.hover{ background:#2c8cd5; color:#ffffff;}
+.insuranceType{ width:850px; height:auto; padding:14px;}
+.insurancePlanbox{ width:848px; height:257px;  border:1px solid #f1f1f1;}
+.insurancePlanbox td{ border-bottom:1px dashed #ededed;}
+.insurancePlan1{ background:#f8f8f8; color:#1c1c1c; text-align:center;}
+.insurancePlan2{ text-align:center; padding-right:20px;}
+.insurancePlan2 a{ float:left; display:block; padding:9px 22px; border:1px solid #f8f8f8; font-size:14px; line-height:14px; color:#7a7a7a; margin-left:17px;}
+.insurancePlan2 a:hover{ border:2px solid #0064af;  padding:8px 21px; }
+.insurancePlan2 a.hover{ border:2px solid #0064af;  padding:8px 21px; }
+.insurancePlanbox .insurancePlan3{ border-bottom:none;}
+.insuranceReadbox{ width:848px; height:auto; background:#fbfbfb; border:1px solid #f1f1f1; margin-top:15px; padding-bottom:20px;}
+.insuranceReadTit{ width:848px; height:44px; line-height:44px; font-size:14px; color:#373737;}
+.insuranceReadTit img{ width:4px; height:13px; display:block; margin:16px 10px 0px 39px;_margin:16px 10px 0px 30px; float:left}
+.insuranceReadbox p{ color:#7a7a7a; line-height:20px; padding:0 39px;}
+.insuranceReadbox p span{ color:#cd2d02;}
+.insuranceKnowbox{ width:850px; border:none; padding-bottom:30px;}
+.insuranceScorebox{ width:848px; height:auto; border:1px solid #dde8ee; float:left;}
+.insuranceScore1{ width:175px; float:left;color:#000000; padding-bottom:23px;}
+.insuranceScore1 span{ width:175px; height:12px; line-height:12px;  padding-top:13px; text-indent:16px; float:left;}
+.insuranceScore1 strong{
+height:21px;
+font-size:38px;
+line-height:12px;
+padding-top:20px;
+padding-left:35px;
+color:#0264af;
+float:left;
+}
+.insuranceScore1 .insuranceScorePoint{font-size:12px; padding-top:30px; padding-left:0;}
+.insuranceScore1 .insuranceScoreUnit{ width:13px;padding-top:30px; text-indent:0;}
+.insuranceScore1 i{ color:#e21455; font-style:normal;}
+.insuranceScore2{ width:200px; float:left;}
+.insuranceScore2 ul{ width:200px; float:left; padding-top:41px;}
+.insuranceScore2 ul li{ float:left; margin:0; padding:0 2px; width:200px; height:18px; color:#555555; line-height:21px;}
+.insuranceScore2 ul li img{ vertical-align:-3px;}
+.insuranceScore3{ float:left; margin:0; padding:0; width:350px; height:31px; padding-top:65px; padding-left:65px;}
+.insuranceScore3 a{ display:block; float:left; margin:0; padding:0; width:100px; height:31px; line-height:31px; text-align:center; background:#0064af; color:#fff;}
+.insuranceScore3 a:hover{background:#0784e2;}
+.insuranceScore3 span{ float:left; margin:0; padding:0; width:235px; height:31px; line-height:31px; color:#b3b3b3; padding-left:15px;}
+.insuranceEvaluation{ width:848px; height:auto; border:1px solid #dde8ee; margin-top:30px; float:left;}
+.insuranceEvaluation ul li{ float:left; width:94%; height:56px; border-bottom:1px dashed #d7d7d7; padding:27px 23px 0 23px;}
+.insuranceEvaluation h1{ float:left; text-align:left; height:15px; line-height:15px; font-size:12px; color:#6a6a6a; font-weight:normal;}
+.insuranceEvaluation span{ float:left; padding-left:30px;  font-size:12px; color:#6a6a6a;}
+.insuranceEvaluation img{ float:right; padding:0 3px;}
+.insuranceEvaluation p{ float:left;  width: 100%; line-height:22px; color:#161616; font-size:12px;}
+.insuranceEvaluation .insuranceEvaluationLine{ border-bottom:none;}
+.insuranceCommentTit{ width:848px; height:30px; padding-top:25px; font-size:14px; color:#1e1e1e; line-height:14px;}
+.insuranceCommentBox{ width:804px; height:295px; border:1px solid #dde8ee; padding:0 22px;}
+.insuranceComment1{ width:804px; height:31px; padding-top:14px; float:left;}
+.insuranceComment1 h1{ width:75px; height:31px; font-size:12px; color:#444444; font-weight:normal; float:left;}
+.insuranceComment1 a{ display:block; width:16px; height:16px; background:url(insurance-16.png) no-repeat; margin:0 2px; float:left;}
+.insuranceComment1 a:hover{ background:url(insurance-15.png) no-repeat; }
+.insuranceComment1 a:visited{ background:url(insurance-15.png) no-repeat; }
+.insuranceComment1 span{
+padding:1px 6px;
+height:16px;
+line-height:16px;
+font-size:12px;
+color:#ffffff;
+background:url(insurance-07.jpg) left center no-repeat #0062ae;
+font-family:Arial, Helvetica, sans-serif;
+margin-left:6px;
+float:left;
+}
+.insuranceComment2 h1{ width:75px; font-size:12px; color:#444444; font-weight:normal;  float:left;}
+.insuranceComment2 textarea{ border:none; width:700px; overflow-y:hidden; background:#fafafa; padding:10px; font-size:12px; float:left;}
+.insuranceComment2 span{ width:729px; height:43px; padding-left:75px; float:left;}
+.insuranceComment2 a{ display:block; width:65px; height:43px; line-height:43px; background:url(insurance-08.jpg) 0px no-repeat; color:#6c6c6c; padding-left:20px; float:left;}
+.insuranceComment2 a:hover{ color:#424141;}
+.insuranceComment2Btn{ width:100px; height:31px; padding-top:18px; padding-left:75px;}
+.insuranceComment2Let{ width:2px; height:31px; background:url(insurance-10.jpg) no-repeat; float:left;}
+.insuranceComment2Rit{ width:2px; height:31px; background:url(insurance-11.jpg) no-repeat; float:left;}
+.insuranceComment2Btn a{ 
+display:block; 
+padding:0; 
+margin:0; 
+width:96px; 
+height:31px; 
+background:url(insurance-09.jpg) repeat-x;
+line-height:31px;
+text-align:center;
+color:#ffffff;
+}
+.insuranceComment2Btn a:hover{background:url(insurance-12.jpg) repeat-x; color:#fff;}
+.insuranceDutybox{ width:878px; height:204px; background:#ffffff; border:1px solid #f1f1f1; margin-top:15px;}
+.insuranceDutybox .insuranceDutyline{ border-right:1px dashed #f1f1f1;}
+.insuranceDuty{ width:380px; height:204px; padding-left:30px; padding-right:28px; float:left;}
+.insuranceDutyTit{ width:380px; height:44px;}
+.insuranceDutyTit h1{ width:94px; height:44px; line-height:44px; border-bottom:1px solid #0064af; font-size:16px; color:#343434; padding-left:4px; float:left;}
+.insuranceDutyTit span{ width:282px; height:26px; padding-top:18px; line-height:12px; border-bottom:1px solid #d8d8d8; text-align:right; float:left;}
+.insuranceDutyTit span a{ color:#111111;}
+.insuranceDutyTit span a:hover{ text-decoration:underline;}
+.insuranceDuty ul li{ width:361px; height:28px; line-height:28px; padding-left:19px; background:url(insurance-02.jpg) 8px 14px no-repeat; float:left;}
+.insuranceDuty li a{ color:#343434;}
+.insuranceDuty li a:hover{ color:#242424; text-decoration:underline;}
+.insuranceRight{ width:250px; height:226px; border:1px solid #f1f1f1; float:left;}
+.insuranceRightTit{ width:250px; height:50px; line-height:50px; text-indent:22px; font-size:18px; color:#242424; border-bottom:1px solid #aaaaaa;}
+.insuranceRight ul{ padding-top:8px;}
+.insuranceRight li{
+	width:250px; 
+	height:28px; 
+	padding-left:31px; 
+	line-height:28px; 
+	background:url(insurance-02.jpg) 20px 14px no-repeat;
+}
+.insuranceRight li a{ color:#444444;}
+.insuranceRight li a:hover{ color:#242424; text-decoration:underline;}
+/**会员中心——会员资料**/
+
+.memberInfoRemark{ width:98%; height:23px; padding-top:18px; line-height:12px; color:#676767; padding-left:16px;}
+.memberInfoRemark img{ vertical-align:-7px; margin-left:12px; margin-right:3px;}
+.memberCo{ width:852px; height:auto; border:1px solid #e6e6e6; padding:0 12px 12px 12px; background:#fdfdfd; margin-bottom:25px; margin-left:16px; float:left;}
+.memberCoTit{ width:852px; height:38px; line-height:38px; color:#1d1d1d; font-size:14px; border-bottom:1px solid #0064af; margin-bottom:7px; float:left;}
+.memberCoTit img{ width:6px; height:12px; display:block; margin:14px 10px 0px 2px;_margin:12px 10px 0px 2px; float:left}
+.memberCo th{ padding-right:12px; color:#636363; font-weight:normal;}
+.memberCo td span{ line-height:25px; padding:0 7px; float:left;}
+.memberCo td img{ vertical-align:-4px; margin-left:10px; padding-top:8px;}
+.memberCotxt1, .memberCotxt2, .memberCotxt5, .memberCotxt7{ height:25px; line-height:25px; border:1px solid #d2d2d2; padding-left:7px;}
+.memberCotxt1{ width:125px;}
+.memberCotxt2{ width:145px; float:left;}
+.memberCotxt3, .memberCotxt4{ width:52px; height:27px; line-height:27px; background:url(member-01.jpg) repeat-x; border:1px solid #d2d2d2; cursor:pointer; font-family:"微软雅黑"; font-size:12px; float:left;}
+.memberCotxt3{border-left:none; color:#636363;}
+.memberCotxt4{ color:#0a5284; margin-left:13px;}
+.memberCotxt5{ width:60px; float:left;}
+.memberCotxt6{ width:26px; height:27px; line-height:27px; background:url(member-02.jpg) no-repeat; border:1px solid #d2d2d2; border-left:none; cursor:pointer; float:left;}
+.memberCotxt7{ width:99px; float:left;}
+.memberCoList1{ margin-left:204px; width:450px; height:160px; overflow:auto; overflow-x:hidden; background:#fff; border:1px solid #d2d2d2; cursor:pointer; margin-bottom:17px; float:left;}
+.memberCoList1 li{ height:17px;  width:440px; padding:6px 0; color:#6c6a7f; float:left;}
+.memberCoList1 li img{ padding-right:10px; float:left;}
+.memberCoList1 li span{ padding-right:20px; float:right;} 
+.memberCoList1 li span a{ color:#6b6a7a; }
+.memberCoList1 li span a:hover{ text-decoration:underline;}
+.memberCoList2{ height:140px;}
+.memberInfoBtn{ width:110px; height:43px; padding-bottom:45px; margin:0 auto;}
+.memberInfoBtn a{ display:block; width:110px; height:43px; background:#ef4218; color:#fff; font-size:16px; line-height:43px; text-align:center;}
+.memberInfoBtn a:hover{ background:#f00;}
+/**投保步骤**/
+.coverbox{ width:880px; height:auto; margin:0 auto;}
+.coverStep{ width:880px; height:97px; padding:17px 0 34px 0px;}
+.coverStep td{text-align:center; font-size:14px; color:#555555;}
+.coverInfobox{ width:788px; height:auto; margin-bottom:45px; padding:0 45px; border:1px solid #f1f1f1; position:relative;}
+.coverInfoTlet{ width:4px; height:3px; left:-1px; top:-1px; position:absolute;}
+.coverInfoTrit{ width:4px; height:3px; right:-1px; top:-1px; position:absolute;}
+.coverInfoBlet{ width:4px; height:3px; left:-1px; bottom:-1px; position:absolute;}
+.coverInfoBrit{ width:4px; height:3px; right:-1px; bottom:-1px; position:absolute;}
+.coverInfo{ width:786px; height:auto; font-size:14px; padding-bottom:26px; border-top:2px solid #0063ae; border-left:1px solid #f1f1f1; border-right:1px solid #f1f1f1;}
+.coverInfo h1{ width:786px; height:44px; line-height:44px; font-size:16px; color:#4a4a4a; text-align:center; background:url(cover-05.jpg) repeat-x;}
+.coverInfo th{ padding-right:12px; color:#636363; font-weight:normal;}
+.coverInfo1 td{color:#636363;}
+.coverInfo td img{ vertical-align:-4px; margin-left:10px; padding-top:8px;}
+.coverInfotxt1{ line-height:25px; border:1px solid #d2d2d2; padding-left:7px; float:left; }
+.coverInfotxt1{ width:106px; height:25px;}
+.coverInfo1{ padding-top:13px;}
+.coverInfo1 i{ color:#d93c47; font-style:normal; }
+.coverInfo1 i img{ vertical-align:0px; margin-right:5px;}
+.coverInfo1 td span{ line-height:25px; padding:0 7px; float:left;}
+.coverInfotxt2{ width:132px; height:25px; border:1px solid #d2d2d2; margin-left:280px; float:left;}
+.coverInfotxt2 a{ display:block; width:132px; height:25px; line-height:25px; color:#494949;  background:url(cover-05.jpg) repeat-x;}
+.coverInfotxt2 a:hover{ background:url(cover-06.jpg) repeat-x;}
+.coverInfotxt2 a img{ vertical-align:-1px; padding-top:5px; margin-right:10px;}
+.coverInfotxt3{  margin-top:5px; float:left;}
+.coverInfotxt4{ width:55px; float:left;}
+.coverInfo1 td strong{ font-weight:normal;color:#373737; line-height:25px; padding-right:10px; float:left;}
+.coverInfo1 td a{ line-height:25px; color:#0f7ab6; float:left;}
+.coverInfo1 td a:hover{ text-decoration:underline;}
+.coverInfolast{border-bottom:1px solid #f1f1f1; margin-bottom:27px;}
+.coverInfo2{ padding-left:257px;}
+.coverInfo2 h2, .coverInfo h3{ width:529px; height:16px; line-height:16px; font-weight:normal;}
+.coverInfo2 h2{ color:#0064af; padding-top:35px; font-size:16px;}
+.coverInfo2 h3{ color:#4f4f4f; padding:23px 0; font-size:14px;}
+.coverInfo2 p{ color:#4f4f4f; font-size:12px; line-height:22px;}
+.coverInfo2 p a{ color:#3a4089;}
+.coverInfo2 p a:hover{ text-decoration:underline;}
+.coverInfo2 p a.hover{ text-decoration:underline;}
+.coverInfo2 span{width:529px; color:#868686; font-size:12px; padding-top:50px; display:block;}
+.coverInfotxt{ padding-left:75px;}
+.coverInfobox span{ width:100%; text-align:center; font-size:14px; color:#2c2c2c; line-height:35px; display:block;}
+.coverInfo h1 th{ font-size:14px; color:#2c2c2c; font-weight:normal; padding-right:0;}
+.coverInfo3{ padding-bottom:0;}
+.coverInfo3 td{ font-size:14px; color:#2c2c2c; border-bottom:1px dashed #d8d8d8; text-align:center; }
+.coverInfo3 .coverInfotxt5{ text-align:right; border-bottom:1px solid #f1f1f1; padding-right:60px; }
+.coverInfotxt5 i{ font-style:normal; color:#f24e4d;}
+.coverPay{ width:786px; padding-top:10px; line-height:73px; font-size:16px; color:#2a2a2a;}
+.coverPaybtn a{ display:block; width:142px; height:43px; line-height:43px; padding-left:9px; color:#fff; font-size:16px; padding-left:25px; background:url(cover-07.jpg) right center no-repeat #ef4218; margin-left:614px; margin-bottom:43px;} 
+.coverPaybtn a:hover{background:url(cover-08.jpg) right center no-repeat #f00;}
+/**在线咨询**/
+.onlinebox{ right:20px; top:420px; width:102px; height:106px; padding:4px 5px; border:1px solid #3686c1; position:absolute; z-index:0;}
+.onlineTlet{ left:-1px; top:-1px; width:4px; height:4px; background:url(online-01.jpg) no-repeat; position:absolute; z-index:1;}
+.onlineTrit{ right:-1px; top:-1px; width:4px; height:4px; background:url(online-02.jpg) no-repeat; position:absolute; z-index:1;}
+.onlineBlet{ left:-1px; bottom:-1px; width:4px; height:4px; background:url(online-03.jpg) no-repeat; position:absolute; z-index:1;}
+.onlineBrit{ right:-1px; bottom:-1px; width:4px; height:4px; background:url(online-04.jpg) no-repeat; position:absolute; z-index:1;}
+.onlineClose{ width:10px; height:10px; padding-left:92px; position:relative;}
+.onlineClose a{ display:block; width:8px; height:8px; background:#3486be; padding:1px;}
+.onlineClose a:hover{  background:#3ca1ed;}
+.online{ width:92px; height:28px; margin:15px 5px 20px 5px; background:url(online-02.png) no-repeat; position:relative;}
+.online a{ display:block; width:92px; height:28px; line-height:28px; text-align:center; color:#fff; font-size:14px;}
+.online a:hover{ background:url(online-04.png) no-repeat;}
+.onlinebox span{ color:#3686c1; }
+.onlinebox span img{ vertical-align:-3px;}
+/**帮助-如何注册**/
+.helpRit{ min-height:568px;}
+.helpNavs ul{ border-bottom:1px dashed #ebe9ea;}
+.helpNavs li{height:12px; line-height:12px; padding-bottom:25px; width:234px; position:relative; text-indent:36px;  }
+.helpNavs li a{display:block; height:12px; font-family:"微软雅黑"; font-size:14px; color:#afafaf;}
+.helpNavs li a:hover{ color:#0b5185; font-weight:bold;}
+.helpNavs li a.hover{ color:#0b5185; font-weight:bold;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
