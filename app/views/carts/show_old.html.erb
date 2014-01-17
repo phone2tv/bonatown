@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="user">
+    <ol class="breadcrumb">
+      <li><a href="#">保险超市网</a></li>
+      <li><a href="#">会员中心</a></li>
+      <li class="active">会员中心首页</li>
+    </ol>
+  </div>
+</div>
+
+<div class="row">
+  <div class='col-md-2'>
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  </div>
+  <div class='col-md-10'>
+
+    <div class="row">
+      <div class='col-md-4'>
+
+    <%= form_for(Order.new) do |f| %>
+      <table class='table'>
+        <% current_user.line_items.where(order_id: nil).quoted.each do |line_item| %>
+          <tr>
+            <td>
+              <%= check_box_tag('order[line_items][]', line_item.id) %>
+              <%# label_tag('order[line_items][]', "check out this line_item") %>
+            </td>
+            <td><%= link_to line_item.id, line_item %></td>
+            <td><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance %></td>
+          </tr>
+        <% end %>
+        <tr>
+          <td> </td>
+          <td> </td>
+          <td> <%= f.submit class: 'btn btn-primary' %> </td>
+        </tr>
+      </table>
+    <% end %>
+
+      </div>
+    </div>
+
+    <p>
+    <%= link_to '清空购物车', cart_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= link_to '结算', new_order_path, class: 'btn btn-success' %>
+    <%# button_to 'Empty cart', cart_path, class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' %>
+    </p>
+    <%= render 'line_items/line_items', line_items: @line_items %>
+  </div> <!-- col-md-10 -->
+</div> <!-- row -->

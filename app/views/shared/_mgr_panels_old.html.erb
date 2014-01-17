@@ -1,0 +1,56 @@
+<div class="user">
+
+  <%= render 'shared/mgr_panel_myorder.html.erb' %>
+  <%= render 'shared/mgr_panel_orders.html.erb' %>
+  <%= render 'shared/mgr_panel_users.html.erb' %>
+  <%= render 'shared/mgr_panel_parks.html.erb' %>
+  <%= render 'shared/mgr_panel_companies.html.erb' %>
+  <%= render 'shared/mgr_panel_insurances.html.erb' %>
+
+  <% if user_signed_in? %>
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title">账户管理</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <li><%= link_to '会员资料', { controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile }, 'data-no-turbolink' => true %></li>
+          <li><a href="#" class="">寄送地址</a></li>
+          <li><a href="#" class="">账户安全</a></li>
+          <li><%= link_to '常用联系人', contacts_path %></li>
+          <li><%= link_to '添加常用联系人', new_contact_path, 'data-no-turbolink' => true %></li>
+          <li><a href="#" class="">我的收藏夹</a></li>
+          <li><a href="#" class="">订阅管理</a></li>
+        </ul>
+      </div>
+    </div> <!-- panel -->
+  <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">投保管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><a href="#" class="">订单管理</a></li>
+        <li><a href="#" class="">保单管理</a></li>
+        <li><a href="#" class="">保险卡管理</a></li>
+        <li><a href="#" class="">评价管理</a></li>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+
+  <div class="panel panel-danger">
+    <div class="panel-heading">
+      <h3 class="panel-title">交易管理</h3>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li><a href="#" class="">收支明细</a></li>
+        <li><a href="#" class="">充提记录</a></li>
+        <li><a href="#" class="">消费记录</a></li>
+      </ul>
+    </div>
+  </div> <!-- panel -->
+
+</div> <!-- user -->

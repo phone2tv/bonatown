@@ -13,7 +13,13 @@
     </div>
     <div class="indexTopTelRit">
       <ul>
-        <li class="indexTopTelRit1"> <%= image_tag("index-01.jpg") %> <a href="#">我的购物车</a>( <span>0</span> )</li>
+        <li class="indexTopTelRit1"> <%= image_tag("index-01.jpg") %>
+        <% if (user_signed_in? and current_user.has_role?(:customer)) %>
+          <%= link_to '我的购物车 ', cart_path %>( <span><strong><%= current_user.line_items.where(order_id: nil).size %></strong></span> )
+        <% else %>
+          <span>我的购物车</span>
+        <% end %>
+        </li>
         <li class="indexTopTelRit2"><%= image_tag("index-02.jpg") %> <a href="#">关注我</a></li>
         <li class="indexTopTelRit3"><%= image_tag("index-03.jpg") %> 400-1454-0000</li>
       </ul>   
@@ -21,7 +27,7 @@
   </div>
 
   <div  class="indexTopBot">
-    <div class="indexTopBotLogo"><a href="index.html"><%= image_tag("index-logo.jpg") %></a></div>
+    <div class="indexTopBotLogo"><%= link_to image_tag('index-logo.jpg'), root_path %></div>
     <div class="indexTopBotMid">
       <div class="indexTopBotMidBOX">
         <input name="" type="text"  class="indexTopBotMidinput1"  /> <%= image_tag("index-index17.png", class: "indexTopBotMidinput2") %>
@@ -47,7 +53,7 @@
   <div class="navRit"></div>
   <div class="nav1">保险超市</div>
   <ul>
-    <li><a href="#" class="hover">首页</a></li>
+    <li><%= link_to '首页', root_path, class: 'hover' %></li>
     <li><a href="#" >会员中心</a></li>
     <li><a href="#">保险课堂</a></li>
     <li><a href="#">保单验证</a></li>

@@ -1,50 +1,158 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
-  </div>
-</div>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 代金券</div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  <div class="mainright">
+    <div class="topNewsBox">
+      <%= image_tag("img_01.jpg", size: "279x200") %>
+      <div class="tnbRight">
+        <dl>
+          <dt>独家老人癌症专家，限时特惠</dt>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+        </dl>
+        <p class="clearfix"><a href="#">了解详情</a><a href="#" class="ml_90">立即投保</a></p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="bdTabBox">
+      <ul class="bdTabBox_Tit clearfix">
+        <li class="hover" id="one1" onMouseOver="zahe_1('one',1,4)"><a href="javascript:;">全部保单（1）</a></li>
+        <li id="one2" onMouseOver="zahe_1('one',2,4)"><a href="javascript:;">待提交（2）</a></li>
+        <li id="one3" onMouseOver="zahe_1('one',3,4)"><a href="javascript:;">待支付（2）</a></li>
+        <li id="one4" onMouseOver="zahe_1('one',4,4)"><a href="javascript:;">待出保（2）</a></li>
+      </ul>	
+      <div id="con_one_1" class="bdTabBox_Con ">	
 
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-10'>
-
-    <div class="row">
-      <div class='col-md-4'>
-
-    <%= form_for(Order.new) do |f| %>
-      <table class='table'>
-        <% current_user.line_items.where(order_id: nil).quoted.each do |line_item| %>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd">
           <tr>
-            <td>
-              <%= check_box_tag('order[line_items][]', line_item.id) %>
-              <%# label_tag('order[line_items][]', "check out this line_item") %>
-            </td>
-            <td><%= link_to line_item.id, line_item %></td>
-            <td><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance %></td>
+            <th scope="col" width="125">产品<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></th>
+            <th scope="col" width="115">保险期间<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjxx.jpg") %></a></th>
+            <th scope="col" width="90">数量</th>
+            <th scope="col" width="75">保费 </th>
+            <th scope="col" width="110">代金券</th>
+            <th scope="col" width="95">状态</th>
+            <th scope="col" width="120">当前处理人</th>
+            <th scope="col" width="141">&nbsp;</th>
           </tr>
-        <% end %>
-        <tr>
-          <td> </td>
-          <td> </td>
-          <td> <%= f.submit class: 'btn btn-primary' %> </td>
-        </tr>
-      </table>
-    <% end %>
+          <tr>
+            <td colspan="8">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
+                <tr>
+                  <td colspan="7" height="57">
+                    <span class="dd_num">订单编号：15135366</span>
+                  </td>
+                  <td>
+                    <a href="#" class="btn">完善订单</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
+                  <td width="115"><strong>2013/1-1014/1</strong></td>
+                  <td width="90"><strong>1</strong></td>
+                  <td width="75"><span>￥100.00</span></td>
+                  <td width="110"><span>￥100.00</span></td>
+                  <td width="95">待提交</td>
+                  <td width="120"><b>张三</b></td>
+                  <td width="141"><a href="#">撤销</a></td>
+                </tr>
 
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="8">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
+                <tr>
+                  <td colspan="7" height="57">
+                    <span class="dd_num">订单编号：15135366</span>
+                  </td>
+                  <td>
+                    <a href="#" class="btn">完善订单</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
+                  <td width="115"><strong>2013/1-1014/1</strong></td>
+                  <td width="90"><strong>1</strong></td>
+                  <td width="75"><span>￥100.00</span></td>
+                  <td width="110"><span>￥100.00</span></td>
+                  <td width="95">待提交</td>
+                  <td width="120"><b>张三</b></td>
+                  <td width="141"><a href="#">撤销</a></td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="8">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
+                <tr>
+                  <td colspan="7" height="57">
+                    <span class="dd_num">订单编号：15135366</span>
+                  </td>
+                  <td>
+                    <a href="#" class="btn">完善订单</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
+                  <td width="115"><strong>2013/1-1014/1</strong></td>
+                  <td width="90"><strong>1</strong></td>
+                  <td width="75"><span>￥100.00</span></td>
+                  <td width="110"><span>￥100.00</span></td>
+                  <td width="95">待提交</td>
+                  <td width="120"><b>张三</b></td>
+                  <td width="141"><a href="#">撤销</a></td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td colspan="8">
+              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
+                <tr>
+                  <td colspan="7" height="57">
+                    <span class="dd_num">订单编号：15135366</span>
+                  </td>
+                  <td>
+                    <a href="#" class="btn">完善订单</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
+                  <td width="115"><strong>2013/1-1014/1</strong></td>
+                  <td width="90"><strong>1</strong></td>
+                  <td width="75"><span>￥100.00</span></td>
+                  <td width="110"><span>￥100.00</span></td>
+                  <td width="95">待提交</td>
+                  <td width="120"><b>张三</b></td>
+                  <td width="141"><a href="#">撤销</a></td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+        </table>
+
+
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
       </div>
     </div>
 
-    <p>
-    <%= link_to '清空购物车', cart_path, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
-    <%= link_to '结算', new_order_path, class: 'btn btn-success' %>
-    <%# button_to 'Empty cart', cart_path, class: 'btn btn-danger', method: :delete, confirm: 'Are you sure?' %>
-    </p>
-    <%= render 'line_items/line_items', line_items: @line_items %>
-  </div> <!-- col-md-10 -->
-</div> <!-- row -->
+  </div>
+</div>
+<div class="clear"></div>						
