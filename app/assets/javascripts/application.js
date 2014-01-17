@@ -17,6 +17,7 @@
 //= require bootstrap
 //= require placeholder.min
 //= require china_city/jquery.china_city
+//= site
 //= require_tree .
 
 window.setTimeout(function() {

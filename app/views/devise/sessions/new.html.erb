@@ -1,16 +1,44 @@
-<div class='row'>
-  <div class='col-md-4 col-md-offset-4'>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= t('devise.login') %></h3>
-      </div>
-      <div class="panel-body">
-        <%= render 'form' %>
-        <hr/>
-        <center><h5><%= t("devise.or.signup") %></h5></center>
-        <%= link_to t("devise.signup"), new_registration_path(resource_name), class: 'btn btn-success btn-lg btn-block' %>
-      </div> <!-- panel-body -->
-    </div> <!-- panel -->
-    <%= render "devise/shared/links" %>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 登录</div>
+
+<div class="loginbox">
+
+  <div class="loginLeft">
+    <div class="loginLeftBox">
+      <div class="loginLeftTitel">登录</div>
+      <%# render 'form' %>
+      <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: '' }) do |f| %>
+      <table width="296" border="0" >
+        <tr>
+          <td width="77" height="45" align="right" class="malMembepasswordtitel">用户名：</td>
+          <td colspan="3"><%= f.text_field :login, class: 'loginLeftinput1', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %></td>
+        </tr>
+        <tr>
+          <td width="77" height="45" align="right" class="malMembepasswordtitel">登录密码：</td>
+          <td colspan="3"><%= f.password_field :password, class: 'loginLeftinput1', placeholder: t('activerecord.attributes.user.password') %></td>
+        </tr>
+        <tr>
+          <td width="77" height="45" align="right" class="malMembepasswordtitel">验证码：</td>
+          <td width="90"><input name="input" type="text"  class="loginLeftinput2" /></td>
+          <td width="70"><input name="" type="button"  class="loginLeftinput5" value="ABCD" /></td>
+          <td width="41"><a href="#" class="loginLeftinput6">换一张</a></td>
+        </tr>
+        <tr>
+          <td width="77" height="18" align="right" class="malMembepasswordtitel">&nbsp;</td>
+          <td colspan="3" class="malMembepasswordcode"><a href="#" class="loginLeftinput3">忘记密码？</a></td>
+        </tr>
+        <tr>
+          <td width="77" height="45" align="right" class="malMembepasswordtitel">&nbsp;</td>
+          <td colspan="3" class="malMembepasswordcode">
+            <%= f.submit t('devise.login'), class: 'loginLeftbutton' %>
+            <div class="loginLeftinput4"><a href="#">立即注册</a></div>
+          </td>
+        </tr>
+      </table>
+      <% end %>
+
+    </div>
   </div>
-</div> <!-- .row -->
+  <div class="loginRight">
+    <%= image_tag "loginRight-01.png" %>
+  </div>                
+</div>

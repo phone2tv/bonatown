@@ -16,7 +16,6 @@ img{ border:0px;}
 .clearfix {
 	clear:both;
 }
-.hidden{ display:none; }
 /*页头页尾**********************************/
 .indexTop{ width:1147px; height:138px; margin:0px auto;color:#8a8a8a; }
 .indexTopTel{ width:1147px; height:28px; line-height:28px; font-size:12px;}
@@ -30,57 +29,39 @@ img{ border:0px;}
 .indexTopTelRit1 span{color:#ff5a00}
 .indexTopTelRit2{ width:100px; height:28px; float:left}
 .indexTopTelRit3{ width:130px; height:28px; float:left; color:#ff5a00} 
-
 .indexTopBot{ width:1147px; height:110px;}
 .indexTopBotLogo{ width:181px; height:71px; padding:23px 0px 0px 10px; float:left}
-
 .indexTopBotMid{ width:390px; height:75px;  float:left; padding:33px 0px 0px 160px; }
-
 .indexTopBotMidBOX{ width:390PX; height:47px; position:relative}
 .indexTopBotMidinput1{ width:381px; height:41px; border:none; float:left; text-indent:5px; line-height:47px; border:#006ab5 2px solid;border-radius:8px; }
 .indexTopBotMidinput2{ width:31px; height:31px; position:absolute; top:7px; right:15px; cursor:pointer}
-
-
 .indexTopBotMid ul{ width:340px; height:28px; }
 .indexTopBotMid li{ width:60px;  height:28px; line-height:28px; margin-right:20px; float:left;color:#aeaeae; }
 .indexTopBotMid li a{ color:#aeaeae}
-
 .indexTopBotRit{ width:300px;height:71px; float:right; }
 .indexTopBotRit a{ color:#aeaeae}
 .indexTopBotRit li{ float:left;width:90px; height:71px;padding:32px 0px 0px 10px}
 .indexTopBotRit li img{  display:block; margin:0px auto}
 .indexTopBotRit span{ width:90px; height:25px; line-height:25px; text-align:center; display:block}
-
-
 .indexBottomBox{ width:100%; height:206px; border-top:#d9d9d9 1px solid ; margin-top:30px; }
 .indexBottom{ width:1147px; height:165px; border-bottom:1px #d4d4d4 dashed; margin:0px auto}
 .indexBottom ul{ float:left;}
 .indexBottom li{ width:95px; height:165px; float:left; padding-left:5px; line-height:28px; font-size:14px; color:#7f7f7f; padding-left:120px;}
 .indexBottom li a{ color:#7f7f7f; }
-
 .indexBottom li strong{ width:100%;height:58px; line-height:58px;  font-size:16px; display:block; border-bottom:1px dashed #aeaeae;margin-bottom:5px; color:#000}
-
 .indexBottom li strong a{ color:#000}
-
 .indexBottom1box{ width:217px; height:165px; float:left}
 .indexBottom1{width:217px;height:58px; line-height:58px;  font-size:16px; display:block;  color:#000; text-align:center; font-weight:bolder}
 .indexBottom1 a{ color:#000}
-
 .indexBottom2{ width:216px; height:165px; float:left;}
 .indexBottom2 img{ width:216px; height:56px; margin-top:53px; margin-left:20px;}
-
 .indexBottom3{ width:1147px; height:40px; line-height:40px; text-align:right; color:#c8c8c8; margin:0px auto}
-
 .fonta{ font-family:Arial;}
 
 
-
-
-
-
 /*首页**********************************/
-.indexnr{ width:1147px; height:auto; margin:0px auto}
-.nav{ background:#0064af; width:1133px; padding:0px 7px 0px 7px; height:47px; position:relative}
+.indexnr{ width:1147px; height:auto; margin:0px auto;}
+.nav{ background:#0064af; width:1133px; padding:0px 7px 0px 7px; height:47px; position:relative; margin:auto;}
 .navLet{ width:7px; height:47px; background:url(index-nav1.jpg) no-repeat; position:absolute; top:0px ; left:0px;}
 .navRit{width:7px; height:47px; background:url(index-nav3.jpg) no-repeat; position:absolute; top:0px ; right:0px;}
 .nav1{ width:227px; height:47px; float:left; line-height:47px; color:#FFF; font-size:18px; background:url(index-nav2.jpg) no-repeat 190px 0px ; text-indent:14px;}
@@ -366,7 +347,7 @@ img{ border:0px;}
 
 /**保险详情**/
 .insurancePositionbox{ width:1147px; height:50px; line-height:50px; color:#353535;}
-.insurancePositionbox span{ color:#0064af;}
+.order_site span{ color:#0064af;}
 .insuranceDetailsnr{ width:880px; height:auto; margin-right:15px; float:left;}
 .insuranceDetailsbox{ width:870px; height:392px; border:1px solid #f1f1f1; background:#ffffff; padding-top:14px; padding-left:8px;}
 .insuranceDetails1{ width:352px; height:392px; margin-right:54px; float:left;}
@@ -542,7 +523,7 @@ color:#ffffff;
 .memberInfoBtn{ width:110px; height:43px; padding-bottom:45px; margin:0 auto;}
 .memberInfoBtn a{ display:block; width:110px; height:43px; background:#ef4218; color:#fff; font-size:16px; line-height:43px; text-align:center;}
 .memberInfoBtn a:hover{ background:#f00;}
-/**投保步骤**/
+/**投保第一步**/
 .coverbox{ width:880px; height:auto; margin:0 auto;}
 .coverStep{ width:880px; height:97px; padding:17px 0 34px 0px;}
 .coverStep td{text-align:center; font-size:14px; color:#555555;}
@@ -591,6 +572,73 @@ color:#ffffff;
 .coverPay{ width:786px; padding-top:10px; line-height:73px; font-size:16px; color:#2a2a2a;}
 .coverPaybtn a{ display:block; width:142px; height:43px; line-height:43px; padding-left:9px; color:#fff; font-size:16px; padding-left:25px; background:url(cover-07.jpg) right center no-repeat #ef4218; margin-left:614px; margin-bottom:43px;} 
 .coverPaybtn a:hover{background:url(cover-08.jpg) right center no-repeat #f00;}
+
+/* 登录 */
+.order_site{ width:1147px; height:40px; line-height:40px; margin:0 auto;}
+.order_site a{ color:#0064af;}
+.loginbox{ width:1145px; height:325px; border:1px solid #f1f1f1; margin:0px auto 20px}
+.loginLeft{ width:340px; height:325px; float:left}
+.loginLeftBox{ width:300px; height:290px; border:1px #f5f5f5 solid;margin-top:16px; margin-left:20px;}
+.loginLeftTitel{ width:100%px; height:35px; background:#2c8cd5; color:#FFF; line-height:35px; font-size:16px; text-align:center;}
+.loginLeft table{ color:#4c4c4c}
+.loginLeftinput1{ width:165px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
+.loginLeftinput2{ width:85px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
+.loginLeftinput3{ color:#1f7dc3}
+.loginLeftbutton{ width:84px; height:34px; background:#f8860d; color:#FFF; line-height:34px; text-align:center; font-size:14px; border:none; cursor:pointer; float:left; margin-right:10px;}
+.loginLeftinput4 a{ line-height:34px; text-decoration:underline; color:#797979}
+.loginLeftinput5{ width:70px; height:27px; border:1px #eaebeb solid; background:#efeded; text-align:center; line-height:25px; color:#c0c0c0; display:block; cursor: pointer;}
+.loginLeftinput6{ color:#6a6a6a}
+.loginRight{ width:805px; height:309px; float:left; padding-top:16px; }
+.loginRight img {border:1px solid #f5f5f5}
+
+/* 注册 */
+.registerbox{ width:1145px; height:366px; border:1px solid #f1f1f1; margin:0px auto 20px;}
+.registerLeft{ width:340px; height:366px; float:left}
+.registerLeftBox{ width:300px; height:331px; border:1px #f5f5f5 solid;margin-top:16px; margin-left:20px;}
+.registerLeftTitel{ width:100%; height:35px; background:#2c8cd5; color:#FFF; line-height:35px; font-size:16px; text-align:center;}
+.registerLeft table{ color:#4c4c4c}
+.registerLeftinput1{ width:165px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb; float:left}
+.registerLeftinput2{ width:85px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
+.registerLeftinput3{ margin-left:2px; display:block; float:left; color:#363434}
+.registerLeftinput3 a{ color:#8dc3eb}
+.registerLeftbutton{ width:84px; height:34px; background:#f8860d; color:#FFF; line-height:34px; text-align:center; font-size:14px; border:none; cursor:pointer; float:left; margin-right:10px;}
+.registerLeftinput4 a{ line-height:34px; color:#1f7dc3}
+.registerLeftinput5{ width:137px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb; float:left}
+.registerLeftinput6{ width:27px; height:27px; background:url(loginRight-04.png) no-repeat; border:none; float:left; cursor:pointer}
+.registerRight{ width:805px; height:309px; float:left; padding-top:16px; }
+.registerRight img {border:1px solid #f5f5f5}
+
+.Orderm3Top{ width:100%px; height:35px; font-size:14px}
+.Orderm3Let{ width:414px; height:100px; float:left}
+.Orderm3Rit{ width:350px; height:15px; float:left; font-size:14px; color:#636363; padding-top:70px;}
+
+/* 会员中心首页 */
+.order-wait{ margin-left: 10%;}
+.topNewsBox-info{ border: 2px solid #E6E6E6; margin: 10px 20px 20px 20px; padding:10px; color:#000;}
+.user-info{ float:left; width:55%; border-right:1px solid #ccc;}
+.user-info-title{width:95%; border-bottom:1px solid #ccc; height:30px; line-height:30px; margin-left:7px;}
+.user-info-title div{height:12px; width:3px; background-color:rgb(78, 78, 196); float:left; margin-top:9px; margin-right:5px;}
+.user-info dl dd{margin-top:25px; margin-left:15px; clear:both;}
+.user-info .safe-title{float:left;}
+.user-info .user-safe{margin-bottom:60px;}
+.user-info .safe{margin-left:60px;}
+.user-info .safe span{margin-top:-5px; display:block; float:left;text-align:center;}
+.user-info .safe .level button{height:10px; border-radius:8px; background-color:#ccc; width:25px; border:0; display:block; margin-bottom:3px; margin-left:5px;}
+.user-info .safe .low{background-color:red !important;}
+.user-info .safe .middle{background-color:yellow !important;}
+.user-info .safe .height{background-color:green !important;}
+.voucher{ float:left; padding:20px; width:40%;}
+.voucher-title{margin-top:15px;}
+.voucher-img{margin-top:15px;}
+.voucher-get{text-align:right; margin-top:15px;}
+.bdTabBox_Tit_memer li{ float:left; width:70%; height:37px; line-height:37px; text-align:center;  background:#f0f0f0; }
+.bdTabBox_Tit_memer li.hover{ width:30% !important;background:#2c8cd5}
+.order-list dd{ height:60px; border-bottom:1px dashed #ccc; line-height:60px;}
+.order-list dd:last-child{ height:60px; border-bottom:0; line-height:60px;}
+.order-list dd span{ margin-left:50px;}
+.order-list dd>a{ color:#fff;float:right;margin-right:50px; height:30px; line-height:30px; width:70px; margin-top:20px; text-align:center; background-color:rgb(221, 172, 18);}
+
+
 /**在线咨询**/
 .onlinebox{ right:20px; top:420px; width:102px; height:106px; padding:4px 5px; border:1px solid #3686c1; position:absolute; z-index:0;}
 .onlineTlet{ left:-1px; top:-1px; width:4px; height:4px; background:url(online-01.jpg) no-repeat; position:absolute; z-index:1;}
@@ -612,37 +660,3 @@ color:#ffffff;
 .helpNavs li a{display:block; height:12px; font-family:"微软雅黑"; font-size:14px; color:#afafaf;}
 .helpNavs li a:hover{ color:#0b5185; font-weight:bold;}
 .helpNavs li a.hover{ color:#0b5185; font-weight:bold;}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

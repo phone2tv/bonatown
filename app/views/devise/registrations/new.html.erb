@@ -1,16 +1,57 @@
-<div class='row'>
-  <div class='col-md-4 col-md-offset-4'>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title"><%= t('devise.signup') %></h3>
-      </div>
-      <div class="panel-body">
-        <%= render 'form' %>
-        <hr/>
-        <center><h5><%= t("devise.or.signin") %></h5></center>
-        <%= link_to t("devise.signin"), new_session_path(resource_name), class: 'btn btn-primary btn-lg btn-block' %>
-      </div> <!-- panel-body -->
-    </div> <!-- panel -->
-    <%= render "devise/shared/links" %>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 注册</div>
+<!--content-->
+<div class="registerbox">
+
+  <div class="registerLeft">
+    <div class="registerLeftBox">
+      <div class="registerLeftTitel">注册</div>
+      <table width="296" border="0" >
+        <tr>
+          <td width="77" height="43" align="right" class="malMembepasswordtitel">类别：</td>
+          <td width="209" colspan="3">
+            <input name="input3" type="text"  class="registerLeftinput5" />
+            <input name="" type="button"  class="registerLeftinput6"/>
+          </td>
+        </tr>
+        <tr>
+          <td width="77" height="43" align="right" class="malMembepasswordtitel">用户名：</td>
+          <td width="209" colspan="3">
+            <input name="input2" type="text"  class="registerLeftinput1" />
+            <%= image_tag "loginRight-02.png", class: "registerLeftinput3" %>
+          </td>
+        </tr>
+        <tr>
+          <td width="77" height="43" align="right" class="malMembepasswordtitel">手机号：</td>
+          <td width="209" colspan="3">
+            <input name="input2" type="text"  class="registerLeftinput1" />
+            <%= image_tag "loginRight-03.png", class: "registerLeftinput3" %>
+          </td>
+        </tr>
+        <tr>
+          <td width="77" height="43" align="right" class="malMembepasswordtitel">密码：</td>
+          <td width="209" colspan="3"><input name="input2" type="text"  class="registerLeftinput1" /></td>
+        </tr>
+        <tr>
+          <td width="77" height="43" align="right" class="malMembepasswordtitel">确认密码：</td>
+          <td width="209" colspan="3"><input name="input2" type="text"  class="registerLeftinput1" /></td>
+        </tr>
+
+        <tr>
+          <td width="77" height="17" align="right" class="malMembepasswordtitel"><input name="" type="checkbox" value="" /> </td>
+          <td width="209" colspan="3" class="malMembepasswordcode"><div class="registerLeftinput3">我已阅读并同意保纳通<a href="#">《服务条款》</a></div></td>
+        </tr>
+        <tr>
+          <td width="77" height="41" align="right" class="malMembepasswordtitel">&nbsp;</td>
+          <td width="209" colspan="3" class="malMembepasswordcode">
+            <input name="" type="button" class="registerLeftbutton"  value="立即注册"  /> 
+            <div class="registerLeftinput4"><a href="#">登录</a></div>
+          </td>
+        </tr>
+      </table>
+
+    </div>
   </div>
-</div> <!-- .row -->
+  <div class="registerRight">
+    <%= image_tag "loginRight-01.png" %>
+  </div>                
+</div>

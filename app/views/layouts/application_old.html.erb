@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Insurance</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <!-- content and footer can NOT in same div -->
+  <div class='sticky-wrapper'>
+    <%# render 'layouts/navbar_static' %>
+    <%# render 'layouts/header_xyz' %>
+    <%= render 'layouts/header_xiaomi' %>
+    <div class='container'>
+      <%# render 'layouts/navbar' %>
+      <%= flash_messages! %>
+      <%= yield %>
+      <%# debug params %>
+    </div> <!-- .container -->
+  </div> <!-- .sticky-wrapper -->
+
+  <%= render "layouts/footer" %>
+
+</body>
+</html>
