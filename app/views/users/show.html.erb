@@ -1,18 +1,79 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
-  </div>
-</div>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 首页 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-10'>
-    <%= render @user.profile %>
+  <div class="mainright">
+    <div class="topNewsBox-info">
+      <div class="user-info">
+        <li class="user-info-title"><div></div>用户信息</li>
+        <dl>
+          <dd>账户名:某某某</dd>
+          <dd class="user-safe">
+          <div class="safe-title">
+            账号安全:
+          </div>
+          <div class="safe">
+            <span class="level"><button class="low"></button>低</span>
+            <span class="level"><button></button>中</span>
+            <span class="level"><button></button>高</span>
+            <!--中(middle),高(height)，都在css里-->
+          </div>
+          </dd>
+          <dd>上次登录时间: 2013.01.01</dd>
+          <dd>隶属园区: <a href="#">某某区</a></dd>
+          <dd>已支付总额: 200元</dd>
+          <dd>已查询报价次数: 2次<span>用户性质: 企业用户/园区用户</span></dd>
+        </dl>
+      </div>
+      <div class="voucher">
+        <li class="voucher-title">代金券领取:</li>
+        <li class="voucher-img"><%= image_tag("voucher.png") %></li>
+        <li class="voucher-get"><a href="#">如何获取?</a></li>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <div class="bdTabBox">
+      <ul class="bdTabBox_Tit clearfix">
+        <% if params[:state].nil? %>
+          <li class='hover'><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user) %></li>
+          <li><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+        <% else %>
+          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user) %></li>
+          <li class='hover'><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+        <% end %>
+      </ul>	
+    </div>
+
+    <% if params[:state].nil? %>
+      <%= render 'line_items/line_items', line_items: current_user.line_items.where(order_id: nil).quoted %>
+    <% else %>
+      <%= render 'line_items/line_items', line_items: current_user.line_items.where(order_id: nil).shipped %>
+    <% end %>
+
+    <!--
+    <div class="bdTabBox">
+      <div id="con_one_1" class="bdTabBox_Con_mem">	
+        <div class="order-list">
+          <dl>
+            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
+            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
+            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
+          </dl>
+        </div>
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
+      </div>
+    </div>
+    -->
+
   </div>
 </div>
+<div class="clear"></div>						

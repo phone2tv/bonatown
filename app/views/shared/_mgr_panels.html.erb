@@ -10,14 +10,24 @@
   <div class="left_tit">会员中心</div>
   <ul class="leftNavs">
     <% if (user_signed_in? and current_user.has_role?(:customer)) %>
-      <li class="current"><%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+      <% if params[:controller] == 'users' and params[:action] == 'show' %>
+        <li class="current"><%= link_to '首页 ', current_user %></li>
+      <% else %>
+        <li><%= link_to '首页 ', current_user %></li>
+      <% end %>
+
+      <% if params[:controller] == 'carts' and params[:action] == 'show' %>
+        <li class="current"> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+      <% else %>
+        <li> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+      <% end %>
+
       <li><%= link_to '交易管理 ', orders_path %></li>
     <% end %>
     <li><a href="#">保单管理</a></li>
     <li><a href="#">代金券</a></li>
     <li><a href="#">会员资料</a></li>
     <li><a href="#">常用联系人</a></li>
-    <li><a href="#">我的购物车</a></li>   
   </ul>
 </div>
 <script language="javascript">

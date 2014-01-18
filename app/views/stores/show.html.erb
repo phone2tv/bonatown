@@ -64,7 +64,8 @@
       </div>
 
       <div class="indexDiscountLet">
-        <div class="indexDiscountLetTitel"><a href="#">某某保险</a></div>
+        <% insurance = PublicLiabilityInsurance.first %>
+        <div class="indexDiscountLetTitel"><%= link_to insurance.title, insurance_path(insurance) %></div>
         <div class="indexDiscountLetnr">
           <a href="#"><%= image_tag("index-index19.jpg", class: "indexDiscountLetimg1") %></a>
           <h1><a href="#">产品特色</a></h1>
@@ -72,16 +73,16 @@
           <span> <a href="#"> 1、综合交通保障，特色特色。<br/>
               2、意外伤残，医疗。</a></span><br/>
           <h2><a href="#">￥<strong>100.00</strong>起</a></h2>
-          <input name="" type="button" class="indexDiscountLetnrh3" value="我要投保"   />
-          <input name="" type="button" class="indexDiscountLetnrh4" value="我要投保"   />
+          <%= link_to t('cart.buy_now'), { controller: insurance.class.to_s.tableize.sub('insurances', 'items'), action: 'new', insurance_id: insurance }, { class: 'indexDiscountLetnrh3' } %>
+          <%= link_to t('cart.add_to_cart'), { controller: insurance.class.to_s.tableize.sub('insurances', 'items'), action: 'add_to_cart', insurance_id: insurance }, { method: :post, class: 'indexDiscountLetnrh4' } %>
           <div class="clear"></div>
           <div class="indexInsure">30天内<span>0</span>人投保</div >
         </div>
       </div>
 
       <div class="indexDiscountRit">
-
-        <div class="indexDiscountRitTitel"><a href="#">某某保险</a></div>
+        <% insurance = ProductLiabilityInsurance.first %>
+        <div class="indexDiscountRitTitel"><%= link_to insurance.title, insurance_path(insurance) %></div>
         <div class="indexDiscountRitnr">
           <a href="#"> <%= image_tag("index-index21.jpg", class: "indexDiscountRitimg1") %></a>
           <h1><a href="#">产品特色</a></h1>
@@ -89,8 +90,8 @@
           <span><a href="#"> 1、综合交通保障，特色特色。<br/>
               2、意外伤残，医疗。</a></span><br/>
           <h2><a href="#">￥<strong>100.00</strong>起</a></h2>
-          <input name="" type="button"  value="我要投保" class="indexDiscountRitnrh3"  />
-          <input name="" type="button" class="indexDiscountLetnrh4" value="我要投保"   />
+          <%= link_to t('cart.buy_now'), { controller: insurance.class.to_s.tableize.sub('insurances', 'items'), action: 'new', insurance_id: insurance }, { class: 'indexDiscountLetnrh3' } %>
+          <%= link_to t('cart.add_to_cart'), { controller: insurance.class.to_s.tableize.sub('insurances', 'items'), action: 'add_to_cart', insurance_id: insurance }, { method: :post, class: 'indexDiscountLetnrh4' } %>
           <div class="clear"></div>
           <div class="indexInsure">30天内<span>0</span>人投保</div >
           </div>

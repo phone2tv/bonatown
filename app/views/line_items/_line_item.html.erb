@@ -10,7 +10,7 @@
         </td>
       </tr>
       <tr>
-        <td width="245" height="40"><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance, class: "name" %></td>
+        <td width="245" height="40"><%= link_to line_item.insurance_item.specific_insurance.title, insurance_path(line_item.insurance_item.specific_insurance), class: "name" %></td>
         <td width="145"><strong>
             <%= line_item.created_at.strftime("%Y/%m/%d") + ' - ' + line_item.created_at.strftime("%Y/%m/%d") %>
         </strong></td>

@@ -1,15 +1,9 @@
+<fieldset>
   <div class='elevator-entry'>
-
-    <li>
-    <span class="bnt-lable"><%= f.label :kind, class: 'control-label' %>:</span>
-    <span class="bnt-input"><%= f.text_field :kind, class: 'cover-input cover-width-140' %></span>
-    <span class="bnt-require">*</span>
-    <div class="require-hide">
-      <span class="bnt-minus"></span>
-      <span class="bnt-alert">请输入车牌号码</span>
-    </div>
-    </li>
-
+  <div class="form-group">
+    <%= f.label :kind, class: 'control-label' %>
+    <%= f.text_field :kind, class: 'form-control' %>
+  </div>
   <div class="form-group">
     <%# f.label :quantity, class: 'control-label' %>
     <%# f.text_field :quantity, class: 'form-control' %>
@@ -36,3 +30,4 @@
     <%= link_to "remove", '#', class: 'remove_fields' %>
   </div>
   </div>
+</fieldset>

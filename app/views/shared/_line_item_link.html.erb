@@ -1,0 +1,6 @@
+<% if params[:state] == state %>
+  <li class='hover'>
+<% else %>
+  <li>
+<% end %>
+<%= link_to "#{title} (#{current_user.line_items.where(order_id: nil, aasm_state: state).count})", cart_path(state: state) %></li>

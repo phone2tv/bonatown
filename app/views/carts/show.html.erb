@@ -19,13 +19,17 @@
 
     <div class="bdTabBox">
       <ul class="bdTabBox_Tit clearfix">
-        <li class='hover'><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
-        <li><%= link_to "未提交订单项 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", cart_path(state: 'uncommitted') %></li>
-        <li><%= link_to "已提交订单项 (#{current_user.line_items.where(order_id: nil).committed.count})", cart_path(state: 'committed') %></li>
-        <li><%= link_to "被拒绝订单项 (#{current_user.line_items.where(order_id: nil).rejected.count})", cart_path(state: 'rejected') %></li>
-        <li><%= link_to "已审核订单项 (#{current_user.line_items.where(order_id: nil).verified.count})", cart_path(state: 'verified') %></li>
-        <li><%= link_to "已报价订单项 (#{current_user.line_items.where(order_id: nil).quoted.count})", cart_path(state: 'quoted') %></li>
-        <li><%= link_to "已取消订单项 (#{current_user.line_items.where(order_id: nil).cancelled.count})", cart_path(state: 'cancelled') %></li>
+        <% if params[:state].nil? %>
+          <li class='hover'><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
+        <% else %>
+          <li><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
+        <% end %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '未提交订单项', state: 'uncommitted' } %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '已提交订单项', state: 'committed' } %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '被拒绝订单项', state: 'rejected' } %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '已审核订单项', state: 'verified' } %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '已报价订单项', state: 'quoted' } %>
+        <%= render partial: 'shared/line_item_link', locals: { title: '已取消订单项', state: 'cancelled' } %>
       </ul>	
     </div>
 
