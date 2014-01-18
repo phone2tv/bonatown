@@ -8,14 +8,6 @@ a{   blr:expression(this.onFocus=this.blur());/*IE*/
 	text-decoration:none; }
 img{ border:0px;}
 .clear{ clear:both}
-.clearfix:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-.clearfix {
-	clear:both;
-}
 /*页头页尾**********************************/
 .indexTop{ width:1147px; height:138px; margin:0px auto;color:#8a8a8a; }
 .indexTopTel{ width:1147px; height:28px; line-height:28px; font-size:12px;}
@@ -563,7 +555,7 @@ color:#ffffff;
 .coverInfo2 p a.hover{ text-decoration:underline;}
 .coverInfo2 span{width:529px; color:#868686; font-size:12px; padding-top:50px; display:block;}
 .coverInfotxt{ padding-left:75px;}
-.coverInfobox span{ width:100%; text-align:center; font-size:14px; color:#2c2c2c; line-height:35px; display:block;}
+.coverInfobox span{ font-size:14px; color:#636363; line-height:25px; margin-bottom:10px; float:left;}
 .coverInfo h1 th{ font-size:14px; color:#2c2c2c; font-weight:normal; padding-right:0;}
 .coverInfo3{ padding-bottom:0;}
 .coverInfo3 td{ font-size:14px; color:#2c2c2c; border-bottom:1px dashed #d8d8d8; text-align:center; }
@@ -581,10 +573,10 @@ color:#ffffff;
 .loginLeftBox{ width:300px; height:290px; border:1px #f5f5f5 solid;margin-top:16px; margin-left:20px;}
 .loginLeftTitel{ width:100%px; height:35px; background:#2c8cd5; color:#FFF; line-height:35px; font-size:16px; text-align:center;}
 .loginLeft table{ color:#4c4c4c}
-.loginLeftinput1{ width:165px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
+.loginLeftinput1{ width:165px; height:25px; border:1px #eaebeb solid !important; line-height:25px; text-indent:5px; background:#fbfbfb}
 .loginLeftinput2{ width:85px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
 .loginLeftinput3{ color:#1f7dc3}
-.loginLeftbutton{ width:84px; height:34px; background:#f8860d; color:#FFF; line-height:34px; text-align:center; font-size:14px; border:none; cursor:pointer; float:left; margin-right:10px;}
+.loginLeftbutton{ width:84px; height:34px; background:#f8860d; color:#FFF; line-height:34px; text-align:center; font-size:14px; border:none; cursor:pointer; margin-right:5px;}
 .loginLeftinput4 a{ line-height:34px; text-decoration:underline; color:#797979}
 .loginLeftinput5{ width:70px; height:27px; border:1px #eaebeb solid; background:#efeded; text-align:center; line-height:25px; color:#c0c0c0; display:block; cursor: pointer;}
 .loginLeftinput6{ color:#6a6a6a}
@@ -599,7 +591,7 @@ color:#ffffff;
 .registerLeft table{ color:#4c4c4c}
 .registerLeftinput1{ width:165px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb; float:left}
 .registerLeftinput2{ width:85px; height:25px; border:1px #eaebeb solid; line-height:25px; text-indent:5px; background:#fbfbfb}
-.registerLeftinput3{ margin-left:2px; display:block; float:left; color:#363434}
+.registerLeftinput3{ margin-left:2px; display:block; float:left; color:#363434; margin-bottom:10px; margin-left:30px;}
 .registerLeftinput3 a{ color:#8dc3eb}
 .registerLeftbutton{ width:84px; height:34px; background:#f8860d; color:#FFF; line-height:34px; text-align:center; font-size:14px; border:none; cursor:pointer; float:left; margin-right:10px;}
 .registerLeftinput4 a{ line-height:34px; color:#1f7dc3}
@@ -660,3 +652,82 @@ color:#ffffff;
 .helpNavs li a{display:block; height:12px; font-family:"微软雅黑"; font-size:14px; color:#afafaf;}
 .helpNavs li a:hover{ color:#0b5185; font-weight:bold;}
 .helpNavs li a.hover{ color:#0b5185; font-weight:bold;}
+
+
+/*投保新增表单*/
+.coverInfo1 ul{ margin-left:25px; margin-bottom:20px;}
+.coverInfo1 ul li{clear:both;}
+.bnt-lable{width:130px; text-align:right; line-height: 35px !important;height: 35px !important;display: inline-block;}
+.bnt-lable-info{ text-align:left; margin-left:10px;line-height: 35px !important;height: 35px !important;}
+.bnt-button{
+  display: block;
+  height: 26px;
+  color: #0f7ab6;
+  width: 130px;
+  float: left;
+  line-height: 26px;
+  border: 1px solid #ccc;
+}
+
+.bnt-margin-left-200{margin-left:200px;}
+.bnt-plus{background: url(cover-09.png) no-repeat; width:20px; height:20px; margin-left:5px;margin-top:5px;}
+
+.cover-input{
+  line-height: 25px;
+  height: 25px;
+  border: 1px solid #d2d2d2;
+  margin-left: 13px;
+}
+
+.cover-width-140{width:140px;}
+.cover-width-130{width:130px;}
+.cover-width-155{width:155px;}
+.cover-width-280{width:280px;}
+.cover-width-95{width:95px;}
+.cover-width-85{width:85px;}
+
+.cover-select{
+  line-height: 25px !important;
+  height: 25px !important;
+  border: 1px solid #d2d2d2;
+  margin-left: 13px;
+  padding-left: 10px;
+  float:left;
+  margin-top:3px;
+}
+
+.bnt-require{
+  margin-left:10px;
+  color:red !important;
+  float:left !important;
+  line-height: 35px !important;
+  height: 35px !important;
+}
+
+.select-drop{
+  width: 26px;
+  height: 25px;
+  line-height: 25px;
+  background: url(member-02.jpg) no-repeat;
+  border-left: 1px solid #d2d2d2;
+  border-left: none;
+  cursor: pointer;
+  float: left;
+  margin:4px 0 0 -26px;
+}
+.require-hide{display:none}
+.require-show{display:inline;}
+
+.bnt-alert{margin-left:3px; width:200px; color:#d93c47 !important;line-height: 35px !important;height: 35px !important;}
+.bnt-minus{margin-left:15px; width:15px; height:20px; margin-top:10px; color:#d93c47 !important; background:url(cover-08.png) no-repeat;}
+
+.bnt-login{ margin:10px auto; width:100%;}
+.bnt-login ul{margin-left:15px;}
+.bnt-login ul li{margin-top:10px;clear:both}
+.bnt-login .bnt-lable{width:60px; float:left;}
+.verify{width:70px;}
+.bnt-verify img{vertical-align:middle;}
+.bnt-forget{width:100%; text-align:center; margin-top:10px;}
+.bnt-accept{width:100%; text-align:center; margin-top:20px !important;}
+.bnt-login .login{text-align:center; margin-top:10px;}
+.bnt-login .login-btn{text-align:center; margin-top:10px;}

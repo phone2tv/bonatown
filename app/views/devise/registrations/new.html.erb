@@ -1,53 +1,45 @@
 <div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 注册</div>
+
+<!--content-->
+
 <!--content-->
 <div class="registerbox">
 
   <div class="registerLeft">
     <div class="registerLeftBox">
       <div class="registerLeftTitel">注册</div>
-      <table width="296" border="0" >
-        <tr>
-          <td width="77" height="43" align="right" class="malMembepasswordtitel">类别：</td>
-          <td width="209" colspan="3">
-            <input name="input3" type="text"  class="registerLeftinput5" />
-            <input name="" type="button"  class="registerLeftinput6"/>
-          </td>
-        </tr>
-        <tr>
-          <td width="77" height="43" align="right" class="malMembepasswordtitel">用户名：</td>
-          <td width="209" colspan="3">
-            <input name="input2" type="text"  class="registerLeftinput1" />
-            <%= image_tag "loginRight-02.png", class: "registerLeftinput3" %>
-          </td>
-        </tr>
-        <tr>
-          <td width="77" height="43" align="right" class="malMembepasswordtitel">手机号：</td>
-          <td width="209" colspan="3">
-            <input name="input2" type="text"  class="registerLeftinput1" />
-            <%= image_tag "loginRight-03.png", class: "registerLeftinput3" %>
-          </td>
-        </tr>
-        <tr>
-          <td width="77" height="43" align="right" class="malMembepasswordtitel">密码：</td>
-          <td width="209" colspan="3"><input name="input2" type="text"  class="registerLeftinput1" /></td>
-        </tr>
-        <tr>
-          <td width="77" height="43" align="right" class="malMembepasswordtitel">确认密码：</td>
-          <td width="209" colspan="3"><input name="input2" type="text"  class="registerLeftinput1" /></td>
-        </tr>
+      <div class="bnt-login">
+        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: '' }) do |f| %>
+        <ul>
+          <li>
+          <span class="bnt-lable">用户名:</span>
+          <span class="bnt-input"><%= f.text_field :username, class: 'cover-input loginLeftinput1', :autofocus => true %></span>
+          </li>
+          <li>
+          <span class="bnt-lable">电子邮件:</span>
+          <span class="bnt-input"><%= f.email_field :email, class: 'cover-input loginLeftinput1' %></span>
+          </li>
+          <li>
+          <span class="bnt-lable">密码:</span>
+          <span class="bnt-input"><%= f.password_field :password, class: 'required cover-input loginLeftinput1', minlength: 6 %></span>
+          </li>
+          <li>
+          <span class="bnt-lable">确认密码:</span>
+          <span class="bnt-input"><%= f.password_field :password_confirmation, class: 'required cover-input loginLeftinput1', minlength: 6 %></span>
+          </li>
+          <li class="bnt-accept">
+          <span class="registerLeftinput3"><%= f.check_box :terms_of_service %>我已阅读并同意保纳通<a href="">《服务条款》</a></span>
+          </li>
+          <li class="login">
+          <span class="login-btn loginLeftinput4">
+            <%= f.submit '立即注册', class: 'loginLeftbutton' %>
+            <a href="#">登陆</a>
+          </span>
+          </li>
+        </ul>
+        <% end %>
+      </div>
 
-        <tr>
-          <td width="77" height="17" align="right" class="malMembepasswordtitel"><input name="" type="checkbox" value="" /> </td>
-          <td width="209" colspan="3" class="malMembepasswordcode"><div class="registerLeftinput3">我已阅读并同意保纳通<a href="#">《服务条款》</a></div></td>
-        </tr>
-        <tr>
-          <td width="77" height="41" align="right" class="malMembepasswordtitel">&nbsp;</td>
-          <td width="209" colspan="3" class="malMembepasswordcode">
-            <input name="" type="button" class="registerLeftbutton"  value="立即注册"  /> 
-            <div class="registerLeftinput4"><a href="#">登录</a></div>
-          </td>
-        </tr>
-      </table>
 
     </div>
   </div>

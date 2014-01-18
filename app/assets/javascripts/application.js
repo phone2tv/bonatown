@@ -17,7 +17,7 @@
 //- require bootstrap
 //= require placeholder.min
 //= require china_city/jquery.china_city
-//= require jquery.customSelect.js
+//= require jquery.customSelect
 //= site
 //= require_tree .
 

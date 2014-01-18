@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
 
   rolify
 
+  # callbacks
+  before_create do |user|
+    user.add_role :customer
+  end
+
   # instance methods
   def role_name
     return "role.name.broker" if self.has_role? :broker
