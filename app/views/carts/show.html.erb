@@ -16,142 +16,20 @@
       </div>
       <div class="clear"></div>
     </div>
+
     <div class="bdTabBox">
       <ul class="bdTabBox_Tit clearfix">
-        <li class="hover" id="one1" onMouseOver="zahe_1('one',1,4)"><a href="javascript:;">全部保单（1）</a></li>
-        <li id="one2" onMouseOver="zahe_1('one',2,4)"><a href="javascript:;">待提交（2）</a></li>
-        <li id="one3" onMouseOver="zahe_1('one',3,4)"><a href="javascript:;">待支付（2）</a></li>
-        <li id="one4" onMouseOver="zahe_1('one',4,4)"><a href="javascript:;">待出保（2）</a></li>
+        <li class='hover'><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
+        <li><%= link_to "未提交订单项 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", cart_path(state: 'uncommitted') %></li>
+        <li><%= link_to "已提交订单项 (#{current_user.line_items.where(order_id: nil).committed.count})", cart_path(state: 'committed') %></li>
+        <li><%= link_to "被拒绝订单项 (#{current_user.line_items.where(order_id: nil).rejected.count})", cart_path(state: 'rejected') %></li>
+        <li><%= link_to "已审核订单项 (#{current_user.line_items.where(order_id: nil).verified.count})", cart_path(state: 'verified') %></li>
+        <li><%= link_to "已报价订单项 (#{current_user.line_items.where(order_id: nil).quoted.count})", cart_path(state: 'quoted') %></li>
+        <li><%= link_to "已取消订单项 (#{current_user.line_items.where(order_id: nil).cancelled.count})", cart_path(state: 'cancelled') %></li>
       </ul>	
-      <div id="con_one_1" class="bdTabBox_Con ">	
-
-        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd">
-          <tr>
-            <th scope="col" width="125">产品<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></th>
-            <th scope="col" width="115">保险期间<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjxx.jpg") %></a></th>
-            <th scope="col" width="90">数量</th>
-            <th scope="col" width="75">保费 </th>
-            <th scope="col" width="110">代金券</th>
-            <th scope="col" width="95">状态</th>
-            <th scope="col" width="120">当前处理人</th>
-            <th scope="col" width="141">&nbsp;</th>
-          </tr>
-          <tr>
-            <td colspan="8">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
-                <tr>
-                  <td colspan="7" height="57">
-                    <span class="dd_num">订单编号：15135366</span>
-                  </td>
-                  <td>
-                    <a href="#" class="btn">完善订单</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
-                  <td width="115"><strong>2013/1-1014/1</strong></td>
-                  <td width="90"><strong>1</strong></td>
-                  <td width="75"><span>￥100.00</span></td>
-                  <td width="110"><span>￥100.00</span></td>
-                  <td width="95">待提交</td>
-                  <td width="120"><b>张三</b></td>
-                  <td width="141"><a href="#">撤销</a></td>
-                </tr>
-
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="8">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
-                <tr>
-                  <td colspan="7" height="57">
-                    <span class="dd_num">订单编号：15135366</span>
-                  </td>
-                  <td>
-                    <a href="#" class="btn">完善订单</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
-                  <td width="115"><strong>2013/1-1014/1</strong></td>
-                  <td width="90"><strong>1</strong></td>
-                  <td width="75"><span>￥100.00</span></td>
-                  <td width="110"><span>￥100.00</span></td>
-                  <td width="95">待提交</td>
-                  <td width="120"><b>张三</b></td>
-                  <td width="141"><a href="#">撤销</a></td>
-                </tr>
-
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="8">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
-                <tr>
-                  <td colspan="7" height="57">
-                    <span class="dd_num">订单编号：15135366</span>
-                  </td>
-                  <td>
-                    <a href="#" class="btn">完善订单</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
-                  <td width="115"><strong>2013/1-1014/1</strong></td>
-                  <td width="90"><strong>1</strong></td>
-                  <td width="75"><span>￥100.00</span></td>
-                  <td width="110"><span>￥100.00</span></td>
-                  <td width="95">待提交</td>
-                  <td width="120"><b>张三</b></td>
-                  <td width="141"><a href="#">撤销</a></td>
-                </tr>
-
-              </table>
-            </td>
-          </tr>
-
-          <tr>
-            <td colspan="8">
-              <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd_List">
-                <tr>
-                  <td colspan="7" height="57">
-                    <span class="dd_num">订单编号：15135366</span>
-                  </td>
-                  <td>
-                    <a href="#" class="btn">完善订单</a>
-                  </td>
-                </tr>
-                <tr>
-                  <td width="125" height="40"><a href="#" class="name">大众型天下</a></td>
-                  <td width="115"><strong>2013/1-1014/1</strong></td>
-                  <td width="90"><strong>1</strong></td>
-                  <td width="75"><span>￥100.00</span></td>
-                  <td width="110"><span>￥100.00</span></td>
-                  <td width="95">待提交</td>
-                  <td width="120"><b>张三</b></td>
-                  <td width="141"><a href="#">撤销</a></td>
-                </tr>
-
-              </table>
-            </td>
-          </tr>
-        </table>
-
-
-        <div class="pagesWrap clearfix">
-          <a href="#" class="prev">上一页</a>
-          <a href="#" class="current">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#" class="next">下一页</a>
-          <span>共3页</span>
-        </div>
-      </div>
     </div>
+
+    <%= render 'line_items/line_items', line_items: @line_items %>
 
   </div>
 </div>

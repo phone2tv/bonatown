@@ -1,0 +1,18 @@
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th><%= t('activerecord.attributes.line_item.id') %></th>
+      <th><%= t('activerecord.attributes.line_item.insurance_id') %></th>
+      <th><%= t('activerecord.attributes.line_item.order_id') %></th>
+      <th><%= t('activerecord.attributes.line_item.aasm_state') %></th>
+      <th><%= t('activerecord.attributes.line_item.price') %></th>
+      <th><%= t('activerecord.attributes.line_item.quantity') %></th>
+      <th>Actions</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%# render collection: @line_items, as: :line_item %>
+    <%= render line_items %>
+  </tbody>
+</table>

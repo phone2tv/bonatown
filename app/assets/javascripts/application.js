@@ -14,9 +14,10 @@
 //= require jquery.ui.all
 //= require jquery_ujs
 //= require turbolinks
-//= require bootstrap
+//- require bootstrap
 //= require placeholder.min
 //= require china_city/jquery.china_city
+//= require jquery.customSelect.js
 //= site
 //= require_tree .
 

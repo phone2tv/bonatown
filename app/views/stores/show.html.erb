@@ -14,10 +14,11 @@
       <div class="navlistTil"><a href="#" class="hover"><%= image_tag("index-index12.png") %>责任险</a></div>
       <li class="hover">
       <div class="navlistNr">
-        <span><%= link_to '公众责任险', PublicLiabilityInsurance.first %></span>
-        <span><%= link_to '产品责任险', ProductLiabilityInsurance.first %></span> <br>
-        <span><%= link_to '雇主责任险', EmployerLiabilityInsurance.first %></span>
-        <span><%= link_to '火灾险', AccidentInsurance.first %></span>
+        <span><%= link_to '公众责任险', insurance_path(PublicLiabilityInsurance.first) %></span>
+        <span><%= link_to '产品责任险', insurance_path(ProductLiabilityInsurance.first) %></span> <br>
+        <span><%= link_to '雇主责任险', insurance_path(EmployerLiabilityInsurance.first) %></span>
+        <span><%= link_to '火灾险', insurance_path(AccidentInsurance.first) %></span>
+        <span><%# link_to '火灾险', AccidentInsurance.first %></span>
       </div>
       </li>
     </ul>                                       

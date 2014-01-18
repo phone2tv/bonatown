@@ -1,18 +1,30 @@
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th><%= t('activerecord.attributes.line_item.id') %></th>
-      <th><%= t('activerecord.attributes.line_item.insurance_id') %></th>
-      <th><%= t('activerecord.attributes.line_item.order_id') %></th>
-      <th><%= t('activerecord.attributes.line_item.aasm_state') %></th>
-      <th><%= t('activerecord.attributes.line_item.price') %></th>
-      <th><%= t('activerecord.attributes.line_item.quantity') %></th>
-      <th>Actions</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <%# render collection: @line_items, as: :line_item %>
-    <%= render line_items %>
-  </tbody>
-</table>
+<div class="bdTabBox">
+  <div id="con_one_1" class="bdTabBox_Con ">	
+
+    <%= form_for(Order.new) do |f| %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd">
+      <tr>
+        <th scope="col" width="245">产品<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></th>
+        <th scope="col" width="145">保险期间<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjxx.jpg") %></a></th>
+        <th scope="col" width="40">数量</th>
+        <th scope="col" width="75">保费 </th>
+        <th scope="col" width="110">实付款</th>
+        <th scope="col" width="50">选择</th>
+        <th scope="col" width="65">状态</th>
+        <th scope="col" width="141">操作</th>
+      </tr>
+      <%= render line_items %>
+    </table>
+    <%= f.submit class: 'btn' %>
+    <% end %>
+
+    <div class="pagesWrap clearfix">
+      <a href="#" class="prev">上一页</a>
+      <a href="#" class="current">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#" class="next">下一页</a>
+      <span>共3页</span>
+    </div>
+  </div>
+</div>

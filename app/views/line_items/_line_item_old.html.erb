@@ -1,0 +1,24 @@
+<tr>
+  <td><%= link_to line_item.id, line_item %></td>
+  <td><%= link_to line_item.insurance_item.specific_insurance.title, line_item.insurance_item.specific_insurance %></td>
+  <td>
+    <%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.id), line_item.order %> <br>
+    <%= link_to_if line_item.order.present?, (line_item.order.nil? ? '-' : line_item.order.order_number), line_item.order %>
+  </td>
+  <td><%= t('line_item.state.' + line_item.aasm_state) %></td>
+  <td><%= line_item.price %></td>
+  <td><%= line_item.quantity %></td>
+  <td>
+    <% blank = true %>
+    <% line_item.aasm.events.each do |event| %>
+      <% if can? event, line_item %>
+        <div><%= link_to t('line_item.action.'+event.to_s), { controller: 'line_items', action: event, id: line_item }, { method: :put } %></div>
+        <% blank = false %>
+      <% end %>
+    <% end %>
+    <%= "-" if blank %>
+  </td>
+  <td><%= link_to 'Show', line_item %>
+    / <%= link_to 'Edit', controller: line_item.insurance_item.class.to_s.tableize, action: 'edit', id: line_item.insurance_item %>
+    / <%= link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

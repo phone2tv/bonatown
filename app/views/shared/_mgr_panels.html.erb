@@ -9,7 +9,10 @@
   </div>
   <div class="left_tit">会员中心</div>
   <ul class="leftNavs">
-    <li class="current"><a href="#">订单管理</a></li>
+    <% if (user_signed_in? and current_user.has_role?(:customer)) %>
+      <li class="current"><%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+      <li><%= link_to '交易管理 ', orders_path %></li>
+    <% end %>
     <li><a href="#">保单管理</a></li>
     <li><a href="#">代金券</a></li>
     <li><a href="#">会员资料</a></li>

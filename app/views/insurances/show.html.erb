@@ -1,52 +1,327 @@
-<p>
-  <strong>Title:</strong>
-  <%= @insurance.title %>
-</p>
+<div class="order_site">您的位置：<span>保纳通 <%= image_tag("insurance-01.png") %> 责任险 <%= image_tag("insurance-01.png") %> </span>雇主责任险</div>
 
-<p>
-  <strong>Synopsis:</strong>
-  <%= @insurance.synopsis %>
-</p>
+<!--content-->
+<div class="indexnr">
+  <div class="insuranceDetailsnr">
+    <div class="insuranceDetailsbox">
+      <div class="insuranceDetails1">
+        <%= image_tag("insurance-03.jpg", width: "346", height: "290", class: "insuranceDetails1img") %>
+        <p>分享到：
+        <a href="#"><%= image_tag("share-people.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-tx.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-dou.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-xl.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-zone.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-wb.png", width: "16", height: "16") %></a>
+        <a href="#"><%= image_tag("share-more.png", width: "16", height: "16") %></a>
+        <a href="#">更多</a>
+        </p>
+      </div>
+      <div class="insuranceDetails2">
+        <h1><%= @insurance.title %></h1>
+        <span>试用企业：</span> <h2>0~100人</h2>
+        <span>年龄：</span><h2>16周岁以上</h2>
+        <span>保障期限：</span><h2>一年起</h2>  
+        <span>保费：</span><h2><i class="insuranceDetails2Price">200元 </i>起</h2>
+        <span>销量：</span><h2>100份</h2>
+        <span>报价：</span><h2>0人报价</h2>
+        <span>促销：</span><h2 class="insuranceDetails2Vouchers"><a href="#">代金券抵扣</a></h2>
+        <%= render 'shared/buy', insurance: @insurance %>
+        <div class="clear"></div>
+      </div>
+    </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @insurance.price %>
-</p>
+    <div class="insuranceStepbox">
+      <table width="100%" border="0">
+        <tr>
+          <td width="130"><%= image_tag("insurance-04.png", width: "59", height: "60") %></td>
+          <td width="50"><%= image_tag("insurance-08.png", width: "50", height: "9") %></td>
+          <td width="130"><%= image_tag("insurance-05.png", width: "53", height: "60") %></td>
+          <td width="50"><%= image_tag("insurance-08.png", width: "50", height: "9") %></td>
+          <td width="130"><%= image_tag("insurance-06.png", width: "66", height: "66") %></td>
+          <td width="50"><%= image_tag("insurance-08.png", width: "50", height: "9") %></td>
+          <td width="130"><%= image_tag("insurance-07.png", width: "69", height: "64") %></td>
+        </tr>
+        <tr>
+          <td height="35">填写投保资料</td>
+          <td></td>
+          <td>等待报价</td>
+          <td></td>
+          <td>确认并支付</td>
+          <td></td>
+          <td>投保成功</td>
+        </tr>
+      </table>
+    </div>
+    <div class="clear"></div>
+    <div class="insuranceCobrandingbox">
+      <div class="insuranceCobranding">
+        <h1>合作品牌</h1>
+        <ul>
+          <li>
+          <%= image_tag("insurance-09.png", width: "108", height: "31") %>
+          <p>快速出保单<br />24小时在线<br />服务价格超低</p>
+          <input name="" type="button" class="indexDiscountLetnrh3" value="我要投保"   />
+          </li>
+          <li>
+          <%= image_tag("insurance-04.jpg", width: "101", height: "31") %>
+          <p>快速出保单<br />24小时在线<br />服务价格超低</p>
+          <input name="" type="button" class="indexDiscountLetnrh3" value="我要投保"   />
+          </li>
+          <li>
+          <%= image_tag("insurance-05.jpg", width: "93", height: "31") %>
+          <p>快速出保单<br />24小时在线<br />服务价格超低</p>
+          <input name="" type="button" class="indexDiscountLetnrh3" value="我要投保"   />
+          </li>
+          <li class="rb">
+          <%= image_tag("insurance-06.jpg", width: "105", height: "31") %>
+          <p>快速出保单<br />24小时在线<br />服务价格超低</p>
+          <input name="" type="button" class="indexDiscountLetnrh3" value="我要投保"   />
+          </li>
+        </ul>
+        <div class="insuranceCobrandingTl"><a href="#"></a></div>
+        <div class="insuranceCobrandingTr"><a class="hover" href="#"></a></div>
+      </div>
+    </div> 
+    <div class="clear"></div> 
+    <div class="insuranceTabbox">
+      <div class="insuranceTab">
+        <a data-id="1" href="#">险种详情</a>
+        <a data-id="2" href="#">案例分享</a>
+        <a data-id="3" class="hover" href="#">用户评价<span>(5)</span></a>
+      </div>
+      <div class="insuranceType" id="con_click_1" style="display:none;">
+        <div class="insurancePlanbox">
+          <table width="100%" border="0" cellpadding="0" cellspacing="0" hspace="0">
+            <tr>
+              <td class="insurancePlan1" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2"><a href="#">中年档</a><a href="#">中年档</a><a href="#">中年档</a></td>
+            </tr>
+            <tr>
+              <td class="insurancePlan1" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2"><a class="hover" href="#">中年档</a></td>
+            </tr>
+            <tr>
+              <td class="insurancePlan1" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2"><a href="#">中年档</a><a href="#">中年档</a><a class="hover" href="#">老人档</a></td>
+            </tr>
+            <tr>
+              <td class="insurancePlan1" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2"><a href="#">中年档</a><a href="#">中年档</a><a href="#">中年档</a></td>
+            </tr>
+            <tr>
+              <td class="insurancePlan1" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2"><a class="hover" href="#">中年档</a><a class="hover" href="#">中年档</a><a href="#">中年档</a></td>
+            </tr>
+            <tr>
+              <td class="insurancePlan1 insurancePlan3" width="125" height="42">保险计划</td>
+              <td class="insurancePlan2 insurancePlan3"><a class="hover" href="#">中年档</a><a href="#">中年档</a><a href="#">中年档</a></td>
+            </tr>
+          </table>
 
-<p>
-  <strong>Aasm state:</strong>
-  <%= @insurance.aasm_state %>
-</p>
+        </div>      
+        <div class="insuranceReadbox">
+          <div class="insuranceReadTit"><%= image_tag("index-index35.jpg") %>产品解读</div>
+          <p>1、老人专属产品，小至意外磕碰，大致伤筋动骨均可保障，无需体检。</p>
+          <p>2、涵盖公共交通双倍给付、住院津贴、意外猝死等特色保障，多份保障多份从容。</p>
+          <p>3、承保年龄最高可达80周岁，市面少有的老人综合保障。</p>
+        </div>
+        <div class="clear"></div>
+        <div class="insuranceReadbox insuranceKnowbox">
+          <div class="insuranceReadTit"><%= image_tag("index-index35.jpg") %>投保须知</div>
+          <p>1、就医除外责任：除了北京市平谷区所有医院，请注意，在北京平谷区所有医院的就医均不给予理赔。</p>
+          <p>2、凡<span>投保时年龄为61周岁-80周岁</span>，身体健康、符合1至3类职业者均可作为被保险人。</p>
+          <p>3、本保险计划生效日可自由选择，<span>最早为网上投保日后第5天零时生效</span>。</p>
+          <p>4、保障范围为中国境内，不含港、澳、台地区。</p>
+          <p>5、本保险计划不承保被保险人在90日等待期内身患的疾病或出现的症状及既往病症。</p>
+          <p>6、若投保多份大众保险的“意外身故、残疾和烧烫伤保险”、“疾病身故保险”或“重大疾病保险”（不包括团体保险），则大众保险仅按其中保险金额最高者做出赔偿。</p>
+          <p>7、本保险计划<span>每一被保险人限投保一份，多投无效</span>。</p>
+          <p>8、投保时，投保人有义务将该保险产品的保障内容、保险金额、责任免除条款等向被保险人进行明确说明，并征得被保险人同意，方可投保；父母为其未成年子女投保不受此限。</p>
+          <p>9、本保障计划由大众保险股份有限公司承保，目前该公司在<span>北京、上海、江苏、浙江、宁波、安徽、青岛、福建、苏州有分支机构，客户从新一站保险网购买，后续变更与理赔事务均可由新一站保险网协助您办理</span>。</p>
+          <p>健康声明</p>
+          <p>被保险人需满足如下健康条件，否则大众保险不予承保。如有隐瞒或告知不实，保险公司有权不承保任何责任。</p>
+          <p>1、被保险人在最近2年内未曾在申请如寿险、意外伤害保险，重大疾病保险、医疗健康保险等任何保险计划时，被延迟、被拒保、或附加或修改任何承保条件（如增加保费或特别免责条款）。</p>
+          <p>2、未曾患有或者未正患下列疾病：器官移植、尿毒症、恶性肿瘤（含白血病）、心脏病、脑卒中（脑出血、脑梗塞等）、肝硬化、癫痫、精神疾病、糖尿病、残疾、植物人状态。</p>
+          <p>3、不存在下列任意一项：<span>身体机能存在聋或哑，失明，脊柱、胸廓畸开，四肢、手足缺损或畸形，瘫痪；一周内体重增加或减少5千克</span>；曾经或者正在接受透析、放疗、化疗或介入治疗。</p>
+          <p>4、在最近2年内，本人也没有因身患疾病，<span>连续3天以上不能从事日常工作或活动（除外怀孕期间）</span>。</p>
+          <p>5、不存在住院未痊愈或出院后至今未满6个月。</p>
+        </div>
+      </div>      
+      <div class="insuranceType" id="con_click_2" style="display:none;">     
+        <div class="insurancePlanbox">         
+          <p>1、老人专属产品，小至意外磕碰，大致伤筋动骨均可保障，无需体检。</p>
+          <p>2、涵盖公共交通双倍给付、住院津贴、意外猝死等特色保障，多份保障多份从容。</p>
+          <p>3、承保年龄最高可达80周岁，市面少有的老人综合保障。</p>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="insuranceType" id="con_click_3">     
+        <div class="insuranceScorebox">
+          <div class="insuranceScore1">
+            <span>产品总体评分度</span>
+            <strong>4</strong><strong class="insuranceScorePoint">.2</strong><span class="insuranceScoreUnit">分</span>
+            <span>（共有<i>25</i>条评论）</span>
+          </div>
+          <div class="insuranceScore2">
+            <ul>
+              <li>
+              产品描述：
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              &nbsp;5.0分
+              </li>
+              <li>
+              出单速度：
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+              <%= image_tag("insurance-16.png", width: "16", height: "16") %>
+              &nbsp;4.4分
+              </li>
+              <li>
+              服务质量：
+              <%= image_tag("insurance-15.png", width: "16", height:"16") %>
+              <%= image_tag("insurance-15.png", width: "16", height:"16") %>
+              <%= image_tag("insurance-15.png", width: "16", height:"16") %>
+              <%= image_tag("insurance-15.png", width: "16", height:"16") %>
+              <%= image_tag("insurance-16.png", width: "16", height:"16") %>
+              &nbsp;4.4分
+              </li>
+            </ul>
+          </div>
+          <div class="insuranceScore3"><a href="#">我要评论</a><span>只有购买过该商品的用户才能评论。</span></div>
+        </div>
+        <div class="clear"></div>
+        <div class="insuranceEvaluation">
+          <ul>
+            <li>
+            <h1>翁****玲</h1>
+            <span>2013-12-23 11:01:14</span>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <p>很好吃  超好吃</p>
+            </li>
+            <li>
+            <h1>翁****玲</h1>
+            <span>2013-12-23 11:01:14</span>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <p>很好吃  超好吃</p>
+            </li>
+            <li>
+            <h1>翁****玲</h1>
+            <span>2013-12-23 11:01:14</span>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <p>很好吃  超好吃</p>
+            </li>
+            <li>
+            <h1>翁****玲</h1>
+            <span>2013-12-23 11:01:14</span>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <p>很好吃  超好吃</p>
+            </li>
+            <li class="insuranceEvaluationLine">
+            <h1>翁****玲</h1>
+            <span>2013-12-23 11:01:14</span>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <%= image_tag("insurance-15.png", width: "16", height: "16") %>
+            <p>很好吃  超好吃</p>
+            </li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+        <div class="insuranceCommentTit">发表点评</div> 
+        <div class="insuranceCommentBox">
+          <div class="insuranceComment1">
+            <h1>总体评价：</h1>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>
+            <a href="#"></a>         
+            <span>点击星星为商家打分，最高5颗星</span>
+          </div>
+          <div class="insuranceComment2">
+            <h1>内　　容：</h1>
+            <textarea name="" cols="114" rows="6"></textarea>
+            <span><a href="#">表情</a></span>
+            <div class="insuranceComment2Btn">
+              <div class="insuranceComment2Let"></div>
+              <a href="#">提交评论</a>
+              <div class="insuranceComment2Rit"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
 
-<p>
-  <strong>Type:</strong>
-  <%= @insurance.type %>
-</p>
+      <div class="insuranceDutybox">
+        <div class="insuranceDuty insuranceDutyline">
+          <div class="insuranceDutyTit">
+            <h1>责任险资讯</h1>
+            <span><a href="#">更多 <%= image_tag("insurance-14.png", width: "6", height: "11") %></a></span>
+            <ul>
+              <li><a href="#">责任险资讯标题</a></li>
+              <li><a href="#">责任险资讯标题责任险资讯标题责任险资讯标题</a></li>
+              <li><a href="#">责任险资讯标题责任险资讯标题</a></li>
+              <li><a href="#">责任险资讯标题责任险资讯标题责任险资讯标题责任险资讯标题</a></li>
+              <li><a href="#">责任险资讯标题责任险资讯标题</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="insuranceDuty">
+          <div class="insuranceDutyTit">
+            <h1>保险资讯</h1>
+            <span><a href="#">更多 <%= image_tag("insurance-14.png", width: "6", height: "11") %></a></span>
+            <ul>
+              <li><a href="#">保险资讯标题</a></li>
+              <li><a href="#">保险资讯标题保险资讯标题保险资讯标题</a></li>
+              <li><a href="#">保险资讯标题保险资讯标题保险</a></li>
+              <li><a href="#">保险资讯标题保险资讯标题保险资讯标题保险资讯标题</a></li>
+              <li><a href="#">保险资讯标题保险资讯标题保险</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
 
-<p>
-  <strong>Company:</strong>
-  <%= @insurance.company %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @insurance.image %>
-</p>
-
-<p>
-  <strong>Target:</strong>
-  <%= @insurance.target %>
-</p>
-
-<p>
-  <strong>Feature:</strong>
-  <%= @insurance.feature %>
-</p>
-
-<p>
-  <strong>Benefit:</strong>
-  <%= @insurance.benefit %>
-</p>
-
-<%= link_to 'Edit', edit_insurance_path(@insurance) %> |
-<%= link_to 'Back', insurances_path %>
+  <div class="insuranceRight">
+    <div class="insuranceRightTit">热门资讯</div>
+    <ul>
+      <li><a href="#">热门资讯热门资讯</a></li>
+      <li><a href="#">热门资讯热门资讯</a></li>
+      <li><a href="#">热门资讯热门资讯</a></li>
+      <li><a href="#">热门资讯热门资讯</a></li>
+      <li><a href="#">热门资讯热门资讯</a></li>
+    </ul>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,18 +1,24 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 代金券</div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  <div class="mainright">
+    <div class="topNewsBox">
+      <%= image_tag("img_01.jpg", size: "279x200") %>
+      <div class="tnbRight">
+        <dl>
+          <dt>独家老人癌症专家，限时特惠</dt>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+          <dd><a href="#" target="_blank">癌症保险金3-11万 癌症保险金3-11万 信息信息癌症保险金3-11万</a></dd>
+        </dl>
+        <p class="clearfix"><a href="#">了解详情</a><a href="#" class="ml_90">立即投保</a></p>
+      </div>
+      <div class="clear"></div>
+    </div>
+
+    <%= render 'order', order: @order %>
+
   </div>
 </div>
-
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-10'>
-    <%= render 'order', order: @order %>
-  </div> <!-- col-md-10 -->
-</div> <!-- row -->
+<div class="clear"></div>						
