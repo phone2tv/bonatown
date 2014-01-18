@@ -53,8 +53,20 @@
   <div class="navRit"></div>
   <div class="nav1">保险超市</div>
   <ul>
-    <li><%= link_to '首页', root_path, class: 'hover' %></li>
-    <li><a href="#" >会员中心</a></li>
+    <% if controller_name == 'stores' or controller_name == 'insurances' %>
+      <li><%= link_to '首页', root_path, class: 'hover' %></li>
+    <% else %>
+      <li><%= link_to '首页', root_path %></li>
+    <% end %>
+    <% if user_signed_in? %>
+      <% if controller_name == 'users' %>
+        <li><%= link_to "会员中心", user_path(current_user), class: 'hover' %></li>
+      <% else %>
+        <li><%= link_to "会员中心", user_path(current_user) %></li>
+      <% end %>
+    <% else %>
+      <li><%= link_to "会员中心", '#' %></li>
+    <% end %>
     <li><a href="#">保险课堂</a></li>
     <li><a href="#">保单验证</a></li>
   </ul>
