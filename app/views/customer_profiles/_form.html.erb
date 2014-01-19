@@ -14,15 +14,17 @@
   </div>
 
   <div class='form-group'>
-    <%= f.label :location, class: 'control-label' %> <br>
-    <div class='form-group'>
-      <%# f.collection_select :province_code, Province.all, :code, :name, prompt: true %>
-      <%= f.select :province_code, Province.all.map { |province| [province.name, province.code] }, { include_blank: false, prompt: '--省份--' } %>
-      <%# f.collection_select :city_code, City.all, :code, :name, include_blank: true %>
-      <%= f.grouped_collection_select :city_code, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' } %>
-      <%# f.collection_select :district_code, District.all, :code, :name, include_blank: true %>
-      <%= f.grouped_collection_select :district_code, City.all, :districts, :name, :code, :name, { include_blank: false, prompt: '--地区--' } %>
-    </div>
+    <%= f.label :location, '所在省市', class: 'control-label' %>
+    <%# f.collection_select :province_code, Province.all, :code, :name, prompt: true %>
+    <%= f.select :province_code, Province.all.map { |province| [province.name, province.code] }, { include_blank: false, prompt: '--省份--' } %>
+    <%# f.collection_select :city_code, City.all, :code, :name, include_blank: true %>
+    <%= f.grouped_collection_select :city_code, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' } %>
+    <%# f.collection_select :district_code, District.all, :code, :name, include_blank: true %>
+    <%= f.grouped_collection_select :district_code, City.all, :districts, :name, :code, :name, { include_blank: false, prompt: '--地区--' } %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :location, class: 'control-label' %>
     <%= f.text_field :location, class: 'form-control' %>
   </div>
 
@@ -36,11 +38,14 @@
     <%= f.label :business_license, class: 'control-label' %>
     <div>
       <% if @profile.business_license? %>
-        <%= image_tag(@profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
+        <%# image_tag(@profile.business_license_url(:thumb128).to_s, size: '128x128', class: 'img-polaroid' ) %>
+        <% license_note = '已上传' %>
+      <% else %>
+        <% license_note = '未上传' %>
       <% end %>
     </div>
     <div class="input-group">
-      <input id="business_license_input" class="form-control" type="text" placeholder="Upload business_license ..." disabled>
+      <input id="business_license_input" class="form-control" type="text" placeholder=<%= license_note %> disabled>
       <span class="input-group-btn">
         <a class="btn btn-default" onclick="$('input[id=customer_profile_business_license]').click();"><span class="fa fa-upload"></span> <%= t('customer_profile.select_business_license') %></a>
       </span>

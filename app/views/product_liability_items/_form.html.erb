@@ -1,6 +1,9 @@
 <%= form_for(@product_liability_item) do |f| %>
   <%= form_error_messages!(f.object) %>
 
+  <div class="coverInfo">
+    <h1>车辆信息</h1>
+
   <div class="form-group">
     <%= f.label :insurance_id, class: 'control-label' %>
     <%= f.text_field :insurance_id, readonly: true, class: 'form-control' %>
@@ -34,17 +37,30 @@
     <%= f.date_select :stopped_at, class: 'form-control' %>
   </div>
 
+  </div> <!-- coverInfo -->
+
+
+  <div class="coverInfo">
+    <h1>公共信息</h1>
+
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
+
+  </div> <!-- coverInfo -->
+
+  <div class="coverInfo">
+    <h1>投保产品信息</h1>
 
   <%= f.fields_for :insured_products do |builder| %>
     <%= render 'insured_product_fields', f: builder %>
   <% end %>
 
-  <div class="form-group">
-    <%= link_to_add_fields "Add Insured Product", f, :insured_products %>
+  </div> <!-- coverInfo -->
+
+  <div class="form-link">
+    <%= link_to_add_fields "添加投保产品", f, :insured_products %>
   </div>
 
-  <div class="form-group">
+  <div class="form-action">
     <%= f.submit class: 'btn btn-primary' %>
   </div>
 <% end %>

@@ -1,3 +1,101 @@
-// Place all the styles related to the orders controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+form {
+  text-align: left;
+  font-size: 13px;
+
+  .form-group {
+    padding-top: 10px;
+    clear: both;
+  }
+
+  .form-action {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    clear: both;
+  }
+
+  label {
+    display: block;
+    float: left;
+    width: 150px;
+//  line-height: 21px;
+    line-height: 25px;
+//  background-color: #F0F0F0;
+//  border: 2px solid #ccc;
+    margin-right: 10px;
+    padding-right: 10px;
+    vertical-align: center;
+    text-align: right;
+    font-size: 14px;
+  }
+
+  input[type=email], input[type=text], input[type=number], input[type=password], textarea {
+    float: left;
+    font-size: 14px;
+    width: 250px;
+    line-height: 25px;
+    height: 25px;
+    padding: 0 10px;
+//  border: 2px solid #ccc;
+    border: 1px solid #d2d2d2;
+  }
+
+  .dynamic-fields {
+    margin-left: 175px;
+    .form-fields {
+      input[type=email], input[type=text], input[type=number], input[type=password], textarea {
+        margin-right: 10px;
+        width: 50px;
+      }
+      a {
+        width: 50px;
+        padding: 5px 15px;
+        background-color: #ccccff;
+        color: black;
+      }
+    }
+  }
+
+  input[type=checkbox] {
+    float: left;
+    line-height: 25px;
+    height: 25px;
+    margin-top: -17px;
+    padding: 0 10px;
+  }
+
+  input[type=submit] {
+    float: left;
+//  width: 110px;
+//  height: 43px;
+//  line-height: 43px;
+    margin-left: 175px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    border: none;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #ff0000;
+    font-size: 16px;
+    text-align: center;
+    &:hover {
+      background-color: #ff5050;
+    }
+  }
+
+  .form-link {
+    a {
+      margin-left: 175px;
+      margin-right: 10px;
+      color: #ff6060;
+    }
+  }
+
+  select {
+    font-size: 12px;
+//  border: 2px solid #ccc;
+    border: 1px solid #d2d2d2;
+    border-radius: 0;
+    height: 25px;
+  }
+} // form

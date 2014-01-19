@@ -1,0 +1,144 @@
+/*投保新增表单*/
+/*
+ .form-group {
+  clear: both;
+  margin:3px 0 3px;
+}
+.bnt-input{float:left;}
+.bnt-lable{float:left;width:130px; text-align:right; line-height: 35px;height: 35px;display: inline-block;}
+.bnt-lable-info{ text-align:left; margin-left:10px;line-height: 35px;height: 35px;}
+.bnt-button{
+  display: inline-block;
+  height: 35px;
+  background-color: #ef4218;
+  width: 130px;
+  color: #fff;
+  font-size: 12px;
+  line-height: 30px;
+  border: 1px solid #F1EDED;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.bnt-white{
+  background-color:#fff;
+  color:#ccc;
+}
+
+.bnt-green{
+color: #fff;
+background-color: #5cb85c;
+border-color: #4cae4c;
+}
+
+.bnt-info{
+  color: #fff;
+  background-color: #5bc0de;
+  border-color: #46b8da;
+}
+
+.bnt-info:hover{
+  color: #fff;
+  background-color: #39b3d7;
+  border-color: #269abc;
+}
+
+.bnt-green:hover{
+color: #fff;
+background-color: #47a447;
+border-color: #398439;
+}
+
+.bnt-button:hover{
+  background-color:#BB300E;
+}
+
+.bnt-white:hover{
+  background-color:#ccc;
+  color: #fff;
+}
+
+.bnt-small{
+  height: 30px;
+  line-height: 25px;
+  width:80px;
+}
+
+.bnt-button-plus{
+  display: inline-block;
+  height: 30px;
+  color: #ef4218;
+  width: 130px;
+  line-height: 30px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+.bnt-plus{
+  background: url(../images/cover-09.png) no-repeat;
+  width: 20px;
+  height: 26px;
+  line-height: 26px;
+  vertical-align: middle;
+  margin-left: 5px;
+  margin-top: 8px;
+  display: inline-block;
+}
+
+.bnt-checkbox, .bnt-radio{
+  float: left;
+  height: 30px;
+  line-height: 30px;
+  margin-left: 5px;
+}
+
+.cover-input{
+  line-height: 25px;
+  height: 25px;
+  border: 1px solid #d2d2d2;
+  margin-left: 13px;
+  float:left;
+}
+
+.bnt-margin-left-200{margin-left:200px;}
+.cover-width-140{width:140px;}
+.cover-width-130{width:130px;}
+.cover-width-155{width:155px;}
+.cover-width-280{width:280px;}
+.cover-width-95{width:95px;}
+.cover-width-85{width:85px;}
+
+.cover-select{
+  line-height: 25px;
+  height: 25px;
+  border: 1px solid #d2d2d2;
+  margin-left: 13px;
+  padding-left: 10px;
+  float:left;
+  margin-top:3px;
+}
+
+.bnt-require{
+  margin-left:10px;
+  color:red;
+  float:left;
+  line-height: 35px;
+  height: 35px;
+}
+
+.require-hide{display:none}
+.require-show{display:inline;}
+
+.bnt-alert{margin-left:3px; color:#d93c47;line-height: 35px;height: 35px;}
+.bnt-minus{
+  display: inline-block;
+  margin-left: 15px;
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+  color: #d93c47 !important;
+  background: url(../images/cover-08.png) no-repeat;
+}
+
+.ui-datepicker-trigger{margin-left:-38px; margin-top:6px; vertical-align:middle;}
+*/

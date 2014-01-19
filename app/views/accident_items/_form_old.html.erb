@@ -1,0 +1,46 @@
+<%= form_for(@accident_item) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="form-group">
+    <%= f.label :insurance_id, class: 'control-label' %>
+    <%= f.text_field :insurance_id, readonly: true, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :industry_id, class: 'control-label' %>
+    <%= f.select :industry_id, Industry.all.map { |industry| [industry.name, industry.id] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :employee_number, class: 'control-label' %>
+    <%= f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_item.employee_number.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER.map { |item| [t("accident_item.employee_number.#{item[0]}"), item[1]] }, { include_blank: false, prompt: 'Employee Number' }, { class: 'form-control' } %>
+    <%# f.select :employee_number, AccidentItem::EMPLOYEE_NUMBER, prompt: 'Employee Number' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :quota, class: 'control-label' %>
+    <%= f.select :quota, AccidentItem::QUOTA.map { |item| [t("accident_item.quota.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :started_at, class: 'control-label' %> <br>
+    <%= f.date_select :started_at, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :stopped_at, class: 'control-label' %> <br>
+    <%= f.date_select :stopped_at, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :accident_medical, class: 'control-label' %>
+    <%= f.select :accident_medical, AccidentItem::ACCIDENT_MEDICAL.map { |item| [t("accident_item.accident_medical.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hospital_allowance, class: 'control-label' %>
+    <%= f.select :hospital_allowance, AccidentItem::HOSPITAL_ALLOWANCE.map { |item| [t("accident_item.hospital_allowance.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
+  </div>
+
+  <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
+
+  <div class="form-group">
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>
+
+<%= debug params %>

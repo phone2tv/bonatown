@@ -25,7 +25,7 @@
 $(document).on "page:change", ->
   $('form').on 'click', '.remove_fields', (event) ->
     $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('.elevator-entry').hide()
+    $(this).closest('.dynamic-fields').hide()
 #   $(this).closest('fieldset').hide()
     event.preventDefault()
 
