@@ -1,0 +1,34 @@
+<%= form_for(@user) do |f| %>
+  <%= form_error_messages!(f.object) %>
+
+  <div class="memberCo">
+    <div class="memberCoTit"><%= image_tag("index-index35.jpg") %>账户资料</div>
+
+  <div class='form-group'>
+    <%= f.label :username, class: 'control-label' %>
+    <%= f.text_field :username, class: 'form-control', :autofocus => true %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :email, class: 'control-label' %>
+    <%= f.email_field :email, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :password, class: 'control-label' %>
+    <%= f.password_field :password, class: 'form-control', :autocomplete => "off" %>
+    <span class='help-block'><%# t('devise.help_block.password') %></span>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :password_confirmation, class: 'control-label' %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+  </div>
+
+  </div> <!-- memberCo -->
+
+  <div class='form-group'>
+    <%= f.submit class: 'btn btn-primary' %>
+  </div>
+
+<% end %>

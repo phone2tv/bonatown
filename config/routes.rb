@@ -20,7 +20,7 @@ Insuretown::Application.routes.draw do
 
   devise_for :users
 
-  resources :users, only: [:index, :show, :destroy]
+  resources :users, only: [:index, :show, :edit, :update, :destroy]
 
   resources :admin_profiles, only: [:new, :edit, :create, :update, :destroy]
   resources :moderator_profiles, only: [:new, :edit, :create, :update, :destroy]

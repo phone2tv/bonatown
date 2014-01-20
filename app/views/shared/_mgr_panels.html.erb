@@ -10,23 +10,34 @@
   <div class="left_tit">会员中心</div>
   <ul class="leftNavs">
     <% if (user_signed_in? and current_user.has_role?(:customer)) %>
-      <% if params[:controller] == 'users' and params[:action] == 'show' %>
+      <% if controller_name == 'users' and params[:action] == 'show' %>
         <li class="current"><%= link_to '首页 ', current_user %></li>
       <% else %>
         <li><%= link_to '首页 ', current_user %></li>
       <% end %>
 
-      <% if params[:controller] == 'carts' and params[:action] == 'show' %>
+      <% if controller_name == 'carts' and params[:action] == 'show' %>
         <li class="current"> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
       <% else %>
         <li> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
       <% end %>
 
-      <li><%= link_to '交易管理 ', orders_path %></li>
+      <% if controller_name == 'orders' and params[:action] == 'index' %>
+        <li class="current"><%= link_to '交易管理 ', orders_path %></li>
+      <% else %>
+        <li><%= link_to '交易管理 ', orders_path %></li>
+      <% end %>
     <% end %>
     <li><a href="#">保单管理</a></li>
     <li><a href="#">代金券</a></li>
-    <% if (user_signed_in?) %>
+    <% if controller_name == 'users' and params[:action] == 'edit' %>
+      <li class="current"><%= link_to '账户资料', edit_user_path(current_user) %></li>
+    <% else %>
+      <li><%= link_to '账户资料', edit_user_path(current_user) %></li>
+    <% end %>
+    <% if controller_name == current_user.profile.class.to_s.tableize and params[:action] == 'edit' %>
+      <li class="current"><%= link_to '会员资料', { controller: current_user.profile.class.to_s.tableize, action: 'edit', id: current_user.profile }, 'data-no-turbolink' => true %></li>
+    <% else %>
       <li><%= link_to '会员资料', { controller: current_user.profile.class.to_s.tableize, action: 'edit', id: current_user.profile }, 'data-no-turbolink' => true %></li>
     <% end %>
     <li><a href="#">常用联系人</a></li>

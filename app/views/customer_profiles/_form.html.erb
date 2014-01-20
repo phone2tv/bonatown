@@ -1,7 +1,15 @@
 <%= form_for(@profile, :html => { class: 'form-border' }) do |f| %>
   <%= form_error_messages!(f.object) %>
 
-  <%= render partial: 'users/form_user', locals: { user_form: f } %>
+  <div class="memberCo">
+    <div class="memberCoTit"><%= image_tag("index-index35.jpg") %>联系人资料</div>
+
+    <%= render partial: 'users/form_user', locals: { user_form: f } %>
+
+  </div> <!-- memberCo -->
+
+  <div class="memberCo">
+    <div class="memberCoTit"><%= image_tag("index-index35.jpg") %>企业资料</div>
 
   <div class='form-group'>
     <%= f.label :name, class: 'control-label' %>
@@ -57,6 +65,8 @@
     <%= f.collection_select :park_profile_id, ParkProfile.all, :id, :name, { include_blank: t('customer_profile.include_blank') }, class: 'form-control' %>
     <%# f.collection_select :park_profile_id, ParkProfile.all, :id, :name, { include_blank: true, prompt: true }, class: 'form-control' %>
   </div>
+
+  </div> <!-- coverInfo -->
 
   <div class='form-group'>
     <%= f.submit class: 'btn btn-primary' %>
