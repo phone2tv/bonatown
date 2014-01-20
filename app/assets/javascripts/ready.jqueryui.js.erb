@@ -1,0 +1,19 @@
+/*
+$(document).ready(function() {
+  var image_path = '<%= asset_path 'calendar.gif' %>'
+  $(".datepicker").prop("readOnly", true).datepicker({
+    showOn: "button",
+    buttonImage: image_path,
+    buttonImageOnly: true
+  });
+});
+*/
+
+$(document).on('page:change', function() {
+  var image_path = '<%= asset_path 'calendar.gif' %>'
+  $(".datepicker").prop("readOnly", true).datepicker({
+    showOn: "button",
+    buttonImage: image_path,
+    buttonImageOnly: true
+  });
+});

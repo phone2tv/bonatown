@@ -33,14 +33,33 @@ $(document).ready(function(){
                   } 
     } 
 
-   $(".insuranceTab a").on("mouseover",function(){
+//var image_path = '<%= asset_path 'calendar.gif' %>'
+//$(".datepicker").prop("readOnly", true).datepicker({
+//  showOn: "button",
+//  buttonImage: image_path,
+//  buttonImageOnly: true
+//});
+
+    //add by rainyang
+    $(".insuranceTab a").on("mouseover",function(){
         var dataid = $(this).attr("data-id");
         $(".insuranceType").hide();
         $(".insuranceTab a").removeClass("hover");
         $("#con_click_"+dataid).show();
         $(this).addClass("hover");
     }); 
-    
-$('select.cover-select').customSelect();
-    
+
+    $("#btn-add-person").on("click",function(){
+        var person = tmpl("tmpl-person-body");
+        $("#add-person").append(person);
+    });
+
+    $(".btn-del-person").click(function(){
+        $(this).parent().parent().find(".bnt").remove();
+    });
+
+    $("#add-person").on("click",".del-person",function(){
+        $(this).parent().parent().remove();
+    });
 });
+

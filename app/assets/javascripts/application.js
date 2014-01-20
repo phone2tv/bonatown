@@ -13,12 +13,13 @@
 //= require jquery
 //= require jquery.ui.all
 //= require jquery_ujs
+//= require jqueryui.date.cn
 //= require turbolinks
 //- require bootstrap
 //= require placeholder.min
 //= require china_city/jquery.china_city
 //= require jquery.customSelect
-//= site
+//= require site
 //= require_tree .
 
 window.setTimeout(function() {
