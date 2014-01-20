@@ -11,12 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.ui.all
 //= require jquery_ujs
-//= require jqueryui.date.cn
+//= require jquery.ui.all
+//= require jquery.ui.datepicker-zh-CN
 //= require turbolinks
 //- require bootstrap
-//= require placeholder.min
+//- require placeholder.min
 //= require china_city/jquery.china_city
 //= require jquery.customSelect
 //= require site

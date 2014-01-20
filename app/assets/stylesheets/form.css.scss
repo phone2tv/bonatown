@@ -1,3 +1,9 @@
+.ui-datepicker-trigger {
+  margin-left: -22px;
+  margin-top: 6px;
+  vertical-align: middle;
+}
+
 form.form-border {
   input[type=email], input[type=password], input[type=text], textarea {
     border: 1px solid #cccccc;

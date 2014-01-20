@@ -31,7 +31,7 @@ form {
 
   input[type=email], input[type=text], input[type=number], input[type=password], textarea {
     float: left;
-    font-size: 14px;
+    font-size: 13px;
     width: 250px;
     line-height: 25px;
     height: 25px;
@@ -89,12 +89,6 @@ form {
       margin-right: 10px;
       color: #ff6060;
     }
-  }
-
-  .ui-datepicker-trigger {
-    margin-left: -22px;
-    margin-top: 6px;
-    vertical-align: middle;
   }
 
   select {
