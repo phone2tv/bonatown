@@ -1,19 +1,21 @@
-<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: '' }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'bonatown-login' }) do |f| %>
   <div class='form-group'>
-    <%# f.label :email %>
+    <%= f.label :email %>
     <%# f.email_field :email, class: 'form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
     <%= f.text_field :login, class: 'form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
   </div>
 
   <div class='form-group'>
-    <%# f.label :password %>
+    <%= f.label :password %>
     <%= f.password_field :password, class: 'form-control', placeholder: t('activerecord.attributes.user.password') %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
+  <div class='form-group'>
     <div class='checkbox'>
       <%= f.check_box :remember_me %> <%= f.label :remember_me %>
     </div>
+  </div>
   <% end -%>
 
   <div class='form-group'>

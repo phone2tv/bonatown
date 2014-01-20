@@ -99,3 +99,39 @@ form {
     height: 25px;
   }
 } // form
+
+
+form.bonatown-login {
+  margin: 15px;
+
+  label {
+    width: 50px;
+    text-align: left;
+    font-size: 12px;
+  }
+  input[type=email], input[type=text], input[type=number], input[type=password], textarea {
+    width: 177px;
+    font-size: 12px;
+    background: #fbfbfb;
+    &:focus {
+      background: white;
+    }
+  }
+
+  input[type=submit] {
+    margin-left: 70px;
+    font-size: 14px;
+    background: #f8860d;
+  }
+
+  .checkbox {
+    margin-left: 70px;
+    input[type=checkbox] {
+      margin-top: -1px;
+      margin-right: 5px;
+    }
+    label {
+      width: 150px;
+    }
+  }
+}

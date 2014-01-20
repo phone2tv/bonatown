@@ -1,23 +1,23 @@
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: '' }) do |f| %>
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: 'bonatown-login' }) do |f| %>
   <%= devise_error_messages! %>
 
   <div class='form-group'>
-    <%# f.label :username, class: 'control-label' %>
+    <%= f.label :username, class: 'control-label' %>
     <%= f.text_field :username, class: 'form-control', placeholder: t('activerecord.attributes.user.username') %>
   </div>
 
   <div class='form-group'>
-    <%# f.label :email %>
+    <%= f.label :email %>
     <%= f.email_field :email, class: 'required form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
   </div>
 
   <div class='form-group'>
-    <%# f.label :password %>
+    <%= f.label :password %>
     <%= f.password_field :password, class: 'required form-control', minlength: 6, placeholder: t('activerecord.attributes.user.password') %>
   </div>
 
   <div class='form-group'>
-    <%# f.label :password_confirmation %>
+    <%= f.label :password_confirmation %>
     <%= f.password_field :password_confirmation, class: 'required form-control', minlength: 6, placeholder: t('activerecord.attributes.user.password_confirmation') %>
   </div>
 
@@ -25,8 +25,10 @@
   <%# @user.build_profile %>
   <%# render partial: 'profiles/form', locals: { user_form: f } %>
 
-  <div class='checkbox'>
-    <%= f.check_box :terms_of_service %> <%= f.label :terms_of_service %>
+  <div class='form-group'>
+    <div class='checkbox'>
+      <%= f.check_box :terms_of_service %> <%= f.label :terms_of_service %>
+    </div>
   </div>
 
   <div class='form-group'>

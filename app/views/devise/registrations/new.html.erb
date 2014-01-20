@@ -8,39 +8,7 @@
   <div class="registerLeft">
     <div class="registerLeftBox">
       <div class="registerLeftTitel">注册</div>
-      <div class="bnt-login">
-        <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), html: { class: '' }) do |f| %>
-        <ul>
-          <li>
-          <span class="bnt-lable">用户名:</span>
-          <span class="bnt-input"><%= f.text_field :username, class: 'cover-input loginLeftinput1', :autofocus => true %></span>
-          </li>
-          <li>
-          <span class="bnt-lable">电子邮件:</span>
-          <span class="bnt-input"><%= f.email_field :email, class: 'cover-input loginLeftinput1' %></span>
-          </li>
-          <li>
-          <span class="bnt-lable">密码:</span>
-          <span class="bnt-input"><%= f.password_field :password, class: 'required cover-input loginLeftinput1', minlength: 6 %></span>
-          </li>
-          <li>
-          <span class="bnt-lable">确认密码:</span>
-          <span class="bnt-input"><%= f.password_field :password_confirmation, class: 'required cover-input loginLeftinput1', minlength: 6 %></span>
-          </li>
-          <li class="bnt-accept">
-          <span class="registerLeftinput3"><%= f.check_box :terms_of_service %>我已阅读并同意保纳通<a href="">《服务条款》</a></span>
-          </li>
-          <li class="login">
-          <span class="login-btn loginLeftinput4">
-            <%= f.submit '立即注册', class: 'loginLeftbutton' %>
-            <a href="#">登陆</a>
-          </span>
-          </li>
-        </ul>
-        <% end %>
-      </div>
-
-
+      <%= render 'form' %>
     </div>
   </div>
   <div class="registerRight">
