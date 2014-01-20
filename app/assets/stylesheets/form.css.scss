@@ -5,7 +5,7 @@
 }
 
 form.form-border {
-  input[type=email], input[type=password], input[type=text], textarea {
+  input[type=email], input[type=password], input[type=number], input[type=text], textarea {
     border: 1px solid #cccccc;
     &:focus {
       border-color: #66afe9;
@@ -15,7 +15,7 @@ form.form-border {
     label {
       color: #b94a48;
     }
-    input[type=email], input[type=password], input[type=text], textarea, ul {
+    input[type=email], input[type=password], input[type=number], input[type=text], textarea, ul {
       border: 1px solid #b94a48;
       &:focus {
         border-color: #ff0000;
