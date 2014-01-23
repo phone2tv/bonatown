@@ -67,3 +67,8 @@ gem 'aasm'
 gem 'china_city'
 
 gem 'acts_as_trackable', :git => "https://github.com/cloudbsd/acts_as_trackable.git"
+
+group :production do
+# gem 'mysql2'
+  gem 'pg'
+end
