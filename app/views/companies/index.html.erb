@@ -1,36 +1,43 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
-  </div>
-</div>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 首页 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-10'>
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th><%= t('activerecord.attributes.company.name') %></th>
-          <th><%= t('activerecord.attributes.company.website') %></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @companies.each do |company| %>
+  <div class="mainright">
+    <div class="bdTabBox">
+    <div id="con_one_1" class="bdTabBox_Con ">	
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd">
+        <thead>
           <tr>
-            <td><%= link_to company.name, company %></td>
-            <td><%= company.website %></td>
-            <td><%= link_to 'Edit', edit_company_path(company) %>
-              / <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <th><%= t('activerecord.attributes.company.name') %></th>
+            <th><%= t('activerecord.attributes.company.website') %></th>
+            <th></th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div> <!-- col-md-10 -->
-</div> <!-- row -->
+        </thead>
+        <tbody>
+          <% @companies.each do |company| %>
+            <tr>
+              <td><%= link_to company.name, company %></td>
+              <td><%= company.website %></td>
+              <td><%= link_to 'Edit', edit_company_path(company) %>
+                / <%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <div class="pagesWrap clearfix">
+        <a href="#" class="prev">上一页</a>
+        <a href="#" class="current">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#" class="next">下一页</a>
+        <span>共3页</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+</div>
+<div class="clear"></div>						

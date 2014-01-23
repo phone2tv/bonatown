@@ -30,18 +30,36 @@
     <% end %>
     <li><a href="#">保单管理</a></li>
     <li><a href="#">代金券</a></li>
+
     <% if controller_name == 'users' and params[:action] == 'edit' %>
       <li class="current"><%= link_to '账户资料', edit_user_path(current_user) %></li>
     <% else %>
       <li><%= link_to '账户资料', edit_user_path(current_user) %></li>
     <% end %>
+
     <% if controller_name == current_user.profile.class.to_s.tableize and params[:action] == 'edit' %>
       <li class="current"><%= link_to '会员资料', { controller: current_user.profile.class.to_s.tableize, action: 'edit', id: current_user.profile }, 'data-no-turbolink' => true %></li>
     <% else %>
       <li><%= link_to '会员资料', { controller: current_user.profile.class.to_s.tableize, action: 'edit', id: current_user.profile }, 'data-no-turbolink' => true %></li>
     <% end %>
+
+    <% if current_user.is_admin? %>
+      <% if controller_name == 'insurances' and params[:action] == 'index' %>
+        <li class="current"><%= link_to '保险管理', insurances_path %></li>
+      <% else %>
+        <li><%= link_to '保险管理', insurances_path %></li>
+      <% end %>
+    <% end %>
+
+    <% if current_user.is_admin? %>
+      <% if controller_name == 'companies' and params[:action] == 'index' %>
+        <li class="current"><%= link_to '保险公司管理', companies_path %></li>
+      <% else %>
+        <li><%= link_to '保险公司管理', companies_path %></li>
+      <% end %>
+    <% end %>
+
     <li><a href="#">常用联系人</a></li>
-    <li><a href="#">保险公司管理</a></li>
   </ul>
 </div>
 <script language="javascript">
