@@ -1,17 +1,1 @@
-<p>
-  <strong>Accident insurance:</strong>
-  <%= @accident_item.specific_insurance.title %>
-</p>
-
-<p>
-  <strong>Industry:</strong>
-  <%= @accident_item.industry.name %>
-</p>
-
-<p>
-  <strong>Employee number:</strong>
-  <%= t("accident_item.employee_number.#{AccidentItem::EMPLOYEE_NUMBER[@accident_item.employee_number.to_i][0]}") %>
-</p>
-
-<%= link_to 'Edit', edit_accident_item_path(@accident_item) %> |
-<%= link_to 'Back', accident_items_path %>
+<%= render 'shared/step2' %>
