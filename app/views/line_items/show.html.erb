@@ -12,12 +12,12 @@
     </tr>
   </thead>
   <tbody>
-    <% @line_item.traces.each do |trace| %>
+    <% @line_item.tracks.each do |track| %>
 
       <tr>
-        <td><%= trace.tracer.username %></td>
-        <td><%= t('line_item.action.'+trace.action) %></td>
-        <td><%= trace.created_at %></td>
+        <td><%= track.tracker.username %></td>
+        <td><%= t('line_item.action.'+track.action) %></td>
+        <td><%= track.created_at %></td>
         <td><%# link_to 'Show', line_item %>
           / <%# link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

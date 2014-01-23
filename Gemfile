@@ -66,4 +66,4 @@ gem "font-awesome-rails", '~> 4.0.0'
 gem 'aasm'
 gem 'china_city'
 
-gem 'acts_as_traceable', :git => "https://github.com/cloudbsd/acts_as_traceable.git"
+gem 'acts_as_trackable', :git => "https://github.com/cloudbsd/acts_as_trackable.git"

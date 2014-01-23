@@ -76,7 +76,7 @@ class LineItemsController < ApplicationController
 
   def commit
     @line_item.commit!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
@@ -89,7 +89,7 @@ class LineItemsController < ApplicationController
     else
       @line_item.cart = nil
       @line_item.cancel!
-      current_user.trace(@line_item, params[:action])
+      current_user.track(@line_item, params[:action])
     end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
@@ -99,7 +99,7 @@ class LineItemsController < ApplicationController
 
   def verify
     @line_item.verify!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
@@ -108,7 +108,7 @@ class LineItemsController < ApplicationController
 
   def quote
     @line_item.quote!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
@@ -117,7 +117,7 @@ class LineItemsController < ApplicationController
 
   def reject
     @line_item.reject!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
@@ -126,7 +126,7 @@ class LineItemsController < ApplicationController
 
   def pay
     @line_item.pay!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }
@@ -135,7 +135,7 @@ class LineItemsController < ApplicationController
 
   def ship
     @line_item.ship!
-    current_user.trace(@line_item, params[:action])
+    current_user.track(@line_item, params[:action])
     respond_to do |format|
       format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
       format.json { head :no_content }

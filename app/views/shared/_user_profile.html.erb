@@ -1,0 +1,15 @@
+<div class="order_site">您的位置：<span>保纳通&nbsp;<%= image_tag("insurance-01.png") %>&nbsp;会员中心&nbsp;<%= image_tag("insurance-01.png") %></span>&nbsp;会员资料</div>
+<!--content-->
+<div class="indexnr">
+  <div class="order_main clearfix">
+    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+
+    <div class="mainright">
+      <div class="memberInfoRemark">我们会严格保密<%= image_tag("index-index61.jpg") %>为必填 </div>
+      <%= render(partial: 'form') %>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!--content-->
+</div>
+<div class="clear"></div>

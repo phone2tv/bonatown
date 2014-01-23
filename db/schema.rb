@@ -302,18 +302,18 @@ ActiveRecord::Schema.define(version: 20140114165125) do
   add_index "roles", ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], name: "index_roles_on_name"
 
-  create_table "traces", force: true do |t|
-    t.integer  "tracer_id",      null: false
-    t.string   "tracer_type",    null: false
-    t.integer  "traceable_id",   null: false
-    t.string   "traceable_type", null: false
+  create_table "tracks", force: true do |t|
+    t.integer  "tracker_id",     null: false
+    t.string   "tracker_type",   null: false
+    t.integer  "trackable_id",   null: false
+    t.string   "trackable_type", null: false
     t.string   "action",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "traces", ["traceable_id", "traceable_type"], name: "index_traces_on_traceable_id_and_traceable_type"
-  add_index "traces", ["tracer_id", "tracer_type"], name: "index_traces_on_tracer_id_and_tracer_type"
+  add_index "tracks", ["trackable_id", "trackable_type"], name: "index_tracks_on_trackable_id_and_trackable_type"
+  add_index "tracks", ["tracker_id", "tracker_type"], name: "index_tracks_on_tracker_id_and_tracker_type"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

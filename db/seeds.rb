@@ -68,22 +68,25 @@ end
 def create_insurances
   print_title('setting up insurances')
 
-  company = Company.create!(name: 'Pacific', website: 'www.pacific.com', aboutme: 'about pacific')
-  company = Company.create!(name: 'Pingan', website: 'www.pingan.com', aboutme: 'about pingan')
+  companies = [
+    { 'name' => 'Pacific', website: 'www.pacific.com', aboutme: 'About pacific' },
+    { 'name' => 'Pingan', website: 'www.pingan.com', aboutme: 'About pingan' },
+    { 'name' => 'Huatai', website: 'www.huatai.com', aboutme: 'About huatai' },
+  ]
+  companies.each do |item|
+    Company.create!(name: item['name'], website: item['website'], aboutme: item['aboutme'])
+  end
 
-  insur = AccidentInsurance.create!(title: 'Accident insurance title 1', synopsis: 'Accident insurance synopsis 1', price: '1.00', company: company)
+  insur = AccidentInsurance.create!(title: 'AccidentInsurance', synopsis: 'Synpsis', price: '100.00', company: Company.all[1])
   print_content "insurance: #{insur.title}"
 
-  insur = HealthInsurance.create!(title: 'Health insurance title 1', synopsis: 'Health insurance synopsis 1', price: '1.00', company: company)
+  insur = ProductLiabilityInsurance.create!(title: 'ProductLiabilityInsurance', synopsis: 'Synpsis', price: '95.00', company: Company.all[2])
   print_content "insurance: #{insur.title}"
 
-  insur = PublicLiabilityInsurance.create!(title: 'Public Liability insurance title 1', synopsis: 'Public Liability insurance synopsis 1', price: '1.00', company: company)
+  insur = PublicLiabilityInsurance.create!(title: 'PublicLiabilityInsurance', synopsis: 'Synpsis', price: '128.00', company: Company.first)
   print_content "insurance: #{insur.title}"
 
-  insur = ProductLiabilityInsurance.create!(title: 'Product Liability insurance title 1', synopsis: 'Product Liability insurance synopsis 1', price: '1.00', company: company)
-  print_content "insurance: #{insur.title}"
-
-  insur = EmployerLiabilityInsurance.create!(title: 'Employer Liability insurance title 1', synopsis: 'Employer Liability insurance synopsis 1', price: '1.00', company: company)
+  insur = EmployerLiabilityInsurance.create!(title: 'EmployerLiabilityInsurance', synopsis: 'Synpsis', price: '56.00', company: Company.all[0])
   print_content "insurance: #{insur.title}"
 end
 
@@ -93,7 +96,7 @@ def create_industries
   industry = Industry.create(name: 'Computer')
   print_content "industry: #{industry.name}"
 
-  industry = Industry.create(name: 'Band')
+  industry = Industry.create(name: 'Bank')
   print_content "industry: #{industry.name}"
 end
 

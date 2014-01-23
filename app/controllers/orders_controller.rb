@@ -87,7 +87,7 @@ class OrdersController < ApplicationController
     @order.pay!
     @order.line_items.each do |line_item|
       line_item.pay!
-      current_user.trace(line_item, 'pay')
+      current_user.track(line_item, 'pay')
     end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully paid.' }
@@ -99,7 +99,7 @@ class OrdersController < ApplicationController
     @order.ship!
     @order.line_items.each do |line_item|
       line_item.ship!
-      current_user.trace(line_item, 'ship')
+      current_user.track(line_item, 'ship')
     end
     respond_to do |format|
       format.html { redirect_to :back, notice: 'Order was successfully shipped.' }
@@ -125,7 +125,7 @@ class OrdersController < ApplicationController
 #   @order.cancel!
 #   @order.line_items.each do |line_item|
 #     line_item.cancel!
-#     current_user.trace(line_item, 'cancel')
+#     current_user.track(line_item, 'cancel')
 #   end
 #   respond_to do |format|
 #     format.html { redirect_to :back, notice: 'Order was successfully cancelled.' }
