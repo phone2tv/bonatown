@@ -14,11 +14,11 @@
     <%= f.text_field :card_no, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :birthday, class: 'control-label' %> <br>
+    <%= f.label :birthday, class: 'control-label' %>
     <%= f.date_select :birthday, class: 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :gender, class: 'control-label' %> <br>
+    <%= f.label :gender, class: 'control-label' %>
     <%# f.select :gender, Contact::GENDER.map { |item| [t("contact.gender.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
     <%= f.select :gender, Contact::GENDER.map { |item| [t("contact.gender.#{item[0]}"), item[1]] }, { include_blank: false } %>
   </div>
@@ -36,9 +36,9 @@
   </div>
   <div class="form-group">
     <%= f.label :location, class: 'control-label' %>
-    <%= f.label :province, class: 'control-label' %>
-    <%= f.label :city, class: 'control-label' %>
-    <%= f.label :district, class: 'control-label' %>
+    <%# f.label :province, class: 'control-label' %>
+    <%# f.label :city, class: 'control-label' %>
+    <%# f.label :district, class: 'control-label' %>
   <%-
     province = @contact.province
     city = @contact.city
@@ -53,7 +53,10 @@
     <%= select_tag :city    , options_for_select(cities, city)        , prompt: '--城市--', id: 'contact_city',     name: 'contact[city]', class: ['city-select', 'city-city'] %>
     <%= select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: 'contact_district', name: 'contact[district]', class: ['city-select', 'city-district'] %>
   </div>
+  </div>
 
+  <div class="form-group">
+    <%= f.label :location, class: 'control-label' %>
     <%= f.text_field :location, class: 'form-control' %>
   </div>
 

@@ -86,7 +86,7 @@ zh-CN:
         province: "所在省"
         city: "所在市"
         district: "所在区县"
-        location: "企业地址"
+        location: "通讯地址"
       park:
         name: "园区名称"
         website: "园区主页"

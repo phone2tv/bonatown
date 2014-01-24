@@ -6,6 +6,7 @@ class ContactsController < ApplicationController
   def index
   # @contacts = Contact.all
     @contacts = current_user.profile.contacts
+  # @contact = Contact.new
   end
 
   # GET /contacts/1
@@ -15,12 +16,14 @@ class ContactsController < ApplicationController
 
   # GET /contacts/new
   def new
-  # @contact = Contact.new
-    @contact = current_user.profile.contacts.build
+    @contact = Contact.new
+  # @contact = current_user.profile.contacts.build
+    @contacts = current_user.profile.contacts
   end
 
   # GET /contacts/1/edit
   def edit
+    @contacts = current_user.profile.contacts
   end
 
   # POST /contacts
@@ -30,7 +33,8 @@ class ContactsController < ApplicationController
     @contact = current_user.profile.contacts.build(contact_params)
     respond_to do |format|
       if @contact.save
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+      # format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
+        format.html { redirect_to contacts_url, notice: 'Contact was successfully created.' }
         format.json { render action: 'show', status: :created, location: @contact }
       else
         format.html { render action: 'new' }
@@ -44,7 +48,8 @@ class ContactsController < ApplicationController
   def update
     respond_to do |format|
       if @contact.update(contact_params)
-        format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+      # format.html { redirect_to @contact, notice: 'Contact was successfully updated.' }
+        format.html { redirect_to contacts_url, notice: 'Contact was successfully created.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

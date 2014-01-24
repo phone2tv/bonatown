@@ -1,18 +1,54 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 常用联系人 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+
+  <div class="mainright">
+    <div class="linkman-title"><i>&nbsp;</i>常用联系人管理</div>
+    <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span>添加常用联系人</div>
+
+    <div class="add-linkman-form">
+      <%= render 'form' %>
+    </div>
+
+    <div class="bdTabBox">
+      <div id="con_one_1" class="bdTabBox_Con ">	
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd linkman-list">
+          <tr>
+            <th scope="col" width="125">姓名</th>
+            <th scope="col" width="125">联系方式</th>
+            <th scope="col" width="185">证件类型及号码</th>
+            <th scope="col" width="125">最近使用时间</th>
+            <th scope="col" width="125">使用次数</th>
+            <th scope="col" width="125">操作</th>
+          </tr>
+          <% @contacts.each do |contact| %>
+          <tr>
+            <td height="50"><a href="#" class="name"><%= contact.name %></a></td>
+            <td><strong><%= contact.mobile %></strong></td>
+            <td><strong><%= t("contact.card_type.#{contact.card_type}") %>:<%= contact.card_no %></strong></td>
+            <td><span class="bnt-red">12/01</span></td>
+            <td><span class="bnt-red">10</span></td>
+            <td><span>
+                <%= link_to '编辑', edit_contact_path(contact), 'data-no-turbolink' => true %> / 
+                <%= link_to '删除', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+            </span></td>
+          </tr>
+          <% end %>
+
+        </table>
+
+
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-<div class='row'>
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-4'>
-    <%= render(partial: 'form') %>
-  </div>
-</div> <!-- .row -->
+<div class="clear"></div>						
