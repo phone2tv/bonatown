@@ -1,4 +1,5 @@
 class ProductLiabilityInsurancesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
   before_action :set_product_liability_insurance, only: [:show, :edit, :update, :destroy]
 
   # GET /product_liability_insurances

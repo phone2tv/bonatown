@@ -1,4 +1,6 @@
 class EmployerLiabilityInsurancesController < ApplicationController
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
+
   before_action :set_employer_liability_insurance, only: [:show, :edit, :update, :destroy]
 
   # GET /employer_liability_insurances

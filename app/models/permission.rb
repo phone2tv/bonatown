@@ -7,7 +7,7 @@ class Permission
     allow :stores, [:show, :tagged]
     allow :orders, [:index]
     allow [:line_items], [:index, :show]
-    allow [:companies, :insurances, :accident_insurances, :public_liability_insurances, :product_liability_insurances, :employer_liability_insurances, :health_insurances], [:index, :show]
+    allow [:insurances, :accident_insurances, :public_liability_insurances, :product_liability_insurances, :employer_liability_insurances, :health_insurances], [:index, :show]
     if user
       # as user
       allow :sessions, [:destroy]
@@ -47,9 +47,11 @@ class Permission
         user.is_customer? and cart.owned_by?(user)
       end
       # companies
+      allow [:companies], [:index, :show] do |company|
+        user.is_admin?
+      end
       allow [:companies, :insurances, :accident_insurances, :public_liability_insurances, :product_liability_insurances, :employer_liability_insurances, :health_insurances], [:new, :edit, :create, :update, :destroy] do |company|
-        user.is_manager?
-        true # TODO: remove this line
+        user.is_admin?
       end
       # orders
       allow :orders, [:new, :create] do |order|
