@@ -29,7 +29,6 @@
       <% end %>
     <% end %>
     <li><a href="#">保单管理</a></li>
-    <li><a href="#">代金券</a></li>
 
     <% if controller_name == 'users' and params[:action] == 'edit' %>
       <li class="current"><%= link_to '账户资料', edit_user_path(current_user) %></li>
@@ -66,6 +65,8 @@
         <li><%= link_to '常用联系人', contacts_path %></li>
       <% end %>
     <% end %>
+
+    <li><a href="#">代金券</a></li>
   </ul>
 </div>
 <script language="javascript">
