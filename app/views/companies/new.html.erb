@@ -1,18 +1,48 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
-  </div>
-</div>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 首页 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
+  <div class="mainright">
+    <div class="linkman-title"><i>&nbsp;</i>保险公司管理</div>
+    <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加保险公司', new_company_path, 'data-no-turbolink' => true %></div>
+    <div class="add-linkman-form">
+      <%= render 'form' %>
+    </div>
+
+    <div class="bdTabBox">
+      <div id="con_one_1" class="bdTabBox_Con ">	
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd linkman-list">
+          <tr>
+            <th scope="col" width="40%"><%= t('activerecord.attributes.company.name') %></th>
+            <th scope="col" width="30%"><%= t('activerecord.attributes.company.website') %></th>
+            <th scope="col" width="30%">操作</th>
+          </tr>
+          <% @companies.each do |company| %>
+            <tr>
+              <td height="50"><span><%= link_to company.name, company %></span></td>
+              <td><span><%= company.website %></span></td>
+              <td>
+                <%= link_to '编辑', edit_company_path(company) %> /
+                <%= link_to '删除', company, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
+
+      </div>
+    </div>
   </div>
-  <div class='col-md-6'>
-    <%= render 'form' %>
-  </div>
-</div> <!-- row -->
+
+</div>
+<div class="clear"></div>						

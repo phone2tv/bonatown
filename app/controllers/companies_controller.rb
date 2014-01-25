@@ -15,10 +15,12 @@ class CompaniesController < ApplicationController
   # GET /companies/new
   def new
     @company = Company.new
+    @companies = Company.all
   end
 
   # GET /companies/1/edit
   def edit
+    @companies = Company.all
   end
 
   # POST /companies
@@ -28,7 +30,8 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
-        format.html { redirect_to @company, notice: 'Company was successfully created.' }
+      # format.html { redirect_to @company, notice: 'Company was successfully created.' }
+        format.html { redirect_to companies_url, notice: 'Company was successfully created.' }
         format.json { render action: 'show', status: :created, location: @company }
       else
         format.html { render action: 'new' }
@@ -42,7 +45,8 @@ class CompaniesController < ApplicationController
   def update
     respond_to do |format|
       if @company.update(company_params)
-        format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+      # format.html { redirect_to @company, notice: 'Company was successfully updated.' }
+        format.html { redirect_to companies_url, notice: 'Company was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

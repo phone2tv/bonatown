@@ -20,21 +20,19 @@
             <th scope="col" width="125">操作</th>
           </tr>
           <% @contacts.each do |contact| %>
-          <tr>
-            <td height="50"><a href="#" class="name"><%= contact.name %></a></td>
-            <td><strong><%= contact.mobile %></strong></td>
-            <td><strong><%= t("contact.card_type.#{contact.card_type}") %>:<%= contact.card_no %></strong></td>
-            <td><span class="bnt-red">12/01</span></td>
-            <td><span class="bnt-red">10</span></td>
-            <td><span>
-                <%= link_to '编辑', edit_contact_path(contact), 'data-no-turbolink' => true %> / 
-                <%= link_to '删除', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
-            </span></td>
-          </tr>
+            <tr>
+              <td height="50"><a href="#" class="name"><%= contact.name %></a></td>
+              <td><strong><%= contact.mobile %></strong></td>
+              <td><strong><%= t("contact.card_type.#{contact.card_type}") %>:<%= contact.card_no %></strong></td>
+              <td><span class="bnt-red">12/01</span></td>
+              <td><span class="bnt-red">10</span></td>
+              <td><span>
+                  <%= link_to '编辑', edit_contact_path(contact), 'data-no-turbolink' => true %> / 
+                  <%= link_to '删除', contact, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </span></td>
+            </tr>
           <% end %>
-
         </table>
-
 
         <div class="pagesWrap clearfix">
           <a href="#" class="prev">上一页</a>
@@ -44,8 +42,10 @@
           <a href="#" class="next">下一页</a>
           <span>共3页</span>
         </div>
+
       </div>
     </div>
   </div>
+
 </div>
 <div class="clear"></div>						
