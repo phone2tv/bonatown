@@ -1,30 +1,27 @@
 <div class="bdTabBox">
-  <div id="con_one_1" class="bdTabBox_Con ">	
+  <div id="con_one_1" class="orderm-content">	
+    <div class="orderm-content-title">
+      <span><input type="checkbox" name="">全选</span>
+      <span>产品<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></span>
+      <span>保险期间<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></span>
+      <span>数量<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></span>
+      <span>保费</span>
+      <span>状态</span>
+      <span>当前处理人</span>
+      <span>操作</span>
+    </div>
 
     <%= form_for(Order.new) do |f| %>
-    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd">
-      <tr>
-        <th scope="col" width="245">产品<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjx.jpg") %></a></th>
-        <th scope="col" width="145">保险期间<a href="#"><%= image_tag("hjs.jpg") %></a><a href="#"><%= image_tag("hjxx.jpg") %></a></th>
-        <th scope="col" width="40">数量</th>
-        <th scope="col" width="75">保费 </th>
-        <th scope="col" width="110">实付款</th>
-        <th scope="col" width="50">选择</th>
-        <th scope="col" width="65">状态</th>
-        <th scope="col" width="141">操作</th>
-      </tr>
-      <%= render line_items %>
-    </table>
-    <%= f.submit class: 'btn' %>
-    <% end %>
+    <%= render line_items %>
 
-    <div class="pagesWrap clearfix">
-      <a href="#" class="prev">上一页</a>
-      <a href="#" class="current">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#" class="next">下一页</a>
-      <span>共3页</span>
+    <div class="orderm-content-title">
+      <span><input type="checkbox" name="">全选</span>
+      <span class="total">
+        <%= f.submit '去结算', class: 'checkout bnt-button bnt-gray bnt-small margin-top-3' %>
+        <a href="#" class="bnt-button bnt-gray bnt-small margin-top-3">去结算</a>
+      </span>
+      <span class="clearing">合计:<i>￥200</i></span>
     </div>
+    <% end %>
   </div>
 </div>

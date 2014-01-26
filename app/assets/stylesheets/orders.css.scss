@@ -56,7 +56,7 @@ form {
     }
   }
 
-  input[type=checkbox] {
+  input[type=checkbox].blue-theme {
     float: left;
     line-height: 25px;
     height: 25px;
@@ -81,6 +81,20 @@ form {
     &:hover {
       background-color: #ff5050;
     }
+  }
+
+  input[type=submit].checkout {
+    float: none;
+    height: 25px;
+    line-height: 25px;
+    width:80px;
+    margin-left: 0;
+    padding: 0 4px;
+//  color: #fff;
+//  background-color: #ff0000;
+    font-size: 13px;
+    border-radius: 4px;
+    text-align: center;
   }
 
   .form-link {
