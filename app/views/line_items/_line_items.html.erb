@@ -11,14 +11,13 @@
       <span>操作</span>
     </div>
 
-    <%= form_for(Order.new) do |f| %>
+    <%= form_for(Order.new, :html => { class: 'checkout' }) do |f| %>
     <%= render line_items %>
 
     <div class="orderm-content-title">
       <span><input type="checkbox" name="">全选</span>
       <span class="total">
-        <%= f.submit '去结算', class: 'checkout bnt-button bnt-gray bnt-small margin-top-3' %>
-        <a href="#" class="bnt-button bnt-gray bnt-small margin-top-3">去结算</a>
+        <%= f.submit '去结算', class: 'checkout bnt-button margin-top-3' %>
       </span>
       <span class="clearing">合计:<i>￥200</i></span>
     </div>

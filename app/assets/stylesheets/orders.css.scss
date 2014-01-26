@@ -1,4 +1,4 @@
-form {
+form.blue-theme {
   text-align: left;
   font-size: 13px;
 
@@ -56,7 +56,7 @@ form {
     }
   }
 
-  input[type=checkbox].blue-theme {
+  input[type=checkbox] {
     float: left;
     line-height: 25px;
     height: 25px;
@@ -83,20 +83,6 @@ form {
     }
   }
 
-  input[type=submit].checkout {
-    float: none;
-    height: 25px;
-    line-height: 25px;
-    width:80px;
-    margin-left: 0;
-    padding: 0 4px;
-//  color: #fff;
-//  background-color: #ff0000;
-    font-size: 13px;
-    border-radius: 4px;
-    text-align: center;
-  }
-
   .form-link {
     a {
       margin-left: 175px;
@@ -115,7 +101,7 @@ form {
 } // form
 
 
-form.bonatown-login {
+form.blue-theme.bonatown-login {
   margin: 15px;
 
   label {
@@ -147,5 +133,21 @@ form.bonatown-login {
     label {
       width: 150px;
     }
+  }
+}
+
+form.checkout {
+  input[type=submit] {
+    float: none;
+    height: 25px;
+    line-height: 25px;
+    width:80px;
+    margin-left: 0;
+    padding: 0 4px;
+//  color: #fff;
+//  background-color: #ff0000;
+    font-size: 13px;
+    border-radius: 4px;
+    text-align: center;
   }
 }

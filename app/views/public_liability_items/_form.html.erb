@@ -1,4 +1,4 @@
-<%= form_for(@public_liability_item) do |f| %>
+<%= form_for(@public_liability_item, :html => { class: 'blue-theme' }) do |f| %>
   <%= form_error_messages!(f.object) %>
 
   <div class="coverInfo">
@@ -19,11 +19,11 @@
   </div>
   <div class="form-group">
     <%= f.label :with_fire_control, class: 'control-label' %><br>
-    <%= f.check_box :with_fire_control, class: 'blue-theme' %>
+    <%= f.check_box :with_fire_control %>
   </div>
   <div class="form-group">
     <%= f.label :with_security_measure %><br>
-    <%= f.check_box :with_security_measure, class: 'blue-theme' %>
+    <%= f.check_box :with_security_measure %>
   </div>
 
   </div> <!-- coverInfo -->

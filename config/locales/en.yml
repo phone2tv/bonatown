@@ -68,6 +68,7 @@ en:
         name: "Full Name"
         park_name: "Park Name"
         location: "Park Location"
+        company_id: "Belonged Company"
       customer_profile:
         name: "Full Name"
         enterprise_name: "Enterprise Name"

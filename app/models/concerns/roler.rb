@@ -22,6 +22,6 @@ module Roler
   end
 
   def is_customer?
-    has_role? :customer
+    self.roles.size == 1 and has_role? :customer
   end
 end
