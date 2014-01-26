@@ -1,6 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
-body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select{margin:0;padding:0}
+body,ol,ul,h1,h2,h3,h4,h5,h6,p,th,td,dl,dd,form,fieldset,legend,input,textarea,select,div{margin:0;padding:0;z-index:1;}
 body{ color:#819093; font-size:12px; font-family:"微软雅黑"; }	
 ul,li{	list-style:none;}
 a{    outline:none;/*火狐*/
@@ -56,6 +56,7 @@ img{ border:0px;}
 .navLet{ width:7px; height:47px; background:url(index-nav1.jpg) no-repeat; position:absolute; top:0px ; left:0px;}
 .navRit{width:7px; height:47px; background:url(index-nav3.jpg) no-repeat; position:absolute; top:0px ; right:0px;}
 .nav1{ width:227px; height:47px; float:left; line-height:47px; color:#FFF; font-size:18px; background:url(index-nav2.jpg) no-repeat 190px 0px ; text-indent:14px;}
+.nav1-up{background:url(index-nav02-up.jpg) no-repeat 190px 0px;}
 .nav1:hover{color:#00d2ff;}
 .discount-recommend{ display:none;}
 .nav ul li{ width:137px; height:47px; float:left;  }
@@ -75,19 +76,24 @@ img{ border:0px;}
 .navlistNr span{ margin-right:20px; }
 .navlistBot{ width:234px; height:7px; background:url(index-index17.jpg) no-repeat; position:absolute; bottom:0px;_bottom:-14px ;left:-2px;}
 
+.mod1{width:50%; *width:49%;  margin-top:-1px;  float:left;}
 .indexbanner { width:897px; height:337px;  float:left; padding-top:15px;}
 .indexbanner img{ width:897px; height:337px; border:1px solid #e7e7e7; float:left; display:block}
 .indexDiscountbox{ width:1147px; height:278px; margin-top:15px; }
 .indexDiscountboxLet{ width:7px; height:286px;  background:url(index-index48.jpg); float:left}
-.indexDiscountboxMid{ width:1147px; height:284px;border: 1px solid #f1f1f1;
-border-radius: 4px; float:left}
+.indexDiscountboxMid{ width:1147px; height:284px;border-radius: 4px; float:left;}
 .indexDiscountboxRit{ width:7px; height:286px;  background:url(index-index47.jpg); float:left}
-.indexDiscountTitel{ width:1147px; height:44px;border-bottom:1px solid #f1f1f1; }
+.indexDiscountTitel{ width:1147px; height:44px;border:1px solid #f1f1f1; }
 .indexDiscountTitel li{width:120px; height:44px;line-height:44px; float:left;}
 .indexDiscountTitel li a{ display:block; text-align:center; font-size:16px; color:#000000;  font-weight:bold}
 .indexDiscountTitel  li a.hover{ background:url(index-index18.jpg) no-repeat  bottom}
-.indexDiscountLet{ width:518px; height:239px; float:left;border-right:1px dashed #f1f1f1; padding-left:47px; }
-.indexDiscountLetTitel{ width:518px; height:47px; line-height:47px; color:#595959; font-size:14px;}
+.indexDiscountLet{
+height:239px; float:left;
+ padding-left:53px;
+overflow:hidden;border:1px solid #f1f1f1;
+ position:relative;
+}
+.indexDiscountLetTitel{ height:47px; line-height:47px; color:#595959; font-size:14px;}
 .indexDiscountLetTitel a{color:#595959;}
 .indexDiscountLetnr{ width:306px; height:184px; position:relative; padding:0px 0px 0px 212px;line-height:26px; }
 .indexDiscountLetnr span a{ color:#9f9f9f; }
@@ -106,8 +112,20 @@ border-radius: 4px; float:left}
 
 .indexInsure{width:273px; height:22px; text-align:right;font-size:12px; padding-top:5px;}
 .indexInsure span{color:#ff5400}
-.indexDiscountRit{ width:518px; height:239px; float:left; padding-left:47px; }
-.indexDiscountRitTitel{ width:518px; height:47px; line-height:47px; color:#595959; font-size:14px;}
+.indexDiscountRit{
+height: 239px;
+float: left;
+padding-left: 46px;
+*padding-left: 47px;
+padding-right: 10px;
+*padding-right: 21px;
+margin-left:-1px !important;
+border:1px solid #f1f1f1;
+ position:relative;
+ overflow:hidden;
+ *overflow:inherit;
+}
+.indexDiscountRitTitel{height:47px; line-height:47px; color:#595959; font-size:14px;}
 .indexDiscountRitTitel a{color:#595959;}
 .indexDiscountRitnr{ width:306px; height:184px; position:relative; padding:0px 0px 0px 212px;line-height:26px; }
 .indexDiscountRitnr span a{ color:#9f9f9f; }
@@ -132,19 +150,26 @@ border-radius: 4px; float:left}
 .indexPropertyBoxLet{ width:7px; height:228px;  float:left; background:url(index-index51.jpg)  no-repeat}
 .indexPropertyBoxRit{ width:7px; height:228px;  float:left; background:url(index-index52.jpg)  no-repeat}
 .indexProperty{ width:1133px; height:227px;float:left;}
-.indexProperty1{ width:147px; height:220px; border-right:1px solid #f1f1f1; float:left; position:relative; padding-left:266px; }
+.indexProperty1{ width:147px; height:220px; border-right:1px solid #f1f1f1; float:left; position:relative;overflow:hidden; padding-left:266px; }
 .indexProperty1 span a{ color:#767676; }
 .indexProperty1img1{border:1px solid  #eceaeb; position:absolute; top:12px; left:7px; width:200px; height:200px;}
-.indexProperty1 h1{ width:147px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
+.indexProperty1 h1{ width:147px;color:#717171; font-size:14px; display:block; height:44px; padding-top:32px; line-height:14px; color:#000000; }
 .indexProperty1 h1 a{color:#000000;}
 .indexProperty1 h2{ width:147px; color:#838383; font-size:14px; display:block; height:49px; font-weight:inherit; line-height:49px; }
 .indexProperty1 h2 a{ color:#767676}
 .indexProperty1 h2 strong{ color:#ff5400}
 .indexProperty1h3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
-.indexProperty1h3:hover{ background:#F00 }
+.indexProperty1h3:hover{
+	background: #F00;
+}
 
+.indexProperty1:hover, .indexProperty2:hover{
+	border: 1px solid rgb(25, 194, 209);
+	margin: -1px 0 -1px -1px;
+}
 
 .indexProperty2{ width:185px; height:220px; border-right:1px solid #f1f1f1; float:left;  position:relative; padding-left:300px;}
+
 .indexProperty2 span a{ color:#767676; }
 .indexProperty2img1{border:1px solid  #eceaeb; position:absolute; top:12px; left:55px; width:200px; height:200px;}
 .indexProperty2 h1{ width:185px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
@@ -171,14 +196,16 @@ border-radius: 4px; float:left}
 .indexCartyTitel img{ margin:11px 10px 0px 10px; display:block; float:left}
 .indexCartyBoxLet{ width:7px; height:418px;  float:left; background:url(index-index53.jpg)  no-repeat}
 .indexCartyBoxRit{ width:7px; height:418px;  float:left; background:url(index-index56.jpg)  no-repeat}
-.indexCarty{ width:1133px; height:417px;float:left; border-bottom:1px solid #f1f1f1; }
+.indexCarty{ width:1133px; height:417px;float:left; }
 .indexCarty1{ width:350px; height:387px; padding:30px 0px 0px 100px; border-right:1px solid #f1f1f1; float:left; background:url(index-index27.jpg) no-repeat  18px 200px;color:#585858; font-size:14px; }
-.indexCarty1:hover,.indexCarty2:hover,.indexMedicinety1:hover,.indexMedicinety2:hover{padding:30px 0px 0px 96px; border:2px solid rgb(25, 194, 209)}
-.indexProperty1:hover{width:144px; border:2px solid rgb(25, 194, 209)}
-.indexProperty2:hover{width:182px; border:2px solid rgb(25, 194, 209)}
-.indexduty1:hover{width:467px; border:2px solid rgb(25, 194, 209)}
-.indexduty2Top:hover, .indexduty2Bot:hover{width:178px; border:2px solid rgb(25, 194, 209)}
-.indexDiscountLet:hover,.indexDiscountRit:hover{width:516px; border:2px solid rgb(25, 194, 209)};
+.indexCarty1:hover,.indexCarty2:hover,.indexMedicinety1:hover,.indexMedicinety2:hover{padding:29px 0px 0px 99px; border:1px solid rgb(25, 194, 209);}
+.indexCarty1:hover, .indexCarty2:hover{background-position:17px 199px;}
+.indexMedicinety1:hover, .indexMedicinety2:hover{background-position:5px 199px;}
+
+
+.indexDiscountLet:hover{ border-color:rgb(25, 194, 209); position:relative;z-index:10;*margin-right:1px;}
+.indexDiscountRit:hover{ border-color:rgb(25, 194, 209); position:relative;z-index:10;}
+
 .indexCarty1 a{ color:#585858}
 .indexCarty1 span{ font-size:18px; color:#101010;}
 .indexCarty1 span a{ color:#000}
@@ -227,7 +254,11 @@ border-radius: 4px; float:left}
 .indexdutyBoxLet{ width:7px; height:418px;  float:left; background:url(index-index53.jpg)  no-repeat}
 .indexdutyBoxRit{ width:7px; height:418px;  float:left; background:url(index-index54.jpg)  no-repeat}
 .indexduty{ width:1147px; height:417px;float:left; }
-.indexduty1{ width:470px; height:417px; border-right:1px solid #f1f1f1; float:left;color:#585858; font-size:14px; }
+.indexduty1{ width:470px; height:417px; border-right:1px solid #f1f1f1; float:left;color:#585858; font-size:14px; position:relative; overflow:hidden; }
+.indexduty1:hover{
+	border: 1px solid rgb(25, 194, 209);
+	margin: -1px 0 -1px -1px;
+}
 .indexduty1 span a{color:#585858;}
 .indexduty1 img{ width:448px; height:233px; margin:15px  0px  0px 7px ;border-right:1px solid #f1f1f1;}
 .indexduty1 h1{ width:147px;color:#717171; font-size:14px; display:block; height:50px; line-height:50px; color:#000000; padding-left:90px;}
@@ -242,6 +273,13 @@ border-radius: 4px; float:left}
 .indexduty2{ width:430px; height:417px;  border-right:1px solid #f1f1f1; float:left; color:#585858; font-size:14px;}
 .indexduty2 span a{color:#585858;}
 .indexduty2Top{width:180px; height:208px;border-bottom:1px solid #f1f1f1; position:relative; padding-left:250px; }
+.indexduty2Top:hover, .indexduty2Bot:hover{
+	border: 1px solid rgb(25, 194, 209);
+	margin: -1px -1px 0 -1px;
+}
+.indexProperty1:hover input, .indexProperty2:hover input, .indexduty2Top:hover input, .indexduty2Bot:hover input{
+	*margin-left:1px;
+}
 .indexduty2Topimg{ width:180px; height:180px;  position:absolute; top:12px; left:12px; border:1px #e7e7e7 solid}
 .indexduty2Top h1{ width:160px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
 .indexduty2Top h1 a{ color:#000}
@@ -251,8 +289,7 @@ border-radius: 4px; float:left}
 .indexduty2Top h2 strong{ color:#ff5400}
 .indexduty2Toph3{ border:1px #ff5400 solid; background:#ff5400;border-radius:5px;; width:91px; height:29px; line-height:29px; text-align:center; display:block; cursor:pointer; color:#FFF; font-weight:inherit; font-size:12px;float:left}
 .indexduty2Toph3:hover{ background:#F00}
-
-.indexduty2Bot{width:180px; height:208px;border-bottom:1px solid #f1f1f1; position:relative; padding-left:250px; }
+.indexduty2Bot{width:180px; height:208px; position:relative; padding-left:250px; }
 .indexduty2Botimg{ width:180px; height:180px;  position:absolute; top:12px; left:12px; border:1px #e7e7e7 solid}
 .indexduty2Bot h1{ width:160px;color:#717171; font-size:14px; display:block; height:76px; line-height:76px; color:#000000; }
 .indexduty2Bot h1 a{ color:#000}
@@ -697,7 +734,7 @@ color:#ffffff;
 .bnt-login .login{text-align:center; margin-top:10px;}
 .bnt-login .login-btn{text-align:center; margin-top:10px;}
 
-.sub-page-menu{display:none; position:absolute; left:0;top:0; z-index:999}
+.sub-page-menu{display:none; position:absolute; left:0;top:-40px; z-index:999}
 .tb-flow{ margin-left:20px;padding-top: 30px;}
 .insuranceStepbox h1{height: 47px;
 line-height: 47px;
@@ -766,8 +803,8 @@ overflow: hidden;
 .orderm-content-sub-title span{ margin-left:20px;}
 
 .orderm-content-full{width:100%;float:left; height:auto;}
-.orderm-content-full li{ height:90px; line-height:90px; border-right:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1;display:block;}
-.orderm-content-full li span{width:12%; height:90px; line-height:90px; display:block; float:left;text-align:center;}
+.orderm-content-full li{ height:70px; line-height:70px; border-right:1px solid #f1f1f1; border-bottom:1px solid #f1f1f1;display:block;}
+.orderm-content-full li span{width:12%; height:70px; line-height:70px; display:block; float:left;text-align:center;}
 .orderm-content-full li span p{margin-top:-70px;}
 .orderm-content-full li span p{margin-top:-70px;}
 
@@ -871,6 +908,15 @@ float: right;
 
 .lay-prod-navgation .selected-att {
 padding: 0;
+}
+
+.lay-prod-navgation .prod_prop_list:hover{
+  color:blue;
+  cursor:pointer;
+}
+
+.my-select strong:hover, #dev_clearAllProp:hover,.tableBd_List .name:hover{
+  color:orange;
 }
 
 .lay-prod-navgation .selected-att li {
