@@ -19,6 +19,7 @@
 //- require placeholder.min
 //= require china_city/jquery.china_city
 //= require jquery.customSelect
+//= require jcarousellite
 //= require site
 //= require_tree .
 
