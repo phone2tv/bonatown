@@ -11,29 +11,29 @@
   <ul class="leftNavs">
     <% if (user_signed_in? and current_user.has_role?(:customer)) %>
       <% if controller_name == 'users' and params[:action] == 'show' %>
-        <li class="current"><%= link_to '首页 ', current_user %></li>
+        <li class="current"><%= link_to '首页 ', current_user, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li><%= link_to '首页 ', current_user %></li>
+        <li><%= link_to '首页 ', current_user, 'data-no-turbolink' => true %></li>
       <% end %>
 
       <% if controller_name == 'carts' and params[:action] == 'show' %>
-        <li class="current"> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+        <li class="current"> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path %></li>
+        <li> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path, 'data-no-turbolink' => true %></li>
       <% end %>
 
       <% if controller_name == 'orders' and params[:action] == 'index' %>
-        <li class="current"><%= link_to '交易管理 ', orders_path %></li>
+        <li class="current"><%= link_to '交易管理 ', orders_path, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li><%= link_to '交易管理 ', orders_path %></li>
+        <li><%= link_to '交易管理 ', orders_path, 'data-no-turbolink' => true %></li>
       <% end %>
     <% end %>
     <li><a href="#">保单管理</a></li>
 
     <% if controller_name == 'users' and params[:action] == 'edit' %>
-      <li class="current"><%= link_to '账户资料', edit_user_path(current_user) %></li>
+      <li class="current"><%= link_to '账户资料', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
     <% else %>
-      <li><%= link_to '账户资料', edit_user_path(current_user) %></li>
+      <li><%= link_to '账户资料', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
     <% end %>
 
     <% if controller_name == current_user.profile.class.to_s.tableize and params[:action] == 'edit' %>
@@ -60,9 +60,9 @@
 
     <% if current_user.is_customer? %>
       <% if controller_name == 'contacts' %>
-        <li class="current"><%= link_to '常用联系人', contacts_path %></li>
+        <li class="current"><%= link_to '常用联系人', contacts_path, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li><%= link_to '常用联系人', contacts_path %></li>
+        <li><%= link_to '常用联系人', contacts_path, 'data-no-turbolink' => true %></li>
       <% end %>
     <% end %>
 
