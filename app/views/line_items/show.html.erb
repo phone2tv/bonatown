@@ -1,29 +1,7 @@
-<%= render @line_item.insurance_item %>
+<%= render 'shared/step2', line_item: @line_item %>
 
-<%= debug @line_item %>
+<%# render @line_item.insurance_item %>
 
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Actions</th>
-      <th>Time</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @line_item.tracks.each do |track| %>
+<%# debug @line_item %>
 
-      <tr>
-        <td><%= track.tracker.username %></td>
-        <td><%= t('line_item.action.'+track.action) %></td>
-        <td><%= track.created_at %></td>
-        <td><%# link_to 'Show', line_item %>
-          / <%# link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
-
-<%= debug params %>
+<%# debug params %>

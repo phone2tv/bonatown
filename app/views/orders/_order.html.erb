@@ -1,6 +1,6 @@
 <div class="orderm-content-sub-title">
   <span class="check"><input type="checkbox" name=""></span>
-  <span>订单编号: <%= order.order_number %></span>
+  <span>订单编号: <%= link_to order.order_number, order %></span>
   <span>成交时间: <%= order.created_at.strftime("%Y/%m/%d") %></span>
 </div>
 

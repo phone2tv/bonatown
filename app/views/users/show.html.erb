@@ -4,63 +4,43 @@
   <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
   <div class="mainright">
-    <div class="topNewsBox-info">
-      <div class="user-info">
-        <li class="user-info-title"><div></div>用户信息</li>
-        <dl>
-          <dd>账户名:某某某</dd>
-          <dd class="user-safe">
-          <div class="safe-title">
-            账号安全:
-          </div>
-          <div class="safe">
-            <span class="level"><button class="low"></button>低</span>
-            <span class="level"><button></button>中</span>
-            <span class="level"><button></button>高</span>
-            <!--中(middle),高(height)，都在css里-->
-          </div>
-          </dd>
-          <dd>上次登录时间: 2013.01.01</dd>
-          <dd>隶属园区: <a href="#">某某区</a></dd>
-          <dd>已支付总额: 200元</dd>
-          <dd>已查询报价次数: 2次<span>用户性质: 企业用户/园区用户</span></dd>
-        </dl>
-      </div>
-      <div class="voucher">
-        <li class="voucher-title">代金券领取:</li>
-        <li class="voucher-img"><%= image_tag("voucher.png") %></li>
-        <li class="voucher-get"><a href="#">如何获取?</a></li>
-      </div>
-      <div class="clear"></div>
-    </div>
+    <%= render 'info' %>
 
     <div class="bdTabBox">
-      <ul class="bdTabBox_Tit clearfix">
-        <% if params[:state].nil? %>
-          <li class='hover'><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user) %></li>
+      <ul class="bdTabBox_Tit1 clearfix">
+        <% if params[:state] == 'quoted' %>
+          <li><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
+          <li class='hover'><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
           <li><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
-        <% else %>
-          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user) %></li>
+          <% line_items = current_user.line_items.where(order_id: nil).quoted %>
+        <% elsif params[:state] == 'shipped' %>
+          <li><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
+          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
           <li class='hover'><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+          <% line_items = current_user.line_items.where.not(order_id: nil).shipped %>
+        <% else %>
+          <li class='hover'><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
+          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
+          <li><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+          <% line_items = current_user.line_items.where(order_id: nil).uncommitted %>
         <% end %>
       </ul>	
-    </div>
-
-    <% if params[:state].nil? %>
-      <%= render 'line_items/line_items', line_items: current_user.line_items.where(order_id: nil).quoted %>
-    <% else %>
-      <%= render 'line_items/line_items', line_items: current_user.line_items.where(order_id: nil).shipped %>
-    <% end %>
-
-    <!--
-    <div class="bdTabBox">
-      <div id="con_one_1" class="bdTabBox_Con_mem">	
+      <div id="con_one_1" class="bdTabBox_Con1 ">	
         <div class="order-list">
-          <dl>
-            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
-            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
-            <dd><span><a href="#">订单编号:1423423</a></span><a href="#">立即提交</a></dd>
-          </dl>
+          <ul>
+            <% line_items.each do |line_item| %>
+              <li>
+              <span><%= link_to "订单编号：8888888#{line_item.id}", line_item %></span>
+              <% if can? :commit, line_item %>
+                <%= link_to t('line_item.action.commit'), { controller: 'line_items', action: :commit, id: line_item }, { method: :put, class: "order-listbutton"} %>
+              <% elsif can? :pay, line_item %>
+                <%= link_to t('line_item.action.pay'), { controller: 'line_items', action: :pay, id: line_item }, { method: :put, class: "order-listbutton"} %>
+              <% else %>
+                <%= link_to '再次购买', insurance_path(line_item.insurance_item.specific_insurance), class: "order-listbutton" %>
+              <% end %>
+              </li>
+            <% end %>
+          </ul>
         </div>
         <div class="pagesWrap clearfix">
           <a href="#" class="prev">上一页</a>
@@ -72,7 +52,6 @@
         </div>
       </div>
     </div>
-    -->
 
   </div>
 </div>
