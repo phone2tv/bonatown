@@ -1,0 +1,6 @@
+<% if params[:state] == state %>
+  <li class='hover'>
+<% else %>
+  <li>
+<% end %>
+<%= link_to "#{title} (#{current_user.orders.where(aasm_state: state).size})", orders_path(state: state) %></li>

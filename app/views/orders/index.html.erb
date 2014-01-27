@@ -17,7 +17,8 @@
       <div class="clear"></div>
     </div>
 
-    <%= render partial: 'orders/order', collection: @orders, as: :order %>
+    <%= render 'orders', orders: @orders %>
+    <%# render partial: 'orders/order', collection: @orders, as: :order %>
     <%# render collection: @orders, as: :order %>
 
   </div>

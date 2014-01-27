@@ -1,0 +1,29 @@
+<div class="bdTabBox">
+  <ul class="bdTabBox_Tit clearfix">
+    <% if params[:state].nil? %>
+      <li class='hover'><%= link_to "全部订单 (#{current_user.orders.size})", orders_path %></li>
+    <% else %>
+      <li><%= link_to "全部订单 (#{current_user.orders.size})", orders_path %></li>
+    <% end %>
+
+    <%= render partial: 'shared/order_header_link', locals: { title: '待支付订单', state: 'unpaid' } %>
+    <%= render partial: 'shared/order_header_link', locals: { title: '已支付订单', state: 'paid' } %>
+    <%= render partial: 'shared/order_header_link', locals: { title: '已出保订单', state: 'shipped' } %>
+    <%= render partial: 'shared/order_header_link', locals: { title: '已取消订单', state: 'cancelled' } %>
+  </ul>	
+  <div id="con_one_1" class="orderm-content">	
+    <div class="orderm-content-title">
+      <span><input type="checkbox" name="">全选</span>
+      <span>产品<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>单价（元）<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>数量<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>保费</span>
+      <span>状态</span>
+      <span>当前处理人</span>
+      <span>操作</span>
+    </div>
+
+    <%= render orders %>
+  </div>
+
+</div>

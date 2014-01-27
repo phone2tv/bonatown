@@ -1,0 +1,65 @@
+<div class="bdTabBox">
+<strong>ORDER ID:</strong> <%= order.id %>, 
+<strong>订单号:</strong> <%= order.order_number %>, 
+<strong><%= t('activerecord.attributes.order.aasm_state') %>:</strong> <%= t('line_item.state.' + order.aasm_state) %>, < 
+<%= link_to_if can?(:pay, order), t('order.action.pay'), pay_order_path(order), method: :put %> |
+<%= link_to_if can?(:ship, order), t('order.action.ship'), ship_order_path(order), method: :put %> |
+<%= link_to_if can?(:cancel, order), t('order.action.cancel'), cancel_order_path(order), method: :put %> |
+<%= link_to 'Show', order %> |
+<%= link_to 'Edit', edit_order_path(order) %> |
+<%= link_to 'Back', orders_path %> >
+</div>
+
+<%# render 'line_items/line_items' %>
+<%= render 'line_items/line_items', line_items: order.line_items %>
+
+
+<div class="bdTabBox">
+  <ul class="bdTabBox_Tit clearfix">
+    <li class="hover" id="one1"><a href="javascript:;">全部保单（1）</a></li>
+    <li id="one2"><a href="javascript:;">待提交（2）</a></li>
+    <li id="one3"><a href="javascript:;">待支付（2）</a></li>
+    <li id="one4"><a href="javascript:;">待出保（2）</a></li>
+  </ul>	
+  <div id="con_one_1" class="orderm-content">	
+    <div class="orderm-content-title">
+      <span><input type="checkbox" name="">全选</span>
+      <span>产品<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>单价（元）<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>数量<a href="#"><%= image_tag "hjs.jpg" %></a><a href="#"><%= image_tag "hjx.jpg" %></a></span>
+      <span>保费</span>
+      <span>状态</span>
+      <span>当前处理人</span>
+      <span>操作</span>
+    </div>
+
+    <div class="orderm-content-sub-title">
+      <span class="check"><input type="checkbox" name=""></span>
+      <span>订单编号: <%= order.order_number %></span>
+      <span>成交时间: <%= order.created_at.strftime("%Y/%m/%d") %></span>
+    </div>
+    <div>
+    <div class="orderm-content-left">
+      <ul>
+        <% order.line_items.each do |line_item| %>
+          <li>
+          <span></span>
+          <span><%= link_to line_item.insurance_item.specific_insurance.title, insurance_path(line_item.insurance_item.specific_insurance) %></span>
+          <span><%= line_item.price || '￥100.00' %></span>
+          <span><%= line_item.quantity %></span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="orderm-content-right">
+      <li>
+      <span>200</span>
+      <span>投保成功<p><a href="#">查看详情</a></p></span>
+      <span>张三</span>
+      <span><a href="#" class="bnt-yellow">完善订单</a><p>再次购买</p></span>
+      </li>
+    </div>
+    </div>
+  </div>
+
+</div>

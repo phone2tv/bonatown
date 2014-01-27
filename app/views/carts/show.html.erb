@@ -22,9 +22,9 @@
     <div class="bdTabBox">
       <ul class="bdTabBox_Tit clearfix">
         <% if params[:state].nil? %>
-          <li class='hover'><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
+          <li class='hover'><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %></li>
         <% else %>
-          <li><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %>
+          <li><%= link_to "全部订单项 (#{current_user.line_items.where(order_id: nil).size})", cart_path %></li>
         <% end %>
         <%= render partial: 'shared/line_item_link', locals: { title: '未提交订单项', state: 'uncommitted' } %>
         <%= render partial: 'shared/line_item_link', locals: { title: '已提交订单项', state: 'committed' } %>
@@ -33,9 +33,9 @@
         <%= render partial: 'shared/line_item_link', locals: { title: '已报价订单项', state: 'quoted' } %>
         <%= render partial: 'shared/line_item_link', locals: { title: '已取消订单项', state: 'cancelled' } %>
       </ul>	
-    </div>
 
-    <%= render 'line_items/line_items', line_items: @line_items %>
+      <%= render 'line_items/line_items', line_items: @line_items %>
+    </div>
 
   </div>
 </div>
