@@ -125,12 +125,21 @@ class LineItemsController < ApplicationController
   end
 
   def pay
-    @line_item.pay!
-    current_user.track(@line_item, params[:action])
-    respond_to do |format|
-      format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
-      format.json { head :no_content }
+    order = current_user.orders.build
+    order.line_items << @line_item
+    order.order_number = order.make_order_number(current_user.id, @line_item.id)
+    if order.save
+      redirect_to order, notice: 'Order was successfully created.'
+    else
+      redirect_to :back, notice: 'Order was failed to create.'
     end
+
+  # @line_item.pay!
+  # current_user.track(@line_item, params[:action])
+  # respond_to do |format|
+  #   format.html { redirect_to :back, notice: 'LineItem was successfully updated.' }
+  #   format.json { head :no_content }
+  # end
   end
 
   def ship

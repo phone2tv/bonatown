@@ -21,6 +21,7 @@
 //= require jquery.customSelect
 //= require jcarousellite
 //= require site
+//= require zzsc
 //= require_tree .
 
 window.setTimeout(function() {
