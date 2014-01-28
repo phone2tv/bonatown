@@ -14,8 +14,9 @@ class AccidentItemsController < ApplicationController
 
   # GET /accident_items/new
   def new
+    insurance = Insurance.find params[:insurance_id]
     @accident_item = AccidentItem.new(insurance_id: params[:insurance_id])
-    @accident_item.build_line_item(user_id: current_user.id)
+    @accident_item.build_line_item(user_id: current_user.id, price: insurance.price)
   end
 
   # GET /accident_items/1/edit

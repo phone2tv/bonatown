@@ -32,34 +32,27 @@
       <div class="coverInfoBlet"><%= image_tag("cover-03.jpg", width: "4", height: "3") %></div>
       <div class="coverInfoBrit"><%= image_tag("cover-04.jpg", width: "4", height: "3") %></div>
       <div class="memberInfoRemark">我们会严格保密<%= image_tag("index-index61.jpg") %>为必填 </div>
-      <div class="coverInfo">
-        <h1>操作记录</h1>
-
-<table class="table table-bordered table-hover">
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Actions</th>
-      <th>Time</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% line_item.tracks.each do |track| %>
-
-      <tr>
-        <td><%= track.tracker.username %></td>
-        <td><%= t('line_item.action.'+track.action) %></td>
-        <td><%= track.created_at %></td>
-        <td><%# link_to 'Show', line_item %>
-          / <%# link_to 'Destroy', line_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-
-    <% end %>
-  </tbody>
-</table>
-
+      <div class="coverInfo coverInfo3">
+        <h1>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <th width="35%">用户名称</td>
+            <th width="35%">操作</td>
+            <th width="30%">操作时间</td>
+          </tr>
+        </table>
+        </h1>
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+          <% line_item.tracks.each do |track| %>
+            <tr>
+              <td width="35%" height="53"><%= track.tracker.username %></td>
+              <td width="35%"><%= t('line_item.action.'+track.action) %></td>
+              <td width="30%"><%= track.created_at %></td>
+            </tr>
+          <% end %>
+        </table>
       </div><!--coverInfo--> 
+
       <div class="coverInfo">
         <h1>投保信息</h1>
         <div class="coverInfo2">

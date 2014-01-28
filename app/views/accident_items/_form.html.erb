@@ -20,11 +20,11 @@
     <%= f.select :quota, AccidentItem::QUOTA.map { |item| [t("accident_item.quota.#{item[0]}"), item[1]] }, { include_blank: false }, { class: 'form-control' } %>
   </div>
   <div class="form-group">
-    <%= f.label :started_at, class: 'control-label' %> <br>
+    <%= f.label :started_at, class: 'control-label' %>
     <%= f.date_select :started_at, { class: 'form-control' } %>
   </div>
   <div class="form-group">
-    <%= f.label :stopped_at, class: 'control-label' %> <br>
+    <%= f.label :stopped_at, class: 'control-label' %>
     <%= f.date_select :stopped_at, { class: 'form-control' } %>
   </div>
   <div class="form-group">

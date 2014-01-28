@@ -30,7 +30,7 @@
       <div class="coverInfoTrit"><%= image_tag "cover-02.jpg", width: "4", height: "3" %></div>
       <div class="coverInfoBlet"><%= image_tag "cover-03.jpg", width: "4", height: "3" %></div>
       <div class="coverInfoBrit"><%= image_tag "cover-04.jpg", width: "4", height: "3" %></div>
-      <span>订单号 <%= order.order_number %></span>
+      <div class="memberInfoRemark"> 订单号 <%= order.order_number %> </div>
       <div class="coverInfo coverInfo3">
         <h1>
           <table width="100%" border="0" cellpadding="0" cellspacing="0">
@@ -59,10 +59,19 @@
       </div><!--coverInfo--> 
       <div class="clear"></div>
 
-      <div class="cover-four-content-bottom">
-        <h4>您可以继续查看<a href="#">其他保险</a></h4>
-        <h4>如有疑问,请<a href="#">联系客服</a>或拨打<span>1373482734</span></h4>
-      </div>
+      <% if can?(:ship, order) %>
+        <div class="coverPay">支付方式：
+          <input type="radio" name="RadioGroup1" value="银联" id="RadioGroup1_0" />银联　　<input type="radio" name="RadioGroup1" value="支付宝" id="RadioGroup1_1" />支付宝</div>
+        <div class="clear"></div>
+        <div class="coverPaybtn">
+          <%= link_to '确认，并出单', ship_order_path(order), method: :put if can?(:ship, order) %>
+        </div> 
+      <% else %>
+        <div class="cover-four-content-bottom">
+          <h4>您可以继续查看<a href="#">其他保险</a></h4>
+          <h4>如有疑问,请<a href="#">联系客服</a>或拨打<span>1373482734</span></h4>
+        </div>
+      <% end %>
     </div>
   </div><!--coverbox-->
 </div><!--indexnr-->

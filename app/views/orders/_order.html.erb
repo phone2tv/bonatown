@@ -19,7 +19,7 @@
 <div class="orderm-content-right">
   <li>
   <span>200</span>
-  <span>投保成功<p><a href="#">查看详情</a></p></span>
+  <span><%= t('line_item.state.' + order.aasm_state) %><p><%= link_to '查看详情', order %></p></span>
   <span>张三</span>
   <span>
     <% if can?(:pay, order) %>
