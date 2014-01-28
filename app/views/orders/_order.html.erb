@@ -21,6 +21,17 @@
   <span>200</span>
   <span>投保成功<p><a href="#">查看详情</a></p></span>
   <span>张三</span>
-  <span><a href="#" class="bnt-yellow">完善订单</a><p>再次购买</p></span>
+  <span>
+    <% if can?(:pay, order) %>
+      <%= link_to t('order.action.pay'), pay_order_path(order), method: :put, class: 'bnt-yellow' %>
+      <p><%= link_to t('order.action.cancel'), cancel_order_path(order), method: :put if can?(:cancel, order) %></p>
+    <% elsif can?(:ship, order) %>
+      <%= link_to t('order.action.ship'), ship_order_path(order), method: :put, class: 'bnt-yellow'  %>
+      <p>再次购买</p>
+    <% else %>
+      <a href="#" class="bnt-yellow">再次购买</a>
+      <p>再次购买</p>
+    <% end %>
+  </span>
   </li>
 </div>
