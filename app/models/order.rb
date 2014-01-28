@@ -43,6 +43,14 @@ class Order < ActiveRecord::Base
   # 前几天做手机银联pos支付，在服务器端要对订单进行签名base64(rsa(md5(订单)))；base64跟md5在php中都有现成的函数
   end
 
+  def fill_data(user, line_items)
+    Array(line_items).each do |line_item|
+      self.line_items << line_item
+    end
+    self.order_number = self.make_order_number(user.id, Array(line_items).first.id)
+  end
+
+
   include AASM
 
   aasm :column => 'aasm_state' do

@@ -37,11 +37,7 @@ class OrdersController < ApplicationController
       @order = current_user.orders.build(order_params)
       line_items = LineItem.where(id: params[:order][:line_items])
 
-      line_items.quoted.each do |line_item|
-        @order.line_items << line_item
-      end
-
-      @order.order_number = @order.make_order_number(current_user.id, line_items.first.id)
+      @order.fill_data(current_user, line_items)
 
       respond_to do |format|
         if @order.save
