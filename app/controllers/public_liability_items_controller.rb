@@ -14,9 +14,9 @@ class PublicLiabilityItemsController < ApplicationController
 
   # GET /public_liability_items/new
   def new
-  # @public_liability_item = PublicLiabilityItem.new
+    insurance = Insurance.find params[:insurance_id]
     @public_liability_item = PublicLiabilityItem.new(insurance_id: params[:insurance_id])
-    @public_liability_item.build_line_item(user_id: current_user.id)
+    @public_liability_item.build_line_item(user_id: current_user.id, price: insurance.price)
     @public_liability_item.elevators.build
   end
 

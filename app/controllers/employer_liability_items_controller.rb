@@ -14,8 +14,9 @@ class EmployerLiabilityItemsController < ApplicationController
 
   # GET /employer_liability_items/new
   def new
+    insurance = Insurance.find params[:insurance_id]
     @employer_liability_item = EmployerLiabilityItem.new(insurance_id: params[:insurance_id])
-    @employer_liability_item.build_line_item(user_id: current_user.id)
+    @employer_liability_item.build_line_item(user_id: current_user.id, price: insurance.price)
   end
 
   # GET /employer_liability_items/1/edit
