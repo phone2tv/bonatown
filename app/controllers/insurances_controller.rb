@@ -17,10 +17,12 @@ class InsurancesController < ApplicationController
   # GET /insurances/new
   def new
     @insurance = Insurance.new
+    @insurances = Insurance.all
   end
 
   # GET /insurances/1/edit
   def edit
+    @insurances = Insurance.all
   end
 
   # POST /insurances
@@ -30,7 +32,8 @@ class InsurancesController < ApplicationController
 
     respond_to do |format|
       if @insurance.save
-        format.html { redirect_to @insurance, notice: 'Insurance was successfully created.' }
+      # format.html { redirect_to @insurance, notice: 'Insurance was successfully created.' }
+        format.html { redirect_to insurances_url, notice: 'Insurance was successfully created.' }
         format.json { render action: 'show', status: :created, location: @insurance }
       else
         format.html { render action: 'new' }
@@ -44,7 +47,8 @@ class InsurancesController < ApplicationController
   def update
     respond_to do |format|
       if @insurance.update(insurance_params)
-        format.html { redirect_to @insurance, notice: 'Insurance was successfully updated.' }
+      # format.html { redirect_to @insurance, notice: 'Insurance was successfully updated.' }
+        format.html { redirect_to insurances_url, notice: 'Insurance was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

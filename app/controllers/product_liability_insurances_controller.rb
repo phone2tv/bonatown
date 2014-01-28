@@ -43,7 +43,8 @@ class ProductLiabilityInsurancesController < ApplicationController
   def update
     respond_to do |format|
       if @product_liability_insurance.update(product_liability_insurance_params)
-        format.html { redirect_to @product_liability_insurance, notice: 'Accident insurance was successfully updated.' }
+      # format.html { redirect_to @product_liability_insurance, notice: 'Accident insurance was successfully updated.' }
+        format.html { redirect_to insurances_url, notice: 'Product liability insurance was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
