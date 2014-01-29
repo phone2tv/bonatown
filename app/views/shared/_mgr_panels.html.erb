@@ -60,7 +60,7 @@
     <% end %>
 
     <% if current_user.is_admin? %>
-      <% if controller_name == 'users' %>
+      <% if controller_name == 'users' and params[:action] != 'show' %>
         <li class="current"><%= link_to '用户管理', users_path %></li>
       <% else %>
         <li><%= link_to '用户管理', users_path %></li>
