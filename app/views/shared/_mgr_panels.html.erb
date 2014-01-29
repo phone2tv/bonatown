@@ -43,7 +43,7 @@
     <% end %>
 
     <% if current_user.is_admin? %>
-      <% if controller_name == 'insurances' and params[:action] == 'index' %>
+      <% if controller_name == 'insurances' %>
         <li class="current"><%= link_to '保险管理', insurances_path %></li>
       <% else %>
         <li><%= link_to '保险管理', insurances_path %></li>
@@ -51,7 +51,7 @@
     <% end %>
 
     <% if current_user.is_admin? %>
-      <% if controller_name == 'companies' and params[:action] == 'index' %>
+      <% if controller_name == 'companies' %>
         <li class="current"><%= link_to '保险公司管理', companies_path %></li>
       <% else %>
         <li><%= link_to '保险公司管理', companies_path %></li>

@@ -15,7 +15,10 @@ class PublicLiabilityInsurancesController < ApplicationController
 
   # GET /public_liability_insurances/new
   def new
-    @public_liability_insurance = PublicLiabilityInsurance.new
+  # @public_liability_insurance = PublicLiabilityInsurance.new
+    @insurance = PublicLiabilityInsurance.new
+    @insurances = Insurance.all
+    render 'insurances/new'
   end
 
   # GET /public_liability_insurances/1/edit
@@ -29,7 +32,8 @@ class PublicLiabilityInsurancesController < ApplicationController
 
     respond_to do |format|
       if @public_liability_insurance.save
-        format.html { redirect_to @public_liability_insurance, notice: 'Accident insurance was successfully created.' }
+      # format.html { redirect_to @public_liability_insurance, notice: 'Accident insurance was successfully created.' }
+        format.html { redirect_to insurances_url, notice: 'Insurance was successfully created.' }
         format.json { render action: 'show', status: :created, location: @public_liability_insurance }
       else
         format.html { render action: 'new' }

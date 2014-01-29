@@ -1,5 +1,51 @@
-<h1>New insurance</h1>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 首页 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
-<%= render 'form' %>
+  <div class="mainright">
+    <div class="linkman-title"><i>&nbsp;</i>保险公司管理</div>
+    <div class="add-linkman-form">
+      <%= render 'insurances/form' %>
+    </div>
 
-<%= link_to 'Back', insurances_path %>
+    <div class="bdTabBox">
+      <div id="con_one_1" class="bdTabBox_Con ">	
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd linkman-list">
+          <tr>
+            <th scope="col" width="40%"><%= t('activerecord.attributes.insurance.title') %></th>
+            <th scope="col" width="15%"><%= t('activerecord.attributes.insurance.company_id') %></th>
+            <th scope="col" width="15%"><%= t('activerecord.attributes.insurance.price') %></th>
+            <th scope="col" width="15%"><%= t('activerecord.attributes.insurance.aasm_state') %></th>
+            <th scope="col" width="15%">操作</th>
+          </tr>
+          <% @insurances.each do |insurance| %>
+            <tr>
+              <td height="50"><span><%= link_to insurance.title, insurance %></span></td>
+              <td><span><%= insurance.company.name %></span></td>
+              <td><span><%= insurance.price %></span></td>
+              <td><span><%= insurance.aasm_state %></span></td>
+              <td>
+                <%= link_to '编辑', edit_insurance_path(insurance) %> /
+                <%= link_to '删除', insurance, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="clear"></div>						

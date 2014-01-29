@@ -16,7 +16,7 @@ class InsurancesController < ApplicationController
 
   # GET /insurances/new
   def new
-    @insurance = Insurance.new
+    @insurance = Insurance.new(insurance_params)
     @insurances = Insurance.all
   end
 
