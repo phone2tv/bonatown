@@ -26,7 +26,8 @@ class AdminProfilesController < ApplicationController
     @profile.user.add_role :admin
     respond_to do |format|
       if @profile.save
-        format.html { redirect_to @profile.user, notice: 'AdminProfile was successfully created.' }
+      # format.html { redirect_to @profile.user, notice: 'AdminProfile was successfully created.' }
+        format.html { redirect_to users_url }
         format.json { render action: 'show', status: :created, location: @profile.user }
       else
         format.html { render action: 'new' }
@@ -40,7 +41,8 @@ class AdminProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(admin_profile_params)
-        format.html { redirect_to @profile.user, notice: 'Profile was successfully updated.' }
+      # format.html { redirect_to @profile.user, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to users_url }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

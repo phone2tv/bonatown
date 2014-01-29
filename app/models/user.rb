@@ -42,7 +42,7 @@ class User < ActiveRecord::Base
 
   # callbacks
   before_create do |user|
-    user.add_role :customer
+    user.add_role :customer if user.roles.empty?
   end
 
   # instance methods
