@@ -1,37 +1,61 @@
-<div class="row">
-  <div class="user">
-    <ol class="breadcrumb">
-      <li><a href="#">保险超市网</a></li>
-      <li><a href="#">会员中心</a></li>
-      <li class="active">会员中心首页</li>
-    </ol>
-  </div>
-</div>
+<div class="order_site">您的位置：<a href="#">保纳通</a> > <a href="#">会员中心</a> > 首页 </div>
+<!--content-->
+<div class="order_main clearfix">
+  <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
 
-<div class="row">
-  <div class='col-md-2'>
-    <%= render partial: 'shared/mgr_panels', locals: { user: current_user } %>
-  </div>
-  <div class='col-md-10'>
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th><%= t('activerecord.attributes.admin_profile.name') %></th>
-          <th><%= t('activerecord.attributes.user.username') %></th>
-          <th><%= t('activerecord.attributes.role.name') %></th>
-          <th><%= t('activerecord.attributes.user.email') %></th>
-        </tr>
-      </thead>
-      <tbody>
-        <% @users.each do |user| %>
+  <div class="mainright">
+    <div class="linkman-title"><i>&nbsp;</i>用户管理</div>
+    <% if current_user.is_admin? %>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.admin'), new_admin_profile_path, 'data-no-turbolink' => true %></div>
+    <% end %>
+    <% if current_user.is_admin? or current_user.is_moderator? %>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.moderator'), new_moderator_profile_path, 'data-no-turbolink' => true %></div>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.manager'), new_manager_profile_path, 'data-no-turbolink' => true %></div>
+    <% end %>
+    <% if current_user.is_admin? or current_user.is_moderator? or current_user.is_manager? %>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.quoter'), new_quoter_profile_path, 'data-no-turbolink' => true %></div>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.park'), new_park_profile_path, 'data-no-turbolink' => true %></div>
+      <div class="add-linkman-title"><span class="add-linkman">&nbsp;</span><%= link_to '添加'+t('role.name.customer'), new_customer_profile_path, 'data-no-turbolink' => true %></div>
+    <% end %>
+    <%# render 'form' %>
+
+    <div class="bdTabBox">
+      <div id="con_one_1" class="bdTabBox_Con ">	
+
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="tableBd linkman-list">
           <tr>
-            <td><%= link_to user.profile.name, user %> </td>
-            <td><%= link_to user.username, controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile %></td>
-            <td><%= t(user.role_name) %> </td>
-            <td><%= user.email %> </td>
+            <th scope="col" width="20%"><%= t('activerecord.attributes.admin_profile.name') %></th>
+            <th scope="col" width="20%"><%= t('activerecord.attributes.user.username') %></th>
+            <th scope="col" width="20%"><%= t('activerecord.attributes.role.name') %></th>
+            <th scope="col" width="20%"><%= t('activerecord.attributes.user.email') %></th>
+            <th scope="col" width="20%">操作</th>
           </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div> <!-- col-md-10 -->
-</div> <!-- row -->
+          <% @users.each do |user| %>
+            <tr>
+              <td height="50"><span><%= link_to user.profile.name, user %> </span></td>
+              <td><span><%= link_to user.username, controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile %></span></td>
+              <td><span><%= t(user.role_name) %> </span></td>
+              <td><span><%= user.email %> </span></td>
+              <td>
+                <%= link_to '编辑', controller: user.profile.class.to_s.tableize, action: 'edit', id: user.profile %> /
+                <%= link_to '删除', user, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+
+        <div class="pagesWrap clearfix">
+          <a href="#" class="prev">上一页</a>
+          <a href="#" class="current">1</a>
+          <a href="#">2</a>
+          <a href="#">3</a>
+          <a href="#" class="next">下一页</a>
+          <span>共3页</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="clear"></div>						
