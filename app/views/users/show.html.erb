@@ -7,21 +7,23 @@
     <%= render 'info' %>
 
     <div class="bdTabBox">
+      <div class="order-title">最近订单</div>
+      <br>
       <ul class="bdTabBox_Tit1 clearfix">
         <% if params[:state] == 'quoted' %>
-          <li><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
-          <li class='hover'><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
-          <li><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+          <li class='hover'><%= link_to "立即支付 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
+          <li><%= link_to "等待报价 (#{current_user.line_items.where(order_id: nil).where("aasm_state = ? OR aasm_state = ?", 'committed', 'verified').count})", user_path(current_user, state: 'unquoted') %></li>
+          <li><%= link_to "完善资料 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
           <% line_items = current_user.line_items.where(order_id: nil).quoted %>
-        <% elsif params[:state] == 'shipped' %>
-          <li><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
-          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
-          <li class='hover'><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
-          <% line_items = current_user.line_items.where.not(order_id: nil).shipped %>
+        <% elsif params[:state] == 'unquoted' %>
+          <li><%= link_to "立即支付 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
+          <li class='hover'><%= link_to "等待报价 (#{current_user.line_items.where(order_id: nil).where("aasm_state = ? OR aasm_state = ?", 'committed', 'verified').count})", user_path(current_user, state: 'unquoted') %></li>
+          <li><%= link_to "完善资料 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
+          <% line_items = current_user.line_items.where(order_id: nil).where("aasm_state = ? OR aasm_state = ?", 'committed', 'verified') %>
         <% else %>
-          <li class='hover'><%= link_to "待提交订单 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
-          <li><%= link_to "待支付订单 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
-          <li><%= link_to "已出保订单 (#{current_user.line_items.where.not(order_id: nil).shipped.count})", user_path(current_user, state: 'shipped') %></li>
+          <li><%= link_to "立即支付 (#{current_user.line_items.where(order_id: nil).quoted.count})", user_path(current_user, state: 'quoted') %></li>
+          <li><%= link_to "等待报价 (#{current_user.line_items.where(order_id: nil).where("aasm_state = ? OR aasm_state = ?", 'committed', 'verified').count})", user_path(current_user, state: 'unquoted') %></li>
+          <li class='hover'><%= link_to "完善资料 (#{current_user.line_items.where(order_id: nil).uncommitted.count})", user_path(current_user, state: 'uncommitted') %></li>
           <% line_items = current_user.line_items.where(order_id: nil).uncommitted %>
         <% end %>
       </ul>	
@@ -30,7 +32,11 @@
           <ul>
             <% line_items.each do |line_item| %>
               <li>
-              <span><%= link_to "订单编号：8888888#{line_item.id}", line_item %></span>
+              <span>
+                <%= link_to "订单编号：8888888#{line_item.id}", line_item %>
+                <%= line_item.insurance_item.specific_insurance.title %>
+                <%= line_item.created_at.strftime("%Y-%m-%d") %>
+              </span>
               <% if can? :commit, line_item %>
                 <%= link_to t('line_item.action.commit'), { controller: 'line_items', action: :commit, id: line_item }, { method: :put, class: "order-listbutton"} %>
               <% elsif can? :pay, line_item %>

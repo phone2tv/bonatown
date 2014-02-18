@@ -27,6 +27,7 @@ zh-CN:
       employer_liability_item: "雇主责任险"
     attributes:
       user:
+        login: "登录名称"
         email: "电子邮件"
         password: "用户密码"
         password_digest: "确认密码"

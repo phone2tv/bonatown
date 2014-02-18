@@ -34,8 +34,9 @@ form.blue-theme {
     font-size: 13px;
     width: 250px;
     line-height: 25px;
+    line-height: 19px;
     height: 25px;
-    padding: 0 10px;
+    padding: 0 7px;
 //  border: 2px solid #ccc;
     border: 1px solid #d2d2d2;
   }
@@ -121,7 +122,14 @@ form.blue-theme.bonatown-login {
   input[type=submit] {
     margin-left: 70px;
     font-size: 14px;
-    background: #f8860d;
+    background: #2a77cb;
+    &:hover {
+      background: #3a97eb;
+    }
+  }
+
+  a {
+    line-height: 37px;
   }
 
   .checkbox {

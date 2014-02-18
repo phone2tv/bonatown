@@ -27,6 +27,7 @@ en:
       employer_liability_item: "Employer Liability Insurance"
     attributes:
       user:
+        login: "Login"
         email: "Email"
         password: "Password"
         password_digest: "Confirmation"

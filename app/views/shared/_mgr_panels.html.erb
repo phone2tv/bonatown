@@ -1,13 +1,18 @@
 <div class="mainleft">
   <div class="left_top">
+    <!--
     <h2>企业会员</h2>
+    -->
+    <div class="user_tip">会员类别: 企业会员</div>
     <div class="user">
       <%= image_tag("user.jpg", size: "30x30") %>
-      XXX，您好！
+      <%= current_user.username %>，您好！
     </div>
-    <div class="user_tip">属于创业者基地创业基地</div>
+    <div class="user_tip">园区名称: 属于创业者基地创业基地</div>
   </div>
+  <!--
   <div class="left_tit">会员中心</div>
+  -->
   <ul class="leftNavs">
     <% if (user_signed_in? and current_user.has_role?(:customer)) %>
       <% if controller_name == 'users' and params[:action] == 'show' %>
@@ -17,23 +22,24 @@
       <% end %>
 
       <% if controller_name == 'carts' and params[:action] == 'show' %>
-        <li class="current"> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path, 'data-no-turbolink' => true %></li>
+        <li class="current"> <%= link_to "订单管理", cart_path, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li> <%= link_to "订单管理 #{current_user.line_items.where(order_id: nil).size}", cart_path, 'data-no-turbolink' => true %></li>
+        <li> <%= link_to "订单管理", cart_path, 'data-no-turbolink' => true %></li>
       <% end %>
 
       <% if controller_name == 'orders' and params[:action] == 'index' %>
-        <li class="current"><%= link_to '交易管理 ', orders_path, 'data-no-turbolink' => true %></li>
+        <li class="current"><%= link_to '交易纪录 ', orders_path, 'data-no-turbolink' => true %></li>
       <% else %>
-        <li><%= link_to '交易管理 ', orders_path, 'data-no-turbolink' => true %></li>
+        <li><%= link_to '交易纪录 ', orders_path, 'data-no-turbolink' => true %></li>
       <% end %>
     <% end %>
-    <li><a href="#">保单管理</a></li>
+    <li><a href="#">保单查询</a></li>
+    <li><a href="#">代金券</a></li>
 
     <% if controller_name == 'users' and params[:action] == 'edit' %>
-      <li class="current"><%= link_to '账户资料', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
+      <li class="current"><%= link_to '账户密码', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
     <% else %>
-      <li><%= link_to '账户资料', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
+      <li><%= link_to '账户密码', edit_user_path(current_user), 'data-no-turbolink' => true %></li>
     <% end %>
 
     <% if controller_name == current_user.profile.class.to_s.tableize and params[:action] == 'edit' %>

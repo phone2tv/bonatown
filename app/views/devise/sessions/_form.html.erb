@@ -1,8 +1,9 @@
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), html: { class: 'blue-theme bonatown-login' }) do |f| %>
   <div class='form-group'>
-    <%= f.label :email %>
+    <%# f.label :email %>
     <%# f.email_field :email, class: 'form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
-    <%= f.text_field :login, class: 'form-control', :autofocus => true, placeholder: t('activerecord.attributes.user.email') %>
+    <%= f.label :login %>
+    <%= f.text_field :login, class: 'form-control', :autofocus => true, placeholder: '用户名或者邮箱' %>
   </div>
 
   <div class='form-group'>
@@ -20,5 +21,6 @@
 
   <div class='form-group'>
     <%= f.submit t('devise.login'), class: 'btn btn-primary btn-lg btn-block' %>
+    <%= link_to t("devise.forgot_password"), new_password_path(resource_name) %><br />
   </div>
 <% end %>

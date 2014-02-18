@@ -401,7 +401,7 @@ border:1px solid #f1f1f1;
 .insuranceDetails1 p a:hover{ color:#0064af;}
 .insuranceDetails1 p img{ vertical-align:-3px;}
 .insuranceDetails2{ width:464px; height:392px; float:left;}
-.insuranceDetails2 h1{ width:464px; height:47px; line-height:47px; color:#202020; font-size:18px; font-weight:normal; float:left;}
+.insuranceDetails2 h1{ width:464px; height:47px; line-height:47px; color:#202020; font-size:18px; font-weight:bold; float:left;}
 .insuranceDetails2 span{ width:75px; height:36px; color:#6c6c6c; text-align:right; line-height:36px; font-size:14px; float:left;}
 .insuranceDetails2 h2{ width:389px; height:36px; color:#323232; line-height:36px; font-size:14px; font-weight:normal; float:left;}
 .insuranceDetails2 .insuranceDetails2Vouchers a{ color:#ff3000;}
@@ -678,8 +678,9 @@ color:#ffffff;
 .user-info .safe .middle{background-color:yellow !important;}
 .user-info .safe .height{background-color:green !important;}
 
-.voucher{ float:left;  width:365px; height:252px; padding-left:20px; }
+.voucher{ float:left;  width:365px; height:252px; padding-left:20px; margin-top:5px; }
 .voucher-title{margin-top:15px; font-size:14px ; color:#686868; height:30px; line-height:30px;}
+.voucher-title1{height:20px; width:359px; margin-bottom: 10px; line-height:13px; text-indent:13px; font-size:12px; background:url(memcenter-01.jpg) no-repeat 5px 0px; border-bottom:1px solid  #ccc   }
 .voucher-get a{text-align:right; height:25px; line-height:25px; color:#F00; display:block; width:350px;}
 .voucher-img{ width:359px; height:98px; background:url(memcenter-02.jpg) no-repeat; position:relative}
 .voucher-imgbox{ width:359px; height:16px; background:url(memcenter-03.jpg); position:absolute; bottom:0px; left:0px; }
