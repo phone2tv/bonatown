@@ -25,6 +25,7 @@ en:
       public_liability_item: "Public Liability Insurance"
       product_liability_item: "Product Liability Insurance"
       employer_liability_item: "Employer Liability Insurance"
+      insurance_business: "Insurance Business"
     attributes:
       user:
         login: "Login"
@@ -174,6 +175,16 @@ en:
         year_of_manufacture: "Year of Manufacture"
         using_years: "Using Years"
         overhaul_interval: "Overhaul Interval"
+      insurance_business:
+        name: "Contact"
+        telephone: "Telephone"
+        code_number: "Code Number"
+        enterprise_name: "Enterprise Name"
+        province: "province"
+        city: "City"
+        district: "District"
+        location: "Enterprise Location"
+        zipcode: "Zip Code"
   datetime:
     formats:
       default: ! '%Y-%m-%d'

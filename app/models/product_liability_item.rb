@@ -4,6 +4,8 @@ class ProductLiabilityItem < ActiveRecord::Base
   # association macros
   belongs_to :specific_insurance, class_name: 'ProductLiabilityInsurance', foreign_key: 'insurance_id'
 # belongs_to :insurance
+  has_one :insurance_business, as: :business_owner, class_name: 'InsuranceBusiness', dependent: :destroy
+  accepts_nested_attributes_for :insurance_business, update_only: true
   has_one :line_item, as: :insurance_item, dependent: :destroy
   accepts_nested_attributes_for :line_item, update_only: true
   has_many :insured_products, dependent: :destroy

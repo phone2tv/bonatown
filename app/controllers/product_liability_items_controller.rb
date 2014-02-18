@@ -17,6 +17,7 @@ class ProductLiabilityItemsController < ApplicationController
     insurance = Insurance.find params[:insurance_id]
     @product_liability_item = ProductLiabilityItem.new(insurance_id: params[:insurance_id])
     @product_liability_item.build_line_item(user_id: current_user.id, price: insurance.price)
+    @product_liability_item.build_insurance_business
   end
 
   # GET /product_liability_items/1/edit
@@ -86,6 +87,6 @@ class ProductLiabilityItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_liability_item_params
-      params.require(:product_liability_item).permit(:insurance_id, :business_nature, :each_accident_limit, :bodily_injury_limit, :property_damage_limit, :aggregate_limit, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode, :lock_version], :insured_products_attributes => [:id, :name, :kind, :nature, :use, :sales_area, :sales_volumn, :_destroy])
+      params.require(:product_liability_item).permit(:insurance_id, :business_nature, :each_accident_limit, :bodily_injury_limit, :property_damage_limit, :aggregate_limit, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode, :lock_version], :insurance_business_attributes => [:name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode], :insured_products_attributes => [:id, :name, :kind, :nature, :use, :sales_area, :sales_volumn, :_destroy])
     end
 end
