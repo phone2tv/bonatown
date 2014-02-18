@@ -56,11 +56,12 @@
     <%= render 'insured_product_fields', f: builder %>
   <% end %>
 
-  </div> <!-- coverInfo -->
-
+  <%= link_to_add_fields "添加投保产品", f, :insured_products %>
   <div class="form-link">
-    <%= link_to_add_fields "添加投保产品", f, :insured_products %>
+    <%# link_to_add_fields "添加投保产品", f, :insured_products %>
   </div>
+
+  </div> <!-- coverInfo -->
 
   <div class="form-action">
     <%= f.submit class: 'btn btn-primary' %>

@@ -43,16 +43,19 @@ form.blue-theme {
 
   .dynamic-fields {
     margin-left: 175px;
+    margin-top: 10px;
+    line-height: 27px;
     .form-fields {
       input[type=email], input[type=text], input[type=number], input[type=password], textarea {
         margin-right: 10px;
         width: 50px;
       }
       a {
-        width: 50px;
-        padding: 5px 15px;
-        background-color: #ccccff;
-        color: black;
+        line-height: 27px;
+//      width: 50px;
+//      padding: 5px 15px;
+//      background-color: #ccccff;
+//      color: black;
       }
     }
   }
@@ -84,13 +87,21 @@ form.blue-theme {
     }
   }
 
-  .form-link {
-    a {
-      margin-left: 175px;
-      margin-right: 10px;
-      color: #ff6060;
-    }
+  a.add_fields {
+    height: 30px;
+    line-height: 30px;
+    margin-left: 175px;
+    margin-right: 10px;
+    color: #ff6060;
   }
+
+//.form-link {
+//  a {
+//    margin-left: 175px;
+//    margin-right: 10px;
+//    color: #ff6060;
+//  }
+//}
 
   select {
     font-size: 12px;
