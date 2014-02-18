@@ -72,9 +72,12 @@ zh-CN:
         company_id: "所属保险公司"
       customer_profile:
         name: "联系人"
+        telephone: "联系电话"
+        business_license: "营业执照"
+        code_number: "组织机构代码"
         enterprise_name: "企业名称"
         location: "企业地址"
-        business_license: "营业执照"
+        zipcode: "邮政编码"
         park_profile_id: "所属园区"
       contact:
         name: "姓名"

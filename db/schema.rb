@@ -87,12 +87,15 @@ ActiveRecord::Schema.define(version: 20140114165125) do
 
   create_table "customer_profiles", force: true do |t|
     t.string   "name"
-    t.string   "enterprise_name"
-    t.string   "location"
+    t.string   "telephone"
     t.string   "business_license"
+    t.string   "code_number"
+    t.string   "enterprise_name"
     t.string   "province_code"
     t.string   "city_code"
     t.string   "district_code"
+    t.string   "location"
+    t.string   "zipcode"
     t.integer  "park_profile_id"
     t.datetime "created_at"
     t.datetime "updated_at"

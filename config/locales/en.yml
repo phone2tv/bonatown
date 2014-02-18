@@ -71,10 +71,13 @@ en:
         location: "Park Location"
         company_id: "Belonged Company"
       customer_profile:
-        name: "Full Name"
+        name: "Contact"
+        telephone: "Telephone"
+        business_license: "Business License"
+        code_number: "Code Number"
         enterprise_name: "Enterprise Name"
         location: "Enterprise Location"
-        business_license: "Business License"
+        zipcode: "Zip Code"
         park_profile_id: "Park Name"
       contact:
         name: "Name"
