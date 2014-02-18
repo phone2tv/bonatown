@@ -39,15 +39,12 @@
   <div class="coverInfo">
     <h1>电梯信息</h1>
 
-  <%= f.fields_for :elevators do |builder| %>
-    <%= render 'elevator_fields', f: builder %>
-  <% end %>
+    <%= f.fields_for :elevators do |builder| %>
+      <%= render 'elevator_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "添加投保电梯", f, :elevators %>
 
   </div> <!-- coverInfo -->
-
-  <div class="form-link">
-    <%= link_to_add_fields "添加投保电梯", f, :elevators %>
-  </div>
 
   <div class="form-action">
     <%= f.submit class: 'btn btn-primary' %>

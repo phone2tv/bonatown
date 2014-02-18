@@ -1,6 +1,9 @@
 <%= form_for(@employer_liability_item, :html => { class: 'blue-theme' }) do |f| %>
   <%= form_error_messages!(f.object) %>
 
+  <div class="coverInfo">
+    <h1>车辆信息</h1>
+
   <div class="form-group">
     <%= f.label :insurance_id, class: 'control-label' %>
     <%= f.text_field :insurance_id, readonly: true, class: 'form-control' %>
@@ -62,15 +65,24 @@
     <%= f.date_select :termination_date, class: 'form-control' %>
   </div>
 
+  </div> <!-- coverInfo -->
+
+  <div class="coverInfo">
+    <h1>公共信息</h1>
+
   <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
 
-  <%= f.fields_for :employer_liability_employees do |builder| %>
-    <%= render 'employer_liability_employee_fields', f: builder %>
-  <% end %>
+  </div> <!-- coverInfo -->
 
-  <div class="form-group">
+  <div class="coverInfo">
+    <h1>员工信息</h1>
+
+    <%= f.fields_for :employer_liability_employees do |builder| %>
+      <%= render 'employer_liability_employee_fields', f: builder %>
+    <% end %>
     <%= link_to_add_fields "Add Employee", f, :employer_liability_employees %>
-  </div>
+
+  </div> <!-- coverInfo -->
 
   <div class="form-group">
     <%= f.submit class: 'btn btn-primary' %>

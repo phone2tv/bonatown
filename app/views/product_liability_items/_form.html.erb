@@ -52,14 +52,10 @@
   <div class="coverInfo">
     <h1>投保产品信息</h1>
 
-  <%= f.fields_for :insured_products do |builder| %>
-    <%= render 'insured_product_fields', f: builder %>
-  <% end %>
-
-  <%= link_to_add_fields "添加投保产品", f, :insured_products %>
-  <div class="form-link">
-    <%# link_to_add_fields "添加投保产品", f, :insured_products %>
-  </div>
+    <%= f.fields_for :insured_products do |builder| %>
+	    <%= render 'insured_product_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "添加投保产品", f, :insured_products %>
 
   </div> <!-- coverInfo -->
 
