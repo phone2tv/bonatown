@@ -210,6 +210,15 @@ ActiveRecord::Schema.define(version: 20140114165125) do
     t.decimal  "price"
     t.integer  "quantity",            default: 1, null: false
     t.integer  "lock_version",        default: 0, null: false
+    t.string   "name"
+    t.string   "telephone"
+    t.string   "code_number"
+    t.string   "enterprise_name"
+    t.string   "province"
+    t.string   "city"
+    t.string   "district"
+    t.string   "location"
+    t.string   "zipcode"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

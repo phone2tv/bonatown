@@ -11,6 +11,46 @@
     <%= f.label :quantity, class: 'control-label' %>
     <%= f.text_field :quantity, class: 'form-control' %>
   </div>
+  <!-- insured -->
+  <div class='form-group'>
+    <%= f.label :name, class: 'control-label' %>
+    <%= f.text_field :name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :telephone, class: 'control-label' %>
+    <%= f.text_field :telephone, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :code_number, class: 'control-label' %>
+    <%= f.text_field :code_number, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :enterprise_name, class: 'control-label' %>
+    <%= f.text_field :enterprise_name, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :location, '所在省市', class: 'control-label' %>
+    <%# f.collection_select :province_code, Province.all, :code, :name, prompt: true %>
+    <%= f.select :province, Province.all.map { |province| [province.name, province.code] }, { include_blank: false, prompt: '--省份--' }, { class: 'select-province' } %>
+    <%# f.collection_select :city_code, City.all, :code, :name, include_blank: true %>
+    <%= f.grouped_collection_select :city, Province.all, :cities, :name, :code, :name, { include_blank: false, prompt: '--城市--' }, { class: 'select-city' } %>
+    <%# f.collection_select :district_code, District.all, :code, :name, include_blank: true %>
+    <%= f.grouped_collection_select :district, City.all, :districts, :name, :code, :name, { include_blank: false, prompt: '--地区--' }, { class: 'select-district' } %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :location, class: 'control-label' %>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+
+  <div class='form-group'>
+    <%= f.label :zipcode, class: 'control-label' %>
+    <%= f.text_field :zipcode, class: 'form-control' %>
+  </div>
   <!-- lock_version -->
   <div class="form-group">
     <%= f.hidden_field :lock_version %>

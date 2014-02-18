@@ -123,6 +123,12 @@ en:
         aasm_state: "State"
         price: "Deal Price"
         quantity: "Quantity"
+        name: "Contact"
+        telephone: "Telephone"
+        code_number: "Code Number"
+        enterprise_name: "Enterprise Name"
+        location: "Enterprise Location"
+        zipcode: "Zip Code"
       accident_item:
         industry_id: "Industry"
         employee_number: "Employee Number"

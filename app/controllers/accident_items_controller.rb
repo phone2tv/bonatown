@@ -85,6 +85,6 @@ class AccidentItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_item_params
-      params.require(:accident_item).permit(:insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :lock_version])
+      params.require(:accident_item).permit(:insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode, :lock_version])
     end
 end

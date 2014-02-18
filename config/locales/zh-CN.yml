@@ -123,6 +123,12 @@ zh-CN:
         aasm_state: "状态"
         price: "购买时价格"
         quantity: "数量"
+        name: "联系人"
+        telephone: "联系电话"
+        code_number: "组织机构代码"
+        enterprise_name: "企业名称"
+        location: "企业地址"
+        zipcode: "邮政编码"
       accident_item:
         industry_id: "行业分类"
         employee_number: "员工数量"

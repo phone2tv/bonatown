@@ -3,4 +3,7 @@
   font-size:15px;
   border-left: 5px solid #1B4E9E;
   color: #666;
+
+//filter: gray; /* IE6-9 */  
+//-webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */  
 }
