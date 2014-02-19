@@ -17,6 +17,7 @@ class AccidentItemsController < ApplicationController
     insurance = Insurance.find params[:insurance_id]
     @accident_item = AccidentItem.new(insurance_id: params[:insurance_id])
     @accident_item.build_line_item(user_id: current_user.id, price: insurance.price)
+    @accident_item.build_insurance_business
   end
 
   # GET /accident_items/1/edit
@@ -85,6 +86,6 @@ class AccidentItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accident_item_params
-      params.require(:accident_item).permit(:insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode, :lock_version])
+      params.require(:accident_item).permit(:insurance_id, :industry_id, :employee_number, :quota, :started_at, :stopped_at, :line_item_attributes => [:user_id, :price, :quantity, :name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode, :lock_version], :insurance_business_attributes => [:name, :telephone, :code_number, :enterprise_name, :province, :city, :district, :location, :zipcode])
     end
 end

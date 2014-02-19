@@ -37,6 +37,11 @@
   </div> <!-- coverInfo -->
 
   <div class="coverInfo">
+    <h1>被投保人信息</h1>
+    <%= render partial: 'insurance_businesses/form', locals: { insurance_business_form: f, insurance_item: @public_liability_item } %>
+  </div> <!-- coverInfo -->
+
+  <div class="coverInfo">
     <h1>电梯信息</h1>
 
     <%= f.fields_for :elevators do |builder| %>

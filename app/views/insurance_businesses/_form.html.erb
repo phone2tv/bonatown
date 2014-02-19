@@ -25,18 +25,20 @@
     <%# f.label :city, class: 'control-label' %>
     <%# f.label :district, class: 'control-label' %>
   <%-
-    province = @product_liability_item.insurance_business.province
-    city = @product_liability_item.insurance_business.city
-    district = @product_liability_item.insurance_business.district
+    province = insurance_item.insurance_business.province
+    city     = insurance_item.insurance_business.city
+    district = insurance_item.insurance_business.district
     provinces  = ChinaCity.list
     cities     = ChinaCity.list(province)
     districtes = ChinaCity.list(city)
+
+    owner_name = insurance_item.class.to_s.tableize.singularize
   %>
 
   <div class='rails-helper city-group'>
-    <%= select_tag :province, options_for_select(provinces, province) , prompt: '--省份--', id: 'product_liability_item_insurance_business_attributes_province', name: 'product_liability_item[insurance_business_attributes][province]', class: ['city-select', 'city-province'] %>
-    <%= select_tag :city    , options_for_select(cities, city)        , prompt: '--城市--', id: 'product_liability_item_insurance_business_attributes_city',     name: 'product_liability_item[insurance_business_attributes][city]', class: ['city-select', 'city-city'] %>
-    <%= select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: 'product_liability_item_insurance_business_attributes_district', name: 'product_liability_item[insurance_business_attributes][district]', class: ['city-select', 'city-district'] %>
+    <%= select_tag :province, options_for_select(provinces, province) , prompt: '--省份--', id: "#{owner_name}_insurance_business_attributes_province", name: "#{owner_name}[insurance_business_attributes][province]", class: ['city-select', 'city-province'] %>
+    <%= select_tag :city    , options_for_select(cities, city)        , prompt: '--城市--', id: "#{owner_name}_insurance_business_attributes_city",     name: "#{owner_name}[insurance_business_attributes][city]",     class: ['city-select', 'city-city'] %>
+    <%= select_tag :district, options_for_select(districtes, district), prompt: '--地区--', id: "#{owner_name}_insurance_business_attributes_district", name: "#{owner_name}[insurance_business_attributes][district]", class: ['city-select', 'city-district'] %>
   </div>
   </div>
 

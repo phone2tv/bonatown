@@ -69,9 +69,12 @@
 
   <div class="coverInfo">
     <h1>公共信息</h1>
+    <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
+  </div> <!-- coverInfo -->
 
-  <%= render partial: 'line_items/form', locals: { line_item_form: f } %>
-
+  <div class="coverInfo">
+    <h1>被投保人信息</h1>
+    <%= render partial: 'insurance_businesses/form', locals: { insurance_business_form: f, insurance_item: @employer_liability_item } %>
   </div> <!-- coverInfo -->
 
   <div class="coverInfo">
